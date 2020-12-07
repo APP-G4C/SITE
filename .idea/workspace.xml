@@ -15,6 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectId" id="1lLPbAwe29H4MVH0iHMWhQuONQt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,7 +46,8 @@
       <workItem from="1607373641633" duration="2055000" />
       <workItem from="1607376346260" duration="51000" />
       <workItem from="1607376414174" duration="77000" />
-      <workItem from="1607376496229" duration="168000" />
+      <workItem from="1607376496229" duration="401000" />
+      <workItem from="1607376899981" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="PAGE GESTIONNAIRE MODIFIE">
       <created>1607374005722</created>
@@ -124,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607376525592</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Modification">
+      <created>1607376770443</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607376770443</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +159,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="PAGE GESTIONNAIRE MODIFIE" />
