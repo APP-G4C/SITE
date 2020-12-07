@@ -1,0 +1,84 @@
+.Entete{
+  text-transform: uppercase;
+  height: 20px;
+  width:auto;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 30px;
+  text-align:center;
+  color:#3F51B5;
+
+}
+.Mot{
+font-style: italic;
+text-align: center;
+height:10px;
+font-size: 20px;
+clear: both;
+color: black;
+}
+.lien{
+  color: black;
+}
+
+.contenu{
+  text-align:center;
+}
+.nom{
+  font-size: 20px;
+  position: relative;
+  right:65px;
+  font-weight: bold;
+}
+.Prenom{
+  font-size: 20px;
+  position: relative;
+  right:50px;
+  font-weight: bold;
+}
+.email{
+  font-size: 20px;
+  position: relative;
+  right:65px;
+  font-weight: bold;
+}
+.Message{
+  font-size: 20px;
+  position: relative;
+  right: 47px;
+  font-weight: bold;
+  color: #3F51B5;
+}
+
+.tel{
+  font-size: 20px;
+  position: relative;
+  right:10px;
+  font-weight: bold;
+}
+.Message{
+  font-size: 20px;
+  position: relative;
+  right: 47px;
+  font-weight: bold;
+  display: inline;
+}
+.btn{
+  display:inline-block;
+  background-color:white;
+  border-radius: 8px;
+  border: 2px solid #3F51B5;
+  font-family: Lucida sans;
+  font-size: 20px;
+  cursor: pointer;
+}
+.contenu{
+  text-align: center;
+}
+legend{
+  background-color: #fff;
+  color: #3F51B5;
+  padding: 2px 6px;
+  font-size: 20px;
+  font-weight: bolder;
+}

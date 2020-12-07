@@ -1,0 +1,53 @@
+.menu {
+  background: #3F51B5;
+  width: auto;
+  height: 100px;
+  line-height: 66px;
+}
+
+.m-left {
+  float: left;
+}
+
+a img{
+  position: relative;
+  top: auto;
+  left: 10px;
+  width: 130px;
+  height: 100px;
+}
+
+.logo{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+.m-right {
+  float: right;
+}
+.m-link {
+  position: relative;
+  top: 10px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 0;
+  margin: 0 70px;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.m-link:hover{
+  padding-bottom: 3px;
+  border-color: #fff;
+}
+
+.m-link i{
+  margin-right: 5px;
+}

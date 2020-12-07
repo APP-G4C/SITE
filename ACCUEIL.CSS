@@ -1,0 +1,29 @@
+
+/* graphique */
+section
+{
+    display: flex;
+    justify-content: space-around;
+    text-align: : center;
+}
+
+article
+{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
+
+
+/* f1 */
+article img
+{
+    width: 256px;
+    height:144px;
+}
+
+}
+article p
+{
+    font-size: 2em;
+}

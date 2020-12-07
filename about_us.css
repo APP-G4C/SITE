@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
+
+#titre_aboutus {
+	position: relative;
+	font-size:3vw;
+	color : #3F51B5;
+	margin-left:35%;
+}
+
+#introduction {
+	position: relative;
+	margin-top:4.5%;
+	font-size:1.3vw;
+	margin-left:7%;
+	margin-right:7%;
+}
+
+
+/*Blocs pour chaque personne ---------------------------------------------------*/
+
+.image {
+	height: auto;
+	width : 100%;
+}
+
+.email{
+	text-decoration : none;
+	color : #3F51B5;
+	font-weight : bold;
+}
+
+.information{
+	font-weight : bold;
+}
+
+.overlay {
+	position: absolute;
+	top:0 ;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	margin-top:50%;
+	transition: 1s ease;
+	opacity:0;
+	color: white;
+	padding:20px;
+	text-align: center;
+	font-size:1.5vw;
+}
+
+#container1 {
+	position: absolute;
+	top : 50%;
+	left : 7%;
+	width: 11%;
+}
+#container2 {
+	position: absolute;
+	top : 50%;
+	left : 22%;
+	width: 11%;
+}
+#container3 {
+	position: absolute;
+	top : 50%;
+	left:37%;
+	width: 11%;
+}
+#container4 {
+	position: absolute;
+	top : 50%;
+	left:52%;
+	width: 11%;
+}
+#container5 {
+	position: absolute;
+	top : 50%;
+	left:67%;
+	width: 11%;
+}
+#container6 {
+	position: absolute;
+	top : 50%;
+	left:82%;
+	width: 11%;
+}
+
+#container1:hover .overlay {
+	opacity: 1;
+}
+#container2:hover .overlay {
+	opacity: 1;
+}
+#container3:hover .overlay {
+	opacity: 1;
+}
+#container4:hover .overlay {
+	opacity: 1;
+}
+#container5:hover .overlay {
+	opacity: 1;
+}
+#container6:hover .overlay {
+	opacity: 1;
+}
+
+/*Textes de description*/
+
+#description1{
+	display:none;
+	font-size:1.2vw;
+}
+#description2{
+	display:none;
+	font-size:1.2vw;
+}
+#description3{
+	display:none;
+	font-size:1.2vw;
+}
+#description4{
+	display:none;
+	font-size:1.2vw;
+}
+#description5{
+	display:none;
+	font-size:1.2vw;
+}
+#description6{
+	display:none;
+	font-size:1.2vw;
+}
+
+/*Boutons*/
+
+#myBtn1{
+	border:none;
+	padding:6px 8px 6px 8px;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	display : block;
+	margin:auto;
+}
+#myBtn1:hover{
+	background:#DFDEDE;
+}
+
+#myBtn2{
+	border:none;
+	padding:6px 8px 6px 8px;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	display : block;
+	margin:auto;
+}
+#myBtn2:hover{
+	background:#DFDEDE;
+}
+
+#myBtn3{
+	border:none;
+	padding:6px 8px 6px 8px;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	display : block;
+	margin:auto;
+}
+#myBtn3:hover{
+	background:#DFDEDE;
+}
+
+#myBtn4{
+	border:none;
+	padding:6px 8px 6px 8px;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	display : block;
+	margin:auto;
+}
+#myBtn4:hover{
+	background:#DFDEDE;
+}
+
+#myBtn5{
+	border:none;
+	padding:6px 8px 6px 8px;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	display : block;
+	margin:auto;
+}
+#myBtn5:hover{
+	background:#DFDEDE;
+}
+
+#myBtn6{
+	border:none;
+	padding:6px 8px 6px 8px;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	display : block;
+	margin:auto;
+}
+#myBtn6:hover{
+	background:#DFDEDE;
+}
