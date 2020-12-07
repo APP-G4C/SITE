@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4300273c-5191-4b8a-89f6-f05012e26d4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MAPAGEGESTIONNAIRE.html" beforeDir="false" afterPath="$PROJECT_DIR$/MAPAGEGESTIONNAIRE.html" afterDir="false" />
-    </list>
+    <list default="true" id="4300273c-5191-4b8a-89f6-f05012e26d4d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +39,7 @@
       <updated>1607373466885</updated>
       <workItem from="1607373468162" duration="70000" />
       <workItem from="1607373551641" duration="27000" />
-      <workItem from="1607373641633" duration="1622000" />
+      <workItem from="1607373641633" duration="2055000" />
     </task>
     <task id="LOCAL-00001" summary="PAGE GESTIONNAIRE MODIFIE">
       <created>1607374005722</created>
@@ -92,7 +90,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607375147482</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Modification">
+      <created>1607375700708</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607375700708</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Modification">
+      <created>1607375862141</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607375862141</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
