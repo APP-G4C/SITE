@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4300273c-5191-4b8a-89f6-f05012e26d4d" name="Default Changelist" comment="PAGE GESTIONNAIRE MODIFIE">
-      <change afterPath="$PROJECT_DIR$/.idea/SITE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/ACCUEIL_html.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ACCUEIL.CSS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ACCUEIL.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AIDE.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CGU.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONNEXION.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONTACT.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONTACT.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Graphique.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INSCRIPTION.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LH.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about_us.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about_us.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logoapp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logoapp3.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profil_g.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/profil_u.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAPAGEGESTIONNAIRE.html" beforeDir="false" afterPath="$PROJECT_DIR$/MAPAGEGESTIONNAIRE.html" afterDir="false" />
-    </list>
+    <list default="true" id="4300273c-5191-4b8a-89f6-f05012e26d4d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +39,7 @@
       <updated>1607373466885</updated>
       <workItem from="1607373468162" duration="70000" />
       <workItem from="1607373551641" duration="27000" />
-      <workItem from="1607373641633" duration="693000" />
+      <workItem from="1607373641633" duration="949000" />
     </task>
     <task id="LOCAL-00001" summary="PAGE GESTIONNAIRE MODIFIE">
       <created>1607374005722</created>
@@ -79,7 +48,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607374005722</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="PAGE GESTIONNAIRE MODIFIE">
+      <created>1607374354749</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607374354749</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modification">
+      <created>1607374487016</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607374487016</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +70,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="PAGE GESTIONNAIRE MODIFIE" />
-    <option name="LAST_COMMIT_MESSAGE" value="PAGE GESTIONNAIRE MODIFIE" />
+    <MESSAGE value="Modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification" />
   </component>
 </project>
