@@ -45,6 +45,7 @@
       <workItem from="1607373641633" duration="2055000" />
       <workItem from="1607376346260" duration="51000" />
       <workItem from="1607376414174" duration="77000" />
+      <workItem from="1607376496229" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="PAGE GESTIONNAIRE MODIFIE">
       <created>1607374005722</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607376125304</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Modification">
+      <created>1607376525592</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607376525592</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +138,17 @@
         <option value="Default.Date" />
         <option value="Default.Subject" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
