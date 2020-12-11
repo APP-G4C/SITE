@@ -1,66 +1,104 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
+<html lang="fr">
+<head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Website | Accueil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="footer_home.css">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="ACCUEIL.css" />
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-  </head>
-  <body>
 
-      <header role="header">
-        <nav class="menu" role="navigation">
-            <div class="inner">
-              <div class="m-left">
-                <a href="ACCUEIL.html" class="logo"><img src="logoapp.png"/> </a>
-              </div>
-              <div class="m-right">
-                <a href="ACCUEIL.html" class="m-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="AIDE.html" class="m-link"><i class="fas fa-info"></i> Aide</a>
-                <a href="CONTACT.html" class="m-link"><i class="fas fa-envelope"></i> Contact</a>
-                <a href="CONNEXION.html" class="m-link"><i class="far fa-id-badge"></i> Connexion</a>
-              </div>
-            </div>
-        </nav>
-      </header>
+</head>
 
-
-      <div id="bloc_page">
-          <section>
-              <article>
-                  <div id="tp">
-                  <h1>Test psychotechniques</h1>
-                          <div id="photostp">
-                              <img src="f1.jpg" alt="" class="f1" />
-                          </div>
-                  <p>TEST</p>
-                  </div>
-              </article>
-              <p><img src="Graphique.png"></p>
-          </section>
-      </div>
-
-
-      <footer>
-        <nav class="footer" role="navigation">
-            <div class="inner">
-              <div class="f-left">
-              </div>
-              <div class="f-right">
-                <a href="CGU.html" class="f-link"></i> CGU & CL</a>
-                <a href="CONTACT.html" class="f-link"></i> Contact</a>
-                <a href="AIDE.html" class="f-link"></i> Aide</a>
-                <a href="about_us.html" class="f-link"></i> A propos</a>
-              </div>
-            </div>
-        </nav>
+  <header role="header">
+    <nav class="menu" role="navigation">
+        <div class="inner">
+          <div class="m-left">
+            <a href="ACCUEIL.html" class="logo"><img src="logoapp.png"/> </a>
           </div>
-      </footer>
+          <div class="m-right">
+            <a href="ACCUEIL.html" class="m-link"><i class="fas fa-home"></i> Accueil</a>
+            <a href="AIDE.html" class="m-link"><i class="fas fa-info"></i> Aide</a>
+            <a href="CONTACT.html" class="m-link"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="CONNEXION.html" class="m-link"><i class="far fa-id-badge"></i> Connexion</a>
+          </div>
+        </div>
+    </nav>
+  </header>
 
-  </body>
+    <body>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="carousel-caption">
+                        <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Creatif</span></h2>
+                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
+                        <p class="animated bounceInRight" style="animation-delay: 3s"><a href="about_us.html">A Propos</a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h2 class="animated zoomIn" style="animation-delay: 1s">Nous sommes <span>Déterminé</span></h2>
+                        <h3 class="animated fadeInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
+                        <p class="animated zoomIn" style="animation-delay: 3s"><a href="about_us.html">A Propos</a></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h2 class="animated slideInDown" style="animation-delay: 1s">Nous sommes <span>PTT</span></h2>
+                        <h3 class="animated fadeInUp" style="animation-delay: 2s">Psychotechnical Agency</h3>
+                        <p class="animated zoomIn" style="animation-delay: 3s"><a href="about_us.html">A Propos</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </body>
+
+    <footer>
+      <nav class="footer" role="navigation">
+          <div class="inner">
+            <div class="f-left">
+            </div>
+            <div class="f-right">
+              <a href="CGU.html" class="f-link"></i> CGU & CL</a>
+              <a href="CONTACT.html" class="f-link"></i> Contact</a>
+              <a href="AIDE.html" class="f-link"></i> Aide</a>
+              <a href="about_us.html" class="f-link"></i> A propos</a>
+            </div>
+          </div>
+      </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </html>
