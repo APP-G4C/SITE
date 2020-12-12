@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4300273c-5191-4b8a-89f6-f05012e26d4d" name="Default Changelist" comment="Modification">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4300273c-5191-4b8a-89f6-f05012e26d4d" name="Default Changelist" comment="Modification" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +47,7 @@
       <workItem from="1607376496229" duration="401000" />
       <workItem from="1607376899981" duration="12000" />
       <workItem from="1607377225613" duration="263000" />
+      <workItem from="1607422302667" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="PAGE GESTIONNAIRE MODIFIE">
       <created>1607374005722</created>
@@ -168,7 +167,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/Paul" />
                       </list>
                     </value>
                   </entry>
