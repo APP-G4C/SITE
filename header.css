@@ -1,31 +1,77 @@
-a img{
-  position: absolute;
-  top: auto;
-  left: 10px;
-  width: 130px;
-  height: 100px;}
+/* CSS menu 1 */
+header{
+   
+    background-color: #0059C2;
+    border-bottom: solid 4px;
+    border-color: #EFD200;
+    font-size: 19px;
 
-a{
-  text-decoration: none;}
+}
 
-.header{
+#menu1 nav ul{
+    list-style: none;
+}
+
+#menu1 nav li{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+#menu1 nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#menu1 nav{
+    background-color: #0059C2;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    background-color: #0061D3;
-    position: absolute;
-    top: 0;
-  }
+    margin: 0;
+    position: sticky;
+    top: 0px;
 
+}
 
-.ongletheader{
-    background-color: #0061D3;
+#menu1 nav a{
+    display: block;
+    text-decoration: none;
     color: white;
-    padding: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-left: 90px;}
+    vertical-align: center;
 
-.ongletheader:hover{
-    background-color: #0061D3;
-    color: white;}
+}
+
+#menu1 nav a:hover{
+    color: white;
+    font-size: 21.5px;
+    text-shadow: 2px 2px 4px white;
+}
+
+#menu1 li a{
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+}
+
+#link{
+    padding-top: 26px;
+    text-align: center;
+    position: relative;
+}
+
+#logoapp img{
+    padding-top: 3px;
+    height: 87px;
+    width: 117px;
+}
+
+
+
+@media all and (max-width: 600px){
+
+
+    header{
+    font-size: 15px;
+    }   
+
+    
