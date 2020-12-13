@@ -55,3 +55,6 @@ body{
   cursor: pointer;
   margin: 12px 0;
 }
+.error_block p{
+  text-align: center;
+}

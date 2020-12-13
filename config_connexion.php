@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
                     // Si le mail ne correspond à rien, on renvoie un message d'erreur
-                    $username_err = "Cet adresse mail ne correspond à aucun compte.";
+                    $err_Mail = "Cet adresse mail ne correspond à aucun compte.";
                 }
             } else{
               echo "Il y a eu une erreur, veuillez réessayer plus tard.";
