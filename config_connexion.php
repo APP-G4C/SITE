@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 // On charge le fichier config si pas déjà fait (charge databse)
 require_once "config.php";
-// Définie les variables vides
+// Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
 
@@ -32,10 +32,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Mail) && empty($err_password)){
         // On prépare un statement select
-        $sql = "SELECT id_User, Mail, password FROM user WHERE Mail = :Mail";
+        $sql = "SELECT id_User, Mail, password,type FROM user WHERE Mail = :Mail";
 
         if($stmt = $pdo->prepare($sql)){
-          echo $stmt
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
 
@@ -43,14 +42,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_Mail = trim($_POST["Mail"]);
             // On exécute la commande préparée
             if($stmt->execute()){
-              echo "test1";
                 // On vérifie que le Mail existe, puis on vérifie le mdp
                 if($stmt->rowCount() == 1){
                     if($row = $stmt->fetch()){
                         $id = $row["id_User"];
                         $Mail = $row["Mail"];
-                        $hashed_password = $row["password"];
-                        if(password_verify($password, $hashed_password)){
+                        $password1 = $row["password"];
+                        $type=$row['type'];
+                        if($password==$password1){
                             // Le mdp est bon, on lance une session
                             session_start();
 
@@ -58,9 +57,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["connecte"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["Mail"] = $Mail;
-
+                            $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: ACCUEIL.php");
+                            header("Location: ACCUEIL.html");
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
