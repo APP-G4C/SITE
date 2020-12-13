@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -30,17 +31,18 @@
 
     <div class="login-box">
       <h1>Connexion</h1>
-      <div class="textbox">
-        <i class="fas fa-user"></i>
-        <input class="login" type="text" placeholder="Email">
-      </div>
+      <form class="" action="config_connexion.php" method="post">
+        <div class="textbox">
+          <i class="fas fa-user"></i>
+          <input class="login" type="text" placeholder="Email" name="Mail" value="<?php echo $Mail; ?>">
+        </div>
 
-      <div class="textbox">
-        <i class="fas fa-lock"></i>
-        <input class="login" type="password" placeholder="Mot de passe">
-      </div>
-
-      <input type="submit" class="btn" value="Se connecter">
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input class="login" type="password" placeholder="Mot de passe" name="password" value="<?php echo $password ?>">
+        </div>
+        <input type="submit" class="btn" value="Se connecter">
+      </form>
     </div>
 
 
@@ -51,14 +53,13 @@
             <div class="f-left">
             </div>
             <div class="f-right">
-              <a href="CGU.html" class="f-link"></i> CGU & CL</a>
-              <a href="CONTACT.html" class="f-link"></i> Contact</a>
-              <a href="AIDE.html" class="f-link"></i> Aide</a>
-              <a href="about_us.html" class="f-link"></i> A propos</a>
+              <a href="CGU.html" class="f-link">CGU & CL</a>
+              <a href="CONTACT.html" class="f-link">Contact</a>
+              <a href="AIDE.html" class="f-link">Aide</a>
+              <a href="about_us.html" class="f-link">A propos</a>
             </div>
           </div>
       </nav>
-        </div>
     </footer>
 
   </body>
