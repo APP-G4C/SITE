@@ -6,7 +6,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Avenir next;
+    font-family: Avenir Next;
     color: black;
 }
 
@@ -17,102 +17,117 @@ body{
 }
 
 
-/*ANIMATION PAGE ACCUEIL*/
-#images {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 5%;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#carousel-example-generic{
+  width: 100%;
+  height: 600px;
+  background-image: url(fond.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#images img{
-  margin: 50px;
-  border: 2px black solid
-}
-
-#avions img,#pilotes img
-{
-  width: 300px;
-  height: 176px;
-
-}
-
-
-
-
-}
-
 .carousel-caption {
-	padding-bottom: 250px;
-	position: relative;
-	text-align: center;
-	top: 200px;
-	left: 50px;
+  margin-bottom: 20%;
+  position: relative;
+  text-align: center;
+  top: 200px;
+  left: 50px;
 }
 .carousel-caption h2 {
-	font-size: 70px;
-	text-transform: uppercase;
-	font-weight: bold;
-	position: relative;
-	text-align: center;
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
 }
 .carousel-caption h2 span {
-	color:#3F51B5;
+  color:#3F51B5;
 }
 .carousel-caption a {
-	background: #3F51B5;
-	padding: 15px 35px;
-	display: inline-block;
-	margin-top: 15px;
-	color: #fff;
-	text-transform: uppercase;
-	border-radius: 25px;
+  background: #3F51B5;
+  padding: 15px 35px;
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 25px;
 
+}
+
+.carousel-caption h3,.carousel-caption p{
+  text-align:center;
 }
 .carousel-control.right {
-	background-image: none;
+  background-image: none;
 }
 .carousel-control.left {
-	background-image: none;
+  background-image: none;
 }
 .carousel-indicators .active {
-	background-color: #3F51B5;
-	border-color: #EDBB00;
+  background-color: #3F51B5;
+  border-color: #EDBB00;
 }
-
-
-
-
 
 
 /*responsive css*/
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.carousel-caption {
-		padding-bottom: 350px;
-	}
-	.carousel-caption h2 {
-		font-size: 50px;
-	}
+  .carousel-caption {
+    padding-bottom: 350px;
+  }
+  .carousel-caption h2 {
+    font-size: 50px;
+  }
 }
 @media only screen and (max-width: 767px) {
-	.navbar-inverse .navbar-brand {
-		font-size: 30px;
-		padding: 20px 15px;
-	}
-	.carousel-caption {
-		padding-bottom: 120px;
-	}
-	.carousel-caption h2 {
-		font-size: 25px;
-	}
-	.carousel-caption h3 {
-		font-size: 18px;
-	}
-	.carousel-caption a {
-		padding: 10px 25px;
-	}
+  .navbar-inverse .navbar-brand {
+    font-size: 30px;
+    padding: 20px 15px;
+  }
+  .carousel-caption {
+    padding-bottom: 120px;
+  }
+  .carousel-caption h2 {
+    font-size: 25px;
+  }
+  .carousel-caption h3 {
+    font-size: 18px;
+  }
+  .carousel-caption a {
+    padding: 10px 25px;
+  }
 }
+
+header nav ul li
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -204,6 +219,24 @@ legend{
   font-size: 20px;
   font-weight: bolder;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* PAGE CONNEXION*/
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 
@@ -260,6 +293,22 @@ legend{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* PAGE A PROPOS*/
 @import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
 
@@ -277,7 +326,6 @@ legend{
   margin-left:7%;
   margin-right:7%;
 }
-
 
 
 /*Blocs pour chaque personne ---------------------------------------------------*/
@@ -514,6 +562,32 @@ legend{
   margin-left:auto;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* PAGE UTILISATEUR*/
 
 .SECTIONS
@@ -553,6 +627,27 @@ legend{
   height: 128px;
   border: 3px black solid;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* PAGE GESTIONNAIRE*/
 
