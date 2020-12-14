@@ -3,7 +3,7 @@
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: ACCUEIL.php");
+    header("Location: accueil.html");
     exit;
 }
 
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: ACCUEIL.html");
+                            header("Location: accueil.html");
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -82,37 +82,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
+<html lang="fr">
+<head>
     <meta charset="utf-8">
-    <title>Website | Connexion</title>
-    <link rel="stylesheet" href="form.css">
+    <title>Website | Accueil</title>
+    
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="normalize.css">
-  </head>
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   
+
+    
+
+</head>
+
+
+  <header id="menu1">
+    <nav>
+        <ul>
+            <li id="link"><a id="logoapp"href="ACCUEIL.html"><img src="logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="ACCUEIL.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b3"href="AIDE.html"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="CONTACT.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="CONNEXION.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+        </ul>
+    </nav>
+  </header>
+
+
+
+
+
+
+
 
   <body>
-
-    <header role="header">
-      <nav class="menu" role="navigation">
-          <div class="inner">
-            <div class="m-left">
-              <a href="ACCUEIL.html" class="logo"><img src="logoapp.png"/> </a>
-            </div>
-            <div class="m-right">
-              <a href="ACCUEIL.html" class="m-link"><i class="fas fa-home"></i> Accueil</a>
-              <a href="AIDE.html" class="m-link"><i class="fas fa-info"></i> Aide</a>
-              <a href="CONTACT.html" class="m-link"><i class="fas fa-envelope"></i> Contact</a>
-              <a href="INSCRIPTION.html" class="m-link"><i class="far fa-id-badge"></i> Inscription</a>
-            </div>
-          </div>
-      </nav>
-    </header>
-
-
     <div class="login-box">
       <h1>Connexion</h1>
       <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -120,7 +126,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <i class="fas fa-user"></i>
           <input class="login" type="text" placeholder="Email" name="Mail" value="<?php echo $Mail; ?>">
         </div>
-
         <div class="textbox">
           <i class="fas fa-lock"></i>
           <input class="login" type="password" placeholder="Mot de passe" name="password" value="<?php echo $password ?>">
@@ -138,22 +143,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       </form>
     </div>
 
-
-
-    <footer>
-      <nav class="footer" role="navigation">
-          <div class="inner">
-            <div class="f-left">
-            </div>
-            <div class="f-right">
-              <a href="CGU.html" class="f-link">CGU & CL</a>
-              <a href="CONTACT.html" class="f-link">Contact</a>
-              <a href="AIDE.html" class="f-link">Aide</a>
-              <a href="about_us.html" class="f-link">A propos</a>
-            </div>
-          </div>
-      </nav>
-    </footer>
-
   </body>
+  
+
+  <footer id="menu2">
+        <nav>
+            <ul>
+                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
+                <li id="link2"><a href="contact.html">CONTACT</a></li>
+                <li id="link2"><a href="aide.html">AIDE</a></li>
+                <li id="link2"><a href="aboutus.html">A PROPOS</a></li>
+            </ul>
+        </nav>
+  </footer>
+
+    
+
 </html>
