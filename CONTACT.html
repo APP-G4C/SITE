@@ -1,119 +1,130 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
+<html lang="fr">
+<head>
     <meta charset="utf-8">
-    <title>Website | Contact</title>
+    <title>Website | Accueil</title>
+    
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="CONTACT.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   
+
+    
+
+</head>
 
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <header id="menu1">
+    <nav>
+        <ul>
+            <li id="link"><a id="logoapp"href="accueil.html"><img src="logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="accueil.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b3"href="aide.html"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+        </ul>
+    </nav>
+  </header>
 
-  </head>
+  
+
+
+
+
+
+
+
   <body>
-<!--HEADER-->
-      <header role="header">
-        <nav class="menu" role="navigation">
-            <div class="inner">
-              <div class="m-left">
-                <a href="ACCUEIL.html" class="logo"><img src="logoapp.png"/> </a>
-              </div>
-              <div class="m-right">
-                <a href="ACCUEIL.html" class="m-link"><i class="fas fa-home"></i> Accueil</a>
-                <a href="AIDE.html" class="m-link"><i class="fas fa-info"></i> Aide</a>
-                <a href="CONTACT.html" class="m-link"><i class="fas fa-envelope"></i> Contact</a>
-                <a href="CONNEXION.html" class="m-link"><i class="far fa-id-badge"></i> Connexion</a>
-              </div>
-            </div>
-        </nav>
-      </header>
+    <div id="bloccontact">
+      <form method="post" action="traitement.php">
+    <!--Permet de traiter les données avec le php-->
 
+        <div class="bloc">
 
-<form method="post" action="traitement.php">
-  <!--Permet de traiter les données avec le php-->
+              <span>
+                <p class="Entete"><strong>Formulaire de Contact</strong></p>
 
-      <div class="page-header">
+              <p class="Mot"> Une question? <a class="lien" href ="AIDE.html">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
+                <br>
+                <!--REDIRIGE VERS LA FAQ DIRECTEMENT EN CLIQUANT DESSUS-->
+              </span>
 
-            <span style="font-size:x-large;" >
-              <p class="Entete"><strong>Formulaire de Contact</strong></p>
-
-            <p class="Mot"> Une question? <a class="lien" href ="AIDE.html">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
-              <br>
-              <!--REDIRIGE VERS LA FAQ DIRECTEMENT EN CLIQUANT DESSUS-->
-            </span>
-
-          <p></p>
-      </div>
+            <p></p>
+        </div>
+      <br>
+      <br>
 
 
 
-      <div class="page-body">
-<div class="contenu">
-  <fieldset>
-  <legend> Informations importantes </legend>
-<!--FORMULAIRE-->
-<!-- 1) demande du Nom-->
-          <div class="nom">
-            <label for="lname">
-              Remplissez votre nom :
-            </label>
-            <input type="text" name="lname" id="lname" placeholder="Nom"/>
-          </div>
-
-            <br/> <br/>
-<!-- 2) demande du Prénom-->
-            <div class="Prenom">
-              <label for="fname">
-                Remplissez votre prénom :
-              </label>
-              <input type="text" name="fname" id="fname" placeholder="Prénom"/>
-            </div>
-              <br><br>
-<!-- 3) demande du mail-->
-              <div class="email">
-            <label for="email">
-              Remplissez votre email:
-            </label>
-            <input type="email" name="email" id="email"/>
-            </div>
-            <br/> <br/>
-  <!-- 4) demande du Téléphone-->
-            <div class="tel">
-              <label for="phone">Entrez votre numéro de téléphone :</label>
-              <input type="tel" id="phone" name="phone"/>
-            </br></br>
-  </fieldset>
-<!-- 5) demande du Message-->
-<br>
-                  <div class="Message"><label class="label">Message:</label></div>
-
-                  <div class="input-row">
-                    <br>
-                    <textarea rows="6" cols="65"data-size="full"></textarea>
+        
+        <div class="contenu">
+          <fieldset>
+          <legend> Informations importantes </legend>
+        <!--FORMULAIRE-->
+        <!-- 1) demande du Nom-->
+                  <div class="nom">
+                    <label for="lname">
+                      Remplissez votre nom :
+                    </label>
+                    <input type="text" name="lname" id="lname" placeholder="Nom"/>
                   </div>
 
-                      <button class="btn">Envoyer</button>
+                    <br/> <br/>
+        <!-- 2) demande du Prénom-->
+                    <div class="Prenom">
+                      <label for="fname">
+                        Remplissez votre prénom :
+                      </label>
+                      <input type="text" name="fname" id="fname" placeholder="Prénom"/>
+                    </div>
+                      <br><br>
+        <!-- 3) demande du mail-->
+                    <div class="email">
+                      <label for="email">
+                      Remplissez votre email:
+                      </label>
+                      <input type="email" name="email" id="email"/>
+                    </div>
+                    <br/> <br/>
+          <!-- 4) demande du Téléphone-->
+                    <div class="tel">
+                      <label for="phone">Entrez votre numéro de téléphone :</label>
+                      <input type="tel" id="phone" name="phone"/>
+                    </br></br>
+          </fieldset>
+        <!-- 5) demande du Message-->
+        <br>
+            <div class="Message"><label class="label">Message:</label></div>
+
+              <div class="input-row">
+                            <br>
+                <textarea rows="6" cols="65"data-size="full"></textarea>
               </div>
 
-</div>
-</form>
-
-      <footer>
-        <nav class="footer" role="navigation">
-            <div class="inner">
-              <div class="f-left">
-              </div>
-              <div class="f-right">
-                <a href="CGU.html" class="f-link"> CGU & CL</a>
-                <a href="CONTACT.html" class="f-link"> Contact</a>
-                <a href="AIDE.html" class="f-link"> Aide</a>
-                <a href="about_us.html" class="f-link"></i> A propos</a>
-              </div>
+                              <button class="btn">Envoyer</button>
             </div>
-        </nav>
-      </footer>
+        
+        </div>
+      </form>
+    </div>
+
+
+
 
   </body>
+
+    <footer id="menu2">
+        <nav>
+            <ul>
+                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
+                <li id="link2"><a href="contact.html">CONTACT</a></li>
+                <li id="link2"><a href="aide.html">AIDE</a></li>
+                <li id="link2"><a href="aboutus.html">A PROPOS</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    
+
 </html>
