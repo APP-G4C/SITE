@@ -5,7 +5,7 @@ header{
     border-bottom: solid 4px;
     border-color: #EFD200;
     font-size: 19px;
-    height: 150px;
+
 
 }
 
@@ -15,9 +15,11 @@ header{
 
 #menu1 nav li{
     float: left;
-    width: 15%;
+
+    width: 16%;
     text-align: center;
    
+
 }
 
 #menu1 nav ul::after{
@@ -32,6 +34,7 @@ header{
     margin: 0;
     position: sticky;
     top: 0px;
+
 
 }
 
@@ -61,10 +64,41 @@ header{
     position: relative;
 }
 
+
+}
+
+#menu1 nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    vertical-align: center;
+
+}
+
+#menu1 nav a:hover{
+    color: white;
+    font-size: 21.5px;
+    text-shadow: 2px 2px 4px white;
+}
+
+#menu1 li a{
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+}
+
+#link{
+    padding-top: 26px;
+    text-align: center;
+    position: relative;
+}
+
+
 #logoapp img{
     padding-top: 3px;
     height: 87px;
     width: 117px;
+
 }
 
 header nav ul li {
@@ -82,11 +116,15 @@ header nav ul li:hover ul li {
     margin: 30px;
 }
 
+}
+
+
 
 @media all and (max-width: 600px){
 
 
     header{
+
     font-size: 10px;
     }  
 
@@ -94,6 +132,10 @@ header nav ul li:hover ul li {
         margin: 0%;
         margin-left: 5%;
     }
+
+
+    font-size: 15px;
+    }   
 
 
     
