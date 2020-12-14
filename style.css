@@ -18,7 +18,29 @@ body{
 
 
 /*ANIMATION PAGE ACCUEIL*/
+#images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5%;
 
+}
+#images img{
+  margin: 50px;
+  border: 2px black solid
+}
+
+#avions img,#pilotes img
+{
+  width: 300px;
+  height: 176px;
+
+}
+
+
+
+
+}
 
 .carousel-caption {
 	padding-bottom: 250px;
