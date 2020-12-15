@@ -15,15 +15,17 @@
 
 
   <header id="menu1">
-    <nav>
+    <nav class="menu">
+      <div class="m">
         <ul id="menu">
-            <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="logoapp" href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
-
-
+            <li id="link"><a id="b2" href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2" href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2" href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+        </ul>
+      </div>
+    </nav>
 
             <!--UTILISATEUR
             <li id='link'><a id="b6"href="#"> Ma Page</a>

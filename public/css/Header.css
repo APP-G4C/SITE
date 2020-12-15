@@ -1,4 +1,11 @@
 /* CSS menu 1 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+
 
 header{
     background-color: #EFD200;
@@ -28,7 +35,7 @@ header{
 }
 
 #menu1 nav{
-    background-color: #0059C2;
+    background-color: #3F51B5;
     width: 100%;
     margin: 0;
     position: sticky;
@@ -63,7 +70,21 @@ header{
     padding-top: 3px;
     height: 87px;
     width: 117px;
+}
 
+#b2{
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+  top:5vh;
+}
+
+#b2:hover{
+  padding-bottom: 3px;
+  border-color: #fff;
+}
+
+#b2 i{
+  margin-right: 5px;
 }
 
 header nav ul li {
@@ -85,18 +106,11 @@ header nav ul li:hover ul li {
 
 
 @media all and (max-width: 600px){
-<<<<<<< Updated upstream
     header {
         font-size: 10px;
     }
 
-
-
-=======
-
-
     header li{
-
     font-size: 5px;
     }
 
@@ -104,9 +118,3 @@ header nav ul li:hover ul li {
         margin: 0%;
         margin-left: 10%;
     }
-
-
-
-
-
->>>>>>> Stashed changes
