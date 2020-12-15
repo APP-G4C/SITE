@@ -35,32 +35,177 @@
 
 
   <body>
-    <div class="SECTIONS">
-      <div class="SECTION2">
-        <div class="PHOTO1">
-          <img src="LH.jpg" >
-        </div>
-        <div class="DESCRIPTIONSECTION1">
-          <h1> Nom </h1>
-          <h1> Prénom </h1>
-          <h1> Date de naissance </h1>
-          <h1> Nationalité </h1>
-        </div>
-      </div>
-      <div class="SECTION3">
-        <div class="PHOTO2">
-          <img src="Graphique.png">
-        </div>
-      </div>
-      <div class="SECTION4">
-        <h1> RESULTATS</h1>
-          <ul>
-            <li>Résultat 1</li>
-            <li>Résultat 2</li>
-            <li>Résultat 3</li>
-          </ul>
-      </div>
+    <div id="informationspersonnelles">
+      <fieldset> 
+      <legend>INFORMATIONS PERSONELLES</legend>
+          <label> Etat : Utilisateur</label>
+          <br>
+          <br>
+
+
+
+          <label>Photo de profil</label>
+          <br>
+          <br>
+          <img id="photoavatar"src="avatar.png">
+          <br>
+          <br>
+      
+        
+          <br>
+          <br>
+
+          <label>Sexe</label>
+          <br>
+          <br>
+          <select>
+            <option>Homme</option>
+            <option>Femme</option>
+            <option>Autre</option>
+            <
+          </select>
+
+          <br>
+          <br>
+
+          <label>Nom</label>
+          <br>
+          <br>
+          <input type="text" value="" placeholder="Nom">
+          <br>
+          <br> 
+
+
+          <label>Prénom</label>
+          <br>
+          <br>
+          <input type="text" placeholder="Prénom"value="">
+          <br>
+          <br>
+
+
+          <label>Email</label>
+          <br>
+          <br>
+          <input type="email" placeholder="Mail" value="">
+          <br>
+          <br>
+
+          <label>Mot de passe</label>
+          <br>
+          <br>
+          <input type="password" value="G4CG4C">
+          <br>
+
+
+          <label> Numéro de téléphone</label>
+          <br>
+          <br>
+          <input type="tel"  placeholder="0606060606"value="">
+          <br>
+          <br>
+
+          <label>Date de Naissance</label>
+          <br>
+          <br>
+          <input type="date" name="">
+          <br>
+          <br>
+          <
+
+          <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
+
+
+      </fieldset>
     </div>
+
+
+    <div id="prisederdv">
+      <br>
+      <br>
+
+      <fieldset>
+
+
+        <legend>PRISE DE RDV</legend>
+
+
+        <label>Choix du centre</label>
+        <br>
+        <select>
+          <option> Centre 1</option>
+          <option>Centre 2</option>
+        </select>
+        <br>
+        <br>
+
+        <label>Choix de la date</label>
+        <br>
+        <input type="date" name="">
+        <br>
+        <br>
+
+        <label>Choix de l'heure</label>
+        <br>
+        <input type="time" name="">
+        <br>
+        <br>
+
+        <label>Choix du test</label>
+        <br>
+        <select>
+          <option>Test 1</option>
+          <option>Test 2</option>
+        </select>
+      </fieldset>
+    </div>
+
+
+    <div id="résultats">
+      <fieldset>
+        <legend>Résultats</legend>
+        <table>
+
+
+          <tr>
+            <td><strong>Date</strong></td>
+            <td><strong>Centre</strong></td>
+            <td><strong>Fonction1</strong></td> 
+            <td><strong>Fonction 2 </strong></td>
+          </tr>
+
+          <tr>
+            <td>
+              
+              <input type="date" name="">
+              </label>
+            </td>
+
+            <td><input type="text" placeholder="1"></td>
+
+            <td><input type="text" placeholder= "52" ="">
+              <p> /</p>
+              <input type="text" placeholder="100" ="">
+            </td>
+
+            <td><input type="text" placeholder= "48" ="">
+              <p> /</p>
+              <input type="text" placeholder="100" ="">
+            </td>
+          </tr>
+
+        </table>
+      </fieldset>
+    </div>
+
+    <div id="Graphique">
+
+      <fieldset>
+        <legend>Graphique</legend>
+        <img id="graph"src="graph.png">
+      </fieldset>
+    </div>
+
 
   </body>
 
