@@ -2,10 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Website | Accueil</title>
-
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
@@ -13,24 +11,18 @@
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/accueil.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
 </head>
 
 
-      <header role="header">
-        <nav class="menu" role="navigation">
-            <div class="inner">
-              <div class="m-left">
-                <li id="link"><a id="logoapp" href="#" class="logo"><img src="/SITE/public/images/logoapp.png"/></a></li>
-              </div>
-              <div class="m-right">
-                <li id="link"><a id="b2" href="#" class="m-link"><i class="fas fa-home"></i> Accueil</a></li>
-                <li id="link"><a id="b3" href="faq.php" class="m-link"><i class="fas fa-info"></i> Aide</a></li>
-                <li id="link"><a id="b4" href="contact.php" class="m-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li id="link"><a id="b5" href="connexion.php" class="m-link"><i class="far fa-id-badge"></i> Connexion</a></li>
-                </div>
-            </div>
-        </nav>
+  <header id="menu1">
+    <nav>
+        <ul id="menu">
+            <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+
 
 
             <!--UTILISATEUR
@@ -59,6 +51,8 @@
                 </ul>
             </li><!-->
 
+        </ul>
+    </nav>
   </header>
 
 
@@ -84,18 +78,19 @@
     </nav>
   </body>
 
-  <footer>
-      <nav class="footer" role="navigation">
-          <div class="inner">
-            <div class="f-right">
-              <a href="CGU.php" class="f-link"></i> CGU & CL</a>
-              <a href="CONTACT.php" class="f-link"></i> Contact</a>
-              <a href="AIDE.php" class="f-link"></i> Aide</a>
-              <a href="about_us.php" class="f-link"></i> A propos</a>
-            </div>
-          </div>
-      </nav>
-        </div>
+
+
+
+
+    <footer id="menu2">
+        <nav>
+            <ul>
+                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="contact.php">Contact</a></li>
+                <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
+            </ul>
+        </nav>
     </footer>
 
 </html>
