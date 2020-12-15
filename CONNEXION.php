@@ -180,10 +180,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
-                <li id="link2"><a href="contact.html">Contact</a></li>
-                <li id="link2"><a href="faq.html">FAQ</a></li>
-                <li id="link2"><a href="aboutus.html">À propos</a></li>
+                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="contact.php">Contact</a></li>
+                <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
