@@ -3,16 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
+
     <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
    
 
-    
+
+
 
 </head>
 
@@ -24,9 +26,9 @@
 
             <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
 
 
 
@@ -42,7 +44,7 @@
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
-                   
+
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -50,12 +52,12 @@
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
-                  
+
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
-                
+
         </ul>
     </nav>
   </header>
@@ -67,6 +69,7 @@
 
 
     <body>
+
       <div id="informationspersonnelles">
         <fieldset> 
           <legend>INFORMATIONS PERSONNELLES</legend>
@@ -87,10 +90,36 @@
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-              <br>
-          
-            
-              
+              <
+
+          <label>Sexe</label>
+          <br>
+          <br>
+          <select>
+            <option>Homme</option>
+            <option>Femme</option>
+            <option>Autre</option>
+            <
+          </select>
+
+          <br>
+          <br>
+
+          <label>Nom</label>
+          <br>
+          <br>
+          <input type="text" value="" placeholder="Nom">
+          <br>
+          <br>
+
+
+          <label>Prénom</label>
+          <br>
+          <br>
+          <input type="text" placeholder="Prénom"value="">
+          <br>
+          <br>
+
 
               <label><strong><U>Sexe</U></strong></label>
             
@@ -137,6 +166,14 @@
               <br>
 
 
+          <label>Date de Naissance</label>
+          <br>
+          <br>
+          <input type="date" name="">
+          <br>
+          <br>
+
+
               <label><strong><U>Numéro de téléphone</U></strong></label>
               
               <br>
@@ -173,7 +210,7 @@
             <td><strong>Prénom</strong></td>
             <td><strong> Date</strong></td>
             <td><strong>Centre</strong></td>
-       
+
           </tr>
 
           <tr>
@@ -198,7 +235,7 @@
           </tr>
 
           <tr>
-            
+
             <td>
               <input type="text" placeholder="Dupond">
             </td>
@@ -219,7 +256,7 @@
           </tr>
 
           <tr>
-            
+
             <td>
               <input type="text" placeholder="Dupond">
             </td>
@@ -260,7 +297,7 @@
 
 
         <label><strong>Trier par</strong></label>
-      
+
         <br>
         <table>
 
@@ -268,19 +305,19 @@
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
-       
+
           </tr>
 
           <tr>
             <td>
-              
+
               <input type="date" name="">
               </label>
             </td>
 
             <td><input type="text" placeholder="1"></td>
 
-        
+
           </tr>
 
         </table>
@@ -315,7 +352,7 @@
         </form>
         </fieldset>
       </div>
-        
+
 
 
     </body>
@@ -331,6 +368,6 @@
         </nav>
     </footer>
 
-    
+
 
 </html>
