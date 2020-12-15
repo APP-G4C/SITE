@@ -135,6 +135,11 @@ body{
   }
 }
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
 
 
@@ -150,46 +155,6 @@ body{
 
 
 
-
-}
-
-.carousel-caption {
-	padding-bottom: 250px;
-	position: relative;
-	text-align: center;
-	top: 200px;
-	left: 50px;
-}
-.carousel-caption h2 {
-	font-size: 70px;
-	text-transform: uppercase;
-	font-weight: bold;
-	position: relative;
-	text-align: center;
-}
-.carousel-caption h2 span {
-	color:#3F51B5;
-}
-.carousel-caption a {
-	background: #3F51B5;
-	padding: 15px 35px;
-	display: inline-block;
-	margin-top: 15px;
-	color: #fff;
-	text-transform: uppercase;
-	border-radius: 25px;
-
-}
-.carousel-control.right {
-	background-image: none;
-}
-.carousel-control.left {
-	background-image: none;
-}
-.carousel-indicators .active {
-	background-color: #3F51B5;
-	border-color: #EDBB00;
-}
 
 
 
