@@ -1,12 +1,9 @@
 /* CSS commun */
-
 *{
     margin: 0px;
     padding: 0px;
-
     font-family: Avenir Next;
-
-    color: black;
+    color: white;
 }
 
 body{
