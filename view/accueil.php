@@ -64,7 +64,7 @@
           <div class="carousel-inner" role="listbox">
               <div class="item active">
                   <div class="carousel-caption">
-                    <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Creatif</span></h2>
+                    <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Créatifs</span></h2>
                     <h3 class="animated bounceInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
                     <p class="animated bounceInRight" style="animation-delay: 3s"><a href="aboutus.html">A Propos</a></p>
                   </div>
