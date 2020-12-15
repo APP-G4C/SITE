@@ -87,14 +87,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="footer.css">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-   
 
-    
+    <link rel="stylesheet" href="/SITE/public/css/Header.css">
+    <link rel="stylesheet" href="/SITE/public/css/style.css">
+    <link rel="stylesheet" href="/SITE/public/css/footer.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+
 
 </head>
 
@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
-                   
+
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -132,12 +132,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
-                  
+
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
-                
+
         </ul>
     </nav>
   </header>
@@ -175,7 +175,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 
   </body>
-  
+
 
   <footer id="menu2">
         <nav>
@@ -188,6 +188,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </nav>
     </footer>
 
-    
+
 
 </html>
