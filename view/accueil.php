@@ -19,12 +19,9 @@
 
 </head>
 
-
   <header id="menu1">
     <nav>
         <ul id="menu">
-
-
             <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>

@@ -7,12 +7,13 @@ header{
     font-size: 20px;
 }
 
-.fas fa-home img{
-    color: #fff;
+.fas fa-home imgs{
+    color: white;
 }
 
 #menu1 nav ul{
     list-style: none;
+    color: white;
 }
 
 #menu1 nav li{
@@ -28,6 +29,7 @@ header{
     content: "";
     display: table;
     clear: both;
+    color: white;
 }
 
 #menu1 nav{
@@ -36,8 +38,7 @@ header{
     margin: 0;
     position: sticky;
     top: 0px;
-
-
+    color: white;
 }
 
 #menu1 nav a{
@@ -50,7 +51,6 @@ header{
 
 #menu1 nav a:hover{
     color: white;
-
     text-shadow: 2px 2px 4px white;
 }
 
