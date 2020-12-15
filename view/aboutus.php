@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Website | Accueil</title>
     
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="/SITE/public/css/Header.css">
+    <link rel="stylesheet" href="/SITE/public/css/footer.css">
+    <link rel="stylesheet" href="/SITE/public/css/style.css">
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
    
 
@@ -18,11 +18,11 @@
   <header id="menu1">
     <nav>
         <ul>
-            <li id="link"><a id="logoapp"href="ACCUEIL.html"><img src="logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="ACCUEIL.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="AIDE.html"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="CONTACT.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="CONNEXION.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
         </ul>
     </nav>
   </header>
@@ -36,7 +36,7 @@
 
                     <div id="container1">
                         <div class="photoprofil">
-                            <img src="profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
                             <p class="overlay">NOM Prénom</p>
                         </div>
                         <div>
@@ -53,7 +53,7 @@
 
                     <div id="container2">
                         <div class="photoprofil">
-                            <img src="profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
                             <p class="overlay">NOM Prénom</p>
                         </div>
                         <div>
@@ -69,7 +69,7 @@
 
                     <div id="container3">
                         <div class="photoprofil">
-                            <img src="profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
                             <p class="overlay">NOM Prénom</p>
                         </div>
                         <div>
@@ -85,7 +85,7 @@
 
                     <div id="container4">
                         <div class="photoprofil">
-                            <img src="profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
                             <p class="overlay">NOM Prénom</p>
                         </div>
                         <div>
@@ -101,7 +101,7 @@
 
                     <div id="container5">
                         <div class="photoprofil">
-                            <img src="profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
                             <p class="overlay">NOM Prénom</p>
                         </div>
                         <div>
@@ -117,7 +117,7 @@
 
                     <div id="container6">
                         <div class="photoprofil">
-                            <img src="profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
                             <p class="overlay">NOM Prénom</p>
                         </div>
                         <div>
@@ -138,10 +138,10 @@
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
-                <li id="link2"><a href="contact.html">CONTACT</a></li>
-                <li id="link2"><a href="aide.html">AIDE</a></li>
-                <li id="link2"><a href="about_us.html">A PROPOS</a></li>
+                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="contact.php">CONTACT</a></li>
+                <li id="link2"><a href="faq.php">AIDE</a></li>
+                <li id="link2"><a href="about_us.php">A PROPOS</a></li>
             </ul>
         </nav>
     </footer>

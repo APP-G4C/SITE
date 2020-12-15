@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Website | Accueil</title>
     
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="/SITE/public/css/Header.css">
+    <link rel="stylesheet" href="/SITE/public/css/footer.css">
+    <link rel="stylesheet" href="/SITE/public/css/style.css">
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
    
 
@@ -17,12 +17,43 @@
 
   <header id="menu1">
     <nav>
-        <ul>
-            <li id="link"><a id="logoapp"href="accueil.html"><img src="logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="aide.html"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+        <ul id="menu">
+
+
+            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+
+
+
+            <!--UTILISATEUR
+            <li id='link'><a id="b6"href="#"> Ma Page</a>
+                    <ul>
+                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="#">Déconnexion</li></a>
+                    </ul>
+                </li><!-->
+
+             <!--GESTIONNAIRE
+             <li id='link'><a id="b7"href="#"> Ma Page</a>
+                <ul>
+                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
+                   
+                    <li><a href="#">Déconnexion</li></a>
+                </ul>
+            </li><!-->
+            <!-- ADMIN
+             <li id='link'><a id="b7"href="#"> Ma Page</a>
+                <ul>
+                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
+                  
+
+                    <li><a href="#">Déconnexion</li></a>
+                </ul>
+            </li><!-->
+                
         </ul>
     </nav>
   </header>
@@ -117,10 +148,10 @@
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
-                <li id="link2"><a href="contact.html">CONTACT</a></li>
-                <li id="link2"><a href="aide.html">AIDE</a></li>
-                <li id="link2"><a href="aboutus.html">A PROPOS</a></li>
+                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="contact.php">Contact</a></li>
+                <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>

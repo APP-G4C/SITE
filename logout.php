@@ -1,4 +1,4 @@
-<?php
+s<?php
 // Initialisation session
 session_start();
 
@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
 
 // On redirige vers la page d'accueil
-header("location: accueil.html");
+header("location: accueil.php");
 exit;
 ?>

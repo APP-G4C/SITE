@@ -101,12 +101,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   <header id="menu1">
     <nav>
-        <ul>
-            <li id="link"><a id="logoapp"href="ACCUEIL.html"><img src="logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="ACCUEIL.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="AIDE.html"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="CONTACT.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="CONNEXION.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+        <ul id="menu">
+
+
+            <li id="link"><a id="logoapp"href="#"><img src="logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b3"href="faq.html"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+
+
+
+            <!--UTILISATEUR
+            <li id='link'><a id="b6"href="#"> Ma Page</a>
+                    <ul>
+                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="#">Déconnexion</li></a>
+                    </ul>
+                </li><!-->
+
+             <!--GESTIONNAIRE
+             <li id='link'><a id="b7"href="#"> Ma Page</a>
+                <ul>
+                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
+                   
+                    <li><a href="#">Déconnexion</li></a>
+                </ul>
+            </li><!-->
+            <!-- ADMIN
+             <li id='link'><a id="b7"href="#"> Ma Page</a>
+                <ul>
+                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
+                  
+
+                    <li><a href="#">Déconnexion</li></a>
+                </ul>
+            </li><!-->
+                
         </ul>
     </nav>
   </header>
@@ -149,13 +180,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
-                <li id="link2"><a href="contact.html">CONTACT</a></li>
-                <li id="link2"><a href="aide.html">AIDE</a></li>
-                <li id="link2"><a href="aboutus.html">A PROPOS</a></li>
+                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="contact.php">Contact</a></li>
+                <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
             </ul>
         </nav>
-  </footer>
+    </footer>
 
     
 

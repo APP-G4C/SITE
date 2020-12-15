@@ -1,0 +1,151 @@
+/* CSS menu 1 */
+header{
+   
+    background-color: #EFD200;
+    border-bottom: solid 4px;
+    border-color: #EFD200;
+    font-size: 20px;
+
+
+}
+
+.fas fa-home imgs{
+    color: white;
+}
+
+#menu1 nav ul{
+    list-style: none;
+}
+
+#menu1 nav li{
+    float: left;
+
+    width: 20%;
+    text-align: center;
+   
+
+}
+
+#menu1 nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#menu1 nav{
+    background-color: #0059C2;
+    width: 100%;
+    margin: 0;
+    position: sticky;
+    top: 0px;
+
+
+}
+
+#menu1 nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    vertical-align: center;
+
+}
+
+#menu1 nav a:hover{
+    color: white;
+  
+    text-shadow: 2px 2px 4px white;
+}
+
+#menu1 li a{
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+}
+
+#link{
+    padding-top: 16px;
+    text-align: center;
+    position: relative;
+}
+
+
+}
+
+#menu1 nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    vertical-align: center;
+
+}
+
+#menu1 nav a:hover{
+    color: white;
+  
+    text-shadow: 2px 2px 4px white;
+}
+
+#menu1 li a{
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+}
+
+#link{
+    padding-top: 26px;
+    text-align: center;
+    position: relative;
+}
+
+
+#logoapp img{
+    padding-top: 3px;
+    height: 87px;
+    width: 117px;
+
+}
+
+header nav ul li {
+    display: block;
+
+}
+header nav ul li  ul li {
+    display: none;
+    line-height: 10px;
+}
+
+header nav ul li:hover ul li {
+    display: block;
+    font-size: 10px;
+    margin: 30px;
+}
+
+
+
+
+@media all and (max-width: 600px){
+<<<<<<< Updated upstream
+    header {
+        font-size: 10px;
+    }
+
+
+   
+=======
+
+
+    header li{
+
+    font-size: 5px;
+    }  
+
+    #menu li {
+        margin: 0%;
+        margin-left: 10%;
+    }
+
+
+
+
+    
+>>>>>>> Stashed changes
