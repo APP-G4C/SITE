@@ -4,14 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-   
+    <link rel="stylesheet" href="/SITE/public/css/p_utilisateur.css">
 
-    
+
+
 
 </head>
 
@@ -41,7 +42,7 @@
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
-                   
+
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -49,12 +50,12 @@
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
-                  
+
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
-                
+
         </ul>
     </nav>
   </header>
@@ -67,7 +68,7 @@
 
   <body>
     <div id="informationspersonnelles">
-      <fieldset> 
+      <fieldset>
       <legend>INFORMATIONS PERSONELLES</legend>
           <label> Etat : Utilisateur</label>
           <br>
@@ -81,8 +82,8 @@
           <img id="photoavatar"src="/SITE/public/images/avatar.png">
           <br>
           <br>
-      
-        
+
+
           <br>
           <br>
 
@@ -104,7 +105,7 @@
           <br>
           <input type="text" value="" placeholder="Nom">
           <br>
-          <br> 
+          <br>
 
 
           <label>Prénom</label>
@@ -201,13 +202,13 @@
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
-            <td><strong>Fonction1</strong></td> 
+            <td><strong>Fonction1</strong></td>
             <td><strong>Fonction 2 </strong></td>
           </tr>
 
           <tr>
             <td>
-              
+
               <input type="date" name="">
               </label>
             </td>
@@ -251,6 +252,6 @@
         </nav>
     </footer>
 
-    
+
 
 </html>
