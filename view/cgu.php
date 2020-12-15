@@ -203,7 +203,8 @@
                   <div itemprop="text">
                     La législation française s'applique au présent contrat. En cas d'absence de résolution amiable d'un litige né entre les parties, les tribunaux français seront seuls compétents pour en connaître.<br>
                     Pour toute question relative à l’application des présentes CGU, vous pouvez joindre l’éditeur aux coordonnées inscrites à l’ARTICLE 1.
-
+                    <br>
+                    <br>
                   </div>
 
 

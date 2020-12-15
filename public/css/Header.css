@@ -1,16 +1,14 @@
 /* CSS menu 1 */
+
 header{
-   
     background-color: #EFD200;
     border-bottom: solid 4px;
     border-color: #EFD200;
     font-size: 20px;
-
-
 }
 
-.fas fa-home imgs{
-    color: white;
+.fas fa-home img{
+    color: #fff;
 }
 
 #menu1 nav ul{
@@ -22,7 +20,7 @@ header{
 
     width: 20%;
     text-align: center;
-   
+
 
 }
 
@@ -52,7 +50,7 @@ header{
 
 #menu1 nav a:hover{
     color: white;
-  
+
     text-shadow: 2px 2px 4px white;
 }
 
@@ -81,7 +79,7 @@ header{
 
 #menu1 nav a:hover{
     color: white;
-  
+
     text-shadow: 2px 2px 4px white;
 }
 
@@ -130,14 +128,14 @@ header nav ul li:hover ul li {
     }
 
 
-   
+
 =======
 
 
     header li{
 
     font-size: 5px;
-    }  
+    }
 
     #menu li {
         margin: 0%;
@@ -147,5 +145,5 @@ header nav ul li:hover ul li {
 
 
 
-    
+
 >>>>>>> Stashed changes
