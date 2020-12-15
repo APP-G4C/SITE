@@ -3,7 +3,7 @@
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: accueil.html");
+    header("Location: accueil.php");
     exit;
 }
 
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.html");
+                            header("Location: accueil.php");
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <!--UTILISATEUR
             <li id='link'><a id="b6"href="#"> Ma Page</a>
                     <ul>
-                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
                         <li><a href="#">Déconnexion</li></a>
                     </ul>
                 </li><!-->
@@ -123,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              <!--GESTIONNAIRE
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
+                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
@@ -131,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <!-- ADMIN
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
+                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
 
 
                     <li><a href="#">Déconnexion</li></a>
