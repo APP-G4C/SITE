@@ -1,122 +1,66 @@
-/* CSS menu 1 */
-
-header{
-    background-color: #EFD200;
-    border-bottom: solid 4px;
-    border-color: #EFD200;
-    font-size: 20px;
+.menu {
+  background: #3F51B5;
+  width: auto;
+  height: 100px;
+  line-height: 66px;
 }
 
-.fas fa-home imgs{
-    color: white;
+.m-left {
+  float: left;
 }
 
-#menu1 nav ul{
-    list-style: none;
-    color: white;
+a img{
+  position: relative;
+  top: auto;
+  left: 10px;
+  width: 130px;
+  height: 100px;
 }
 
-#menu1 nav li{
-    float: left;
-
-    width: 20%;
-    text-align: center;
-
-
+.logo{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 35px;
+  letter-spacing: 1px;
 }
 
-#menu1 nav ul::after{
-    content: "";
-    display: table;
-    clear: both;
-    color: white;
+.m-right {
+  float: right;
+}
+.m-link {
+  position: relative;
+  top: 10px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 0;
+  margin: 0 70px;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
 }
 
-#menu1 nav{
-    background-color: #0059C2;
-    width: 100%;
-    margin: 0;
-    position: sticky;
-    top: 0px;
-    color: white;
+.m-link:hover{
+  padding-bottom: 3px;
+  border-color: #fff;
 }
 
-#menu1 nav a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    vertical-align: center;
-
-}
-
-#menu1 nav a:hover{
-    color: white;
-    text-shadow: 2px 2px 4px white;
-}
-
-#menu1 li a{
-    vertical-align: middle;
-    display: inline-block;
-    position: relative;
-}
-
-#link{
-    padding-top: 16px;
-    text-align: center;
-    position: relative;
+.m-link i{
+  margin-right: 5px;
 }
 
 
-}
-
-#menu1 nav a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    vertical-align: center;
-
-}
-
-#menu1 nav a:hover{
-    color: white;
-
-    text-shadow: 2px 2px 4px white;
-}
-
-#menu1 li a{
-    vertical-align: middle;
-    display: inline-block;
-    position: relative;
-}
-
-#link{
-    padding-top: 26px;
-    text-align: center;
-    position: relative;
-}
 
 
-#logoapp img{
-    padding-top: 3px;
-    height: 87px;
-    width: 117px;
 
-}
 
-header nav ul li {
-    display: block;
 
-}
-header nav ul li  ul li {
-    display: none;
-    line-height: 10px;
-}
 
-header nav ul li:hover ul li {
-    display: block;
-    font-size: 10px;
-    margin: 30px;
-}
+
+
 
 
 
