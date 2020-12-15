@@ -3,12 +3,12 @@
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: accueil.html");
+    header("Location: accueil.php");
     exit;
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once "config.php";
+require_once "/SITE/config.php";
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.html");
+                            header("Location: accueil.php");
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";

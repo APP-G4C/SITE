@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/p_utilisateur.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
 
 
