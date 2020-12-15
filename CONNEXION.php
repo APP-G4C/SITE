@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <li id="link"><a id="logoapp"href="#"><img src="logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.html"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b3"href="/SITE/SITE/view/faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b4"href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
             <li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>
 
