@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
 
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+
+   
+
 
 
 
@@ -65,25 +69,28 @@
 
 
     <body>
-       <div id="informationspersonnelles">
-      <fieldset>
-      <legend>INFORMATIONS PERSONELLES</legend>
-          <label> Etat : Gestionnaire</label>
-          <br>
-          <br>
+
+      <div id="informationspersonnelles">
+        <fieldset> 
+          <legend>INFORMATIONS PERSONNELLES</legend>
+          <form>
+              <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
+              <br>
+              <br>
+              <label><strong><U>ID :</U></strong></label>
+              <br>
+              <label> 12345
+              <br>
+              <br>
 
 
 
-          <label>Photo de profil</label>
-          <br>
-          <br>
-          <img id="photoavatar"src="/SITE/public/images/avatar.png">
-          <br>
-          <br>
-
-
-          <br>
-          <br>
+              <label><strong><U>Photo de profil</U></strong></label>
+              
+              <br>
+              <img id="photoavatar"src="/SITE/public/images/avatar.png">
+              <br>
+              <
 
           <label>Sexe</label>
           <br>
@@ -114,26 +121,50 @@
           <br>
 
 
-          <label>Email</label>
-          <br>
-          <br>
-          <input type="email" placeholder="Mail" value="">
-          <br>
-          <br>
+              <label><strong><U>Sexe</U></strong></label>
+            
+              <br>
+              <select>
+                <option>Homme</option>
+                <option>Femme</option>
+                <option>Autre</option>
+                <
+              </select>
 
-          <label>Mot de passe</label>
-          <br>
-          <br>
-          <input type="password" value="G4CG4C">
-          <br>
+              <br>
+              <br>
+
+              <label><strong><U>Nom</U></strong></label>
+              <br>
+                    
+              <label>DUPOND</label>
+              <br>
+              <br> 
 
 
-          <label> Numéro de téléphone</label>
-          <br>
-          <br>
-          <input type="tel"  placeholder="0606060606"value="">
-          <br>
-          <br>
+              <label><strong><U>Prénom</U></strong></label>
+              <br>
+              
+            
+             <label> Jean</label>
+              <br>
+              <br>
+
+
+              <label><strong><U>Email</U></strong></label>
+              
+              <br>
+              <input type="email" placeholder="Mail" value="">
+              <br>
+              <br>
+
+              <label><strong><U>Mot de passe</U></strong></label>
+
+              <br>
+              <input type="password" value="G4CG4C">
+              <br>
+              <br>
+
 
           <label>Date de Naissance</label>
           <br>
@@ -143,15 +174,34 @@
           <br>
 
 
-          <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
+              <label><strong><U>Numéro de téléphone</U></strong></label>
+              
+              <br>
+              <input type="tel"  placeholder="0606060606"value="">
+              <br>
+              <br>
 
+              <label><strong><U>Date de Naissance</U></strong></label>
+              
+              <br>
+              <input type="date" name="">
+              <br>
+              <br>
+              
 
-      </fieldset>
-    </div>
+              <button><span>MODFIER MES INFORMATIONS PERSONNELLES<span></button>
+              <br>
+            </form>
+        </fieldset>
+      </div>
 
     <div id="prochainsrdv">
       <fieldset>
+       
         <legend>Prochains RDV</legend>
+        <div id="prisederdv">
+
+        <form>
         <table>
 
 
@@ -181,6 +231,7 @@
             </td>
 
             <td><input type="text" placeholder="1"></td>
+            <td><button><span>Lancer le test</span></button></td>
           </tr>
 
           <tr>
@@ -201,6 +252,7 @@
             </td>
 
             <td><input type="text" placeholder="1"></td>
+            <td><button><span>Lancer le test</span></button></td>
           </tr>
 
           <tr>
@@ -221,8 +273,10 @@
             </td>
 
             <td><input type="text" placeholder="1"></td>
+            <td><button><span>Lancer le test</span></button></td>
           </tr>
         </table>
+      </form>
       </fieldset>
     </div>
 
@@ -230,6 +284,7 @@
      <div id="résultats">
       <fieldset>
         <legend>Résultats</legend>
+        <form>
 
 
         <label><strong>Rechercher</strong></label>
@@ -294,6 +349,7 @@
           <br>
           <br>
           <button>Ajouter l'utilisateur</button>
+        </form>
         </fieldset>
       </div>
 
