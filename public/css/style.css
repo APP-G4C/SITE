@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family: Avenir Next;
-    color: black;
+    color: black; /* gère la couleur des logo du header mais aussi de tous les textes des autres pages... */
 }
 
 body{
