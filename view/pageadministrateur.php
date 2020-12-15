@@ -32,7 +32,7 @@
             <!--UTILISATEUR
             <li id='link'><a id="b6"href="#"> Ma Page</a>
                     <ul>
-                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
                         <li><a href="#">Déconnexion</li></a>
                     </ul>
                 </li><!-->
@@ -40,7 +40,7 @@
              <!--GESTIONNAIRE
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
+                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
@@ -48,7 +48,7 @@
             <!-- ADMIN
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
+                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
 
 
                     <li><a href="#">Déconnexion</li></a>
