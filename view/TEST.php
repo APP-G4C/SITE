@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
+<<<<<<< Updated upstream
     <title>Website | Accueil</title>
     
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
@@ -12,6 +13,22 @@
 
     
 
+=======
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website | Accueil</title>
+
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SITE/public/css/Header.css">
+    <link rel="stylesheet" href="/SITE/public/css/footer.css">
+    <link rel="stylesheet" href="/SITE/public/css/style.css">
+    
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+>>>>>>> Stashed changes
 </head>
 
 
@@ -20,8 +37,13 @@
         <ul id="menu">
 
 
+<<<<<<< Updated upstream
             <li id="link"><a id="logoapp"href="accueil.html"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="accueil.html"><i class="fas fa-home"></i> Accueil</a></li>
+=======
+            <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
+>>>>>>> Stashed changes
             <li id="link"><a id="b3"href="faq.html"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b4"href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
             <li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>
@@ -56,35 +78,51 @@
                 
         </ul>
     </nav>
-  </header>s
+  </header>
+
+
+<<<<<<< Updated upstream
 
 
 
 
 
 
-
-
-  <body>
-    <div class="login-box">
-      <h1>Connexion</h1>
-      <div class="textbox">
-        <i class="fas fa-user"></i>
-        <input class="login" type="text" placeholder="Email">
-      </div>
-
-      <div class="textbox">
-        <i class="fas fa-lock"></i>
-        <input class="login" type="password" placeholder="Mot de passe">
-      </div>
-
-      <input type="submit" class="btn" value="Se connecter">
-    </div>
+    <body>
 
   </body>
-  
 
-  <footer id="menu2">
+   <footer id="menu2">
+=======
+    
+    <body>
+        
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+          <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                  <div class="carousel-caption">
+                    <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Creatif</span></h2>
+                    <h3 class="animated bounceInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
+                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="aboutus.html">A Propos</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+     
+      <h1> TEST</h1>
+
+        </ul>
+    </nav>
+  </header>
+
+
+    
+
+
+
+    <footer id="menu2">
+>>>>>>> Stashed changes
         <nav>
             <ul>
                 <li id="link2"><a href="cgu.html">CGU & CL</a></li>
@@ -94,7 +132,12 @@
             </ul>
         </nav>
     </footer>
+<<<<<<< Updated upstream
 
     
 
 </html>
+=======
+    
+</html>
+>>>>>>> Stashed changes
