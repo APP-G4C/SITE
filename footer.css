@@ -1,16 +1,16 @@
 /* CSS menu 2 */
 
 footer {
-    position: relative;
-    margin-bottom: 0;
-    left: 0;
-    right: 0;
+   
     border-top: solid 4px;
     border-color: #EFD200;
     font-size: 19px;
+    position: sticky;
 }
 
-
+#menu2{
+    position: static;
+}
 
 #menu2 nav ul{
     list-style: none;

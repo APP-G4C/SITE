@@ -74,6 +74,7 @@ body{
   font-weight: bold;
   position: relative;
   text-align: center;
+  color: white;
 }
 .carousel-caption h2 span {
   color:#3F51B5;
@@ -91,6 +92,7 @@ body{
 
 .carousel-caption h3,.carousel-caption p{
   text-align:center;
+  color: white;
 }
 .carousel-control.right {
   background-image: none;
@@ -132,9 +134,6 @@ body{
     padding: 10px 25px;
   }
 }
-
-header nav ul li
-
 
 
 
@@ -672,138 +671,38 @@ legend{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* PAGE UTILISATEUR*/
-
-.SECTIONS
-{
-  display: flex;
-  flex-direction: row;
-  margin-right: 100px;
-  text-align: center;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-bottom: 25%;
-
-
-}
-.SECTION2,.SECTION4,.SECTION1
-{
-  width: 200px;
-  height: 400px;
-  margin: auto;
-  border: 3px black solid;
-  font-size: 10px;
-  margin-top: 50px;
-
-}
-
-.PHOTO1 img
-{
+#photoavatar {
   width: 100px;
   height: 100px;
-  border-radius: 10px 10px 10px 10px;
-
-
-}
-.PHOTO2 img
-{
-  width: 256px;
-  height: 128px;
-  border: 3px black solid;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* PAGE GESTIONNAIRE*/
-
-.SECTIONS
-{
-  display: flex;
-  flex-direction: row;
+legend{
   text-align: center;
-  flex-wrap: nowrap;
-  align-items: center;
-
-
 }
 
-.BLOCK
-{
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  font-family: "Avenir Next";
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 20%;
+fieldset{
+  margin: 10%;
 }
 
-.SECTION2,.SECTION4,.SECTION3,.SECTION1
-{
-  width: 200px;
-  height: 400px;
-  font-size: 10px;
-  margin-bottom: 20%;
-  
-
-}
-
-.PHOTO1 img
-{
-  width: 100px;
-  height: 100px;
-  border-radius: 10px 10px 10px 10px;
 
 
-}
-.PHOTO2 img
-{
-  width: 256px;
-  height: 128px;
-  
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
