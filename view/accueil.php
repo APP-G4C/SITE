@@ -6,10 +6,10 @@
     <title>Website | Accueil</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/SITE/public/css/Header.css">
-    <link rel="stylesheet" href="/SITE/public/css/footer.css">
-    <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/accueil.css">
+    <link rel="stylesheet" href="/SITE/SITE/public/css/Header.css">
+    <link rel="stylesheet" href="/SITE/SITE/public/css/footer.css">
+    <link rel="stylesheet" href="/SITE/SITE/public/css/style.css">
+    <link rel="stylesheet" href="/SITE/SITE/public/css/accueil.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
@@ -17,11 +17,11 @@
   <header id="menu1">
     <nav>
         <ul id="menu">
-            <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="logoapp"href="#"><img src="/SITE/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="b3"href="/SITE/SITE/view/faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b4"href="/SITE/SITE/view/contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b5"href="/SITE/SITE/CONNEXION.php"><i class="far fa-id-badge"></i> Connexion</a></li>
 
 
 
@@ -66,7 +66,7 @@
                   <div class="carousel-caption">
                     <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Créatifs</span></h2>
                     <h3 class="animated bounceInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
-                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="aboutus.html">A Propos</a></p>
+                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="/SITE/SITE/view/aboutus.php">A Propos</a></p>
                   </div>
               </div>
           </div>
@@ -85,10 +85,10 @@
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/contact.php">Contact</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/faq.php">FAQ</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
