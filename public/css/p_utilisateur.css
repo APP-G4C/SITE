@@ -1,0 +1,13 @@
+/* PAGE UTILISATEUR*/
+#photoavatar {
+  width: 100px;
+  height: 100px;
+}
+
+legend{
+  text-align: center;
+}
+
+fieldset{
+  margin: 10%;
+}
