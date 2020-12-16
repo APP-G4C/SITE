@@ -92,7 +92,7 @@
             <option>Homme</option>
             <option>Femme</option>
             <option>Autre</option>
-            <
+            
           </select>
 
           <br>
