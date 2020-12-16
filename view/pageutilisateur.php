@@ -67,6 +67,7 @@
 
 
   <body>
+    <br>
     <div id="informationspersonnelles">
       <fieldset>
       <legend>INFORMATIONS PERSONELLES</legend>
@@ -94,7 +95,7 @@
             <option>Homme</option>
             <option>Femme</option>
             <option>Autre</option>
-            <
+
           </select>
 
           <br>
@@ -143,7 +144,7 @@
           <input type="date" name="">
           <br>
           <br>
-          <
+          
 
           <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 

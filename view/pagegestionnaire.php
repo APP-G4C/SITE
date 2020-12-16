@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
-   
+
 
 
 
@@ -69,9 +69,9 @@
 
 
     <body>
-
+      <br>
       <div id="informationspersonnelles">
-        <fieldset> 
+        <fieldset>
           <legend>INFORMATIONS PERSONNELLES</legend>
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
@@ -86,11 +86,11 @@
 
 
               <label><strong><U>Photo de profil</U></strong></label>
-              
+
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-              <
+              
 
           <label>Sexe</label>
           <br>
@@ -122,7 +122,7 @@
 
 
               <label><strong><U>Sexe</U></strong></label>
-            
+
               <br>
               <select>
                 <option>Homme</option>
@@ -136,23 +136,23 @@
 
               <label><strong><U>Nom</U></strong></label>
               <br>
-                    
+
               <label>DUPOND</label>
               <br>
-              <br> 
+              <br>
 
 
               <label><strong><U>Prénom</U></strong></label>
               <br>
-              
-            
+
+
              <label> Jean</label>
               <br>
               <br>
 
 
               <label><strong><U>Email</U></strong></label>
-              
+
               <br>
               <input type="email" placeholder="Mail" value="">
               <br>
@@ -175,19 +175,19 @@
 
 
               <label><strong><U>Numéro de téléphone</U></strong></label>
-              
+
               <br>
               <input type="tel"  placeholder="0606060606"value="">
               <br>
               <br>
 
               <label><strong><U>Date de Naissance</U></strong></label>
-              
+
               <br>
               <input type="date" name="">
               <br>
               <br>
-              
+
 
               <button><span>MODFIER MES INFORMATIONS PERSONNELLES<span></button>
               <br>
@@ -197,7 +197,7 @@
 
     <div id="prochainsrdv">
       <fieldset>
-       
+
         <legend>Prochains RDV</legend>
         <div id="prisederdv">
 
