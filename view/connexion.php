@@ -8,7 +8,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once "/SITE/config.php";
+require_once "C:\MAMP\htdocs\SITE\config.php";
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
                     // Si le mail ne correspond à rien, on renvoie un message d'erreur
-                    $err_Mail = "Cet adresse mail ne correspond à aucun compte.";
+                    $err_Mail = "Cette adresse mail ne correspond à aucun compte.";
                 }
             } else{
               echo "Il y a eu une erreur, veuillez réessayer plus tard.";
