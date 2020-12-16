@@ -1,5 +1,8 @@
 .container{
   text-align: center;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-bottom: 10vh;
 }
 .top{
   text-transform: uppercase;
@@ -24,11 +27,14 @@ li{
   list-style-type: none;
 }
 .reponses1, .reponses2, .reponses3, .reponses4, .reponses5{
+  margin-left: 10vh;
+  margin-right: 10vh;
   opacity: 0%;
-  transition: 250ms;
+  transition: 0.7s;
   font-size: 20px;
   text-align: justify;
   text-align-last: center;
+
 }
 .question1:hover  ~ .reponses1{
   opacity: 100%;
