@@ -62,7 +62,7 @@
 
 
   <body>
-    <div id="blocaide">
+    <div class="container" id="blocaide">
         <h1 class="top">Nous sommes là pour vous aider</h1>
           <fieldset>
             <legend>Questions fréquentes </legend>

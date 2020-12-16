@@ -1,6 +1,7 @@
 /* PAGE AIDE*/
 #blocaide{
   margin: 5%;
+
 }
 
 .top{
@@ -11,15 +12,4 @@
   font-weight: bold;
   text-align:center;
   color:#3F51B5;
-}
-
-.box .container{
-  width:90%;
-  margin-right:auto;
-  margin-left:auto;
-}
-.container legend{
-  width:auto;
-  margin-right:auto;
-  margin-left:auto;
 }
