@@ -7,8 +7,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
-// On charge le fichier config si pas déjà fait (charge database)
-require_once('C:\MAMP\htdocs\SITE\view\connexion.php');
+// On charge le fichier config si pas déjà fait (charge databse)
+
+require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
+
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
@@ -105,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
             <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
