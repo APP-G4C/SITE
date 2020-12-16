@@ -3,12 +3,12 @@
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: accueil.html");
+    header("Location: accueil.php");
     exit;
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once "config.php";
+require_once "/SITE/config.php";
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.html");
+                            header("Location: accueil.php");
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -82,19 +82,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="footer.css">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-   
 
-    
+    <link rel="stylesheet" href="/SITE/public/css/Header.css">
+    <link rel="stylesheet" href="/SITE/public/css/style.css">
+    <link rel="stylesheet" href="/SITE/public/css/footer.css">
+    <link rel="stylesheet" href="/SITE/public/css/connexion.css">
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 
 </head>
 
@@ -106,16 +106,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
 
 
 
             <!--UTILISATEUR
             <li id='link'><a id="b6"href="#"> Ma Page</a>
                     <ul>
-                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
                         <li><a href="#">Déconnexion</li></a>
                     </ul>
                 </li><!-->
@@ -123,21 +123,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              <!--GESTIONNAIRE
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
-                   
+                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
+
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
             <!-- ADMIN
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
-                  
+                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
+
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
-                
+
         </ul>
     </nav>
   </header>
@@ -175,7 +175,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 
   </body>
-  
+
 
   <footer id="menu2">
         <nav>
@@ -188,6 +188,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </nav>
     </footer>
 
-    
+
 
 </html>

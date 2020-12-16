@@ -1,0 +1,13 @@
+.top{
+  text-align: center;
+}
+
+h2, h3{
+  text-align: center;
+}
+
+.text{
+  margin-left: 20vh;
+  margin-right: 20vh;
+  text-align: justify;
+}

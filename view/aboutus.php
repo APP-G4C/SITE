@@ -3,14 +3,17 @@
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
+
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-   
-
+    <link rel="stylesheet" href="/SITE/public/css/apropos.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     
+
+
+
+
 
 </head>
 
@@ -20,9 +23,9 @@
         <ul>
             <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
         </ul>
     </nav>
   </header>
@@ -131,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
 
   </body>
 
@@ -146,6 +149,6 @@
         </nav>
     </footer>
 
-    
+
 
 </html>

@@ -3,35 +3,31 @@
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
+
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
+    <link rel="stylesheet" href="/SITE/public/css/cgu.css">
+
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-   
-
-    
-
 </head>
 
 
   <header id="menu1">
     <nav>
         <ul id="menu">
-
-
-            <li id="link"><a id="logoapp"href="accueil.php"><img src="l/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
 
 
 
             <!--UTILISATEUR
             <li id='link'><a id="b6"href="#"> Ma Page</a>
                     <ul>
-                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
                         <li><a href="#">Déconnexion</li></a>
                     </ul>
                 </li><!-->
@@ -39,21 +35,21 @@
              <!--GESTIONNAIRE
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
-                   
+                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
+
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
             <!-- ADMIN
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
-                  
+                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
+
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
-                
+
         </ul>
     </nav>
   </header>
@@ -61,18 +57,15 @@
 
 
 
-
-
-
-
-
     <body>
          <div class="container">
-          <h1 class="top" itemprop="name">Conditions générales d'utilisation</h1>
+          <br><br>
+          <h1 class="top">Conditions générales d'utilisation</h1>
+          <br>
               <h2>En vigueur au 25/11/2020</h2>
-
-                <h3 itemprop="name" style="margin-top:21px;">xxxxxxxxxx</h3>
-                  <div itemprop="text">
+                <br>
+                <h3>ARTICLES</h3>
+                  <div class="text">
                     <br>Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition du site et des services par xxxxxxx et de définir les conditions d’accès et d’utilisation des services par « l'Utilisateur ».<br>
                     Les présentes CGU sont accessibles sur le site à la rubrique «CGU».<br>
 
@@ -80,12 +73,12 @@
                     Toute inscription ou utilisation du site implique l'acceptation sans aucune réserve ni restriction des présentes CGU par l’utilisateur. Lors de l'inscription sur le site via le Formulaire d’inscription, chaque utilisateur accepte expressément les présentes CGU en cochant la case précédant le texte suivant : « Je reconnais avoir lu et compris les CGU et je les accepte ».<br>
                     En cas de non-acceptation des CGU stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par le site.
                     xxxxxxx.com se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.
-
                   </div>
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br><br>ARTICLE 1 : Les mentions légales</h3>
-                  <div itemprop="text">
+                <h3><br><br><br>ARTICLE 1 : Les mentions légales</h3>
+                <br>
+                  <div class="text">
                     L'édition du site xxxxxxx.com est assurée par la Société xxxxxxx au capital de xxxxxxx euros, immatriculée au RCS de xxxxxxx sous le numéro xxxxxxx, dont le siège social est situé au xxxxxxx<br>
                     Numéro de téléphone xxxxxxx<br>
                     Adresse e-mail : xxxxxxx.<br>
@@ -96,8 +89,9 @@
                   </div>
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 2 : Accès au site</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 2 : Accès au site</h3>
+                <br>
+                  <div class="text">
                     Le site xxxxxxx.com permet à l'Utilisateur un accès gratuit aux services suivants :<br>
                     Le site internet propose les services suivants :<br>
                     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
@@ -113,22 +107,22 @@
                   </div>
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 3 : Collecte des données</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 3 : Collecte des données</h3>
+                <br>
+                  <div class="text">
                     Le site assure à l'Utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés. Le site est déclaré à la CNIL sous le numéro xxxxxxx.<br><br>
                     En vertu de la loi Informatique et Libertés, en date du 6 janvier 1978, l'Utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition de ses données personnelles. L'Utilisateur exerce ce droit :<br>
                     <br>
+                    - via un formulaire de contact ;<br>
                     <br>
-                    ·         via un formulaire de contact ;<br>
-                    <br>
-                    <br>
-                    ·         via son espace personnel ;
+                    - via son espace personnel ;
 
                   </div>
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 4 : Propriété intellectuelle</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 4 : Propriété intellectuelle</h3>
+                <br>
+                  <div class="text">
                     Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son…) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.<br>
                     <br>
                     <br>
@@ -143,8 +137,9 @@
 
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 5 : Responsabilité</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 5 : Responsabilité</h3>
+                <br>
+                  <div class="text">
                     Les sources des informations diffusées sur le site xxxxxxx.com sont réputées fiables mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d’omissions.<br>
                     Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle. Malgré des mises à jour régulières, le site xxxxxxx.com ne peut être tenu responsable de la modification des dispositions administratives et juridiques survenant après la publication. De même, le site ne peut être tenue responsable de l’utilisation et de l’interprétation de l’information contenue dans ce site.<br>
                     <br>
@@ -158,16 +153,18 @@
                   </div>
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 6 : Liens hypertextes</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 6 : Liens hypertextes</h3>
+                <br>
+                  <div class="text">
                     Des liens hypertextes peuvent être présents sur le site. L’Utilisateur est informé qu’en cliquant sur ces liens, il sortira du site xxxxxxx.com. Ce dernier n’a pas de contrôle sur les pages web sur lesquelles aboutissent ces liens et ne saurait, en aucun cas, être responsable de leur contenu.
 
                   </div>
 
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 7 : Cookies</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 7 : Cookies</h3>
+                <br>
+                  <div class="text">
                     L’Utilisateur est informé que lors de ses visites sur le site, un cookie peut s’installer automatiquement sur son logiciel de navigation.<br>
                     Les cookies sont de petits fichiers stockés temporairement sur le disque dur de l’ordinateur de l’Utilisateur par votre navigateur et qui sont nécessaires à l’utilisation du site xxxxxxx.com. Les cookies ne contiennent pas d’information personnelle et ne peuvent pas être utilisés pour identifier quelqu’un. Un cookie contient un identifiant unique, généré aléatoirement et donc anonyme. Certains cookies expirent à la fin de la visite de l’Utilisateur, d’autres restent.<br>
                     L’information contenue dans les cookies est utilisée pour améliorer le site xxxxxxx.com.<br>
@@ -184,8 +181,9 @@
 
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 8 : Publication par l’Utilisateur</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 8 : Publication par l’Utilisateur</h3>
+                <br>
+                  <div class="text">
                     Le site permet aux membres de publier les contenus suivants :<br>
                     xxxxxxx.<br>
                     Dans ses publications, le membre s’engage à respecter les règles de la Netiquette (règles de bonne conduite de l’internet) et les règles de droit en vigueur.<br>
@@ -199,11 +197,12 @@
                   </div>
 
 
-                <h3 itemprop="name" style="margin-top:21px;"><br><br>ARTICLE 9 : Droit applicable et juridiction compétente</h3>
-                  <div itemprop="text">
+                <h3><br><br>ARTICLE 9 : Droit applicable et juridiction compétente</h3>
+                <br>
+                  <div class="text">
                     La législation française s'applique au présent contrat. En cas d'absence de résolution amiable d'un litige né entre les parties, les tribunaux français seront seuls compétents pour en connaître.<br>
                     Pour toute question relative à l’application des présentes CGU, vous pouvez joindre l’éditeur aux coordonnées inscrites à l’ARTICLE 1.
-
+                    <br><br><br><br>
                   </div>
 
 
@@ -220,6 +219,6 @@
         </nav>
     </footer>
 
-    
+
 
 </html>
