@@ -8,7 +8,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once "/SITE/SITE/config.php";
+require_once "config.php";
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
@@ -104,8 +104,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <ul id="menu">
 
 
-            <li id="link"><a id="logoapp"href="#"><img src="/SITE/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="logoapp"href="/SITE/SITE/view/acceuil"><img src="/SITE/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="/SITE/SITE/view/acceuil"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b3"href="/SITE/SITE/view/faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b4"href="/SITE/SITE/view/contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <li id="link"><a id="b5"href="/SITE/SITE/view/connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
