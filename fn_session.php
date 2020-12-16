@@ -7,4 +7,7 @@ function est_co (){
     return false;
   }
 }
+function type_u(){
+  return $_SESSION['type']
+}
 ?>

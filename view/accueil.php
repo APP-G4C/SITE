@@ -28,7 +28,27 @@ require_once('D:\MAMP\htdocs\SITE\fn_session.php');
             <?php if(est_co()){
               echo '<li id="link"><a id="b2"href="pageutilisateur.php"><i class="far fa-id-badge"></i> Ma Page</a></li>';
             }else{
-              echo '<li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>';
+              if(type_u()==1){
+                echo '<li id='link'><a id="b6"href="#"> Ma Page</a>
+                        <ul>
+                            <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
+                            <li><a href="#">Déconnexion</li></a>
+                        </ul>
+                      </li>'}
+              if(type_u()==2){
+                echo '<li id='link'><a id="b7"href="#"> Ma Page</a>
+                        <ul>
+                           <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
+                           <li><a href="#">Déconnexion</li></a>
+                        </ul>
+                      </li>'}
+              if (type_u()==3){
+                echo '<li id='link'><a id="b7"href="#"> Ma Page</a>
+                        <ul>
+                          <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
+                          <li><a href="#">Déconnexion</li></a>
+                        </ul>
+                      </li>'}
             }?>
         </ul>
     </nav>
