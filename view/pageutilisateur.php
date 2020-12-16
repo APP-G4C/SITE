@@ -4,14 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>Website | Accueil</title>
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-   
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
-    
+
+
 
 </head>
 
@@ -21,18 +22,18 @@
         <ul id="menu">
 
 
-            <li id="link"><a id="logoapp"href="accueil.html"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.html"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
 
 
 
             <!--UTILISATEUR
             <li id='link'><a id="b6"href="#"> Ma Page</a>
                     <ul>
-                        <li><a href="pageutilisateur.html"> Ma Page Utilisateur</li></a>
+                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
                         <li><a href="#">Déconnexion</li></a>
                     </ul>
                 </li><!-->
@@ -40,21 +41,21 @@
              <!--GESTIONNAIRE
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Gestionnaire</li></a>
-                   
+                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
+
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
             <!-- ADMIN
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
-                    <li><a href="pagegestionnaire.html"> Ma Page Administrateur</li></a>
-                  
+                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
+
 
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
-                
+
         </ul>
     </nav>
   </header>
@@ -67,7 +68,7 @@
 
   <body>
     <div id="informationspersonnelles">
-      <fieldset> 
+      <fieldset>
       <legend>INFORMATIONS PERSONELLES</legend>
           <label> Etat : Utilisateur</label>
           <br>
@@ -81,8 +82,8 @@
           <img id="photoavatar"src="/SITE/public/images/avatar.png">
           <br>
           <br>
-      
-        
+
+
           <br>
           <br>
 
@@ -104,7 +105,7 @@
           <br>
           <input type="text" value="" placeholder="Nom">
           <br>
-          <br> 
+          <br>
 
 
           <label>Prénom</label>
@@ -201,13 +202,13 @@
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
-            <td><strong>Fonction1</strong></td> 
+            <td><strong>Fonction1</strong></td>
             <td><strong>Fonction 2 </strong></td>
           </tr>
 
           <tr>
             <td>
-              
+
               <input type="date" name="">
               </label>
             </td>
@@ -243,14 +244,14 @@
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.html">CGU & CL</a></li>
-                <li id="link2"><a href="contact.html">Contact</a></li>
-                <li id="link2"><a href="faq.html">FAQ</a></li>
-                <li id="link2"><a href="aboutus.html">À propos</a></li>
+                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="contact.php">Contact</a></li>
+                <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
 
-    
+
 
 </html>

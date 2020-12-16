@@ -1,17 +1,17 @@
 /* CSS menu 1 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+
 header{
-   
     background-color: #EFD200;
     border-bottom: solid 4px;
     border-color: #EFD200;
     font-size: 20px;
-
-
 }
 
-.fas fa-home imgs{
+.menu{
     color: white;
 }
+
 
 #menu1 nav ul{
     list-style: none;
@@ -19,11 +19,8 @@ header{
 
 #menu1 nav li{
     float: left;
-
     width: 20%;
     text-align: center;
-   
-
 }
 
 #menu1 nav ul::after{
@@ -33,13 +30,11 @@ header{
 }
 
 #menu1 nav{
-    background-color: #0059C2;
+    background-color: #3F51B5;
     width: 100%;
     margin: 0;
     position: sticky;
     top: 0px;
-
-
 }
 
 #menu1 nav a{
@@ -47,12 +42,10 @@ header{
     text-decoration: none;
     color: white;
     vertical-align: center;
-
 }
 
 #menu1 nav a:hover{
     color: white;
-  
     text-shadow: 2px 2px 4px white;
 }
 
@@ -68,41 +61,25 @@ header{
     position: relative;
 }
 
-
-}
-
-#menu1 nav a{
-    display: block;
-    text-decoration: none;
-    color: white;
-    vertical-align: center;
-
-}
-
-#menu1 nav a:hover{
-    color: white;
-  
-    text-shadow: 2px 2px 4px white;
-}
-
-#menu1 li a{
-    vertical-align: middle;
-    display: inline-block;
-    position: relative;
-}
-
-#link{
-    padding-top: 26px;
-    text-align: center;
-    position: relative;
-}
-
-
 #logoapp img{
     padding-top: 3px;
     height: 87px;
     width: 117px;
+}
 
+#b2{
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+  top:5vh;
+}
+
+#b2:hover{
+  padding-bottom: 3px;
+  border-color: #fff;
+}
+
+#b2 i{
+  margin-right: 5px;
 }
 
 header nav ul li {
@@ -124,28 +101,15 @@ header nav ul li:hover ul li {
 
 
 @media all and (max-width: 600px){
-<<<<<<< Updated upstream
     header {
         font-size: 10px;
     }
 
-
-   
-=======
-
-
     header li{
-
     font-size: 5px;
-    }  
+    }
 
     #menu li {
         margin: 0%;
         margin-left: 10%;
     }
-
-
-
-
-    
->>>>>>> Stashed changes

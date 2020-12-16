@@ -1,11 +1,10 @@
 /* CSS menu 2 */
 
 footer {
-   
     border-top: solid 4px;
     border-color: #EFD200;
     font-size: 19px;
-    position: sticky;s
+    position: sticky;
 }
 
 #menu2{
@@ -29,7 +28,7 @@ footer {
 }
 
 #menu2 nav{
-    background-color: #0059C2;
+    background-color: #3F51B5;
     width: 100%;
     height: 75px;
     margin: 0 auto;
@@ -45,11 +44,6 @@ footer {
 
 }
 
-#menu2 nav a:hover{
-    color: white;
-    font-size: 21.5px;
-    text-shadow: 2px 2px 4px white;
-}
 
 #menu2 li a{
     vertical-align: middle;
@@ -57,7 +51,7 @@ footer {
 }
 
 #link2{
-    padding-top: 23px;
+    padding-top: 5vh;
 }
 
 @media all and (max-width: 600px){
