@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/apropos.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="\SITE\public\js\about_us.js"></script>
 </head>
 
 
@@ -27,7 +28,7 @@
       <div id="perso">
         <div id="textaboutus">
           <h1 id="titre_aboutus"></br>Qui sommes-nous ?</br></h1>
-                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati</p>
+                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati </p>
         </div>
                 <div id="containerglobal">
 
