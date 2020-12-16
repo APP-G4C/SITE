@@ -77,7 +77,7 @@
               <span>
                 <p class="Entete"><strong>Formulaire de Contact</strong></p>
 
-              <p class="Mot"> Une question? <a class="lien" href ="AIDE.php">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
+              <p class="Mot"> Une question? <a class="lien" href ="faq.php">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
                 <br>
                 <!--REDIRIGE VERS LA FAQ DIRECTEMENT EN CLIQUANT DESSUS-->
               </span>
