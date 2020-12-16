@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.html");
+                            header("Location: accueil.php");
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -180,10 +180,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/contact.php">Contact</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/faq.php">FAQ</a></li>
+                <li id="link2"><a href="/SITE/SITE/view/aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
