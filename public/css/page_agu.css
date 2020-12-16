@@ -1,0 +1,117 @@
+TILISATEUR*/
+
+body{
+	text-align: center;
+}
+#photoavatar {
+  width: 100px;
+  height: 100px;
+}
+
+legend{
+  text-align: center;
+}
+
+#informationspersonnelles fieldset{
+	width: 30%;
+	border: 3px #0059C2 solid;
+	margin-left: 35%
+}
+
+#informationspersonnelles form{
+  
+  text-align: center;
+}
+td{
+	text-align: center;
+}
+
+
+
+
+button{
+	background-color: black;
+	border-radius: 5px;
+}
+span{
+	color: white;
+}
+
+#prochainsrdv fieldset{
+
+	margin: auto;
+	padding: auto;
+	border: 3px #0059C2 solid;
+	
+}
+#prochainsrdv table {
+	margin:auto;
+}
+
+
+
+
+#résultats fieldset{
+	width: 25%;
+	margin:auto;
+	border: 3px #0059C2 solid;
+}
+
+#résultats form{
+	text-align: center;
+	margin:auto;
+}
+
+#backoffice fieldset{
+	border: 3px #0059C2 solid;
+	width: auto;
+	
+	margin:auto;
+}
+
+#ajouterutilisateur fieldset{
+	width: 50%;
+	padding: auto;
+}
+
+#Graphique{
+	width: auto;
+
+	padding: auto;
+	border: 3px #0059C2 solid;
+}
+#graph{
+	margin-left: 25%
+}
+
+
+@media all and (max-width: 600px){
+     body {
+     	margin:auto;
+     	padding: auto;
+        
+        font-size: 10px
+    }
+    #backoffice fieldset{
+		border: 3px #0059C2 solid;
+		padding: auto;
+		width: auto;
+}
+
+	.champ{
+		width: auto;
+		height: auto;
+	}
+	#form textarea{
+		width:70px;
+		height:100px;
+
+	}
+	input{
+		width: 50px;
+	}
+
+	#graph {
+		width: 300px;
+		height: 150px;
+	}

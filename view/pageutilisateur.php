@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
 
 
 
@@ -67,143 +67,177 @@
 
 
   <body>
-    <div id="informationspersonnelles">
-      <fieldset>
-      <legend>INFORMATIONS PERSONELLES</legend>
-          <label> Etat : Utilisateur</label>
+   <br>
+    <body>
+      <div id="informationspersonnelles">
+        <fieldset> 
+          <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
           <br>
-          <br>
+          <form>
+              <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+              <br>
+              <br>
+              <label><strong><U>ID :</U></strong></label>
+              <br>
+              <label> 12345
+              <br>
+              <br>
 
 
 
-          <label>Photo de profil</label>
-          <br>
-          <br>
-          <img id="photoavatar"src="/SITE/public/images/avatar.png">
-          <br>
-          <br>
+              <label><strong><U>Photo de profil</U></strong></label>
+              
+              <br>
+              <img id="photoavatar"src="/SITE/public/images/avatar.png">
+              <br>
+              <br>
+              <label><strong><U>Sexe</U></strong></label>
+            
+              <br>
+              <select>
+                <option>Homme</option>
+                <option>Femme</option>
+                <option>Autre</option>
+                <
+              </select>
+
+              <br>
+              <br>
+
+              <label><strong><U>Nom</U></strong></label>
+              <br>
+                    
+              <label>DUPOND</label>
+              <br>
+              <br> 
 
 
-          <br>
-          <br>
-
-          <label>Sexe</label>
-          <br>
-          <br>
-          <select>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Autre</option>
-            <
-          </select>
-
-          <br>
-          <br>
-
-          <label>Nom</label>
-          <br>
-          <br>
-          <input type="text" value="" placeholder="Nom">
-          <br>
-          <br>
+              <label><strong><U>Prénom</U></strong></label>
+              <br>
+              
+            
+             <label> Jean</label>
+              <br>
+              <br>
 
 
-          <label>Prénom</label>
-          <br>
-          <br>
-          <input type="text" placeholder="Prénom"value="">
-          <br>
-          <br>
+              <label><strong><U>Email</U></strong></label>
+              
+              <br>
+              <input type="email" placeholder="Mail" value="">
+              <br>
+              <br>
+
+              <label><strong><U>Mot de passe</U></strong></label>
+
+              <br>
+              <input type="password" value="G4CG4C">
+              <br>
+              <br>
 
 
-          <label>Email</label>
-          <br>
-          <br>
-          <input type="email" placeholder="Mail" value="">
-          <br>
-          <br>
-
-          <label>Mot de passe</label>
-          <br>
-          <br>
-          <input type="password" value="G4CG4C">
-          <br>
-
-
-          <label> Numéro de téléphone</label>
-          <br>
-          <br>
-          <input type="tel"  placeholder="0606060606"value="">
-          <br>
-          <br>
-
-          <label>Date de Naissance</label>
-          <br>
+          <label><strong><U>Date de Naissance</U></strong></label>
+        
           <br>
           <input type="date" name="">
           <br>
           <br>
-          <
-
-          <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 
 
-      </fieldset>
-    </div>
+              <label><strong><U>Numéro de téléphone</U></strong></label>
+              
+              <br>
+              <input type="tel"  placeholder="0606060606"value="">
+              <br>
+              <br>
+
+              <label><strong><U>Date de Naissance</U></strong></label>
+              
+              <br>
+              <input type="date" name="">
+              <br>
+              <br>
+              
+
+              <button><span>Modifier mes informations personnelles<span></button>
+              <br>
+            </form>
+        </fieldset>
+      </div>
+      <br>
+      <br>
 
 
-    <div id="prisederdv">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="prochainsrdv">
       <br>
       <br>
 
       <fieldset>
 
 
-        <legend>PRISE DE RDV</legend>
+        <legend><strong>PRISE DE RDV</strong></legend>
+        <table>
+          <tr>
+            <td><strong><U>Choix du centre</U></strong></td>
+            <td><strong><U>Choix de la date</U></strong></td>
+            <td><strong><U>Choix de l'heure</U></strong></td>
+            <td><strong><U>Choix du test</U></strong></td>
+          </tr>
 
-
-        <label>Choix du centre</label>
-        <br>
-        <select>
-          <option> Centre 1</option>
-          <option>Centre 2</option>
-        </select>
-        <br>
-        <br>
-
-        <label>Choix de la date</label>
-        <br>
-        <input type="date" name="">
-        <br>
-        <br>
-
-        <label>Choix de l'heure</label>
-        <br>
-        <input type="time" name="">
-        <br>
-        <br>
-
-        <label>Choix du test</label>
-        <br>
-        <select>
-          <option>Test 1</option>
-          <option>Test 2</option>
-        </select>
+          <tr>
+            <td>
+              <select>
+                <option>Centre A</option>
+                <option>Centre B</option>
+                <option>Centre C</option>
+              
+              </select>
+            </td>
+            <td><input type="date" name=""></td>
+            <td><input type="time" name=""></td>
+            <td><select>
+              <option>Test A</option>
+              <option>Test B</option>
+              <option>Test B</option>
+            </select>
+          </td>
+          <td><button><span>Confirmer</span></button>
+        </tr>
+      </table>
       </fieldset>
     </div>
 
-
+<br>
     <div id="résultats">
       <fieldset>
-        <legend>Résultats</legend>
+        <legend><strong>RESULTATS</strong></legend>
         <table>
 
 
           <tr>
-            <td><strong>Date</strong></td>
-            <td><strong>Centre</strong></td>
-            <td><strong>Fonction1</strong></td>
-            <td><strong>Fonction 2 </strong></td>
+            <td><strong><U>Date</U></strong></td>
+            <td><strong><U>Centre</U></strong></td>
+
+            <td><strong><U>Capteur 1</U></strong></td>
+            <td><strong><U>Capteur 2</U></strong></td>
           </tr>
 
           <tr>
@@ -213,16 +247,15 @@
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>1</label></td>
 
-            <td><input type="text" placeholder= "52" ="">
-              <p> /</p>
-              <input type="text" placeholder="100" ="">
+
+            <td><label>52/100</label>
+          
+              
             </td>
 
-            <td><input type="text" placeholder= "48" ="">
-              <p> /</p>
-              <input type="text" placeholder="100" ="">
+            <td><label>52/100</label>
             </td>
           </tr>
 
@@ -230,13 +263,23 @@
       </fieldset>
     </div>
 
+
+
+
+
+
+
+<br>
     <div id="Graphique">
 
       <fieldset>
-        <legend>Graphique</legend>
+        <legend><strong>GRAPHIQUE</strong></legend>
+        <br>
         <img id="graph"src="/SITE/public/images/Graphique.png">
+        </br>
       </fieldset>
     </div>
+    <
 
 
   </body>
