@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +25,7 @@
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <?php echo header_ada()?>
 
 
 
@@ -140,7 +143,7 @@
           <input type="date" name="">
           <br>
           <br>
-          
+
 
           <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 
