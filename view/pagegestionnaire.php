@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,9 +12,10 @@
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
 
-   
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+
+
 
 
 
@@ -27,7 +32,7 @@
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <?php echo header_ada()?>
 
 
 
@@ -69,28 +74,9 @@
 
     <body>
       <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div id="informationspersonnelles">
-        <fieldset> 
-          <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
-          <br>
+        <fieldset>
+          <legend>INFORMATIONS PERSONNELLES</legend>
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
               <br>
@@ -104,13 +90,43 @@
 
 
               <label><strong><U>Photo de profil</U></strong></label>
-              
+
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-              <br>
+
+
+          <label>Sexe</label>
+          <br>
+          <br>
+          <select>
+            <option>Homme</option>
+            <option>Femme</option>
+            <option>Autre</option>
+            <
+          </select>
+
+          <br>
+          <br>
+
+          <label>Nom</label>
+          <br>
+          <br>
+          <input type="text" value="" placeholder="Nom">
+          <br>
+          <br>
+
+
+          <label>Prénom</label>
+          <br>
+          <br>
+          <input type="text" placeholder="Prénom"value="">
+          <br>
+          <br>
+
+
               <label><strong><U>Sexe</U></strong></label>
-            
+
               <br>
               <select>
                 <option>Homme</option>
@@ -124,23 +140,23 @@
 
               <label><strong><U>Nom</U></strong></label>
               <br>
-                    
+
               <label>DUPOND</label>
               <br>
-              <br> 
+              <br>
 
 
               <label><strong><U>Prénom</U></strong></label>
               <br>
-              
-            
+
+
              <label> Jean</label>
               <br>
               <br>
 
 
               <label><strong><U>Email</U></strong></label>
-              
+
               <br>
               <input type="email" placeholder="Mail" value="">
               <br>
@@ -154,8 +170,8 @@
               <br>
 
 
-          <label><strong><U>Date de Naissance</U></strong></label>
-        
+          <label>Date de Naissance</label>
+          <br>
           <br>
           <input type="date" name="">
           <br>
@@ -163,93 +179,53 @@
 
 
               <label><strong><U>Numéro de téléphone</U></strong></label>
-              
+
               <br>
               <input type="tel"  placeholder="0606060606"value="">
               <br>
               <br>
 
               <label><strong><U>Date de Naissance</U></strong></label>
-              
+
               <br>
               <input type="date" name="">
               <br>
               <br>
-              
 
-              <button><span>Modifier mes informations personnelles<span></button>
+
+              <button><span>MODFIER MES INFORMATIONS PERSONNELLES<span></button>
               <br>
             </form>
         </fieldset>
       </div>
-      <br>
-      <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div id="prochainsrdv">
       <fieldset>
-       
-        <legend><strong>PROCHAINS RDV</strong></legend>
-        <br>
+
+        <legend>Prochains RDV</legend>
         <div id="prisederdv">
 
         <form>
         <table>
 
 
-
-
-
-
           <tr>
-            <td><strong><U>Nom</U></strong></td>
-            <td><strong><U>Prénom</U></strong></td>
-            <td><strong><U>Date</U></strong></td>
-            <td><strong><U>Centre</U></strong></td>
-            <td><strong><U>Horaire</U></strong></td>
+            <td><strong>Nom</strong></td>
+            <td><strong>Prénom</strong></td>
+            <td><strong> Date</strong></td>
+            <td><strong>Centre</strong></td>
 
           </tr>
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label> Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -258,28 +234,19 @@
               </label>
             </td>
 
-            <td><label>1</label></td>
-            <td><input type="time" name=""></td>
+            <td><input type="text" placeholder="1"></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
-
-
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label>Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -288,26 +255,19 @@
               </label>
             </td>
 
-            <td><label>2</label></td>
-             <td><input type="time" name=""></td>
+            <td><input type="text" placeholder="1"></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label>Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -316,49 +276,22 @@
               </label>
             </td>
 
-            <td><label>3</label></td>
-            <td><input type="time" name=""></td>
+            <td><input type="text" placeholder="1"></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
-
-
-
-
-
         </table>
       </form>
       </fieldset>
     </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
      <div id="résultats">
       <fieldset>
-        <legend><strong>RESULTATS</strong></legend>
-        <br>
+        <legend>Résultats</legend>
         <form>
 
 
-        <label><strong><U>Rechercher</U></strong></label>
+        <label><strong>Rechercher</strong></label>
         <br>
 
         <input type="text" name="">
@@ -367,9 +300,8 @@
 
 
 
-        <label><strong><U>Trier par</U></strong></label>
+        <label><strong>Trier par</strong></label>
 
-        <br>
         <br>
         <table>
 
@@ -377,7 +309,6 @@
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
-            <td><strong> Horaire</strong></td>
 
           </tr>
 
@@ -388,12 +319,7 @@
               </label>
             </td>
 
-            <td><select>
-              <option>1</option>
-              <option>2</option>
-             
-            </select></td>
-            <td><input type="time" ="">
+            <td><input type="text" placeholder="1"></td>
 
 
           </tr>
@@ -401,43 +327,17 @@
         </table>
         <br>
         <br>
-        <button><span>Afficher</span></button>
+        <button>Afficher</button>
       </fieldset>
     </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div id="backoffice">
       <fieldset>
-        <legend><strong>BACK-OFFICE</strong></legend>
-        <div id="ajouterutilisateur">
+        <legend>Back-Office</legend>
         <fieldset>
-          <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
+          <legend>Ajouter un utilisateur</legend>
           <br>
-          <label><strong><U>Nom</label>
+          <label> Nom</label>
           <br>
           <input type="text" placeholder="Dupond">
           <br>
@@ -452,22 +352,10 @@
           <input type="mail" placeholder="mail">
           <br>
           <br>
-          <button><span>Ajouter l'utilisateur<span></button>
+          <button>Ajouter l'utilisateur</button>
         </form>
         </fieldset>
       </div>
-      </div>
-      <br>
-
-
-
-
-
-
-
-
-
-
 
 
 

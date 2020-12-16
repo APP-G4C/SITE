@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('/Applications/MAMP/htdocs/SITE/fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,40 +25,7 @@ require_once('/Applications/MAMP/htdocs/SITE/fn_session.php');
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2" href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2" href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <?php if(est_co()){
-              echo '<li id="link"><a id="b2"href="pageutilisateur.php"><i class="far fa-id-badge"></i> Ma Page</a></li>';
-            }else{
-              echo '<li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>';
-            }?>
-        </ul>
-    </nav>
-
-            <!--UTILISATEUR
-            <li id='link'><a id="b6"href="#"> Ma Page</a>
-                    <ul>
-                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
-                        <li><a href="#">Déconnexion</li></a>
-                    </ul>
-                </li><!-->
-
-             <!--GESTIONNAIRE
-             <li id='link'><a id="b7"href="#"> Ma Page</a>
-                <ul>
-                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
-
-                    <li><a href="#">Déconnexion</li></a>
-                </ul>
-            </li><!-->
-            <!-- ADMIN
-             <li id='link'><a id="b7"href="#"> Ma Page</a>
-                <ul>
-                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
-
-
-                    <li><a href="#">Déconnexion</li></a>
-                </ul>
-            </li><!-->
-
+            <?php echo header_ada()?>
         </ul>
     </nav>
   </header>
