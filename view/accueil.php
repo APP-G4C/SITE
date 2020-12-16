@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once('D:\MAMP\htdocs\SITE\fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +25,11 @@
             <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2" href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2" href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2" href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <?php if(est_co()){
+              echo '<li id="link"><a id="b5"href="pageutilisateur.html"><i class="far fa-id-badge"></i> Ma Page</a></li>';
+            }else{
+              echo '<li id="link"><a id="b5"href="connexion.html"><i class="far fa-id-badge"></i> Connexion</a></li>';
+            }?>
         </ul>
     </nav>
 
