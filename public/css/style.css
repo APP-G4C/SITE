@@ -1,13 +1,25 @@
 /* CSS commun */
-
 *{
     margin: 0px;
     padding: 0px;
-
-    font-family: Avenir Next;
-
-    color: black;
 }
+
+header{
+    font-family: 'Lato';
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+footer{
+  font-family: 'Lato';
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
 
 body{
     background: white;
