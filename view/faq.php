@@ -116,7 +116,9 @@
                     Il est individuel, et effectué sur un ordinateur avec des manettes aux mains et des pédales au niveau des pieds.
                     Le test psychotechnique permet de mesurer les réflexes, les capacités d'attention, de concentration et de coordination."
                   </div>
+                  <br>
       </div>
+
             </fieldset>
           </div>
         </body>
