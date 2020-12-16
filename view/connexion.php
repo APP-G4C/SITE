@@ -7,8 +7,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
-// On charge le fichier config si pas déjà fait (charge databse)
-require_once 'C:\wamp64-1\www\SITE\view\connexion.php';
+// On charge le fichier config si pas déjà fait (charge database)
+require_once 'C:\MAMP\htdocs\SITE\view\connexion.php';
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
