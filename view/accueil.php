@@ -1,6 +1,14 @@
 <?php
 session_start();
+<<<<<<< HEAD
 require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+=======
+
+
+
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 ?>
 <!DOCTYPE html>
 <html lang="fr">

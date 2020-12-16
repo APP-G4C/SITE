@@ -12,7 +12,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+=======
+
+    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
+
+
+
+
+
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 </head>
 
 
@@ -66,11 +77,89 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
   <body>
+<<<<<<< HEAD
     <br>
     <div id="informationspersonnelles">
       <fieldset>
       <legend>INFORMATIONS PERSONNELLES</legend>
           <label> Etat : Utilisateur</label>
+=======
+
+   <br>
+    <body>
+      <div id="informationspersonnelles">
+        <fieldset> 
+          <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
+          <br>
+          <form>
+              <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+              <br>
+              <br>
+              <label><strong><U>ID :</U></strong></label>
+              <br>
+              <label> 12345
+              <br>
+              <br>
+
+
+
+              <label><strong><U>Photo de profil</U></strong></label>
+              
+              <br>
+              <img id="photoavatar"src="/SITE/public/images/avatar.png">
+              <br>
+              <br>
+              <label><strong><U>Sexe</U></strong></label>
+            
+              <br>
+              <select>
+                <option>Homme</option>
+                <option>Femme</option>
+                <option>Autre</option>
+                <
+              </select>
+
+              <br>
+              <br>
+
+              <label><strong><U>Nom</U></strong></label>
+              <br>
+                    
+              <label>DUPOND</label>
+              <br>
+              <br> 
+
+
+              <label><strong><U>Prénom</U></strong></label>
+              <br>
+              
+            
+             <label> Jean</label>
+              <br>
+              <br>
+
+
+              <label><strong><U>Email</U></strong></label>
+              
+              <br>
+              <input type="email" placeholder="Mail" value="">
+              <br>
+              <br>
+
+              <label><strong><U>Mot de passe</U></strong></label>
+
+              <br>
+              <input type="password" value="G4CG4C">
+              <br>
+              <br>
+
+
+          <label><strong><U>Date de Naissance</U></strong></label>
+        
+          <br>
+          <input type="date" name="">
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
           <br>
           <br>
 
@@ -87,6 +176,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
+<<<<<<< HEAD
           <label>Sexe</label>
           <br>
           <br>
@@ -96,6 +186,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             <option>Autre</option>
 
           </select>
+=======
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 
           <br>
           <br>
@@ -137,6 +229,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
+<<<<<<< HEAD
           <label>Date de Naissance</label>
           <br>
           <br>
@@ -144,6 +237,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
+=======
+
+
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 
           <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 

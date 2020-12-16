@@ -70,11 +70,87 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
     <body>
+<<<<<<< HEAD
       <br>
        <div id="informationspersonnelles">
       <fieldset>
       <legend>INFORMATIONS PERSONNELLES</legend>
           <label> Etat : Administrateur</label>
+=======
+
+      <div id="informationspersonnelles">
+        <fieldset> 
+          <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
+          <br>
+          <form>
+              <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+              <br>
+              <br>
+              <label><strong><U>ID :</U></strong></label>
+              <br>
+              <label> 12345
+              <br>
+              <br>
+
+
+
+              <label><strong><U>Photo de profil</U></strong></label>
+              
+              <br>
+              <img id="photoavatar"src="/SITE/public/images/avatar.png">
+              <br>
+              <br>
+              <label><strong><U>Sexe</U></strong></label>
+            
+              <br>
+              <select>
+                <option>Homme</option>
+                <option>Femme</option>
+                <option>Autre</option>
+                <
+              </select>
+
+              <br>
+              <br>
+
+              <label><strong><U>Nom</U></strong></label>
+              <br>
+                    
+              <label>DUPOND</label>
+              <br>
+              <br> 
+
+
+              <label><strong><U>Prénom</U></strong></label>
+              <br>
+              
+            
+             <label> Jean</label>
+              <br>
+              <br>
+
+
+              <label><strong><U>Email</U></strong></label>
+              
+              <br>
+              <input type="email" placeholder="Mail" value="">
+              <br>
+              <br>
+
+              <label><strong><U>Mot de passe</U></strong></label>
+
+              <br>
+              <input type="password" value="G4CG4C">
+              <br>
+              <br>
+
+
+          <label><strong><U>Date de Naissance</U></strong></label>
+        
+          <br>
+          <input type="date" name="">
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
           <br>
           <br>
 
@@ -90,6 +166,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
           <label>Sexe</label>
           <br>
           <br>
@@ -99,6 +180,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             <option>Autre</option>
 
           </select>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 
           <br>
           <br>
