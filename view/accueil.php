@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('D:\MAMP\htdocs\SITE\fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
