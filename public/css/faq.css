@@ -20,7 +20,7 @@ legend{
   background-color: #fff;
   color: #3F51B5;
   padding: 2px 6px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bolder;
 }
 li{
@@ -35,6 +35,9 @@ li{
   text-align: justify;
   text-align-last: center;
 
+}
+.question1, .question2,.question3,.question4,.question5{
+  font-size: 23px;
 }
 .question1:hover  ~ .reponses1{
   opacity: 100%;
