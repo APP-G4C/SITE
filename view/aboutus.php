@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,12 +13,7 @@
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/apropos.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    
-
-
-
-
-
+    <script src="\SITE\public\js\about_us.js"></script>
 </head>
 
 
@@ -25,7 +24,7 @@
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <?php echo header_ada()?>
         </ul>
     </nav>
   </header>
@@ -33,7 +32,7 @@
       <div id="perso">
         <div id="textaboutus">
           <h1 id="titre_aboutus"></br>Qui sommes-nous ?</br></h1>
-                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati</p>
+                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati </p>
         </div>
                 <div id="containerglobal">
 

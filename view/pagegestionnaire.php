@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,7 +14,7 @@
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
 
-   
+
 
 
 
@@ -27,7 +31,7 @@
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <?php echo header_ada()?>
 
 
 
@@ -87,10 +91,12 @@
 
 
 
+
       <div id="informationspersonnelles">
         <fieldset> 
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
           <br>
+
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
               <br>
@@ -104,13 +110,13 @@
 
 
               <label><strong><U>Photo de profil</U></strong></label>
-              
+
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-              <br>
+
               <label><strong><U>Sexe</U></strong></label>
-            
+
               <br>
               <select>
                 <option>Homme</option>
@@ -124,23 +130,23 @@
 
               <label><strong><U>Nom</U></strong></label>
               <br>
-                    
+
               <label>DUPOND</label>
               <br>
-              <br> 
+              <br>
 
 
               <label><strong><U>Prénom</U></strong></label>
               <br>
-              
-            
+
+
              <label> Jean</label>
               <br>
               <br>
 
 
               <label><strong><U>Email</U></strong></label>
-              
+
               <br>
               <input type="email" placeholder="Mail" value="">
               <br>
@@ -163,19 +169,19 @@
 
 
               <label><strong><U>Numéro de téléphone</U></strong></label>
-              
+
               <br>
               <input type="tel"  placeholder="0606060606"value="">
               <br>
               <br>
 
               <label><strong><U>Date de Naissance</U></strong></label>
-              
+
               <br>
               <input type="date" name="">
               <br>
               <br>
-              
+
 
               <button><span>Modifier mes informations personnelles<span></button>
               <br>
@@ -213,9 +219,11 @@
 
     <div id="prochainsrdv">
       <fieldset>
+
        
         <legend><strong>PROCHAINS RDV</strong></legend>
         <br>
+
         <div id="prisederdv">
 
         <form>

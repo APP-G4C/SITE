@@ -1,0 +1,60 @@
+.container{
+  text-align: center;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-bottom: 10vh;
+}
+.top{
+  text-transform: uppercase;
+  font-family: 'Lato'
+  height: 20px;
+  width:auto;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 30px;
+  text-align:center;
+  color:#3F51B5;
+
+}
+legend{
+  background-color: #fff;
+  color: #3F51B5;
+  padding: 2px 6px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+li{
+  list-style-type: none;
+}
+.reponses1, .reponses2, .reponses3, .reponses4, .reponses5{
+  margin-left: 10vh;
+  margin-right: 10vh;
+  opacity: 0%;
+  transition: 0.7s;
+  font-size: 20px;
+  text-align: justify;
+  text-align-last: center;
+
+}
+.question1, .question2,.question3,.question4,.question5{
+  font-size: 23px;
+}
+.question1:hover  ~ .reponses1{
+  opacity: 100%;
+}
+.question2:hover  ~ .reponses2{
+  opacity: 100%;
+}
+.question3:hover  ~ .reponses3{
+  opacity: 100%;
+}
+.question4:hover  ~ .reponses4{
+  opacity: 100%;
+}
+.question5:hover  ~ .reponses5{
+  opacity: 100%;
+}
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
