@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
-
-
-
-
 </head>
 
 
@@ -70,7 +66,7 @@
     <br>
     <div id="informationspersonnelles">
       <fieldset>
-      <legend>INFORMATIONS PERSONELLES</legend>
+      <legend>INFORMATIONS PERSONNELLES</legend>
           <label> Etat : Utilisateur</label>
           <br>
           <br>
