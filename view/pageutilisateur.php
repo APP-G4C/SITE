@@ -13,11 +13,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
 
-    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
-
-
 
     <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
+
 
 
 
@@ -79,13 +77,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
   <body>
 
 
-    <br>
-    <div id="informationspersonnelles">
-      <fieldset>
-      <legend>INFORMATIONS PERSONNELLES</legend>
-          <label> Etat : Utilisateur</label>
-
-
+  
    <br>
     <body>
       <div id="informationspersonnelles">
@@ -165,41 +157,21 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
 
 
-              <label><strong><U>Numéro de téléphone</U></strong></label>
-              
-              <br>
-              <input type="tel"  placeholder="0606060606"value="">
-              <br>
-              <br>
 
-              <label><strong><U>Date de Naissance</U></strong></label>
-              
-              <br>
-              <input type="date" name="">
-              <br>
-              <br>
-              
-
-              <button><span>Modifier mes informations personnelles<span></button>
-              <br>
-            </form>
-        </fieldset>
-      </div>
-      <br>
-      <br>
-
-
-
-
-          <label>Sexe</label>
+          <label>Photo de profil</label>
           <br>
           <br>
-          <select>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Autre</option>
+          <img id="photoavatar"src="/SITE/public/images/avatar.png">
+          <br>
+          <br>
 
-          </select>
+
+          <br>
+          <br>
+
+
+
+
 
 
 
@@ -213,60 +185,65 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
+          <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 
 
-    <div id="prochainsrdv">
-      <br>
-      <br>
-
-      <fieldset>
-
-
-        <legend><strong>PRISE DE RDV</strong></legend>
-        <table>
-          <tr>
-            <td><strong><U>Choix du centre</U></strong></td>
-            <td><strong><U>Choix de la date</U></strong></td>
-            <td><strong><U>Choix de l'heure</U></strong></td>
-            <td><strong><U>Choix du test</U></strong></td>
-          </tr>
-
-          <tr>
-            <td>
-              <select>
-                <option>Centre A</option>
-                <option>Centre B</option>
-                <option>Centre C</option>
-              
-              </select>
-            </td>
-            <td><input type="date" name=""></td>
-            <td><input type="time" name=""></td>
-            <td><select>
-              <option>Test A</option>
-              <option>Test B</option>
-              <option>Test B</option>
-            </select>
-          </td>
-          <td><button><span>Confirmer</span></button>
-        </tr>
-      </table>
       </fieldset>
     </div>
 
-<br>
+
+    <div id="prisederdv">
+      <br>
+      <br>
+
+      <fieldset>
+
+
+        <legend>PRISE DE RDV</legend>
+
+
+        <label>Choix du centre</label>
+        <br>
+        <select>
+          <option> Centre 1</option>
+          <option>Centre 2</option>
+        </select>
+        <br>
+        <br>
+
+        <label>Choix de la date</label>
+        <br>
+        <input type="date" name="">
+        <br>
+        <br>
+
+        <label>Choix de l'heure</label>
+        <br>
+        <input type="time" name="">
+        <br>
+        <br>
+
+        <label>Choix du test</label>
+        <br>
+        <select>
+          <option>Test 1</option>
+          <option>Test 2</option>
+        </select>
+      </fieldset>
+    </div>
+
+
     <div id="résultats">
       <fieldset>
-        <legend><strong>RESULTATS</strong></legend>
+        <legend>Résultats</legend>
         <table>
 
 
           <tr>
-            <td><strong><U>Date</U></strong></td>
-            <td><strong><U>Centre</U></strong></td>
-
-            <td><strong><U>Capteur 1</U></strong></td>
-            <td><strong><U>Capteur 2</U></strong></td>
+            <td><strong>Date</strong></td>
+            <td><strong>Centre</strong></td>
+            <td><strong>Fonction1</strong></td>
+            <td><strong>Fonction 2 </strong></td>
           </tr>
 
           <tr>
@@ -276,15 +253,16 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>1</label></td>
+            <td><input type="text" placeholder="1"></td>
 
-
-            <td><label>52/100</label>
-          
-              
+            <td><input type="text" placeholder= "52" ="">
+              <p> /</p>
+              <input type="text" placeholder="100" ="">
             </td>
 
-            <td><label>52/100</label>
+            <td><input type="text" placeholder= "48" ="">
+              <p> /</p>
+              <input type="text" placeholder="100" ="">
             </td>
           </tr>
 
@@ -292,23 +270,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
       </fieldset>
     </div>
 
-
-
-
-
-
-
-<br>
     <div id="Graphique">
 
       <fieldset>
-        <legend><strong>GRAPHIQUE</strong></legend>
-        <br>
+        <legend>Graphique</legend>
         <img id="graph"src="/SITE/public/images/Graphique.png">
-        </br>
       </fieldset>
     </div>
-    <
 
 
   </body>

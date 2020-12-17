@@ -12,7 +12,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
+
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
 
 
@@ -76,33 +77,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
       <div id="informationspersonnelles">
-        <fieldset>
-          <legend>INFORMATIONS PERSONNELLES</legend>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div id="informationspersonnelles">
         <fieldset> 
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
           <br>
+
 
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
@@ -124,6 +102,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
+
+
           <label>Sexe</label>
           <br>
           <br>
@@ -136,6 +116,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
           <br>
           <br>
+
 
           <label>Nom</label>
           <br>
@@ -151,6 +132,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <input type="text" placeholder="Prénom"value="">
           <br>
           <br>
+
 
 
               <label><strong><U>Sexe</U></strong></label>
@@ -198,8 +180,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
 
 
-          <label><strong><U>Date de Naissance</U></strong></label>
-        
+          <label>Date de Naissance</label>
+          <br>
           <br>
           <input type="date" name="">
           <br>
@@ -221,47 +203,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
 
 
-              <button><span>Modifier mes informations personnelles<span></button>
+              <button><span>MODFIER MES INFORMATIONS PERSONNELLES<span></button>
               <br>
             </form>
         </fieldset>
       </div>
-      <br>
-      <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div id="prochainsrdv">
       <fieldset>
-
-
-
-        <legend>Prochains RDV</legend>
-
 
        
         <legend><strong>PROCHAINS RDV</strong></legend>
@@ -274,34 +223,23 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         <table>
 
 
-
-
-
-
           <tr>
-            <td><strong><U>Nom</U></strong></td>
-            <td><strong><U>Prénom</U></strong></td>
-            <td><strong><U>Date</U></strong></td>
-            <td><strong><U>Centre</U></strong></td>
-            <td><strong><U>Horaire</U></strong></td>
+            <td><strong>Nom</strong></td>
+            <td><strong>Prénom</strong></td>
+            <td><strong> Date</strong></td>
+            <td><strong>Centre</strong></td>
 
           </tr>
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label> Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -310,28 +248,19 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>1</label></td>
-            <td><input type="time" name=""></td>
+            <td><input type="text" placeholder="1"></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
-
-
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label>Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -340,26 +269,19 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>2</label></td>
-             <td><input type="time" name=""></td>
+            <td><input type="text" placeholder="1"></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label>Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -368,49 +290,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>3</label></td>
-            <td><input type="time" name=""></td>
+            <td><input type="text" placeholder="1"></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
-
-
-
-
-
         </table>
       </form>
       </fieldset>
     </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
      <div id="résultats">
       <fieldset>
-        <legend><strong>RESULTATS</strong></legend>
-        <br>
+        <legend>Résultats</legend>
         <form>
 
 
-        <label><strong><U>Rechercher</U></strong></label>
+        <label><strong>Rechercher</strong></label>
         <br>
 
         <input type="text" name="">
@@ -419,9 +314,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-        <label><strong><U>Trier par</U></strong></label>
+        <label><strong>Trier par</strong></label>
 
-        <br>
         <br>
         <table>
 
@@ -429,7 +323,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
-            <td><strong> Horaire</strong></td>
 
           </tr>
 
@@ -440,12 +333,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><select>
-              <option>1</option>
-              <option>2</option>
-             
-            </select></td>
-            <td><input type="time" ="">
+            <td><input type="text" placeholder="1"></td>
 
 
           </tr>
@@ -453,43 +341,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         </table>
         <br>
         <br>
-        <button><span>Afficher</span></button>
+        <button>Afficher</button>
       </fieldset>
     </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div id="backoffice">
       <fieldset>
-        <legend><strong>BACK-OFFICE</strong></legend>
-        <div id="ajouterutilisateur">
+        <legend>Back-Office</legend>
         <fieldset>
-          <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
+          <legend>Ajouter un utilisateur</legend>
           <br>
-          <label><strong><U>Nom</label>
+          <label> Nom</label>
           <br>
           <input type="text" placeholder="Dupond">
           <br>
@@ -504,22 +366,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <input type="mail" placeholder="mail">
           <br>
           <br>
-          <button><span>Ajouter l'utilisateur<span></button>
+          <button>Ajouter l'utilisateur</button>
         </form>
         </fieldset>
       </div>
-      </div>
-      <br>
-
-
-
-
-
-
-
-
-
-
 
 
 

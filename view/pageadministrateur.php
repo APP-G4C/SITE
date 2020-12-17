@@ -12,7 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
 
 
@@ -68,16 +68,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-<br>
+
     <body>
 
 
-      <br>
-       <div id="informationspersonnelles">
-      <fieldset>
-      <legend>INFORMATIONS PERSONNELLES</legend>
-          <label> Etat : Administrateur</label>
 
+    
 
 
       <div id="informationspersonnelles">
@@ -153,44 +149,21 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <input type="date" name="">
 
 
+
           <br>
           <br>
 
 
-              <label><strong><U>Numéro de téléphone</U></strong></label>
-              
-              <br>
-              <input type="tel"  placeholder="0606060606"value="">
-              <br>
-              <br>
-
-              <label><strong><U>Date de Naissance</U></strong></label>
-              
-              <br>
-              <input type="date" name="">
-              <br>
-              <br>
-              
-
-              <button><span>Modifier mes informations personnelles<span></button>
-              <br>
-            </form>
-        </fieldset>
-      </div>
-      <br>
-      <br>
+          <label>Photo de profil</label>
+          <br>
+          <br>
+          <img id="photoavatar"src="/SITE/public/images/avatar.png">
+          <br>
+          <br>
 
 
-
-
-
-
-
-
-
-
-
-
+          <br>
+          <br>
 
 
           <label>Sexe</label>
@@ -204,69 +177,83 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           </select>
 
 
+          <br>
+          <br>
+
+          <label>Nom</label>
+          <br>
+          <br>
+          <input type="text" value="" placeholder="Nom">
+          <br>
+          <br>
 
 
+          <label>Prénom</label>
+          <br>
+          <br>
+          <input type="text" placeholder="Prénom"value="">
+          <br>
+          <br>
 
 
+          <label>Email</label>
+          <br>
+          <br>
+          <input type="email" placeholder="Mail" value="">
+          <br>
+          <br>
+
+          <label>Mot de passe</label>
+          <br>
+          <br>
+          <input type="password" value="G4CG4C">
+          <br>
 
 
+          <label> Numéro de téléphone</label>
+          <br>
+          <br>
+          <input type="tel"  placeholder="0606060606"value="">
+          <br>
+          <br>
+
+          <label>Date de Naissance</label>
+          <br>
+          <br>
+          <input type="date" name="">
+          <br>
+          <br>
 
 
+          <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 
 
-
-
-
+      </fieldset>
+    </div>
 
     <div id="prochainsrdv">
       <fieldset>
-       
-        <legend><strong>PROCHAINS RDV</strong></legend>
-        <br>
-        <div id="prisederdv">
-
-        <form>
-          <label><strong><U>Gestionnaire</U></strong></label>
-          <br>
-          <select>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
-            
-          </select>
-          <br>
-          <br>
+        <legend>Prochains RDV</legend>
         <table>
 
 
-
-
-
-
           <tr>
-            <td><strong><U>Nom</U></strong></td>
-            <td><strong><U>Prénom</U></strong></td>
-            <td><strong><U>Date</U></strong></td>
-            <td><strong><U>Centre</U></strong></td>
-            <td><strong><U>Horaire</U></strong></td>
+            <td><strong>Nom</strong></td>
+            <td><strong>Prénom</strong></td>
+            <td><strong> Date</strong></td>
+            <td><strong>Centre</strong></td>
 
           </tr>
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label> Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -275,28 +262,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>1</label></td>
-            <td><input type="time" name=""></td>
-           
+            <td><input type="text" placeholder="1"></td>
           </tr>
-
-
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label>Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -305,26 +282,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>2</label></td>
-             <td><input type="time" name=""></td>
-            
+            <td><input type="text" placeholder="1"></td>
           </tr>
-
-
-
-
-
-
 
           <tr>
 
             <td>
-              <label>Dupond</label>
+              <input type="text" placeholder="Dupond">
             </td>
 
 
             <td>
-              <label>Jean</label>
+              <input type="text" placeholder="Jean">
             </td>
 
 
@@ -333,49 +302,19 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><label>3</label></td>
-            <td><input type="time" name=""></td>
-            
+            <td><input type="text" placeholder="1"></td>
           </tr>
-
-
-
-
-
         </table>
-      </form>
       </fieldset>
     </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
      <div id="résultats">
       <fieldset>
-        <legend><strong>RESULTATS</strong></legend>
-        <br>
-        <form>
+        <legend>Résultats</legend>
 
 
-        <label><strong><U>Rechercher</U></strong></label>
+        <label><strong>Rechercher</strong></label>
         <br>
 
         <input type="text" name="">
@@ -384,9 +323,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-        <label><strong><U>Trier par</U></strong></label>
+        <label><strong>Trier par</strong></label>
 
-        <br>
         <br>
         <table>
 
@@ -394,9 +332,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
-            <td><strong>Gestionnaire</strong>
-            <td><strong> Horaire</strong></td>
-
 
           </tr>
 
@@ -407,18 +342,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><select>
-              <option>1</option>
-              <option>2</option>
-             
-            </select></td>
-            <td>
-              <select>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-              </select>
-            <td><input type="time" ="">
+            <td><input type="text" placeholder="1"></td>
 
 
           </tr>
@@ -426,120 +350,63 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         </table>
         <br>
         <br>
-        <button><span>Afficher</span></button>
+        <button>Afficher</button>
       </fieldset>
     </div>
-    <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div id="backoffice">
       <fieldset>
-        <legend><strong>BACK-OFFICE</strong></legend>
-        <div id="ajouterutilisateur">
+        <legend>Back-Office</legend>
         <fieldset>
-          <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
+          <legend>Ajouter un gestionnaire</legend>
           <br>
-          <label><strong><U>Nom</U></strong></label>
+          <label> Nom</label>
           <br>
           <input type="text" placeholder="Dupond">
           <br>
           <br>
-          <label><strong><U>Prénom</U></strong></label>
+          <label>Prénom</label>
           <br>
           <input type="text" placeholder="Jean">
           <br>
           <br>
-          <label><strong><U> Adresse mail</U></strong></label>
+          <label> Adresse mail</label>
           <br>
           <input type="mail" placeholder="mail">
           <br>
           <br>
-          <button><span>Ajouter l'utilisateur</span></button>
-        </form>
+          <button>Ajouter le gestionnaire</button>
         </fieldset>
-      </div>
-      <fieldset>
-          <legend><strong>AJOUTER UNE FAQ</strong></legend>
-          <label><strong><U>Titre FAQ:</U></strong></label>
+        <fieldset>
+          <legend>Ajouter une FAQ</legend>
+          <label> Titre FAQ:</label>
           <br>
           <input type="text" placeholder="Titre FAQ">
           <br>
           <br>
-          <label><strong><U>Description FAQ:</U></strong> </label>
+          <label>Description FAQ: </label>
           <br>
           <textarea></textarea>
           <br>
           <br>
-          <button><span>Ajouter FAQ</span></button>
+          <button>Ajouter FAQ</button>
         </fieldset>
 
         <fieldset>
-          <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
-          <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
+          <legend>Ajouter une CGU ou une CL</legend>
+          <label> Titre CGU/CL:</label>
           <br>
           <input type="text" placeholder="Titre CGU/CL">
           <br>
           <br>
-          <label><strong><U>Description CGU/CL:</U></strong> </label>
+          <label>Description CGU/CL: </label>
           <br>
           <textarea></textarea>
           <br>
           <br>
-          <button><span>Ajouter CGU/CL</span></button>
+          <button>Ajouter CGU/CL</button>
       </fieldset>
-      <div id="form">
-      <fieldset>
-        <legend><strong>FORMULAIRES DE CONTACT</strong></legend>
-        <table>
-          <tr>
-            <td><strong><U>Nom</U></strong></td>
-            <td><strong><U>Prénom</U></strong></td>
-            <td><strong><U>mail</U></strong></td>
-            <td><strong><U>Téléphone</U></strong></td>
-            <td><strong><U>Message reçu</U></strong></td>
-            <td><strong><U>Message à envoyer</U></strong></td>
-            <td>Répondre</td>
-            
-          </tr>
-          <tr>
-            <td> Dupond</td>
-            <td>Jean</td>
-            <td>Jean Dupond@gmail.com</td>
-            <td> 0606060606</td>
-            <td><textarea></textarea></td>
-            <td><textarea></textarea></td>
-            <td><button><span>Envoyer</span></button></td>
-          </tr>
-        </table>
       </fieldset>
-      </div>
-      </div>
-      <br>
-
-
 
 
 
