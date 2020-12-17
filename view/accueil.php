@@ -10,7 +10,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Website | Accueil</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
