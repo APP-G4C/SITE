@@ -74,28 +74,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
     <body>
       <br>
-<<<<<<< HEAD
-      <div id="informationspersonnelles">
-        <fieldset>
-          <legend>INFORMATIONS PERSONNELLES</legend>
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       <div id="informationspersonnelles">
@@ -103,7 +81,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
           <br>
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
+
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
               <br>
@@ -121,7 +99,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-<<<<<<< HEAD
+
+
+
 
 
           <label>Sexe</label>
@@ -136,6 +116,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
           <br>
           <br>
+
 
           <label>Nom</label>
           <br>
@@ -153,9 +134,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
 
 
-=======
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
               <label><strong><U>Sexe</U></strong></label>
 
               <br>
@@ -233,14 +212,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <div id="prochainsrdv">
       <fieldset>
 
-<<<<<<< HEAD
-        <legend>Prochains RDV</legend>
-=======
        
         <legend><strong>PROCHAINS RDV</strong></legend>
         <br>
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
+
         <div id="prisederdv">
 
         <form>

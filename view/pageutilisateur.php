@@ -12,9 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
-=======
+
 
     <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
 
@@ -23,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
+
 </head>
 
 
@@ -77,14 +75,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
   <body>
-<<<<<<< HEAD
-    <br>
-    <div id="informationspersonnelles">
-      <fieldset>
-      <legend>INFORMATIONS PERSONNELLES</legend>
-          <label> Etat : Utilisateur</label>
-=======
 
+
+  
    <br>
     <body>
       <div id="informationspersonnelles">
@@ -159,7 +152,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <input type="date" name="">
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
+
           <br>
           <br>
 
@@ -176,60 +169,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
-<<<<<<< HEAD
-          <label>Sexe</label>
-          <br>
-          <br>
-          <select>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Autre</option>
-
-          </select>
-=======
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
-
-          <br>
-          <br>
-
-          <label>Nom</label>
-          <br>
-          <br>
-          <input type="text" value="" placeholder="Nom">
-          <br>
-          <br>
 
 
-          <label>Prénom</label>
-          <br>
-          <br>
-          <input type="text" placeholder="Prénom"value="">
-          <br>
-          <br>
 
 
-          <label>Email</label>
-          <br>
-          <br>
-          <input type="email" placeholder="Mail" value="">
-          <br>
-          <br>
-
-          <label>Mot de passe</label>
-          <br>
-          <br>
-          <input type="password" value="G4CG4C">
-          <br>
 
 
-          <label> Numéro de téléphone</label>
-          <br>
-          <br>
-          <input type="tel"  placeholder="0606060606"value="">
-          <br>
-          <br>
-
-<<<<<<< HEAD
           <label>Date de Naissance</label>
           <br>
           <br>
@@ -237,11 +182,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
-=======
 
 
-
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 
           <button>MODFIER MES INFORMATIONS PERSONNELLES</button>
 

@@ -70,13 +70,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
     <body>
-<<<<<<< HEAD
-      <br>
-       <div id="informationspersonnelles">
-      <fieldset>
-      <legend>INFORMATIONS PERSONNELLES</legend>
-          <label> Etat : Administrateur</label>
-=======
+
+
+
+    
+
 
       <div id="informationspersonnelles">
         <fieldset> 
@@ -150,7 +148,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <input type="date" name="">
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
+
+
           <br>
           <br>
 
@@ -166,11 +165,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
           <label>Sexe</label>
           <br>
           <br>
@@ -180,10 +175,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             <option>Autre</option>
 
           </select>
-<<<<<<< HEAD
-=======
 
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 
           <br>
           <br>
