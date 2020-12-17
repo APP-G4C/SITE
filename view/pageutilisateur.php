@@ -13,6 +13,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
 
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+
+
+
     <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
 
 
@@ -73,6 +77,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
   <body>
+
+
+    <br>
+    <div id="informationspersonnelles">
+      <fieldset>
+      <legend>INFORMATIONS PERSONNELLES</legend>
+          <label> Etat : Utilisateur</label>
+
 
    <br>
     <body>
@@ -148,6 +160,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <input type="date" name="">
 
+
           <br>
           <br>
 
@@ -178,17 +191,24 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
+          <label>Sexe</label>
+          <br>
+          <br>
+          <select>
+            <option>Homme</option>
+            <option>Femme</option>
+            <option>Autre</option>
+
+          </select>
 
 
 
-
-
-
-
-
-
-
-
+          <label>Date de Naissance</label>
+          <br>
+          <br>
+          <input type="date" name="">
+          <br>
+          <br>
 
 
 

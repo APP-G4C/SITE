@@ -75,6 +75,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
       <br>
 
 
+      <div id="informationspersonnelles">
+        <fieldset>
+          <legend>INFORMATIONS PERSONNELLES</legend>
+
+
+
+
 
 
 
@@ -114,6 +121,37 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
+
+
+
+          <label>Sexe</label>
+          <br>
+          <br>
+          <select>
+            <option>Homme</option>
+            <option>Femme</option>
+            <option>Autre</option>
+            <
+          </select>
+
+          <br>
+          <br>
+
+          <label>Nom</label>
+          <br>
+          <br>
+          <input type="text" value="" placeholder="Nom">
+          <br>
+          <br>
+
+
+          <label>Prénom</label>
+          <br>
+          <br>
+          <input type="text" placeholder="Prénom"value="">
+          <br>
+          <br>
+
 
               <label><strong><U>Sexe</U></strong></label>
 
@@ -220,9 +258,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <div id="prochainsrdv">
       <fieldset>
 
+
+
+        <legend>Prochains RDV</legend>
+
+
        
         <legend><strong>PROCHAINS RDV</strong></legend>
         <br>
+
 
         <div id="prisederdv">
 

@@ -71,6 +71,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 <br>
     <body>
 
+
+      <br>
+       <div id="informationspersonnelles">
+      <fieldset>
+      <legend>INFORMATIONS PERSONNELLES</legend>
+          <label> Etat : Administrateur</label>
+
+
+
       <div id="informationspersonnelles">
         <fieldset> 
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -142,6 +151,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         
           <br>
           <input type="date" name="">
+
 
           <br>
           <br>
