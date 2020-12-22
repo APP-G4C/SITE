@@ -8,7 +8,13 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
+<<<<<<< HEAD
 require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
+=======
+
+require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
+
+>>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
 // Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
@@ -83,6 +89,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -93,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/connexion.css">
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
 </head>
@@ -104,8 +118,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <ul id="menu">
 
 
-            <li id="link"><a id="logoapp"href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
@@ -143,13 +157,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </header>
 
 
-
-
-
-
-
-
   <body>
+
     <div class="login-box">
       <h1>Connexion</h1>
       <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

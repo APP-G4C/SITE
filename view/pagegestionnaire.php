@@ -12,8 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-
-    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
 
 
 
@@ -48,7 +47,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
-
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -56,8 +54,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
-
-
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -74,9 +70,30 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
     <body>
       <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div id="informationspersonnelles">
-        <fieldset>
-          <legend>INFORMATIONS PERSONNELLES</legend>
+        <fieldset> 
+          <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
+          <br>
+
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
               <br>
@@ -94,36 +111,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-
-
-          <label>Sexe</label>
-          <br>
-          <br>
-          <select>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Autre</option>
-            <
-          </select>
-
-          <br>
-          <br>
-
-          <label>Nom</label>
-          <br>
-          <br>
-          <input type="text" value="" placeholder="Nom">
-          <br>
-          <br>
-
-
-          <label>Prénom</label>
-          <br>
-          <br>
-          <input type="text" placeholder="Prénom"value="">
-          <br>
-          <br>
-
 
               <label><strong><U>Sexe</U></strong></label>
 
@@ -170,8 +157,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
 
 
-          <label>Date de Naissance</label>
-          <br>
+          <label><strong><U>Date de Naissance</U></strong></label>
+        
           <br>
           <input type="date" name="">
           <br>
@@ -193,39 +180,81 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
 
 
-              <button><span>MODFIER MES INFORMATIONS PERSONNELLES<span></button>
+              <button><span>Modifier mes informations personnelles<span></button>
               <br>
             </form>
         </fieldset>
       </div>
+      <br>
+      <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="prochainsrdv">
       <fieldset>
 
-        <legend>Prochains RDV</legend>
+       
+        <legend><strong>PROCHAINS RDV</strong></legend>
+        <br>
+
         <div id="prisederdv">
 
         <form>
         <table>
 
 
+
+
+
+
           <tr>
-            <td><strong>Nom</strong></td>
-            <td><strong>Prénom</strong></td>
-            <td><strong> Date</strong></td>
-            <td><strong>Centre</strong></td>
+            <td><strong><U>Nom</U></strong></td>
+            <td><strong><U>Prénom</U></strong></td>
+            <td><strong><U>Date</U></strong></td>
+            <td><strong><U>Centre</U></strong></td>
+            <td><strong><U>Horaire</U></strong></td>
 
           </tr>
+
+
+
+
+
+
 
           <tr>
 
             <td>
-              <input type="text" placeholder="Dupond">
+              <label> Dupond</label>
             </td>
 
 
             <td>
-              <input type="text" placeholder="Jean">
+              <label>Jean</label>
             </td>
 
 
@@ -234,19 +263,28 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>1</label></td>
+            <td><input type="time" name=""></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
+
+
+
+
+
+
+
+
 
           <tr>
 
             <td>
-              <input type="text" placeholder="Dupond">
+              <label>Dupond</label>
             </td>
 
 
             <td>
-              <input type="text" placeholder="Jean">
+              <label>Jean</label>
             </td>
 
 
@@ -255,19 +293,26 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>2</label></td>
+             <td><input type="time" name=""></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
+
+
+
+
+
+
 
           <tr>
 
             <td>
-              <input type="text" placeholder="Dupond">
+              <label>Dupond</label>
             </td>
 
 
             <td>
-              <input type="text" placeholder="Jean">
+              <label>Jean</label>
             </td>
 
 
@@ -276,22 +321,49 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>3</label></td>
+            <td><input type="time" name=""></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
+
+
+
+
+
         </table>
       </form>
       </fieldset>
     </div>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
      <div id="résultats">
       <fieldset>
-        <legend>Résultats</legend>
+        <legend><strong>RESULTATS</strong></legend>
+        <br>
         <form>
 
 
-        <label><strong>Rechercher</strong></label>
+        <label><strong><U>Rechercher</U></strong></label>
         <br>
 
         <input type="text" name="">
@@ -300,8 +372,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-        <label><strong>Trier par</strong></label>
+        <label><strong><U>Trier par</U></strong></label>
 
+        <br>
         <br>
         <table>
 
@@ -309,6 +382,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
+            <td><strong> Horaire</strong></td>
 
           </tr>
 
@@ -319,7 +393,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><select>
+              <option>1</option>
+              <option>2</option>
+             
+            </select></td>
+            <td><input type="time" ="">
 
 
           </tr>
@@ -327,17 +406,43 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         </table>
         <br>
         <br>
-        <button>Afficher</button>
+        <button><span>Afficher</span></button>
       </fieldset>
     </div>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="backoffice">
       <fieldset>
-        <legend>Back-Office</legend>
+        <legend><strong>BACK-OFFICE</strong></legend>
+        <div id="ajouterutilisateur">
         <fieldset>
-          <legend>Ajouter un utilisateur</legend>
+          <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
           <br>
-          <label> Nom</label>
+          <label><strong><U>Nom</label>
           <br>
           <input type="text" placeholder="Dupond">
           <br>
@@ -352,10 +457,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <input type="mail" placeholder="mail">
           <br>
           <br>
-          <button>Ajouter l'utilisateur</button>
+          <button><span>Ajouter l'utilisateur<span></button>
         </form>
         </fieldset>
       </div>
+      </div>
+      <br>
+
+
+
+
+
+
+
+
+
+
 
 
 
