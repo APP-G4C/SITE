@@ -11,7 +11,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
 // Définis les variables vides
 $Mail = $password = $confirmpassword = "";
-$err_Mail = $err_password = $confirmpassword_err = "";
+$err_Mail = $err_password = $err_confirmpassword = "";
 
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -37,54 +37,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           unset($stmt)//On a plus besoin du stmt, on le met a la poubelle
         }
     }
-// je me suis arreté la j'avais envie de jouer a lol
     // On vérifie qu'un mdp a été entré
     if(empty(trim($_POST["password"]))){
         $err_password = "Veuillez entrer un mot de passe.";
-    } else{
+    }elseif (strlen(trim($_POST["password"]))<6) {
+      $err_password = "Veuillez renforcer la sécurité de votre mot de passe"
+    }else{
         $password = trim($_POST["password"]);
     }
-
+    // On vérifie que la confirmation du mdp a été entré
+    if(empty(trim($_POST["confirm_password"]))){
+      $err_confirmpassword = "Veuillez confirmer votre mot de passe"
+    }
+    else{
+      $confirmpassword = trim($_POST["confirm_password"])
+      if($confirmpassword!=$password){
+        $err_confirmpassword = "Le mot de passe ne correspond pas"
+      }
+    }
     // On vérifie qu'il n'y a pas d'erreur
-    if(empty($err_Mail) && empty($err_password)){
+    if(empty($err_Mail) && empty($err_password) && empty($err_confirmpassword)){
         // On prépare un statement select
-        $sql = "SELECT id_User, Mail, password,type FROM user WHERE Mail = :Mail";
+        $sql = "INSERT INTO User (Mail, password) VALUES (:Mail, :password)";
 
         if($stmt = $pdo->prepare($sql)){
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
+            $stmt->bindParam(":password", $param_password, PDO::PARAM_STR);
 
             // On remplis les paramètres
             $param_Mail = trim($_POST["Mail"]);
+            $param_password = trim($_POST["password"])
             // On exécute la commande préparée
             if($stmt->execute()){
-                // On vérifie que le Mail existe, puis on vérifie le mdp
-                if($stmt->rowCount() == 1){
-                    if($row = $stmt->fetch()){
-                        $id = $row["id_User"];
-                        $Mail = $row["Mail"];
-                        $password1 = $row["password"];
-                        $type=$row['type'];
-                        if($password==$password1){
-                            // Le mdp est bon, on lance une session
-                            session_start();
-
-                            // On stock les donnnées disant que la session est lancée pour un superglobal
-                            $_SESSION["connecte"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["Mail"] = $Mail;
-                            $_SESSION['type'] = $type;
-                            // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.php");
-                        } else{
-                            // Sinon on met un message d'erreur
-                            $err_password = "Votre mot de passe n'est pas valide.";
-                        }
-                    }
-                } else{
-                    // Si le mail ne correspond à rien, on renvoie un message d'erreur
-                    $err_Mail = "Cet adresse mail ne correspond à aucun compte.";
-                }
+                // On redirige l'utilisateur vers la page de connexion
+                header("Location:connexion.php")
             } else{
               echo "Il y a eu une erreur, veuillez réessayer plus tard.";
             }
