@@ -8,14 +8,9 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-<<<<<<< HEAD
-require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
-=======
+
 
 require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
-
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
-// Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
 
