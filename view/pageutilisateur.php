@@ -69,7 +69,16 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-  <body>
+    <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+      <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
+      <a href="#résultats"><button><span>Résultats</span></button></a>
+      <br>
+      <br>
+      <a href="#Backoffice"><button><span>Back-office</span></button></a>
+      <a href="#ajouterutilisateur"><button><span>Ajouter un utilisateur</span></button></a>
+      
+      <br>
+      <br>
 
    <br>
     <body>
@@ -231,6 +240,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
       </fieldset>
     </div>
 
+
+<br>
 <br>
     <div id="résultats">
       <fieldset>
@@ -274,8 +285,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-
 <br>
+<br>
+
     <div id="Graphique">
 
       <fieldset>
@@ -285,7 +297,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         </br>
       </fieldset>
     </div>
-    <
+    <br>
 
 
   </body>
@@ -304,3 +316,4 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 </html>
+
