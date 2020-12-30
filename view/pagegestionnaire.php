@@ -69,24 +69,34 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
     <body>
+         <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <body>
+      <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+      <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
+      <a href="#résultats"><button><span>Résultats</span></button></a>
       <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <br>
+      <a href="#Backoffice"><button><span>Back-office</span></button></a>
+      <a href="#ajouterutilisateur"><button><span>Ajouter un utilisateur</span></button></a>
+      
+      <br>
+      <br>
 
 
       <div id="informationspersonnelles">
@@ -434,10 +444,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-
-    <div id="backoffice">
-      <fieldset>
-        <legend><strong>BACK-OFFICE</strong></legend>
+<hr width="100%"size="3" color=#EFD200 solid>
+ <br>
+  <div id="Backoffice">
+      <p><strong><U>BACK OFFICE</U></strong></p>
+  <br>
+        
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
@@ -484,6 +496,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
                 <li id="link2"><a href="cgu.php">CGU & CL</a></li>
                 <li id="link2"><a href="contact.php">Contact</a></li>
                 <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+
+</html>
                 <li id="link2"><a href="aboutus.php">À propos</a></li>
             </ul>
         </nav>
