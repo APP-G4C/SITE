@@ -11,7 +11,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // On charge le fichier config si pas déjà fait (charge databse)
 require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
 // Définis les variables vides
-$Mail = $password = $confirmpassword = "";
+$Nom = $Mail = $password = $confirmpassword = "";
 $err_Mail = $err_password = $err_confirmpassword = "";
 
 // Si l'utilisateur entre des données dans le form...
@@ -20,40 +20,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
         $err_Mail = "Veuillez entrer votre adresse Mail.";
     } else{
-        $sql = "SELECT Mail from User WHERE Mail=:Mail";
+        $sql = "SELECT Mail from User WHERE Mail=:Mail"; //On vérifie qu'il n'existe pas déjà un compte avec ce mail
         if( $stmt=$pdo->prepare($sql)){
           //On attache des variables aux paramètres de la query
           $stmt->BindParam(":Mail",$param_Mail, PDO::PARAM_STR);
           $param_Mail=trim($_POST["Mail"]);
           //On execute le statement
           if($stmt->execute()){
-            if($stmt->Row_count()==1){
+            if($stmt->rowCount()==1){
               $Mail_err="Cette adresse mail est déjà utilisé pour un autre compte";
             }else{
               $Mail=trim($_POST["Mail"]);
             }
           }else{
-            echo "Il y a eu une erreur, veuillez réessayer plus tard"
+            echo "Il y a eu une erreur, veuillez réessayer plus tard";
           }
-          unset($stmt)//On a plus besoin du stmt, on le met a la poubelle
+          unset($stmt);//On a plus besoin du stmt, on le met a la poubelle
         }
     }
     // On vérifie qu'un mdp a été entré
     if(empty(trim($_POST["password"]))){
         $err_password = "Veuillez entrer un mot de passe.";
     }elseif (strlen(trim($_POST["password"]))<6) {
-      $err_password = "Veuillez renforcer la sécurité de votre mot de passe"
+      $err_password = "Veuillez renforcer la sécurité de votre mot de passe";
     }else{
         $password = trim($_POST["password"]);
     }
     // On vérifie que la confirmation du mdp a été entré
     if(empty(trim($_POST["confirm_password"]))){
-      $err_confirmpassword = "Veuillez confirmer votre mot de passe"
+      $err_confirmpassword = "Veuillez confirmer votre mot de passe";
     }
     else{
-      $confirmpassword = trim($_POST["confirm_password"])
+      $confirmpassword = trim($_POST["confirm_password"]);
       if($confirmpassword!=$password){
-        $err_confirmpassword = "Le mot de passe ne correspond pas"
+        $err_confirmpassword = "Le mot de passe ne correspond pas";
       }
     }
     // On vérifie qu'il n'y a pas d'erreur
@@ -68,11 +68,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // On remplis les paramètres
             $param_Mail = trim($_POST["Mail"]);
-            $param_password = trim($_POST["password"])
+            $param_password = trim($_POST["password"]);
             // On exécute la commande préparée
             if($stmt->execute()){
                 // On redirige l'utilisateur vers la page de connexion
-                header("Location:connexion.php")
+                header("Location:connexion.php");
             } else{
               echo "Il y a eu une erreur, veuillez réessayer plus tard.";
             }
@@ -147,29 +147,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <body>
 
     <div class="login-box">
-      <h1>Inscription</h1>
+      <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <h1>Inscription</h1>
 
-      <div class="textbox">
-        <i class="fas fa-user"></i>
-        <input class="register" type="text" placeholder="Nom">
-      </div>
+        <div class="textbox">
+          <i class="fas fa-user"></i>
+          <input class="register" type="text" placeholder="Nom" name="Nom" value="<?php echo $Nom ?>">
+        </div>
 
-      <div class="textbox">
-        <i class="fas fa-envelope"></i>
-        <input class="register" type="text" placeholder="Email">
-      </div>
+        <div class="textbox">
+          <i class="fas fa-envelope"></i>
+          <input class="register" type="text" placeholder="Email" name="Mail" value="<?php echo $Mail ?>">
+        </div>
 
-      <div class="textbox">
-        <i class="fas fa-lock"></i>
-        <input class="register" type="password" placeholder="Mot de passe">
-      </div>
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input class="register" type="password" placeholder="Mot de passe" name="password" value="<?php echo $password ?>">
+        </div>
 
-      <div class="textbox">
-        <i class="fas fa-lock"></i>
-        <input class="register" type="password" placeholder="Confirmation Mot de passe">
-      </div>
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input class="register" type="password" placeholder="Confirmation Mot de passe" name="confirm_password" value="<?php echo $confirmpassword ?>">
+        </div>
 
-      <input type="button" class="btn" value="S'enregistrer">
+        <input type="submit" class="btn" value="S'enregistrer">
+      </form>
+
     </div>
 
   </body>
