@@ -60,7 +60,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.php");
+                            if($type==1){
+                              header("Location:pageutilisateur.php")
+                            }
+                            if($type==2){
+                              header("Location:pagegestionnaire.php")
+                            }
+                            if($type==3){
+                              header("Location:pageadministrateur.php")
+                            }
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -83,9 +91,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-
-
-
 
 
 
