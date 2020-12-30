@@ -2,20 +2,15 @@
 // Initialisation session
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
     header("Location: accueil.php");
     exit;
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-<<<<<<< HEAD
-require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
-=======
+
 
 require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
-
->>>>>>> 57fadf490a4a44df7823651fca5aaddb6395dd33
-// Définis les variables vides
 $Mail = $password = "";
 $err_Mail = $err_password = "";
 
@@ -65,7 +60,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.php");
+                            if($type==1){
+                              header("Location:pageutilisateur.php")
+                            }
+                            if($type==2){
+                              header("Location:pagegestionnaire.php")
+                            }
+                            if($type==3){
+                              header("Location:pageadministrateur.php")
+                            }
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -88,9 +91,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-
-
-
 
 
 

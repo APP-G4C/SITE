@@ -40,11 +40,12 @@ if(!est_co()){
   if (type_u()==3){
     echo '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
              <ul>
-               <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
+               <li><a href="pageadministrateur.php"> Ma Page Administrateur</li></a>
                <li><a href="/SITE/logout.php">Déconnexion</li></a>
              </ul>
           </li>';
           }
 }
 }
+
 ?>
