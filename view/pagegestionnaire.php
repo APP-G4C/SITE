@@ -47,7 +47,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
-
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -55,8 +54,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
-
-
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
