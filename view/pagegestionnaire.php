@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -504,11 +504,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 </html>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
-            </ul>
-        </nav>
-    </footer>
+                
 
 
 
-</html>

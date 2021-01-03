@@ -1,6 +1,67 @@
 <?php
+// Initialisation session
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+// On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
+
+
+// On charge le fichier config si pas déjà fait (charge databse)
+
+
+require_once $_SERVER['DOCUMENT_ROOT']."/SITE/config.php";
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
+$Mail = $Nom =$Prenom ="";
+$type=2;
+$err_Prenom = $err_Nom =$err_Mail= "";
+
+// Si l'utilisateur entre des données dans le form...
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        $err_Mail = "Veuillez entrer votre adresse Mail.";
+    } else{
+        $Mail = trim($_POST["Mail"]);
+    }
+
+    // On vérifie qu'un mdp a été entré
+    if(empty(trim($_POST["Prenom"]))){
+        $err_password = "Veuillez entrer un Prénom.";
+    } else{
+        $password = trim($_POST["Prenom"]);
+    }
+    if(empty(trim($_POST["Nom"]))){
+        $err_password = "Veuillez entrer un nom";
+    } else{
+        $password = trim($_POST["Nom"]);
+    }
+
+    // On vérifie qu'il n'y a pas d'erreur
+    if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
+        // On prépare un statement select
+        $sql = "INSERT INTO User(Nom,Prénom,Mail,Type) VALUES(:Nom,:Prénom,:Mail,2)";
+
+        if($stmt = $pdo->prepare($sql)){
+            // On attache les variables au statement comme paramètres
+            $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
+
+            // On remplis les paramètres
+            $param_Mail = trim($_POST["Mail"]);
+            // On exécute la commande préparée
+            if($stmt->execute()){
+              header("Location:pageadministrateur.php");
+                // On vérifie que le Mail existe, puis on vérifie le mdp
+                
+            } else{
+              echo "Il y a eu une erreur, veuillez réessayer plus tard.";
+            }
+
+            // On ferme le statement préparé
+            unset($stmt);
+        }
+    }
+
+    // On ferme la connection à la base de donnée
+    unset($pdo);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -462,30 +523,43 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-
+      <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
           <br>
           <label><strong><U>Nom</U></strong></label>
           <br>
-          <input type="text" placeholder="Dupond">
+          <input type="text" placeholder="Dupond"value="<?php echo $Nom; ?>">
           <br>
           <br>
           <label><strong><U>Prénom</U></strong></label>
           <br>
-          <input type="text" placeholder="Jean">
+          <input type="text" placeholder="Jean"value="<?php echo $Prenom; ?>">
           <br>
           <br>
           <label><strong><U> Adresse mail</U></strong></label>
           <br>
-          <input type="mail" placeholder="mail">
+          <input type="mail" placeholder="mail"value="<?php echo $Mail; ?>">
           <br>
           <br>
           <button><span>Ajouter l'utilisateur</span></button>
         
         </fieldset>
       </div>
+       <div class="error_block"><p>
+          <?php if(!empty($err_Nom)){
+            echo $err_Nom;
+          }
+            elseif (!empty($err_Prenom)) {
+              echo $err_Prenom;
+            }
+            elseif (!empty($err_Mail)) {
+              echo $err_Mail;
+            }
+           ?></p>
+        </div>
+    </form>
 
 
 
