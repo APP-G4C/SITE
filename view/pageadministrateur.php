@@ -12,7 +12,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/page_agu.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_agu.css">
 
 
 
@@ -65,8 +65,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
+
 <br>
     <body>
+      <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+      <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
+      <a href="#résultats"><button><span>Résultats</span></button></a>
+      <br>
+      <br>
+      <a href="#Backoffice"><button><span>Back-office</span></button></a>
+      <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
+      <a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
+      <a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
+      <a href="#form"><button><span>Formulaires de contact</span></button></a>
+      <br>
+      <br>
+
 
       <div id="informationspersonnelles">
         <fieldset> 
@@ -180,16 +194,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-          <label>Sexe</label>
-          <br>
-          <br>
-          <select>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Autre</option>
-
-          </select>
-
+       
 
 
 
@@ -417,6 +422,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
       </fieldset>
     </div>
     <br>
+    <br>
+    <br>
 
 
 
@@ -440,11 +447,22 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
+ <hr width="100%"size="3" color=#EFD200 solid>
+ <br>
+  <div id="Backoffice">
+      <p><strong><U>BACK OFFICE</U></strong></p>
+      <br>
+      <br>
 
 
-    <div id="backoffice">
-      <fieldset>
-        <legend><strong>BACK-OFFICE</strong></legend>
+
+
+
+
+
+
+
+
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
@@ -465,10 +483,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
           <button><span>Ajouter l'utilisateur</span></button>
-        </form>
+        
         </fieldset>
       </div>
-      <fieldset>
+
+
+
+
+
+
+
+<br>
+<br>
+        <div id="faq">
+          <fieldset>
           <legend><strong>AJOUTER UNE FAQ</strong></legend>
           <label><strong><U>Titre FAQ:</U></strong></label>
           <br>
@@ -481,10 +509,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
           <button><span>Ajouter FAQ</span></button>
-        </fieldset>
+          </fieldset>
+        </div>
 
-        <fieldset>
+
+
+
+
+<br>
+<br>
+
+        <div id="clcgu">
+          <fieldset>
           <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
+          <br>
           <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
           <br>
           <input type="text" placeholder="Titre CGU/CL">
@@ -496,9 +534,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
           <br>
           <button><span>Ajouter CGU/CL</span></button>
-      </fieldset>
+          
+          </fieldset>
+        </div>
+
+
+<br>
+<br>
       <div id="form">
-      <fieldset>
+        <fieldset>
         <legend><strong>FORMULAIRES DE CONTACT</strong></legend>
         <table>
           <tr>
@@ -508,7 +552,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             <td><strong><U>Téléphone</U></strong></td>
             <td><strong><U>Message reçu</U></strong></td>
             <td><strong><U>Message à envoyer</U></strong></td>
-            <td>Répondre</td>
+            <td><strong><U>Répondre</U></strong></td>
             
           </tr>
           <tr>
@@ -521,10 +565,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             <td><button><span>Envoyer</span></button></td>
           </tr>
         </table>
-      </fieldset>
+        </fieldset>
       </div>
-      </div>
+    </fieldset>
+  
       <br>
+    </div>
 
 
 

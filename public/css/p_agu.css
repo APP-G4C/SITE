@@ -1,4 +1,4 @@
-TILISATEUR*/
+
 
 body{
 	text-align: center;
@@ -31,7 +31,9 @@ td{
 
 button{
 	background-color: black;
-	border-radius: 5px;
+	border:3px solid;
+	box-shadow: 3px 3px 0px #3F51B5;
+	
 }
 span{
 	color: white;
@@ -46,6 +48,10 @@ span{
 }
 #prochainsrdv table {
 	margin:auto;
+
+}
+#prochainsrdv fieldset{
+	width:40%;
 }
 
 
@@ -70,19 +76,48 @@ span{
 }
 
 #ajouterutilisateur fieldset{
-	width: 50%;
-	padding: auto;
+	width:20%;
+	margin: auto;
+	border: 3px #0059C2 solid;
+}
+
+#faq fieldset{
+	width:20%;
+	margin: auto;
+	border: 3px #0059C2 solid;
+}
+#clcgu fieldset{
+	width:20%;
+	margin: auto;
+	border: 3px #0059C2 solid;
+
+}
+#form fieldset {
+	width:60%;
+	margin: auto;
+	border: 3px #0059C2 solid;
+	padding:2% 
+
 }
 
 #Graphique{
 	width: auto;
-
 	padding: auto;
-	border: 3px #0059C2 solid;
+
+	
 }
 #graph{
-	margin-left: 25%
+	margin:auto;
 }
+#Graphique fieldset{
+	width:40%;
+	margin: auto;
+	border: 3px #0059C2 solid;
+}
+#backoffice fieldset {
+	margin: auto;
+}
+
 
 
 @media all and (max-width: 600px){
@@ -115,3 +150,12 @@ span{
 		width: 300px;
 		height: 150px;
 	}
+	button{
+		width: 30px;
+		height:10px;
+		font-size: 70%;
+	}
+	#form fieldset {
+	padding:1%;
+
+}
