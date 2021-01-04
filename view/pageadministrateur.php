@@ -37,13 +37,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
         // On prépare un statement select
-        $sql = "INSERT INTO User(Nom,Prénom,Mail,Type) VALUES(:Nom,:Prénom,:Mail,2)";
+        $sql = "INSERT INTO `User` (`id_User`, `id_centre`, `Nom`, `Prenom`, `Sexe`, `Date_de_naissance`, `Mail`, `password`, `Type`) VALUES ('', '', ':Nom', ':Prenom', '', '', ':Mail', '', '2')";
 
         if($stmt = $pdo->prepare($sql)){
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
+            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
+            $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
 
             // On remplis les paramètres
+            $param_Prenom = trim($_POST["Prenom"]);
+            $param_Nom = trim($_POST["Nom"]);
             $param_Mail = trim($_POST["Mail"]);
             // On exécute la commande préparée
             if($stmt->execute()){
