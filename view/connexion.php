@@ -61,13 +61,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION['type'] = $type;
                             // Puis on redirige l'utilisateur a la page d'accueil
                             if($type==1){
-                              header("Location:pageutilisateur.php")
+                              header("Location:pageutilisateur.php");
                             }
                             if($type==2){
-                              header("Location:pagegestionnaire.php")
+                              header("Location:pagegestionnaire.php");
                             }
                             if($type==3){
-                              header("Location:pageadministrateur.php")
+                              header("Location:pageadministrateur.php");
                             }
                         } else{
                             // Sinon on met un message d'erreur
