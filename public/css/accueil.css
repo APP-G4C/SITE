@@ -1,32 +1,4 @@
 /*ANIMATION PAGE ACCUEIL*/
-#images {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 5%;
-
-}
-#images img{
-  margin: 50px;
-  border: 2px black solid
-}
-
-#avions img,#pilotes img
-{
-  width: 300px;
-  height: 176px;
-
-}
-
-
-
-
-
-
-
-
-
-
 
 #carousel-example-generic{
   width: 100%;
@@ -90,6 +62,7 @@
     font-size: 50px;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .navbar-inverse .navbar-brand {
     font-size: 30px;
@@ -108,24 +81,6 @@
     padding: 10px 25px;
   }
 }
-
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

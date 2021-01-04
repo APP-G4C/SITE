@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,10 +12,9 @@
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_agu.css">
 
-    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
-   
 
 
 
@@ -28,7 +31,7 @@
             <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <?php echo header_ada()?>
 
 
 
@@ -44,7 +47,6 @@
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
-
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -52,8 +54,6 @@
              <li id='link'><a id="b7"href="#"> Ma Page</a>
                 <ul>
                     <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
-
-
                     <li><a href="#">Déconnexion</li></a>
                 </ul>
             </li><!-->
@@ -69,10 +69,41 @@
 
 
     <body>
+         <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <body>
+      <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+      <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
+      <a href="#résultats"><button><span>Résultats</span></button></a>
+      <br>
+      <br>
+      <a href="#Backoffice"><button><span>Back-office</span></button></a>
+      <a href="#ajouterutilisateur"><button><span>Ajouter un utilisateur</span></button></a>
+      
+      <br>
+      <br>
+
 
       <div id="informationspersonnelles">
         <fieldset> 
-          <legend>INFORMATIONS PERSONNELLES</legend>
+          <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
+          <br>
+
           <form>
               <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
               <br>
@@ -86,43 +117,13 @@
 
 
               <label><strong><U>Photo de profil</U></strong></label>
-              
+
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
-              <
-
-          <label>Sexe</label>
-          <br>
-          <br>
-          <select>
-            <option>Homme</option>
-            <option>Femme</option>
-            <option>Autre</option>
-            <
-          </select>
-
-          <br>
-          <br>
-
-          <label>Nom</label>
-          <br>
-          <br>
-          <input type="text" value="" placeholder="Nom">
-          <br>
-          <br>
-
-
-          <label>Prénom</label>
-          <br>
-          <br>
-          <input type="text" placeholder="Prénom"value="">
-          <br>
-          <br>
-
 
               <label><strong><U>Sexe</U></strong></label>
-            
+
               <br>
               <select>
                 <option>Homme</option>
@@ -136,23 +137,23 @@
 
               <label><strong><U>Nom</U></strong></label>
               <br>
-                    
+
               <label>DUPOND</label>
               <br>
-              <br> 
+              <br>
 
 
               <label><strong><U>Prénom</U></strong></label>
               <br>
-              
-            
+
+
              <label> Jean</label>
               <br>
               <br>
 
 
               <label><strong><U>Email</U></strong></label>
-              
+
               <br>
               <input type="email" placeholder="Mail" value="">
               <br>
@@ -166,8 +167,8 @@
               <br>
 
 
-          <label>Date de Naissance</label>
-          <br>
+          <label><strong><U>Date de Naissance</U></strong></label>
+        
           <br>
           <input type="date" name="">
           <br>
@@ -175,53 +176,95 @@
 
 
               <label><strong><U>Numéro de téléphone</U></strong></label>
-              
+
               <br>
               <input type="tel"  placeholder="0606060606"value="">
               <br>
               <br>
 
               <label><strong><U>Date de Naissance</U></strong></label>
-              
+
               <br>
               <input type="date" name="">
               <br>
               <br>
-              
 
-              <button><span>MODFIER MES INFORMATIONS PERSONNELLES<span></button>
+
+              <button><span>Modifier mes informations personnelles<span></button>
               <br>
             </form>
         </fieldset>
       </div>
+      <br>
+      <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div id="prochainsrdv">
       <fieldset>
+
        
-        <legend>Prochains RDV</legend>
+        <legend><strong>PROCHAINS RDV</strong></legend>
+        <br>
+
         <div id="prisederdv">
 
         <form>
         <table>
 
 
+
+
+
+
           <tr>
-            <td><strong>Nom</strong></td>
-            <td><strong>Prénom</strong></td>
-            <td><strong> Date</strong></td>
-            <td><strong>Centre</strong></td>
+            <td><strong><U>Nom</U></strong></td>
+            <td><strong><U>Prénom</U></strong></td>
+            <td><strong><U>Date</U></strong></td>
+            <td><strong><U>Centre</U></strong></td>
+            <td><strong><U>Horaire</U></strong></td>
 
           </tr>
+
+
+
+
+
+
 
           <tr>
 
             <td>
-              <input type="text" placeholder="Dupond">
+              <label> Dupond</label>
             </td>
 
 
             <td>
-              <input type="text" placeholder="Jean">
+              <label>Jean</label>
             </td>
 
 
@@ -230,19 +273,28 @@
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>1</label></td>
+            <td><input type="time" name=""></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
+
+
+
+
+
+
+
+
 
           <tr>
 
             <td>
-              <input type="text" placeholder="Dupond">
+              <label>Dupond</label>
             </td>
 
 
             <td>
-              <input type="text" placeholder="Jean">
+              <label>Jean</label>
             </td>
 
 
@@ -251,19 +303,26 @@
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>2</label></td>
+             <td><input type="time" name=""></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
+
+
+
+
+
+
 
           <tr>
 
             <td>
-              <input type="text" placeholder="Dupond">
+              <label>Dupond</label>
             </td>
 
 
             <td>
-              <input type="text" placeholder="Jean">
+              <label>Jean</label>
             </td>
 
 
@@ -272,22 +331,49 @@
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><label>3</label></td>
+            <td><input type="time" name=""></td>
             <td><button><span>Lancer le test</span></button></td>
           </tr>
+
+
+
+
+
         </table>
       </form>
       </fieldset>
     </div>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
      <div id="résultats">
       <fieldset>
-        <legend>Résultats</legend>
+        <legend><strong>RESULTATS</strong></legend>
+        <br>
         <form>
 
 
-        <label><strong>Rechercher</strong></label>
+        <label><strong><U>Rechercher</U></strong></label>
         <br>
 
         <input type="text" name="">
@@ -296,8 +382,9 @@
 
 
 
-        <label><strong>Trier par</strong></label>
+        <label><strong><U>Trier par</U></strong></label>
 
+        <br>
         <br>
         <table>
 
@@ -305,6 +392,7 @@
           <tr>
             <td><strong>Date</strong></td>
             <td><strong>Centre</strong></td>
+            <td><strong> Horaire</strong></td>
 
           </tr>
 
@@ -315,7 +403,12 @@
               </label>
             </td>
 
-            <td><input type="text" placeholder="1"></td>
+            <td><select>
+              <option>1</option>
+              <option>2</option>
+             
+            </select></td>
+            <td><input type="time" ="">
 
 
           </tr>
@@ -323,17 +416,45 @@
         </table>
         <br>
         <br>
-        <button>Afficher</button>
+        <button><span>Afficher</span></button>
       </fieldset>
     </div>
+    <br>
 
-    <div id="backoffice">
-      <fieldset>
-        <legend>Back-Office</legend>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr width="100%"size="3" color=#EFD200 solid>
+ <br>
+  <div id="Backoffice">
+      <p><strong><U>BACK OFFICE</U></strong></p>
+  <br>
+        
+        <div id="ajouterutilisateur">
         <fieldset>
-          <legend>Ajouter un utilisateur</legend>
+          <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
           <br>
-          <label> Nom</label>
+          <label><strong><U>Nom</label>
           <br>
           <input type="text" placeholder="Dupond">
           <br>
@@ -348,10 +469,22 @@
           <input type="mail" placeholder="mail">
           <br>
           <br>
-          <button>Ajouter l'utilisateur</button>
+          <button><span>Ajouter l'utilisateur<span></button>
         </form>
         </fieldset>
       </div>
+      </div>
+      <br>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -363,6 +496,14 @@
                 <li id="link2"><a href="cgu.php">CGU & CL</a></li>
                 <li id="link2"><a href="contact.php">Contact</a></li>
                 <li id="link2"><a href="faq.php">FAQ</a></li>
+                <li id="link2"><a href="aboutus.php">À propos</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+
+</html>
                 <li id="link2"><a href="aboutus.php">À propos</a></li>
             </ul>
         </nav>
