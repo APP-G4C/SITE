@@ -11,7 +11,7 @@
   margin-bottom: 20%;
   position: relative;
   text-align: center;
-  top: 40px;
+  top: 50px;
   left: 50px;
 }
 .carousel-caption h2 {
@@ -25,14 +25,6 @@
 .carousel-caption h2 span {
   color:#3F51B5;
 }
-.mot{
-  background-color: #F0F8FF;
-  color: #00008B;
-  font-size:22px;
-  opacity: 40%;
-  width: 25%;
-  font-family: Lucida sans;
-}
 .carousel-caption a {
   background: #3F51B5;
   padding: 15px 35px;
@@ -43,7 +35,14 @@
   border-radius: 25px;
 
 }
-
+.mot{
+  background-color: #F0F8FF;
+  color: #00008B;
+  font-size:22px;
+  opacity: 40%;
+  width: 25%;
+  font-family: Lucida sans;
+}
 .carousel-caption h3,.carousel-caption p{
   text-align:center;
   color: white;
