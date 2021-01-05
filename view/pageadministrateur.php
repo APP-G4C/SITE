@@ -10,10 +10,19 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/config.php";
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
 $Mail = $Nom =$Prenom ="";
-$type=2;
 $err_Prenom = $err_Nom =$err_Mail= "";
 
 // Si l'utilisateur entre des données dans le form...
+//useless
+$err=array('err_nom' =>$Nom ,'err_prenom' =>$Prenom,'err_mail' =>$Mail);
+foreach ($err as $i ) {
+  if (empty($i))
+   {
+    echo $i . "est vide";
+  }
+  # code...
+}
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
     if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
@@ -35,32 +44,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // On vérifie qu'il n'y a pas d'erreur
-    if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
-        // On prépare un statement select
-        $sql = "INSERT INTO `User` (`id_User`, `id_centre`, `Nom`, `Prenom`, `Sexe`, `Date_de_naissance`, `Mail`, `password`, `Type`) VALUES ('', '', ':Nom', ':Prenom', '', '', ':Mail', '', '2')";
-
-        if($stmt = $pdo->prepare($sql)){
-            // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
-            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
-            $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
-
-            // On remplis les paramètres
-            $param_Prenom = trim($_POST["Prenom"]);
-            $param_Nom = trim($_POST["Nom"]);
-            $param_Mail = trim($_POST["Mail"]);
-            // On exécute la commande préparée
-            if($stmt->execute()){
-              header("Location:pageadministrateur.php");
-                // On vérifie que le Mail existe, puis on vérifie le mdp
-                
-            } else{
-              echo "Il y a eu une erreur, veuillez réessayer plus tard.";
-            }
-
-            // On ferme le statement préparé
-            unset($stmt);
-        }
+    if(1==1){
+      echo "bonjour";
+       
     }
 
     // On ferme la connection à la base de donnée
@@ -78,6 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/p_agu.css">
+
 
 
 
@@ -124,7 +111,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </ul>
     </nav>
   </header>
-
 
 
 
@@ -202,7 +188,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <label><strong><U>Email</U></strong></label>
               
               <br>
-              <input type="email" placeholder="Mail" value="">
+              <input type="email1" placeholder="Mail" value="">
               <br>
               <br>
 
@@ -527,27 +513,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-      <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+      <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
           <br>
-          <label><strong><U>Nom</U></strong></label>
+          <label id="nom" for="nom"><strong><U>Nom</U></strong></label>
           <br>
-          <input type="text" placeholder="Dupond"value="<?php echo $Nom; ?>">
-          <br>
-          <br>
-          <label><strong><U>Prénom</U></strong></label>
-          <br>
-          <input type="text" placeholder="Jean"value="<?php echo $Prenom; ?>">
+          <input name="nom"type="text" placeholder="Dupond"value="<?php echo $Nom; ?>">
           <br>
           <br>
-          <label><strong><U> Adresse mail</U></strong></label>
+          <label id="prenom"for='prenom'><strong><U>Prénom</U></strong></label>
           <br>
-          <input type="mail" placeholder="mail"value="<?php echo $Mail; ?>">
+          <input name="prenom"type="text" placeholder="Jean"value="<?php echo $Prenom; ?>">
           <br>
           <br>
-          <button><span>Ajouter l'utilisateur</span></button>
+          <label id="email"for="email"><strong><U> Adresse mail</U></strong></label>
+          <br>
+          <input type="text"name="email" placeholder="email"value="<?php echo $Mail; ?>">
+          <small></small>
+          <br>
+          <br>
+          <button type="submit"><span>Ajouter l'utilisateur</span></button>
         
         </fieldset>
       </div>
