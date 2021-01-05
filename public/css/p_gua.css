@@ -76,7 +76,7 @@ span{
 }
 
 #ajouterutilisateur fieldset{
-	width:20%;
+	width:40%;
 	margin: auto;
 	border: 3px #0059C2 solid;
 }
@@ -117,7 +117,16 @@ span{
 #backoffice fieldset {
 	margin: auto;
 }
-
+input{
+		width: 45%;
+		height: 5%;
+	}
+.text-danger {
+	color: red;
+}
+.text-success{
+	color: green;
+}
 
 
 @media all and (max-width: 600px){

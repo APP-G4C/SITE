@@ -7,72 +7,80 @@ session_start();
 // On charge le fichier config si pas déjà fait (charge databse)
 
 
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/config.php";
+require_once ($_SERVER['DOCUMENT_ROOT'].'/SITE/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
-$Mail = $Nom =$Prenom ="";
-$err_Prenom = $err_Nom =$err_Mail= "";
+
+
+// define variables and set to empty values
+
+
+
+
+// define variables and set to empty values
+$nomErr = $emailErr = $prenomrErr  = "";
+$nom = $prenom = $email  = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["nom"])) {
+    $nomErr = "Name is required";
+  } else {
+    $nom = test_input($_POST["nom"]);
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+  }
+    
+  if (empty($_POST["prenom"])) {
+    $prenom = "";
+  } else {
+    $prenom = test_input($_POST["prenom"]);
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+
+  echo $nom;
+}
+
 
 // Si l'utilisateur entre des données dans le form...
 //useless
-$err=array('err_nom' =>$Nom ,'err_prenom' =>$Prenom,'err_mail' =>$Mail);
-foreach ($err as $i ) {
-  if (empty($i))
-   {
-    echo $i . "est vide";
-  }
-  # code...
-}
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // On vérifie qu'un email a été entré
-    if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_Mail = "Veuillez entrer votre adresse Mail.";
-    } else{
-        $Mail = trim($_POST["Mail"]);
-    }
+// define variables and set to empty values
 
-    // On vérifie qu'un mdp a été entré
-    if(empty(trim($_POST["Prenom"]))){
-        $err_password = "Veuillez entrer un Prénom.";
-    } else{
-        $password = trim($_POST["Prenom"]);
-    }
-    if(empty(trim($_POST["Nom"]))){
-        $err_password = "Veuillez entrer un nom";
-    } else{
-        $password = trim($_POST["Nom"]);
-    }
 
-    // On vérifie qu'il n'y a pas d'erreur
-    if(1==1){
-      echo "bonjour";
-       
-    }
 
-    // On ferme la connection à la base de donnée
-    unset($pdo);
-}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Website | Accueil</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
-    <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/p_agu.css">
+    <link rel="stylesheet" href="/SITE/public/css/styles.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_gua.css">
+    <script src="js/regexp.js"></script>
 
-
-
-
-
-</head>
-
-
-  <header id="menu1">
+    <!-- Bootstrap CSS -->
+    <header id="menu1">
     <nav>
         <ul id="menu">
 
@@ -112,14 +120,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </nav>
   </header>
 
+   
+    
 
 
 
 
 
-<br>
-    <body>
-      <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
       <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
       <a href="#résultats"><button><span>Résultats</span></button></a>
       <br>
@@ -133,6 +154,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <br>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <form id=loginForm">
       <div id="informationspersonnelles">
         <fieldset> 
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -185,19 +229,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <br>
 
 
-              <label><strong><U>Email</U></strong></label>
               
-              <br>
-              <input type="email1" placeholder="Mail" value="">
-              <br>
-              <br>
-
-              <label><strong><U>Mot de passe</U></strong></label>
-
-              <br>
-              <input type="password" value="G4CG4C">
-              <br>
-              <br>
 
 
           <label><strong><U>Date de Naissance</U></strong></label>
@@ -212,7 +244,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <label><strong><U>Numéro de téléphone</U></strong></label>
               
               <br>
-              <input type="tel"  placeholder="0606060606"value="">
+              <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
               <br>
               <br>
 
@@ -224,9 +256,45 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <br>
               
 
-              <button><span>Modifier mes informations personnelles<span></button>
-              <br>
+          
             </form>
+        
+
+      
+
+      <title>Javascript - RegExp</title>
+       <div id="informationspersonnelles">
+      
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              
+
+              <form action="" method="POST" class="loginForm">
+                <!-- Email -->
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" name="email" />
+                  <small></small>
+                </div>
+
+                <!-- password -->
+                <div class="form-group">
+                  <label for="password">Mot de</label>
+                  <input type="text" class="form-control" name="password" />
+                  <small></small>
+                </div>
+                
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-secondary btn-block">
+                    <span>Modifier</span>
+                  </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+         </div>
         </fieldset>
       </div>
       <br>
@@ -245,7 +313,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-       
 
 
 
@@ -261,7 +328,154 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-    <div id="prochainsrdv">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr width="100%"size="3" color=#EFD200 solid>
+ <br>
+  <div id="Backoffice">
+     
+      <br>
+      <br>
+
+
+
+
+
+      <form id="form" method="POST"action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  >
+        <div id="ajouterutilisateur">
+        <fieldset>
+          <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
+          <br>
+          <label id="nom" for="nom"><strong><U>Nom</U></strong></label>
+          <br>
+          <input name="nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}"value="<?php echo $nom; ?>"><span class="error">* <?php echo $nameErr;?></span>
+          <br>
+          <br>
+          <label id="prenom"for='prenom'><strong><U>Prénom</U></strong></label>
+          <br>
+          <input name="prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}"value="<?php echo $prenom; ?>">
+          <br>
+          <br>
+          <label id="email"for="email"><strong><U> Adresse mail</U></strong></label>
+          <br>
+          <input type="text"name="email" placeholder="email"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}"value="<?php echo $email; ?>">
+          <small></small>
+          <br>
+          <br>
+          <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+        
+        </fieldset>
+      </div>
+      
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        
+
+        
+     
+       </fieldset>
+    
+    
+    <br>
+    <br>
+  </div>
+  <div id="prochainsrdv">
       <fieldset>
        
         <legend><strong>PROCHAINS RDV</strong></legend>
@@ -281,11 +495,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <br>
         <table>
 
-
-
-
-
-
           <tr>
             <td><strong><U>Nom</U></strong></td>
             <td><strong><U>Prénom</U></strong></td>
@@ -294,12 +503,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <td><strong><U>Horaire</U></strong></td>
 
           </tr>
-
-
-
-
-
-
 
           <tr>
 
@@ -323,14 +526,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            
           </tr>
 
-
-
-
-
-
-
-
-
           <tr>
 
             <td>
@@ -352,12 +547,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              <td><input type="time" name=""></td>
             
           </tr>
-
-
-
-
-
-
 
           <tr>
 
@@ -381,10 +570,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
           </tr>
 
-
-
-
-
         </table>
       </form>
       </fieldset>
@@ -394,24 +579,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <div id="résultats">
+<div id="résultats">
       <fieldset>
         <legend><strong>RESULTATS</strong></legend>
         <br>
@@ -498,68 +666,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
- <hr width="100%"size="3" color=#EFD200 solid>
- <br>
-  <div id="Backoffice">
-      <p><strong><U>BACK OFFICE</U></strong></p>
-      <br>
-      <br>
-
-
-
-
-
-
-
-
-
-      <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
-        <div id="ajouterutilisateur">
-        <fieldset>
-          <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
-          <br>
-          <label id="nom" for="nom"><strong><U>Nom</U></strong></label>
-          <br>
-          <input name="nom"type="text" placeholder="Dupond"value="<?php echo $Nom; ?>">
-          <br>
-          <br>
-          <label id="prenom"for='prenom'><strong><U>Prénom</U></strong></label>
-          <br>
-          <input name="prenom"type="text" placeholder="Jean"value="<?php echo $Prenom; ?>">
-          <br>
-          <br>
-          <label id="email"for="email"><strong><U> Adresse mail</U></strong></label>
-          <br>
-          <input type="text"name="email" placeholder="email"value="<?php echo $Mail; ?>">
-          <small></small>
-          <br>
-          <br>
-          <button type="submit"><span>Ajouter l'utilisateur</span></button>
-        
-        </fieldset>
-      </div>
-       <div class="error_block"><p>
-          <?php if(!empty($err_Nom)){
-            echo $err_Nom;
-          }
-            elseif (!empty($err_Prenom)) {
-              echo $err_Prenom;
-            }
-            elseif (!empty($err_Mail)) {
-              echo $err_Mail;
-            }
-           ?></p>
-        </div>
-    </form>
-
-
-
-
-
-
-
-<br>
-<br>
         <div id="faq">
           <fieldset>
           <legend><strong>AJOUTER UNE FAQ</strong></legend>
@@ -584,6 +690,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <br>
 <br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div id="clcgu">
           <fieldset>
           <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
@@ -604,8 +724,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
 
-<br>
-<br>
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <br>
       <div id="form">
         <fieldset>
         <legend><strong>FORMULAIRES DE CONTACT</strong></legend>
@@ -641,7 +771,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-    </body>
+
+   
 
    <footer id="menu2">
         <nav>
@@ -656,4 +787,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-</html>
+  </html>
