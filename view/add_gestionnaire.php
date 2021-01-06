@@ -2,7 +2,7 @@
 // Initialisation session
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
-    header("Location: pageadministrateur.php");
+    header("Location: page_administrateur.php");
     exit;
 }
 
@@ -31,12 +31,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["Prenom"]))){
         $err_Prenom = "Veuillez entrer un mot de passe.";
     } else{
-        $Nom = trim($_POST["Prenom"]);
+        $Prenom = trim($_POST["Prenom"]);
     }
 
 
     // On vérifie qu'il n'y a pas d'erreur
-        $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`) VALUES ( :Nom, :Prenom,:Mail, '2')";
+        $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`) VALUES (:Nom, :Prenom,:Mail, '2')";
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
@@ -50,9 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->execute();
 
 
-
-
 }unset($pdo);
 
 
-echo $Nom;
+

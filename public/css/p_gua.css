@@ -76,7 +76,7 @@ span{
 }
 
 #ajouterutilisateur fieldset{
-	width:40%;
+	width:30%;
 	margin: auto;
 	border: 3px #0059C2 solid;
 }
@@ -125,6 +125,10 @@ input{
 	color: red;
 }
 .text-success{
+	color: green;
+}
+
+h3{
 	color: green;
 }
 

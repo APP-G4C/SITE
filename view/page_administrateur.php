@@ -2,36 +2,33 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_gestionnaire.php');
+session_start();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Website | Accueil</title>
+   <meta charset="utf-8" name="viewport"/>
+<title>Website | Accueil</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
-    <link rel="stylesheet" href="/SITE/public/css/styles.css">
+    <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/p_gua.css">
-    <script src="js/regexp.js"></script>
 
-    <!-- Bootstrap CSS -->
     <header id="menu1">
     <nav>
         <ul id="menu">
 
 
-            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <?php echo header_ada()?>
 
 
@@ -63,27 +60,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
     </nav>
   </header>
 
-   
-    
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+  <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
       <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
       <a href="#résultats"><button><span>Résultats</span></button></a>
       <br>
@@ -97,29 +77,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
       <br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <form id=loginForm">
+ <form id=loginForm">
       <div id="informationspersonnelles">
         <fieldset> 
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -197,155 +155,50 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
               <input type="date" name="">
               <br>
               <br>
-              
-
-          
             </form>
-        
 
+
+
+   
+
+    
+
+    
       
-
-      <title>Javascript - RegExp</title>
-       <div id="informationspersonnelles">
-      
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-8">
-              
-
-              <form action="" method="POST" class="loginForm">
-                <!-- Email -->
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" name="email" />
-                  <small></small>
-                </div>
-
-                <!-- password -->
-                <div class="form-group">
-                  <label for="password">Mot de</label>
-                  <input type="text" class="form-control" name="password" />
-                  <small></small>
-                </div>
-                
-
-                <div class="form-group">
-                  <button type="submit" class="btn btn-secondary btn-block">
-                    <span>Modifier</span>
-                  </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-         </div>
-        </fieldset>
-      </div>
-      <br>
-      <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr width="100%"size="3" color=#EFD200 solid>
- <br>
+  
+          
+
+          <form action="" method="POST" id="loginForm">
+            <!-- Email -->
+            
+              <label for="email">Mail</label>
+              <input type="text" class="form-control" name="email" />
+              <small></small>
+          
+
+            <!-- password -->
+           
+              <label for="password">Mot de passe</label>
+              <input type="password" class="form-control" name="password" />
+              <small></small>
+            
+
+            <br>
+              <button type="submit" class="btn btn-secondary btn-block">
+                <span>Connexion</span>
+              </button>
+              <br>
+              <br>
+
+            
+          </form>
+       
+    
+  </fieldset>
+  <br>
+  <br>
+  <hr width="100%"size="3" color=#EFD200 solid>
+  <br>
   <div id="Backoffice">
      
       <br>
@@ -355,11 +208,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
 
 
 
-      <form id="form" method="POST"action="pageadministrateur.php">  >
+      <form id="form" method="POST"action="page_administrateur.php">  
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
           <br>
+          
+         <br>
+         <br>
           <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
           <br>
           <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
@@ -372,50 +228,20 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
           <br>
           <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
           <br>
-          <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}"
-          <small></small>
+          <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
           <br>
           <br>
           <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
-        
         </fieldset>
       </div>
+
+      
+      
+        
       
     </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-        
-
-        
-     
-       </fieldset>
-    
-    
-    <br>
+</fieldset>
+<br>
     <br>
   </div>
   <div id="prochainsrdv">
@@ -519,9 +345,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
     </div>
     <br>
 
-
-
-
 <div id="résultats">
       <fieldset>
         <legend><strong>RESULTATS</strong></legend>
@@ -586,30 +409,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
     <br>
     <br>
     <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div id="faq">
+    <div id="faq">
           <fieldset>
           <legend><strong>AJOUTER UNE FAQ</strong></legend>
           <label><strong><U>Titre FAQ:</U></strong></label>
@@ -710,20 +510,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
       <br>
     </div>
 
-
-
-
-
-
+</body>
+<script src="js/regexp.js"></script>
    
 
    <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">Contact</a></li>
+                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
@@ -731,3 +528,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
 
 
   </html>
+
+
+
+    <script src="/SITE/public/js/regexp.js"></script>
+  </body>
+</html>

@@ -20,10 +20,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
   <header id="menu1">
     <nav>
         <ul>
-            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <?php echo header_ada()?>
         </ul>
     </nav>
@@ -140,10 +140,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">CONTACT</a></li>
-                <li id="link2"><a href="faq.php">AIDE</a></li>
-                <li id="link2"><a href="about_us.php">A PROPOS</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">CONTACT</a></li>
+                <li id="link2"><a href="page_faq.php">AIDE</a></li>
+                <li id="link2"><a href="page_about_us.php">A PROPOS</a></li>
             </ul>
         </nav>
     </footer>

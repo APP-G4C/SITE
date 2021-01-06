@@ -4,7 +4,7 @@
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: accueil.php");
+    header("Location: page_accueil.php");
     exit;
 }
 

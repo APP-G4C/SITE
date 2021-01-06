@@ -1,4 +1,4 @@
-let form = document.querySelector('.loginForm');
+let form = document.querySelector('#loginForm');
 
 
 //Ecouter la modification de l'email

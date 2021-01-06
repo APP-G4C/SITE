@@ -119,10 +119,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
             <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b2"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="b2"href="page_connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
 
 
 
@@ -189,10 +189,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">Contact</a></li>
+                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
