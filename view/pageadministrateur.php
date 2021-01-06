@@ -1,65 +1,8 @@
 <?php
-// Initialisation session
-session_start();
-// On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 
-
-// On charge le fichier config si pas déjà fait (charge databse)
-
-
-require_once ($_SERVER['DOCUMENT_ROOT'].'/SITE/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
-
-
-// define variables and set to empty values
-
-
-
-
-// define variables and set to empty values
-$nomErr = $emailErr = $prenomrErr  = "";
-$nom = $prenom = $email  = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["nom"])) {
-    $nomErr = "Name is required";
-  } else {
-    $nom = test_input($_POST["nom"]);
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-  }
-    
-  if (empty($_POST["prenom"])) {
-    $prenom = "";
-  } else {
-    $prenom = test_input($_POST["prenom"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-
-  echo $nom;
-}
-
-
-// Si l'utilisateur entre des données dans le form...
-//useless
-
-// define variables and set to empty values
-
-
-
-
-
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_user.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -412,24 +355,24 @@ function test_input($data) {
 
 
 
-      <form id="form" method="POST"action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  >
+      <form id="form" method="POST"action="pageadministrateur.php">  >
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
           <br>
-          <label id="nom" for="nom"><strong><U>Nom</U></strong></label>
+          <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
           <br>
-          <input name="nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}"value="<?php echo $nom; ?>"><span class="error">* <?php echo $nameErr;?></span>
-          <br>
-          <br>
-          <label id="prenom"for='prenom'><strong><U>Prénom</U></strong></label>
-          <br>
-          <input name="prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}"value="<?php echo $prenom; ?>">
+          <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
           <br>
           <br>
-          <label id="email"for="email"><strong><U> Adresse mail</U></strong></label>
+          <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
           <br>
-          <input type="text"name="email" placeholder="email"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}"value="<?php echo $email; ?>">
+          <input name="Prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}">
+          <br>
+          <br>
+          <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
+          <br>
+          <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}"
           <small></small>
           <br>
           <br>

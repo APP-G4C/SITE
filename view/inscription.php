@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/SITE/config.php";
 // Définis les variables vides
 $Nom = $Mail = $password = $confirmpassword = "";
 $err_Mail = $err_password = $err_confirmpassword = "";
