@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     // On vérifie qu'il n'y a pas d'erreur
-        $sql=" INSERT INTO User ( `Nom`, `Prenom`,`Mail`, `Type`) VALUES ( :Nom, :Prenom,:Mail, '2')";
+        $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`) VALUES ( :Nom, :Prenom,:Mail, '2')";
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
-     
+            $stmt->execute();
 
 
 
