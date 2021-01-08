@@ -1,8 +1,8 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/add_gestionnaire.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 session_start();
 ?>
 
@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/p_gua.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
     <header id="menu1">
     <nav>
@@ -172,20 +172,24 @@ session_start();
             <!-- Email -->
             
               <label for="email">Mail</label>
+              <br>
               <input type="text" class="form-control" name="email" />
               <small></small>
           
 
             <!-- password -->
-           
+           <br>
               <label for="password">Mot de passe</label>
+              <br>
               <input type="password" class="form-control" name="password" />
               <small></small>
             
 
             <br>
               <button type="submit" class="btn btn-secondary btn-block">
+
                 <span>Connexion</span>
+                <br>
               </button>
               <br>
               <br>
@@ -233,15 +237,10 @@ session_start();
           <br>
           <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
         </fieldset>
-      </div>
-
-      
-      
-        
-      
+      </div>    
     </form>
 </fieldset>
-<br>
+    <br>
     <br>
   </div>
   <div id="prochainsrdv">
@@ -425,26 +424,7 @@ session_start();
           <button><span>Ajouter FAQ</span></button>
           </fieldset>
         </div>
-
-
-
-
-
-<br>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <br><br>
 
 
         <div id="clcgu">
@@ -465,17 +445,6 @@ session_start();
           
           </fieldset>
         </div>
-
-
-
-
-
-
-
-
-
-
-
 
   <br>
   <br>
@@ -528,8 +497,6 @@ session_start();
 
 
   </html>
-
-
 
     <script src="/SITE/public/js/regexp.js"></script>
   </body>

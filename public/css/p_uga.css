@@ -13,9 +13,9 @@ legend{
 }
 
 #informationspersonnelles fieldset{
-	width: 30%;
+	width: 40%;
 	border: 3px #0059C2 solid;
-	margin-left: 35%
+	margin: auto;
 }
 
 #informationspersonnelles form{

@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/fn_session.php');
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
 
-    <link rel="stylesheet" href="/SITE/public/css/p_agu.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js
 
 
