@@ -9,7 +9,7 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 // On charge le fichier config si pas déjà fait (charge databse)
 
 
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/config.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
 $Mail = $Nom =$Prenom ="";
 $err_Mail = $err_Nom=$err_Prenom = "";
 
