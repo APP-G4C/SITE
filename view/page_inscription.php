@@ -185,7 +185,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
                 <li id="link2"><a href="page_contact.php">Contact</a></li>
                 <li id="link2"><a href="page_faq.php">FAQ</a></li>
-                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_waboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
