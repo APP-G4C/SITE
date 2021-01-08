@@ -1,34 +1,34 @@
 <?php
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Website | Accueil</title>
+  <head>
+    <!-- Required meta tags -->
+   <meta charset="utf-8" name="viewport"/>
+<title>Website | Accueil</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
-    <link rel="stylesheet" href="/SITE/public/css/p_agu.css">
+    <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
 
-
-
-
-</head>
-
-
-  <header id="menu1">
+    <header id="menu1">
     <nav>
         <ul id="menu">
 
 
-            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <?php echo header_ada()?>
 
 
@@ -63,12 +63,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
 
 
-
-
-
-<br>
-    <body>
-      <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+  <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
       <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
       <a href="#résultats"><button><span>Résultats</span></button></a>
       <br>
@@ -82,6 +77,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
       <br>
 
 
+ <form id=loginForm">
       <div id="informationspersonnelles">
         <fieldset> 
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -134,19 +130,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <br>
 
 
-              <label><strong><U>Email</U></strong></label>
               
-              <br>
-              <input type="email" placeholder="Mail" value="">
-              <br>
-              <br>
-
-              <label><strong><U>Mot de passe</U></strong></label>
-
-              <br>
-              <input type="password" value="G4CG4C">
-              <br>
-              <br>
 
 
           <label><strong><U>Date de Naissance</U></strong></label>
@@ -161,7 +145,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <label><strong><U>Numéro de téléphone</U></strong></label>
               
               <br>
-              <input type="tel"  placeholder="0606060606"value="">
+              <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
               <br>
               <br>
 
@@ -171,46 +155,95 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
               <input type="date" name="">
               <br>
               <br>
-              
-
-              <button><span>Modifier mes informations personnelles<span></button>
-              <br>
             </form>
-        </fieldset>
-      </div>
-      <br>
-      <br>
 
 
 
+   
 
+    
 
+    
+      
+  
+          
 
+          <form action="" method="POST" id="loginForm">
+            <!-- Email -->
+            
+              <label for="email">Mail</label>
+              <br>
+              <input type="text" class="form-control" name="email" />
+              <small></small>
+          
 
+            <!-- password -->
+           <br>
+              <label for="password">Mot de passe</label>
+              <br>
+              <input type="password" class="form-control" name="password" />
+              <small></small>
+            
 
+            <br>
+              <button type="submit" class="btn btn-secondary btn-block">
 
+                <span>Connexion</span>
+                <br>
+              </button>
+              <br>
+              <br>
 
-
-
-
-
+            
+          </form>
        
+    
+  </fieldset>
+  <br>
+  <br>
+  <hr width="100%"size="3" color=#EFD200 solid>
+  <br>
+  <div id="Backoffice">
+     
+      <br>
+      <br>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-    <div id="prochainsrdv">
+      <form id="form" method="POST"action="page_administrateur.php">  
+        <div id="ajouterutilisateur">
+        <fieldset>
+          <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
+          <br>
+          
+         <br>
+         <br>
+          <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
+          <br>
+          <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
+          <br>
+          <br>
+          <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
+          <br>
+          <input name="Prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}">
+          <br>
+          <br>
+          <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
+          <br>
+          <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
+          <br>
+          <br>
+          <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+        </fieldset>
+      </div>    
+    </form>
+</fieldset>
+    <br>
+    <br>
+  </div>
+  <div id="prochainsrdv">
       <fieldset>
        
         <legend><strong>PROCHAINS RDV</strong></legend>
@@ -230,11 +263,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <br>
         <table>
 
-
-
-
-
-
           <tr>
             <td><strong><U>Nom</U></strong></td>
             <td><strong><U>Prénom</U></strong></td>
@@ -243,12 +271,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             <td><strong><U>Horaire</U></strong></td>
 
           </tr>
-
-
-
-
-
-
 
           <tr>
 
@@ -272,14 +294,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
            
           </tr>
 
-
-
-
-
-
-
-
-
           <tr>
 
             <td>
@@ -301,12 +315,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
              <td><input type="time" name=""></td>
             
           </tr>
-
-
-
-
-
-
 
           <tr>
 
@@ -330,37 +338,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
             
           </tr>
 
-
-
-
-
         </table>
       </form>
       </fieldset>
     </div>
     <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <div id="résultats">
+<div id="résultats">
       <fieldset>
         <legend><strong>RESULTATS</strong></legend>
         <br>
@@ -424,78 +408,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <br>
     <br>
     <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <hr width="100%"size="3" color=#EFD200 solid>
- <br>
-  <div id="Backoffice">
-      <p><strong><U>BACK OFFICE</U></strong></p>
-      <br>
-      <br>
-
-
-
-
-
-
-
-
-
-
-        <div id="ajouterutilisateur">
-        <fieldset>
-          <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
-          <br>
-          <label><strong><U>Nom</U></strong></label>
-          <br>
-          <input type="text" placeholder="Dupond">
-          <br>
-          <br>
-          <label><strong><U>Prénom</U></strong></label>
-          <br>
-          <input type="text" placeholder="Jean">
-          <br>
-          <br>
-          <label><strong><U> Adresse mail</U></strong></label>
-          <br>
-          <input type="mail" placeholder="mail">
-          <br>
-          <br>
-          <button><span>Ajouter l'utilisateur</span></button>
-        
-        </fieldset>
-      </div>
-
-
-
-
-
-
-
-<br>
-<br>
-        <div id="faq">
+    <div id="faq">
           <fieldset>
           <legend><strong>AJOUTER UNE FAQ</strong></legend>
           <label><strong><U>Titre FAQ:</U></strong></label>
@@ -511,13 +424,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           <button><span>Ajouter FAQ</span></button>
           </fieldset>
         </div>
+        <br><br>
 
-
-
-
-
-<br>
-<br>
 
         <div id="clcgu">
           <fieldset>
@@ -538,9 +446,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
           </fieldset>
         </div>
 
-
-<br>
-<br>
+  <br>
+  <br>
       <div id="form">
         <fieldset>
         <legend><strong>FORMULAIRES DE CONTACT</strong></legend>
@@ -572,23 +479,25 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
       <br>
     </div>
 
-
-
-
-
-    </body>
+</body>
+<script src="js/regexp.js"></script>
+   
 
    <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">Contact</a></li>
+                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
 
 
 
+  </html>
+
+    <script src="/SITE/public/js/regexp.js"></script>
+  </body>
 </html>
