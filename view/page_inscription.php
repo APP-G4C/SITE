@@ -4,12 +4,12 @@
 session_start();
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: accueil.php");
+    header("Location: page_accueil.php");
     exit;
 }
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once $_SERVER['DOCUMENT_ROOT']."\SITE\config.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/SITE/config.php";
 // Définis les variables vides
 $Nom = $Mail = $password = $confirmpassword = "";
 $err_Mail = $err_password = $err_confirmpassword = "";
@@ -182,10 +182,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">Contact</a></li>
+                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_waboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>

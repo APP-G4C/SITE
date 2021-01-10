@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,10 +20,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
   <header id="menu1">
     <nav class="menu">
         <ul id="menu">
-            <li id="link"><a id="logoapp" href="#"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="#"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2" href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2" href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="logoapp" href="page_accueil.php""><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2" href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2" href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <?php echo header_ada()?>
         </ul>
     </nav>
@@ -36,11 +36,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
           <div class="carousel-inner" role="listbox">
-              <div class="item active">
+              <div class="item active"><br><br><br><br>
                   <div class="carousel-caption">
                     <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Créatifs</span></h2>
                     <h3 class="animated bounceInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
-                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="aboutus.php">A Propos</a></p>
+                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="aboutus.php">A Propos</a></p><br><br><br><br><br>
+                    <div class="mot"> Psychotechnical Agency est une agence offrant aux pilotes la possibilité de tester leurs capacités psychotechniques ou psychomoteurs dans le cadre de l’obtention d’un diplôme (ENAC, EPL..)
+</div>
                   </div>
               </div>
           </div>
@@ -55,10 +57,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">Contact</a></li>
+                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
