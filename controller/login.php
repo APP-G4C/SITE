@@ -1,6 +1,7 @@
 <?php
 // Initialisation session
 session_start();
+setcookie($id, $mail, time() + (86400 * 30), "/"); // 86400 = 1 day
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
     header("Location: accueil.php");
@@ -59,6 +60,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
+                            $_COOKIE["id"]=$id;
+                            $_COOKIE["Mail"]=$Mail;
                             // Puis on redirige l'utilisateur a la page d'accueil
                             if($type==1){
                               header("Location:page_utilisateur.php");
