@@ -6,14 +6,12 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 }
 
 
-
-
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
 $Question = $Reponse = "";
 $err_Question = $err_Reponse = "";
 
 
-    if ($_SERVER['REQUEST_METHOD']=='POST'){
+if ($_SERVER['REQUEST_METHOD']=='POST'){
       if(empty(trim($_POST["Question"]))){
           $err_Question = "Veuillez entrer la question.";
       } else{
@@ -26,8 +24,7 @@ $err_Question = $err_Reponse = "";
       }
 
 
-
-        $sql="INSERT INTO faq (`Question`, `Reponse`) VALUES (:Question, :Reponse)";
+        $sql=" INSERT INTO faq (`Question`, `Reponse`) VALUES (:Question, :Reponse)";
         $stmt = $pdo->prepare($sql);
             $stmt->bindParam(":Question", $param_Question, PDO::PARAM_STR);
             $stmt->bindParam(":Reponse", $param_Reponse, PDO::PARAM_STR);
@@ -37,3 +34,4 @@ $err_Question = $err_Reponse = "";
 
 
 }unset($pdo);
+?>

@@ -409,7 +409,7 @@ session_start();
     <br>
     <br>
     <br>
-    <form class="form" action="ADD_FAQ.php" method="post">
+    <form class="form" action="ADD_FAQ.php" method="POST">
       <div id="faq">
             <fieldset>
             <legend><strong>AJOUTER UNE FAQ</strong></legend>
@@ -423,7 +423,7 @@ session_start();
             <input type="text" placeholder="Reponse" name="Reponse">
             <br>
             <br>
-            <button><span>Ajouter FAQ</span></button>
+            <button type="submit"><span>Ajouter FAQ</span></button>
             </fieldset>
           </div>
     </form>
