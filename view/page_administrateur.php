@@ -3,6 +3,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ADD_FAQ.php');
 session_start();
 ?>
 
@@ -77,9 +78,9 @@ session_start();
       <br>
 
 
- <form id=loginForm">
+ <form id="loginForm">
       <div id="informationspersonnelles">
-        <fieldset> 
+        <fieldset>
           <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
           <br>
           <form>
@@ -95,13 +96,13 @@ session_start();
 
 
               <label><strong><U>Photo de profil</U></strong></label>
-              
+
               <br>
               <img id="photoavatar"src="/SITE/public/images/avatar.png">
               <br>
               <br>
               <label><strong><U>Sexe</U></strong></label>
-            
+
               <br>
               <select>
                 <option>Homme</option>
@@ -115,26 +116,26 @@ session_start();
 
               <label><strong><U>Nom</U></strong></label>
               <br>
-                    
+
               <label>DUPOND</label>
               <br>
-              <br> 
+              <br>
 
 
               <label><strong><U>Prénom</U></strong></label>
               <br>
-              
-            
+
+
              <label> Jean</label>
               <br>
               <br>
 
 
-              
+
 
 
           <label><strong><U>Date de Naissance</U></strong></label>
-        
+
           <br>
           <input type="date" name="">
 
@@ -143,14 +144,14 @@ session_start();
 
 
               <label><strong><U>Numéro de téléphone</U></strong></label>
-              
+
               <br>
               <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
               <br>
               <br>
 
               <label><strong><U>Date de Naissance</U></strong></label>
-              
+
               <br>
               <input type="date" name="">
               <br>
@@ -159,23 +160,23 @@ session_start();
 
 
 
-   
 
-    
 
-    
-      
-  
-          
+
+
+
+
+
+
 
           <form action="" method="POST" id="loginForm">
             <!-- Email -->
-            
+
               <label for="email">Mail</label>
               <br>
               <input type="text" class="form-control" name="email" />
               <small></small>
-          
+
 
             <!-- password -->
            <br>
@@ -183,7 +184,7 @@ session_start();
               <br>
               <input type="password" class="form-control" name="password" />
               <small></small>
-            
+
 
             <br>
               <button type="submit" class="btn btn-secondary btn-block">
@@ -194,17 +195,17 @@ session_start();
               <br>
               <br>
 
-            
+
           </form>
-       
-    
+
+
   </fieldset>
   <br>
   <br>
   <hr width="100%"size="3" color=#EFD200 solid>
   <br>
   <div id="Backoffice">
-     
+
       <br>
       <br>
 
@@ -212,12 +213,12 @@ session_start();
 
 
 
-      <form id="form" method="POST"action="page_administrateur.php">  
+      <form id="form" method="POST"action="page_administrateur.php">
         <div id="ajouterutilisateur">
         <fieldset>
           <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
           <br>
-          
+
          <br>
          <br>
           <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
@@ -232,12 +233,12 @@ session_start();
           <br>
           <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
           <br>
-          <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
+          <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
           <br>
           <br>
           <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
         </fieldset>
-      </div>    
+      </div>
     </form>
 </fieldset>
     <br>
@@ -245,7 +246,7 @@ session_start();
   </div>
   <div id="prochainsrdv">
       <fieldset>
-       
+
         <legend><strong>PROCHAINS RDV</strong></legend>
         <br>
         <div id="prisederdv">
@@ -257,7 +258,7 @@ session_start();
             <option>A</option>
             <option>B</option>
             <option>C</option>
-            
+
           </select>
           <br>
           <br>
@@ -291,7 +292,7 @@ session_start();
 
             <td><label>1</label></td>
             <td><input type="time" name=""></td>
-           
+
           </tr>
 
           <tr>
@@ -313,7 +314,7 @@ session_start();
 
             <td><label>2</label></td>
              <td><input type="time" name=""></td>
-            
+
           </tr>
 
           <tr>
@@ -335,7 +336,7 @@ session_start();
 
             <td><label>3</label></td>
             <td><input type="time" name=""></td>
-            
+
           </tr>
 
         </table>
@@ -386,7 +387,7 @@ session_start();
             <td><select>
               <option>1</option>
               <option>2</option>
-             
+
             </select></td>
             <td>
               <select>
@@ -408,22 +409,25 @@ session_start();
     <br>
     <br>
     <br>
-    <div id="faq">
-          <fieldset>
-          <legend><strong>AJOUTER UNE FAQ</strong></legend>
-          <label><strong><U>Titre FAQ:</U></strong></label>
-          <br>
-          <input type="text" placeholder="Titre FAQ">
-          <br>
-          <br>
-          <label><strong><U>Description FAQ:</U></strong> </label>
-          <br>
-          <textarea></textarea>
-          <br>
-          <br>
-          <button><span>Ajouter FAQ</span></button>
-          </fieldset>
-        </div>
+    <form class="form" action="ADD_FAQ.php" method="post">
+      <div id="faq">
+            <fieldset>
+            <legend><strong>AJOUTER UNE FAQ</strong></legend>
+            <label><strong><U>Question FAQ</U></strong></label>
+            <br>
+            <input type="text" placeholder="Question" name="Question">
+            <br>
+            <br>
+            <label><strong><U>Réponse</U></strong> </label>
+            <br>
+            <input type="text" placeholder="Reponse" name="Reponse">
+            <br>
+            <br>
+            <button><span>Ajouter FAQ</span></button>
+            </fieldset>
+          </div>
+    </form>
+
         <br><br>
 
 
@@ -442,7 +446,7 @@ session_start();
           <br>
           <br>
           <button><span>Ajouter CGU/CL</span></button>
-          
+
           </fieldset>
         </div>
 
@@ -460,7 +464,7 @@ session_start();
             <td><strong><U>Message reçu</U></strong></td>
             <td><strong><U>Message à envoyer</U></strong></td>
             <td><strong><U>Répondre</U></strong></td>
-            
+
           </tr>
           <tr>
             <td> Dupond</td>
@@ -475,13 +479,13 @@ session_start();
         </fieldset>
       </div>
     </fieldset>
-  
+
       <br>
     </div>
 
 </body>
 <script src="js/regexp.js"></script>
-   
+
 
    <footer id="menu2">
         <nav>
