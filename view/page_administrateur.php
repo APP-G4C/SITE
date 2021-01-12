@@ -3,13 +3,16 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
 
 
 
-setcookie($id, $Mail, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 //Début de la session
-session_start();?>
+session_start();
+if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
+  header("Location:page_connexion.php");
+} ?>
 
 <!--DEBUT HTML-->
 
@@ -144,9 +147,9 @@ session_start();?>
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
       <h3><?php 
-      if ($test)
+      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
-          echo 'Felicitations vous avez ajouté '.$Prenom.' '.$Nom.' en tant que Gestionnaire !';
+          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
         }
       else
         {
@@ -331,9 +334,6 @@ session_start();?>
   <br>
 </div>
 </body>
-
-  <p id="test"> Test</p>
-
 
 <!--APPEL DU DOCUMENT JAVASCRIPT-->
 <script src="/SITE/public/js/regexp.js"></script>
