@@ -3,6 +3,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
 
 //Début de la session
 session_start();?>
@@ -50,7 +51,7 @@ session_start();?>
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
-<form id=loginForm">
+<form id="loginForm">
 <div id="informationspersonnelles">
   <fieldset> 
     <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -132,9 +133,19 @@ session_start();?>
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
-      <br> <br><br>
+      <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      
+      <h3><?php 
+      if ($test)
+        {
+          echo 'Felicitations vous avez ajouté '.$Prenom.' '.$Nom.' en tant qu\'Utilisateur !';
+        }
+      else
+        {
+          header("Location:page_administrateur.php");
+        }
+      ?></h3>
+      <br>
 
       <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
       <br>
