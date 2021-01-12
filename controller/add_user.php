@@ -12,6 +12,7 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
 $Mail = $Nom =$Prenom ="";
 $err_Mail = $err_Nom=$err_Prenom = "";
+$test=false;
 
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -36,18 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     // On vérifie qu'il n'y a pas d'erreur
-        $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`) VALUES (:Nom, :Prenom,:Mail, '3')";
-        $stmt = $pdo->prepare($sql);
-            // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
-            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
-            $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
-
-            // On remplis les paramètres
-            $param_Mail = trim($_POST["Mail"]);
-            $param_Nom = trim($_POST["Nom"]);
-            $param_Prenom = trim($_POST["Prenom"]);
-            $stmt->execute();
+        fonction_add_utilisateur();
 
 
 }unset($pdo);
