@@ -6,7 +6,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
 
 //Début de la session
-session_start();?>
+session_start();
+if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
+  header("Location:page_connexion.php");
+} ?>?>
+
 
 <!--DEBUT HTML-->
 <!DOCTYPE html>
@@ -136,9 +140,9 @@ session_start();?>
       <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
       <h3><?php 
-      if ($test)
+      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
-          echo 'Felicitations vous avez ajouté '.$Prenom.' '.$Nom.' en tant qu\'Utilisateur !';
+          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
         }
       else
         {

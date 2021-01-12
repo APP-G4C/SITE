@@ -5,7 +5,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 
 //Début de la session
-session_start();?>
+session_start();
+if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
+  header("Location:page_connexion.php");
+} ?>?>
 
 <!--DEBUT HTML-->
 <!DOCTYPE html>
