@@ -4,6 +4,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 
+
+
 setcookie($id, $Mail, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 //Début de la session
@@ -54,7 +56,7 @@ session_start();?>
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
-<form id=loginForm">
+<form id="loginForm">
 <div id="informationspersonnelles">
   <fieldset> 
     <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -113,8 +115,9 @@ session_start();?>
         <input type="password" class="form-control" name="password" />
         <small></small>
       <br>
+      <br>
         <button type="submit" class="btn btn-secondary btn-block">
-          <span>Connexion</span>
+          <span>Modifier</span>
           <br>
         </button>
         <br> <br>
@@ -137,11 +140,23 @@ session_start();?>
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
-      <br> <br><br>
+      <br> 
+
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      
+      <h3><?php 
+      if ($test)
+        {
+          echo 'Felicitations vous avez ajouté '.$Prenom.' '.$Nom.' en tant que Gestionnaire !';
+        }
+      else
+        {
+          header("Location:page_administrateur.php");
+        }
+      ?></h3>
+      <br><br>
       <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
       <br>
+      <br> 
       <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
       <br> <br>
       <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
@@ -264,7 +279,7 @@ session_start();?>
         <br>
         <textarea></textarea>
         <br> <br>
-        <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')""><span>Ajouter FAQ</span></button>
+        <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"><span>Ajouter FAQ</span></button>
       </fieldset>
   </div>
   <br><br>
