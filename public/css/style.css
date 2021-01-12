@@ -4,10 +4,12 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: Lato;
+
 }
 
 header{
-    font-family: 'Lato';
+
     text-transform: uppercase;
     font-weight: 900;
     font-size: 15px;
@@ -15,7 +17,7 @@ header{
 }
 
 footer{
-  font-family: 'Lato';
+  
   text-transform: uppercase;
   font-weight: 900;
   font-size: 15px;

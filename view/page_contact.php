@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,10 +25,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
         <ul id="menu">
 
 
-            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
             <?php echo header_ada()?>
 
 
@@ -103,8 +103,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
                     <label for="lname">
                       Remplissez votre nom :
                     </label>
-                    <input type="text" name="lname" id="lname" placeholder="Nom" required/>
-                    <span class="validity"></span>
+                    <input type="text" name="lname" id="lname" placeholder="Nom"/>
                   </div>
 
                     <br/> <br/>
@@ -113,25 +112,21 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
                       <label for="fname">
                         Remplissez votre prénom :
                       </label>
-                      <input type="text" name="fname" id="fname" placeholder="Prénom" required/>
-                      <span class="validity"></span>
+                      <input type="text" name="fname" id="fname" placeholder="Prénom"/>
                     </div>
-
                       <br><br>
         <!-- 3) demande du mail-->
                     <div class="email">
                       <label for="email">
                       Remplissez votre email:
                       </label>
-                      <input type="email" name="email" id="email" required/>
-                      <span class="validity"></span>
+                      <input type="email" name="email" id="email"/>
                     </div>
                     <br/> <br/>
           <!-- 4) demande du Téléphone-->
                     <div class="tel">
-                      <label for="tel">Entrez votre numéro de téléphone :</label>
-                      <input type="tel" id="tel" name="tel" required/>
-                      <span class="validity"></span>
+                      <label for="phone">Entrez votre numéro de téléphone :</label>
+                      <input type="tel" id="phone" name="phone"/>
                     </br></br>
           </fieldset>
         <!-- 5) demande du Message-->
@@ -140,18 +135,15 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
 
               <div class="input-row">
                             <br>
-                  <input type="text"  id="message" name ="message" size="40" required/>
-                  <span class="validity"></span>
-                <!--<textarea rows="6" cols="65"data-size="full" name="message"></textarea>-->
+                <textarea rows="6" cols="65"data-size="full"></textarea>
               </div>
-              <br>
 
                               <button class="btn">Envoyer</button>
             </div>
+
         </div>
       </form>
     </div>
-
 
 
 
@@ -161,10 +153,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'\SITE\fn_session.php');
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">Contact</a></li>
-                <li id="link2"><a href="faq.php">FAQ</a></li>
-                <li id="link2"><a href="aboutus.php">À propos</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">Contact</a></li>
+                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
