@@ -93,60 +93,65 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
 
 
+    <div class="contenu">
+        <fieldset>
+        <legend> Informations importantes </legend>
+      <!--FORMULAIRE-->
+      <!-- 1) demande du Nom-->
+                <div class="nom">
+                  <label for="lname">
+                    Remplissez votre nom :
+                  </label>
+                  <input type="text" name="lname" id="lname" placeholder="Nom" required/>
+                  <span class="validity"></span>
+                </div>
 
-        <div class="contenu">
-          <fieldset>
-          <legend> Informations importantes </legend>
-        <!--FORMULAIRE-->
-        <!-- 1) demande du Nom-->
-                  <div class="nom">
-                    <label for="lname">
-                      Remplissez votre nom :
-                    </label>
-                    <input type="text" name="lname" id="lname" placeholder="Nom"/>
-                  </div>
+                  <br/> <br/>
+      <!-- 2) demande du Prénom-->
+                <div class="Prenom">
+                  <label for="fname">
+                    Remplissez votre prénom :
+                  </label>
+                  <input type="text" name="fname" id="fname" placeholder="Prénom" required/>
+                  <span class="validity"></span>
+                </div>
 
-                    <br/> <br/>
-        <!-- 2) demande du Prénom-->
-                    <div class="Prenom">
-                      <label for="fname">
-                        Remplissez votre prénom :
-                      </label>
-                      <input type="text" name="fname" id="fname" placeholder="Prénom"/>
-                    </div>
-                      <br><br>
-        <!-- 3) demande du mail-->
-                    <div class="email">
-                      <label for="email">
+                    <br><br>
+      <!-- 3) demande du mail-->
+                  <div class="email">
+                    <label for="email">
                       Remplissez votre email:
-                      </label>
-                      <input type="email" name="email" id="email"/>
-                    </div>
-                    <br/> <br/>
-          <!-- 4) demande du Téléphone-->
-                    <div class="tel">
-                      <label for="phone">Entrez votre numéro de téléphone :</label>
-                      <input type="tel" id="phone" name="phone"/>
-                    </br></br>
-          </fieldset>
-        <!-- 5) demande du Message-->
-        <br>
-            <div class="Message"><label class="label">Message:</label></div>
+                    </label>
+                    <input type="email" name="email" id="email" required/>
+                    <span class="validity"></span>
+                  </div>
+                  <br/> <br/>
+        <!-- 4) demande du Téléphone-->
+                  <div class="tel">
+                    <label for="tel">Entrez votre numéro de téléphone :</label>
+                    <input type="tel" id="tel" name="tel" required/>
+                    <span class="validity"></span>
+                  </div>
+                  </br></br>
+        </fieldset>
+      <!-- 5) demande du Message-->
+      <br>
+          <div class="Message"><label class="label">Message:</label></div>
 
-              <div class="input-row">
-                            <br>
-                <textarea rows="6" cols="65"data-size="full"></textarea>
-              </div>
+            <div class="input-row">
+                          <br>
+                <input type="text"  id="message" name ="message" size="40" required/>
+                <span class="validity"></span>
+              <!--<textarea rows="6" cols="65"data-size="full" name="message"></textarea>-->
+            </div>
+            <br>
 
-                              <button class="btn">Envoyer</button>
+                            <button class="btn">Envoyer</button>
             </div>
 
         </div>
       </form>
     </div>
-
-
-
 
   </body>
 
