@@ -9,7 +9,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
 session_start();
 if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   header("Location:page_connexion.php");
-} ?>?>
+} ?>
 
 
 <!--DEBUT HTML-->
