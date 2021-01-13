@@ -20,8 +20,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_contact.php');
 
 
 
-
-
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try{
@@ -35,7 +33,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_contact.php');
         );
 
 
-        $requete->bindParam(':nom',$nom,  PDO::PARAM_STR);
+        $requete->bindParam(':nom',$nom);
         $requete->bindParam(':prenom',$prenom);
         $requete->bindParam(':email',$email);
         $requete->bindParam(':telephone',$telephone);
@@ -51,8 +49,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_contact.php');
 
       $requete->execute();
 
-
     }
+
+
     catch(PDOException $e){
       echo 'echec de la co : ' .$e->getMessage();
     }
