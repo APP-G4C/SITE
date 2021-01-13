@@ -10,7 +10,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // On charge le fichier config si pas déjà fait (charge databse)
 require_once "/SITE/controller/config.php";
 // Définis les variables vides
-$Mail = $password = "";
+$id=$Mail = $password = "";
 $err_Mail = $err_password = "";
 
 // Si l'utilisateur entre des données dans le form...

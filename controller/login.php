@@ -4,7 +4,7 @@ session_start();
 setcookie($id, $mail, time() + (86400 * 30), "/"); // 86400 = 1 day
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
-    header("Location: accueil.php");
+    header("Location: page_accueil.php");
     exit;
 }
 
@@ -94,4 +94,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-

@@ -74,6 +74,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
   <body>
     <div id="bloccontact">
       <form method="post" action="traitement.php">
+
     <!--Permet de traiter les données avec le php-->
 
         <div class="bloc">
@@ -139,13 +140,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
           <div class="Message"><label class="label">Message:</label></div>
 
             <div class="input-row">
-                          <br>
-                <input type="text"  id="message" name ="message" size="40" required/>
-                <span class="validity"></span>
-              <!--<textarea rows="6" cols="65"data-size="full" name="message"></textarea>-->
+
+                <textarea name="message" rows="6" cols="65"data-size="full" required ></textarea>
+                <!--<input type="text"  id="message" name ="message" size="40" required/>-->
+
             </div>
             <br>
-
+            <br>
+            <br><br>
                             <button class="btn">Envoyer</button>
             </div>
 

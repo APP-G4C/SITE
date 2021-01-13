@@ -12,7 +12,7 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 
 
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
-$Mail = $Nom =$Prenom ="";
+$Mail= $Nom =$Prenom ="";
 $err_Mail = $err_Nom=$err_Prenom = "";
 $test=false;
 
@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $Prenom = trim($_POST["Prenom"]);
     }
-    
+
 
     // On vérifie qu'il n'y a pas d'erreur
 
@@ -46,6 +46,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  {
     # code...
 }
-
-
-
