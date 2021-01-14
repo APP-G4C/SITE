@@ -142,8 +142,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
             <div class="input-row">
 
                 <textarea name="message" rows="6" cols="65"data-size="full" required ></textarea>
-                <!--<input type="text"  id="message" name ="message" size="40" required/>-->
-
+              
             </div>
             <br>
             <br>
