@@ -170,6 +170,48 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   <br> <br>
   </div>
 
+  <!-- FORMULAIRE " PROCHAINS RDV"-->
+  <div id="prochainsrdv">
+  <fieldset>
+  <legend><strong>PROCHAINS RDV</strong></legend>
+  <br>
+  <div id="prisederdv">
+  <form>
+    <table>
+      <tr>
+        <td><strong><U>Nom</U></strong></td>
+        <td><strong><U>Prénom</U></strong></td>
+        <td><strong><U>Date</U></strong></td>
+        <td><strong><U>Centre</U></strong></td>
+        <td><strong><U>Horaire</U></strong></td>
+      </tr>
+      <tr>
+        <td><label> Dupond</label></td>
+        <td><label>Jean</label></td>
+        <td><input type="date" name=""></td>
+        <td><label>1</label></td>
+        <td><input type="time" name=""></td>
+      </tr>
+      <tr>
+        <td><label>Dupond</label></td>
+        <td><label>Jean</label></td>
+        <td><input type="date" name=""></td>
+        <td><label>2</label></td>
+        <td><input type="time" name=""></td>
+      </tr>
+      <tr>
+        <td><label>Dupond</label></td>
+        <td><label>Jean</label></td>
+        <td><input type="date" name=""></td>
+        <td><label>3</label></td>
+        <td><input type="time" name=""></td>
+      </tr>
+    </table>
+  </form>
+  </fieldset>
+  </div>
+  <br>
+
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 
