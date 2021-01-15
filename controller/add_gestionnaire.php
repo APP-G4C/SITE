@@ -43,12 +43,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 
     // On vérifie qu'il n'y a pas d'erreur
+    if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
 
      fonction_add_gestionnaire();
+    }
+    else{
+        header("Location:page_administrateur.php");
+    }
 
 }unset($pdo);
  {
     # code...
 }
+?>
 
 
