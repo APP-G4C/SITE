@@ -103,7 +103,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
                   <label for="lname">
                     Remplissez votre nom :
                   </label>
-                  <input type="text" name="lname" id="lname" placeholder="Nom" required/>
+                  <input type="text" name="lname" id="lname" placeholder="Nom" pattern="[A-Za-z]+" required />
                   <span class="validity"></span>
                 </div>
 
@@ -113,7 +113,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
                   <label for="fname">
                     Remplissez votre prénom :
                   </label>
-                  <input type="text" name="fname" id="fname" placeholder="Prénom" required/>
+                  <input type="text" name="fname" id="fname" placeholder="Prénom" pattern="[A-Za-z]+" required/>
                   <span class="validity"></span>
                 </div>
 
@@ -123,14 +123,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
                     <label for="email">
                       Remplissez votre email:
                     </label>
-                    <input type="email" name="email" id="email" required/>
+                    <input type="email" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
                     <span class="validity"></span>
                   </div>
                   <br/> <br/>
         <!-- 4) demande du Téléphone-->
                   <div class="tel">
                     <label for="tel">Entrez votre numéro de téléphone :</label>
-                    <input type="tel" id="tel" name="tel" required/>
+                    <input type="tel" id="tel" name="tel" pattern="[0-9]{8,12}"required/>
                     <span class="validity"></span>
                   </div>
                   </br></br>
@@ -142,7 +142,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
             <div class="input-row">
 
                 <textarea name="message" rows="6" cols="65"data-size="full" required ></textarea>
-              
+
             </div>
             <br>
             <br>
