@@ -1,37 +1,8 @@
 <?php
-// Initialisation session
-session_start();
-
-// On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
-
-
-// On charge le fichier config si pas déjà fait (charge databse)
-
-
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
-$Mail = $password = "";
-$err_Mail = $err_password = "";
-
-// Si l'utilisateur entre des données dans le form...
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // On vérifie qu'un email a été entré
-    if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_Mail = "Veuillez entrer votre adresse Mail.";
-    } else{
-        $Mail = trim($_POST["Mail"]);
-    }
-
-    // On vérifie qu'un mdp a été entré
-    if(empty(trim($_POST["password"]))){
-        $err_password = "Veuillez entrer un mot de passe.";
-    } else{
-        $password = trim($_POST["password"]);
-    }
-
-    // On vérifie qu'il n'y a pas d'erreur
-    if(empty($err_Mail) && empty($err_password)){
-        // On prépare un statement select
-        $sql = "SELECT id_User, Mail, password,type FROM user WHERE Mail = :Mail";
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_login.php');
+function fonction_login(){
+$pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+$sql = "SELECT id_User, Mail, password,type FROM user WHERE Mail = :Mail";
 
         if($stmt = $pdo->prepare($sql)){
             // On attache les variables au statement comme paramètres
@@ -85,10 +56,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // On ferme le statement préparé
             unset($stmt);
         }
-    }
-
-    // On ferme la connection à la base de donnée
-    unset($pdo);
-}
-?>
-
+     }
+        ?>

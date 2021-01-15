@@ -74,6 +74,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
   <body>
     <div id="bloccontact">
       <form method="post" action="traitement.php">
+
     <!--Permet de traiter les données avec le php-->
 
         <div class="bloc">
@@ -93,60 +94,65 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
 
 
+    <div class="contenu">
+        <fieldset>
+        <legend> Informations importantes </legend>
+      <!--FORMULAIRE-->
+      <!-- 1) demande du Nom-->
+                <div class="nom">
+                  <label for="lname">
+                    Remplissez votre nom :
+                  </label>
+                  <input type="text" name="lname" id="lname" placeholder="Nom" pattern="[A-Za-z]+" required />
+                  <span class="validity"></span>
+                </div>
 
-        <div class="contenu">
-          <fieldset>
-          <legend> Informations importantes </legend>
-        <!--FORMULAIRE-->
-        <!-- 1) demande du Nom-->
-                  <div class="nom">
-                    <label for="lname">
-                      Remplissez votre nom :
-                    </label>
-                    <input type="text" name="lname" id="lname" placeholder="Nom"/>
-                  </div>
+                  <br/> <br/>
+      <!-- 2) demande du Prénom-->
+                <div class="Prenom">
+                  <label for="fname">
+                    Remplissez votre prénom :
+                  </label>
+                  <input type="text" name="fname" id="fname" placeholder="Prénom" pattern="[A-Za-z]+" required/>
+                  <span class="validity"></span>
+                </div>
 
-                    <br/> <br/>
-        <!-- 2) demande du Prénom-->
-                    <div class="Prenom">
-                      <label for="fname">
-                        Remplissez votre prénom :
-                      </label>
-                      <input type="text" name="fname" id="fname" placeholder="Prénom"/>
-                    </div>
-                      <br><br>
-        <!-- 3) demande du mail-->
-                    <div class="email">
-                      <label for="email">
+                    <br><br>
+      <!-- 3) demande du mail-->
+                  <div class="email">
+                    <label for="email">
                       Remplissez votre email:
-                      </label>
-                      <input type="email" name="email" id="email"/>
-                    </div>
-                    <br/> <br/>
-          <!-- 4) demande du Téléphone-->
-                    <div class="tel">
-                      <label for="phone">Entrez votre numéro de téléphone :</label>
-                      <input type="tel" id="phone" name="phone"/>
-                    </br></br>
-          </fieldset>
-        <!-- 5) demande du Message-->
-        <br>
-            <div class="Message"><label class="label">Message:</label></div>
+                    </label>
+                    <input type="email" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                    <span class="validity"></span>
+                  </div>
+                  <br/> <br/>
+        <!-- 4) demande du Téléphone-->
+                  <div class="tel">
+                    <label for="tel">Entrez votre numéro de téléphone :</label>
+                    <input type="tel" id="tel" name="tel" pattern="[0-9]{8,12}"required/>
+                    <span class="validity"></span>
+                  </div>
+                  </br></br>
+        </fieldset>
+      <!-- 5) demande du Message-->
+      <br>
+          <div class="Message"><label class="label">Message:</label></div>
 
-              <div class="input-row">
-                            <br>
-                <textarea rows="6" cols="65"data-size="full"></textarea>
-              </div>
+            <div class="input-row">
 
-                              <button class="btn">Envoyer</button>
+                <textarea name="message" rows="6" cols="65"data-size="full" required ></textarea>
+
+            </div>
+            <br>
+            <br>
+            <br><br>
+                            <button class="btn">Envoyer</button>
             </div>
 
         </div>
       </form>
     </div>
-
-
-
 
   </body>
 
