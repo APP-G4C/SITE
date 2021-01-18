@@ -21,10 +21,10 @@ $test=false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
     if(empty(trim($_POST["Question"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_Question = "Veuillez entrer votre adresse Mail.";
+        $err_Question = "Le champ est vide";
     } else{
         $Question = trim($_POST["Question"]);
-        
+
     }
 
     // On vérifie qu'un mdp a été entré
@@ -32,9 +32,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_Reponse = "Veuillez entrer un mot de passe.";
     } else{
         $Reponse = trim($_POST["Reponse"]);
-        
+
     }
-    
+
 
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Question) && empty($err_Reponse)){
@@ -50,4 +50,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     # code...
 }
 ?>
-
