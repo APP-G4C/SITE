@@ -32,6 +32,7 @@ function fonction_add_utilisateur(){
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
             $test=true;
+            $_SESSION["Nom_Prenom_gest"] = $param_Prenom." ".$param_Nom;
             $stmt->execute();
 }
 

@@ -13,6 +13,8 @@ function type_u(){
   }
   else{return 4;}
 }
+
+
 function header_ada(){
 $type=type_u();
 if(!est_co()){
@@ -46,6 +48,11 @@ if(!est_co()){
              </ul>
           </li>';
           }
+}}
+function Valid_ajout_gest(){
+  $Nom_Prenom_gest=$_SESSION["Nom_Prenom_gest"];
+  if (!empty($Nom_Prenom_gest)){
+      echo 'Felicitations vous avez ajouté "'.$_SESSION["Nom_Prenom_gest"].'" en tant que Gestionnaire !';
+    }
 }
-}
-
+?>
