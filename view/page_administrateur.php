@@ -143,14 +143,9 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <br>
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php
-      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
-        {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
-        }
-      ?></h3>
+
       <br><br>
-      <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
+      <label id="Nom" for="Nom"><strong><U><?php Valid_ajout_gest()?>Nom</U></strong></label>
       <br>
       <br>
       <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
