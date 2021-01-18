@@ -51,7 +51,19 @@ function fonction_add_faq(){
             $stmt->execute();
 }
 
-
+function fonction_add_cgl(){
+        $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+        $sql=" INSERT INTO `CGL`(`titre_CGL`, `CGL`) VALUES (:titre, :CGL)";
+        $stmt = $pdo->prepare($sql);
+            // On attache les variables au statement comme paramètres
+            $stmt->bindParam(":titre", $param_titre, PDO::PARAM_STR);
+            $stmt->bindParam(":CGL", $param_CGL, PDO::PARAM_STR);
+            // On remplis les paramètres
+            $param_titre = trim($_POST["titre_CGL"]);
+            $param_CGL = trim($_POST["CGL"]);
+            $test=true;
+            $stmt->execute();
+}
 
 function fonction_add_contact(){
   $serveur= "localhost";
