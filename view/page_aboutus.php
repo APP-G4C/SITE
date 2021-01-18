@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,21 +13,18 @@
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/apropos.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-
-
-
+    <script src="\SITE\public\js\about_us.js"></script>
 </head>
 
 
   <header id="menu1">
     <nav>
         <ul>
-            <li id="link"><a id="logoapp"href="accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b3"href="faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b4"href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li id="link"><a id="b5"href="connexion.php"><i class="far fa-id-badge"></i> Connexion</a></li>
+            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
+            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <?php echo header_ada()?>
         </ul>
     </nav>
   </header>
@@ -31,7 +32,7 @@
       <div id="perso">
         <div id="textaboutus">
           <h1 id="titre_aboutus"></br>Qui sommes-nous ?</br></h1>
-                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati</p>
+                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati </p>
         </div>
                 <div id="containerglobal">
 
@@ -139,10 +140,10 @@
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="contact.php">CONTACT</a></li>
-                <li id="link2"><a href="faq.php">AIDE</a></li>
-                <li id="link2"><a href="about_us.php">A PROPOS</a></li>
+                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
+                <li id="link2"><a href="page_contact.php">CONTACT</a></li>
+                <li id="link2"><a href="page_faq.php">AIDE</a></li>
+                <li id="link2"><a href="page_about_us.php">A PROPOS</a></li>
             </ul>
         </nav>
     </footer>

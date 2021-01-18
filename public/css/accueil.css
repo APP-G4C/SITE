@@ -1,36 +1,8 @@
 /*ANIMATION PAGE ACCUEIL*/
-#images {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 5%;
-
-}
-#images img{
-  margin: 50px;
-  border: 2px black solid
-}
-
-#avions img,#pilotes img
-{
-  width: 300px;
-  height: 176px;
-
-}
-
-
-
-
-
-
-
-
-
-
 
 #carousel-example-generic{
   width: 100%;
-  height: 600px;
+  height: 800px;
   background-image: url(/SITE/public/images/fond.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,11 +11,11 @@
   margin-bottom: 20%;
   position: relative;
   text-align: center;
-  top: 200px;
+  top: 40px;
   left: 50px;
 }
 .carousel-caption h2 {
-  font-size: 70px;
+  font-size: 60px;
   text-transform: uppercase;
   font-weight: bold;
   position: relative;
@@ -52,6 +24,20 @@
 }
 .carousel-caption h2 span {
   color:#3F51B5;
+}
+.mot{
+  background-color: #F0F8FF;
+  color: #00008B;
+  font-size:22px;
+  opacity: 40%;
+  width: 25%;
+  font-family: Lucida sans;
+  position: relative;
+  left: 33%;
+  margin: 10px;
+  padding: 15px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
 .carousel-caption a {
   background: #3F51B5;
@@ -90,6 +76,7 @@
     font-size: 50px;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .navbar-inverse .navbar-brand {
     font-size: 30px;
@@ -108,24 +95,6 @@
     padding: 10px 25px;
   }
 }
-
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

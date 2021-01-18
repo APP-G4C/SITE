@@ -1,15 +1,14 @@
 <?php
 // Initialisation session
 session_start();
+
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("Location: ACCUEIL.php");
-    exit;
-}
+
 
 // On charge le fichier config si pas déjà fait (charge databse)
-require_once "config.php";
-// Définis les variables vides
+
+
+require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
 $Mail = $password = "";
 $err_Mail = $err_password = "";
 
@@ -35,7 +34,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "SELECT id_User, Mail, password,type FROM user WHERE Mail = :Mail";
 
         if($stmt = $pdo->prepare($sql)){
-       
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
 
@@ -43,7 +41,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_Mail = trim($_POST["Mail"]);
             // On exécute la commande préparée
             if($stmt->execute()){
-            
                 // On vérifie que le Mail existe, puis on vérifie le mdp
                 if($stmt->rowCount() == 1){
                     if($row = $stmt->fetch()){
@@ -52,7 +49,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $password1 = $row["password"];
                         $type=$row['type'];
                         if($password==$password1){
-                        
                             // Le mdp est bon, on lance une session
                             session_start();
 
@@ -61,9 +57,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
-
+                            $_COOKIE["id"]=$id;
+                            $_COOKIE["Mail"]=$Mail;
                             // Puis on redirige l'utilisateur a la page d'accueil
-                            header("Location: accueil.html");
+                            if($type==1){
+                              header("Location:page_utilisateur.php");
+                            }
+                            if($type==2){
+                              header("Location:page_gestionnaire.php");
+                            }
+                            if($type==3){
+                              header("Location:page_administrateur.php");
+                            }
                         } else{
                             // Sinon on met un message d'erreur
                             $err_password = "Votre mot de passe n'est pas valide.";
@@ -71,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
                     // Si le mail ne correspond à rien, on renvoie un message d'erreur
-                   $err_Mail = "Cet adresse mail ne correspond à aucun compte.";
+                    $err_Mail = "Cet adresse mail ne correspond à aucun compte.";
                 }
             } else{
               echo "Il y a eu une erreur, veuillez réessayer plus tard.";
@@ -86,3 +91,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
+

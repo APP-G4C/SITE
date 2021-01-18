@@ -4,6 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
 
 
 
@@ -59,71 +60,72 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
-<form id="loginForm">
-<div id="informationspersonnelles">
-  <fieldset> 
-    <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
-    <br>
-    <form action="page_infoperso.php" method="POST">
-        <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
-        <td><button onclick="test();"><span>Envoyer</span></button></td>
-        <br> <br>
-        <label><strong><U>ID :</U></strong></label>
+    <form id="loginForm">
+    <div id="informationspersonnelles">
+      <fieldset> 
+        <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <label> 12345
-        <br> <br>
-        <label><strong><U>Photo de profil</U></strong></label>             
-        <br>
-        <img id="photoavatar"src="/SITE/public/images/avatar.png">
-        <br> <br>
-        <label><strong><U>Sexe</U></strong></label>
-        <br>
-        <select>
-          <option>Homme</option>
-          <option>Femme</option>
-          <option>Autre</option>
-        </select>
-        <br> <br>
-        <label><strong><U>Nom</U></strong></label>
-        <br>      
-        <label>DUPOND</label>
-        <br> <br>
-        <label><strong><U>Prénom</U></strong></label>
-        <br>
-       <label> Jean</label>
-        <br> <br>
-        <label><strong><U>Numéro de téléphone</U></strong></label>
-        <br>
-        <input name ="Numéro_de_téléphone" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
-       <br> <br>
+        <form>
+            <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+            <br> <br>
+            <label><strong><U>ID :</U></strong></label>
+            <br>
+            <label> 12345
+            <br> <br>
+            <label><strong><U>Photo de profil</U></strong></label>             
+            <br>
+            <img id="photoavatar"src="/SITE/public/images/avatar.png">
+            <br> <br>
+            <label><strong><U>Sexe</U></strong></label>
+            <br>
+            <select>
+              <option>Homme</option>
+              <option>Femme</option>
+              <option>Autre</option>
+            </select>
+            <br> <br>
+            <label><strong><U>Nom</U></strong></label>
+            <br>      
+            <label>DUPOND</label>
+            <br> <br>
+            <label><strong><U>Prénom</U></strong></label>
+            <br>
+           <label> Jean</label>
+            <br> <br>
         <label><strong><U>Date de Naissance</U></strong></label>
         <br>
-        <input name ="Date_de_naissance" type="date" name="">
-       <br> <br>
-      </form>
-    <form action="" method="POST" id="loginForm">
-      <!-- Email -->
-        <label for="email">Mail</label>
-        <br>
-        <input type="text" class="form-control" name="email" />
-        <small></small>
-      <!-- password -->
-     <br>
-        <label for="password">Mot de passe</label>
-        <br>
-        <input type="password" class="form-control" name="password" />
-        <small></small>
-      <br>
-      <br>
-        <button type="submit" class="btn btn-secondary btn-block">
-          <span>Modifier</span>
-          <br>
-        </button>
+        <input type="date" name="">
         <br> <br>
-    </form>
-</fieldset>
-<br> <br>
-
+            <label><strong><U>Numéro de téléphone</U></strong></label>
+            <br>
+            <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
+           <br> <br>
+            <label><strong><U>Date de Naissance</U></strong></label>
+            <br>
+            <input type="date" name="">
+           <br> <br>
+          </form>
+        <form action="" method="POST" id="loginForm">
+          <!-- Email -->
+            <label for="email">Mail</label>
+            <br>
+            <input type="text" class="form-control" name="email" />
+            <small></small>
+          <!-- password -->
+         <br>
+            <label for="password">Mot de passe</label>
+            <br>
+            <input type="password" class="form-control" name="password" />
+            <small></small>
+          <br>
+            <button type="submit" class="btn btn-secondary btn-block">
+              <span>Connexion</span>
+              <br>
+            </button>
+            <br> <br>
+        </form>
+    </fieldset>
+      <br><br><br><br>
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
 <br>
@@ -257,31 +259,45 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
               <option>C</option>
             </select>
           </td>
-          <td><input type="time" =""></td>
+          <td><input type="time"></td>
         </tr>
       </table>
       <br> <br>
       <button><span>Afficher</span></button>
+    </form>
     </fieldset>
   </div>
   <br><br><br>
 
   <!-- FORMULAIRE "AJOUTER UNE FAQ"-->
-  <div id="faq">
-      <fieldset>
-        <legend><strong>AJOUTER UNE FAQ</strong></legend>
-        <label><strong><U>Titre FAQ:</U></strong></label>
-        <br>
-        <input type="text" placeholder="Titre FAQ">
-        <br> <br>
-        <label><strong><U>Description FAQ:</U></strong> </label>
-        <br>
-        <textarea></textarea>
-        <br> <br>
-        <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"><span>Ajouter FAQ</span></button>
-      </fieldset>
+<div id="Backoffice">
+  <br> <br>
+  <br> <br> 
+  <form id="form" method="POST"action="page_administrateur.php">  
+    <div id="ajouterfaq">
+    <fieldset>
+      <legend><strong>AJOUTER UNE</strong></legend>
+      <br> 
+
+<!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
+      <h3></h3>
+      <br><br>
+      <label id="Question" for="Question"><strong><U>Question</U></strong></label>
+      <br>
+      <br> 
+      <input name="Question"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
+      <br> <br>
+      <label id="Reponse"for="Reponse"><strong><U>Reponse</U></strong></label>
+      <br>
+      <input name="Reponse"type="text" placeholder="Reponse"pattern="[A-Za-z-].{1,}">
+      <br> <br>   
+      <br> <br>
+      <input type="submit" name="FAQ" value="Ajouter FAQ">
+    </fieldset>
+    </div>    
+  </form>
+  <br> <br>
   </div>
-  <br><br>
 
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
