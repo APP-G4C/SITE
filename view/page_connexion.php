@@ -16,7 +16,7 @@ session_start();
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
-    <link rel="stylesheet" href="/SITE/public/css/connexion.css">
+    <link rel="stylesheet" href="/SITE/public/css/connexions.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 

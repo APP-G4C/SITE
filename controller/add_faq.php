@@ -13,39 +13,33 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 
 
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
-$Mail = $Nom =$Prenom ="";
-$err_Mail = $err_Nom=$err_Prenom = "";
+$Question =$Reponse ="";
+$err_Question=$err_Reponse = "";
 $test=false;
 
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
-    if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_Mail = "Veuillez entrer votre adresse Mail.";
+    if(empty(trim($_POST["Question"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        $err_Question = "Veuillez entrer votre adresse Mail.";
     } else{
-        $Mail = trim($_POST["Mail"]);
+        $Question = trim($_POST["Question"]);
         
     }
 
     // On vérifie qu'un mdp a été entré
-    if(empty(trim($_POST["Nom"]))){
-        $err_Nom = "Veuillez entrer un mot de passe.";
+    if(empty(trim($_POST["Reponse"]))){
+        $err_Reponse = "Veuillez entrer un mot de passe.";
     } else{
-        $Nom = trim($_POST["Nom"]);
-        
-    }
-    if(empty(trim($_POST["Prenom"]))){
-        $err_Prenom = "Veuillez entrer un mot de passe.";
-    } else{
-        $Prenom = trim($_POST["Prenom"]);
+        $Reponse = trim($_POST["Reponse"]);
         
     }
     
 
     // On vérifie qu'il n'y a pas d'erreur
-    if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
+    if(empty($err_Question) && empty($err_Reponse)){
 
-     fonction_add_gestionnaire();
+        fonction_add_faq();
     }
     else{
         header("Location:page_administrateur.php");
@@ -56,5 +50,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     # code...
 }
 ?>
-
 
