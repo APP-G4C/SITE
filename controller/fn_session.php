@@ -14,6 +14,7 @@ function type_u(){
   else{return 4;}
 }
 function header_ada(){
+$type=type_u();
 if(!est_co()){
   echo '<li id="link">
           <a id="b2"href="page_connexion.php">
@@ -21,7 +22,7 @@ if(!est_co()){
         </li>';
 
 }else{
-  if(type_u()==1){
+  if($type==1){
     echo '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
               <ul>
                   <li><a href="page_utilisateur.php"> Ma Page Utilisateur</li></a>
@@ -29,7 +30,7 @@ if(!est_co()){
               </ul>
             </li';
         }
-  if(type_u()==2){
+  if($type==2){
     echo '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
              <ul>
                 <li><a href="page_gestionnaire.php"> Ma Page Gestionnaire</li></a>
@@ -37,7 +38,7 @@ if(!est_co()){
              </ul>
           </li>';
         }
-  if (type_u()==3){
+  if ($type==3){
     echo '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
              <ul>
                <li><a href="page_administrateur.php"> Ma Page Administrateur</li></a>
@@ -59,3 +60,4 @@ function useradd()
         echo 'erreur';
         }
 }
+?>
