@@ -148,10 +148,6 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
         {
           echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
         }
-      else
-        {
-          header("Location:page_administrateur.php");
-        }
       ?></h3>
       <br><br>
       <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>

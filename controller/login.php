@@ -1,6 +1,4 @@
 <?php
-// Initialisation session
-session_start();
 
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 
