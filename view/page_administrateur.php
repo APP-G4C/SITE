@@ -271,7 +271,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
   <form id="form" method="POST"action="page_administrateur.php">
     <div id="ajouterfaq">
     <fieldset>
-      <legend><strong>AJOUTER UNE</strong></legend>
+      <legend><strong>AJOUTER UNE FAQ</strong></legend>
       <br>
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
@@ -296,19 +296,21 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
-    <fieldset>
-      <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
-        <br>
-        <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
-        <br>
-        <input type="text" placeholder="Titre CGU/CL">
-        <br> <br>
-        <label><strong><U>Description CGU/CL:</U></strong> </label>
-        <br>
-        <textarea></textarea>
-        <br> <br>
-        <button onclick="alert('Es-tu sûr de vouloir ajouter ce gestionnaire ?')"><span>Ajouter CGU/CL</span></button>
-    </fieldset>
+    <form class="" action="page_administrateur.php" method="post">
+      <fieldset>
+        <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
+          <br>
+          <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
+          <br>
+          <input name="Titre CGU/CGL" type="text" placeholder="Titre CGU/CL">
+          <br> <br>
+          <label><strong><U>Description CGU/CL:</U></strong> </label>
+          <br>
+          <input type="text" name="CGL" >
+          <br> <br>
+          <button type="submit"><span>Ajouter CGU/CL</span></button>
+      </fieldset>
+    </form>
   </div>
   <br> <br>
 
