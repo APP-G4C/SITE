@@ -11,9 +11,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_contact.php');
   <body>
 
 
-    <script>
-    alert("Vous avez bien envoyé votre formulaire, merci.");
-    </script>
+    
   <?php
 
   $serveur= "localhost";
