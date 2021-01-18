@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -73,7 +74,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
   <body>
     <div id="bloccontact">
-      <form method="post" action="traitement.php">
+      <form method="post" action="page_contact.php">
 
     <!--Permet de traiter les données avec le php-->
 
@@ -82,12 +83,12 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
               <span>
                 <p class="Entete"><strong>Formulaire de Contact</strong></p>
 
-              <p class="Mot"> Une question? <a class="lien" href ="faq.php">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
+              <p class="Mot"> Une question? <a class="lien" href ="page_faq.php">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
                 <br>
                 <!--REDIRIGE VERS LA FAQ DIRECTEMENT EN CLIQUANT DESSUS-->
               </span>
 
-            <p></p>
+
         </div>
       <br>
       <br>
@@ -147,7 +148,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
             <br>
             <br>
             <br><br>
-                            <button class="btn">Envoyer</button>
+            <script>
+            function myFunction(){
+              alert("Vous avez bien envoyé votre formulaire, merci !");}
+            </script>
+              <button class="btn" onclick="myFunction()" >Envoyer</button>
             </div>
 
         </div>

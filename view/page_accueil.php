@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
                   <div class="carousel-caption">
                     <h2 class="animated bounceInRight" style="animation-delay: 1s">Nous sommes <span>Créatifs</span></h2>
                     <h3 class="animated bounceInLeft" style="animation-delay: 2s">Psychotechnical Agency</h3>
-                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="aboutus.php">A Propos</a></p><br><br><br><br><br>
+                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="page_aboutus.php">A Propos</a></p><br><br><br><br><br>
                     <div class="mot"> Psychotechnical Agency est une agence offrant aux pilotes la possibilité de tester leurs capacités psychotechniques ou psychomoteurs dans le cadre de l’obtention d’un diplôme (ENAC, EPL..)
 </div>
                   </div>

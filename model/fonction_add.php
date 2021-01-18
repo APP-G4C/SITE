@@ -58,12 +58,48 @@ function fonction_add_cgl(){
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":titre", $param_titre, PDO::PARAM_STR);
             $stmt->bindParam(":CGL", $param_CGL, PDO::PARAM_STR);
-
-
             // On remplis les paramètres
             $param_titre = trim($_POST["titre_CGL"]);
             $param_CGL = trim($_POST["CGL"]);
             $test=true;
             $stmt->execute();
 }
-?>
+
+function fonction_add_contact(){
+  $serveur= "localhost";
+  $login ="root";
+  $pass="root";
+  try{
+    $connexion = new PDO("mysql:host=$serveur;dbname=database_app", $login, $pass); //connection a la bdd
+    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+    $requete = $connexion->prepare(
+      "INSERT INTO contact(nom,prenom,email,telephone,message)
+                  VALUES(:nom,:prenom,:email,:telephone,:message)"
+      );
+
+
+      $requete->bindParam(':nom',$nom);
+      $requete->bindParam(':prenom',$prenom);
+      $requete->bindParam(':email',$email);
+      $requete->bindParam(':telephone',$telephone);
+      $requete->bindParam(':message',$message);
+
+
+      $nom=$_POST['lname'];
+      $prenom =$_POST['fname'];
+      $email= $_POST['email'];
+      $telephone=$_POST['tel'];
+      $message= $_POST['message'];
+
+
+    $requete->execute();
+
+  }
+
+
+  catch(PDOException $e){
+    echo 'echec de la co : ' .$e->getMessage();
+  }
+}

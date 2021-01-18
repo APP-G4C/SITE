@@ -49,15 +49,3 @@ if(!est_co()){
 }
 }
 
-function useradd()
-{
- if ($stmt->execute())
-       {
-        echo 'Felicitations,'.$Prenom.''.$Nom.'a été ajouté en tant que gestionnaire';
-        }
-  else
-        {
-        echo 'erreur';
-        }
-}
-?>
