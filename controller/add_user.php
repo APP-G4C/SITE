@@ -17,27 +17,34 @@ $test=false;
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
-    if(empty(trim($_POST["Mail"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+    if(empty(htmlspecialchars(trim($_POST["Mail"])))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
         $err_Mail = "Veuillez entrer votre adresse Mail.";
     } else{
-        $Mail = trim($_POST["Mail"]);
+        $Mail = trim(htmlspecialchars($_POST["Mail"]));
     }
 
     // On vérifie qu'un mdp a été entré
-    if(empty(trim($_POST["Nom"]))){
+    if(empty(trim(htmlspecialchars($_POST["Nom"])))){
         $err_Nom = "Veuillez entrer un mot de passe.";
     } else{
-        $Nom = trim($_POST["Nom"]);
+        $Nom = htmlspecialchars(trim($_POST["Nom"]));
     }
-    if(empty(trim($_POST["Prenom"]))){
+    if(empty(htmlspecialchars(trim($_POST["Prenom"])))){
         $err_Prenom = "Veuillez entrer un mot de passe.";
     } else{
-        $Prenom = trim($_POST["Prenom"]);
+        $Prenom = htmlspecialchars(trim($_POST["Prenom"]));
     }
 
 
-    // On vérifie qu'il n'y a pas d'erreur
-        fonction_add_utilisateur();
+// On vérifie qu'il n'y a pas d'erreur
+    if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
+
+     fonction_add_utilisateur();
+    }
+    else{
+        header("Location:page_gestionnaire.php");
+    }
+  
 
 
 }unset($pdo);

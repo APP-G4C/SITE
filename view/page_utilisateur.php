@@ -162,17 +162,8 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
         $reponse = $bdd->query($sql);
       while ($donnees=$reponse->fetch()){
           $Heure= "'".$donnees['Heure']."',";
-          echo $Heure;}}
-
+          echo $Heure;}}  ?>
         
-
-
-       
-  
-          ?>
-        
-
- 
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <div id="Graphique" style="width: 75%;margin: auto;">
           <canvas id="myChart"></canvas>

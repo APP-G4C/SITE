@@ -1,15 +1,19 @@
 <?php
+
 // Appel des fonctions PHP
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/recherche.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
 
-//Début de la session
+
 session_start();
-if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
+//Début de la session 
+if(!isset($_SESSION["id"])||$_SESSION['type']!=2)
+{
   header("Location:page_connexion.php");
-} ?>
+}?>
 
 
 <!--DEBUT HTML-->
@@ -61,7 +65,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
     <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
     <br>
     <form>
-        <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+        <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
         <br> <br>
         <label><strong><U>ID :</U></strong></label>
         <br>
@@ -128,7 +132,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
 
 <!-- BACK OFFICE-->
 
-<!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
+<!-- FORMULAIRE "AJOUTER UN UTILISATEUR"-->
 <div id="Backoffice">
   <br> <br>
   <h2> BACK OFFICE</h2>
@@ -136,17 +140,13 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   <form id="form" method="POST"action="page_gestionnaire.php">  
     <div id="ajouterutilisateur">
     <fieldset>
-      <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
+      <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
       <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
       <h3><?php 
       if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
-        }
-      else
-        {
-          header("Location:page_administrateur.php");
+          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que utilisateur !';
         }
       ?></h3>
       <br>
@@ -212,6 +212,82 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   </div>
   <br>
 
+<!-- RECHERCHER-->
+<?php
+$pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+if(isset($_GET['q']) AND !empty($_GET['q'])) 
+{
+   $q = htmlspecialchars($_GET['q']);
+   $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%"');
+ }
+
+
+?>
+<fieldset>
+  <legend><strong><U>RECHERCHER</U></strong></legend>
+  <form method="GET">
+    <br><br>
+     <input type="search" name="q" placeholder="Recherche..." />
+     <br><br>
+     <input type="submit" value="Rechercher" />
+     <br><br>
+     <table>
+        <tr>
+          <td><strong><U>id_user</U></strong></td>
+          <td><strong><U>Nom</U></strong></td>
+          <td><strong><U>Prenom</U></strong></td>
+          <td><strong><U>Date de naissance</U></strong></td>
+          <td><strong><U>Sexe</U></strong></td>
+          <td><strong><U>Mail</U></strong></td>
+        </tr>
+        <tr>
+          <td><?php recherche_id_user();?></td>
+          <td><?php recherche_nom_user()?></td>
+          <td><?php recherche_prenom_user();?></td>
+          <td><?php recherche_date_de_naissance_user();?></td>
+          <td><?php recherche_sexe_user();?></td>
+          <td><?php recherche_mail_user();?></td>
+        </tr>
+      </table>
+  </form>
+</fieldset>
+
+  <!-- AJOUTER UN RDV-->
+  <div id="ajouter_un_rdv">
+    <fieldset>
+      <legend><strong>AJOUTER UN RDV</strong></legend>
+      <form method="POST">
+        <table>
+        <tr>
+          <td><strong><U>id_User</U></strong></td>
+          <td><strong><U>Date</U></strong></td>
+          <td><strong><U>Centre</U></strong></td>
+          <td><strong><U>Horaire</U></strong></td>
+          <td><strong><U>Choix du test</U></strong></td>
+        </tr>
+        <tr>
+          <td>
+            <select name="id_user_rdv" for="prenom_utilisateur">
+              <option><?php id_user_rdv();?></option>
+            </select>
+          </td>
+          <td><input type="Date" name="date_rdv_utilisateur"></td>
+          <td><?php centre_gestionnaire_rdv();?></td>
+          <td><input type="time" name="horaire_rdv_utilisateur"></td>
+          <td>
+            <select name="test_utilisateur">
+                <option>TEST 1</option>
+                <option>TEST 2</option>
+            </select>
+          </td>
+          <td><input type="submit" name="submit"value="ajouter un rdv"></td>
+        </tr>
+      </table>
+    </form>
+
+    </fieldset>
+  </div>
+  
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 

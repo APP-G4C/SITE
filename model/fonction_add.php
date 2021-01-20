@@ -14,6 +14,7 @@ function fonction_add_gestionnaire(){
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
+            
             $test=true;
             $stmt->execute();
 }
@@ -31,6 +32,7 @@ function fonction_add_utilisateur(){
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
+            sleep(1);
             $test=true;
             $stmt->execute();
 }
