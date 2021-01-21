@@ -38,9 +38,7 @@ li{
   font-size: 25px;
   text-decoration: underline;
 }
-.question:hover  ~ .reponses{
-  opacity: 100%;
-}
+/*test*/
 
 @keyframes appear {
   from {opacity: 0;}

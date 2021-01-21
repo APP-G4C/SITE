@@ -79,7 +79,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
     <?php
     }
 
-    $reponse->closeCursor(); // Termine le traitement de la requête
+    $reponse->closeCursor(); // Termine le traitement de la requête 
 
     ?>
 </div>
