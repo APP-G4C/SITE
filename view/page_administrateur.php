@@ -297,13 +297,13 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
           <br>
           <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
           <br>
-          <input name="Titre CGU/CGL" type="text" placeholder="Titre CGU/CL">
+          <input name="titre_cgl" type="text" placeholder="Titre CGU/CL">
           <br> <br>
           <label><strong><U>Description CGU/CL:</U></strong> </label>
           <br>
-          <input type="text" name="CGL" >
+          <input type="text" name="cgl" >
           <br> <br>
-          <button type="submit"><span>Ajouter CGU/CL</span></button>
+          <input type="submit" name="ajout_cgl" value="Ajouter CGL">
       </fieldset>
     </form>
   </div>

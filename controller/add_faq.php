@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_Question = "Veuillez entrer votre adresse Mail.";
     } else{
         $Question = trim($_POST["Question"]);
-        
+
     }
 
     // On vérifie qu'un mdp a été entré
@@ -32,9 +32,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_Reponse = "Veuillez entrer un mot de passe.";
     } else{
         $Reponse = trim($_POST["Reponse"]);
-        
+
     }
-    
+
 
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Question) && empty($err_Reponse)){
@@ -46,8 +46,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
 }unset($pdo);
- {
-    # code...
-}
 ?>
-
