@@ -1,6 +1,6 @@
 <?php
 // Appel des fonctions PHP
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
@@ -59,7 +59,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
-    <form id="loginForm">
+
     <div id="informationspersonnelles">
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -150,7 +150,8 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
         }
       ?></h3>
       <br><br>
-      <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
+      <label id="Nom" for="Nom"><strong><U><?php Valid_ajout_gest()?>Nom</U></strong></label>
+      <br>
       <br>
       <br>
       <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
@@ -274,20 +275,21 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <legend><strong>AJOUTER UNE FAQ</strong></legend>
       <br>
 
-<!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
+<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
       <h3></h3>
       <br><br>
       <label id="Question" for="Question"><strong><U>Question</U></strong></label>
       <br>
       <br>
-      <input name="Question"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
+      <input name="Question"type="text" placeholder="Question" pattern="[A-Za-z-].{1,}">
       <br> <br>
       <label id="Reponse"for="Reponse"><strong><U>Reponse</U></strong></label>
       <br>
       <input name="Reponse"type="text" placeholder="Reponse"pattern="[A-Za-z-].{1,}">
       <br> <br>
       <br> <br>
-      <input type="submit" name="FAQ" value="Ajouter FAQ">
+      <br> <br>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
     </fieldset>
     </div>
   </form>
@@ -302,13 +304,13 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
           <br>
           <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
           <br>
-          <input name="Titre CGU/CGL" type="text" placeholder="Titre CGU/CL">
+          <input name="titre_cgl" type="text" placeholder="Titre CGU/CL">
           <br> <br>
           <label><strong><U>Description CGU/CL:</U></strong> </label>
           <br>
-          <input type="text" name="CGL" >
+          <input type="text" name="cgl" >
           <br> <br>
-          <button type="submit"><span>Ajouter CGU/CL</span></button>
+          <input type="submit" name="ajout_cgl" value="Ajouter CGL">
       </fieldset>
     </form>
   </div>

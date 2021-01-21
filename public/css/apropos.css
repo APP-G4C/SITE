@@ -40,7 +40,7 @@
 }
 
 .overlay {
-  position: absolute;
+  position: relative;
   top:0 ;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -56,37 +56,37 @@
 }
 
 #container1 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left : 7%;
   width: 11%;
 }
 #container2 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left : 22%;
   width: 11%;
 }
 #container3 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:37%;
   width: 11%;
 }
 #container4 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:52%;
   width: 11%;
 }
 #container5 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:67%;
   width: 11%;
 }
 #container6 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:82%;
   width: 11%;
