@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_cgl.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,33 +28,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
             <?php echo header_ada()?>
 
 
-
-            <!--UTILISATEUR
-            <li id='link'><a id="b6"href="#"> Ma Page</a>
-                    <ul>
-                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
-                        <li><a href="#">Déconnexion</li></a>
-                    </ul>
-                </li><!-->
-
-             <!--GESTIONNAIRE
-             <li id='link'><a id="b7"href="#"> Ma Page</a>
-                <ul>
-                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
-
-                    <li><a href="#">Déconnexion</li></a>
-                </ul>
-            </li><!-->
-            <!-- ADMIN
-             <li id='link'><a id="b7"href="#"> Ma Page</a>
-                <ul>
-                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
-
-
-                    <li><a href="#">Déconnexion</li></a>
-                </ul>
-            </li><!-->
-
         </ul>
     </nav>
   </header>
@@ -79,6 +53,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
                     xxxxxxx.com se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.
                   </div>
 
+                <?php echo charge_cgl() ?>
 
                 <h3><br><br><br>ARTICLE 1 : Les mentions légales</h3>
                 <br>
@@ -208,6 +183,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
                     Pour toute question relative à l’application des présentes CGU, vous pouvez joindre l’éditeur aux coordonnées inscrites à l’ARTICLE 1.
                     <br><br><br><br>
                   </div>
+
 
 
     </body>
