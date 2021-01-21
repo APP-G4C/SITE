@@ -15,7 +15,7 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
 $CGL=$titre_CGL="";
 $err_CGL=$err_titre_CGL="";
-$test=false
+$test=false;
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
