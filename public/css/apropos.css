@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
 
 #titre_aboutus {
-  position: absolute;
+  position: relative;
   font-size:3vw;
   color : #3F51B5;
   margin-left:35%;
 }
 
 #introduction {
-  position: absolute;
+  position: relative;
   margin-top:4.5%;
   font-size:1.3vw;
   margin-left:7%;
@@ -40,7 +40,7 @@
 }
 
 .overlay {
-  position: absolute;
+  position: relative;
   top:0 ;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -57,37 +57,37 @@
 }
 
 #container1 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left : 7%;
   width: 11%;
 }
 #container2 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left : 22%;
   width: 11%;
 }
 #container3 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:37%;
   width: 11%;
 }
 #container4 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:52%;
   width: 11%;
 }
 #container5 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:67%;
   width: 11%;
 }
 #container6 {
-  position: absolute;
+  position: relative;
   top : 50%;
   left:82%;
   width: 11%;

@@ -20,18 +20,19 @@ $test=false;
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
-    if(empty(trim($_POST["Question"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+    if(empty(htmlspecialchars(trim($_POST["Question"])))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
         $err_Question = "Le champ est vide";
     } else{
-        $Question = trim($_POST["Question"]);
+        $Question = htmlspecialchars(trim($_POST["Question"]));
+
 
     }
 
     // On vérifie qu'un mdp a été entré
-    if(empty(trim($_POST["Reponse"]))){
+    if(empty(htmlspecialchars(trim($_POST["Reponse"])))){
         $err_Reponse = "Veuillez entrer un mot de passe.";
     } else{
-        $Reponse = trim($_POST["Reponse"]);
+        $Reponse = htmlspecialchars(trim($_POST["Reponse"]));
 
     }
 
