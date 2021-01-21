@@ -53,7 +53,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_cgl.php');
                     xxxxxxx.com se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes CGU.
                   </div>
 
-                <?php echo charge_cgl() ?>
+                <?php echo parc_cgl() ?>
 
                 <h3><br><br><br>ARTICLE 1 : Les mentions légales</h3>
                 <br>
