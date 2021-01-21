@@ -38,14 +38,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container1">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
-                            <p class="overlay">NOM Prénom</p>
+                            <img src="/SITE/public/images/paul.png" alt="Photo de Paul" class="image">
+                            <p class="overlay">Malagoli</p>
                         </div>
                         <div>
                             <p id="description1">
-                                <span class="information">Nom :</span> NOM </br>
-                                <span class="information">Prénom :</span> Prénom</br>
-                                <span class="information">Poste :</span> Poste</br></br>
+                                <span class="information">Nom :</span> MALAGOLI </br>
+                                <span class="information">Prénom :</span> Paul</br>
+                                <span class="information">Poste :</span> Administrateur</br></br>
                                 <a class="email" href="mailto:bidule@gmail.com" >Envoyez un mail</a></br></br>
                             </p>
                             <button onclick="myFunction1()" id="myBtn1">Voir plus</button>
@@ -55,14 +55,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container2">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
-                            <p class="overlay">NOM Prénom</p>
+                            <img src="/SITE/public/images/laure.png" alt="Photo de Laure" class="image">
+                            <p class="overlay">Degot</p>
                         </div>
                         <div>
                             <p id="description2">
-                                <span class="information">Nom :</span> NOM </br>
-                                <span class="information">Prénom :</span> Prénom</br>
-                                <span class="information">Poste :</span> Poste</br></br>
+                                <span class="information">Nom :</span> DEGOT </br>
+                                <span class="information">Prénom :</span> Laure </br>
+                                <span class="information">Poste :</span> Administrateur</br></br>
                                 <a class="email" href="mailto:bidule@gmail.com" >Envoyez un mail</a></br></br>
                             </p>
                             <button onclick="myFunction2()" id="myBtn2">Voir plus</button>
@@ -71,14 +71,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container3">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
-                            <p class="overlay">NOM Prénom</p>
+                            <img src="/SITE/public/images/timothée.png" alt="Photo de Timothée" class="image">
+                            <p class="overlay">Lamare</p>
                         </div>
                         <div>
                             <p id="description3">
-                                <span class="information">Nom :</span> NOM </br>
-                                <span class="information">Prénom :</span> Prénom</br>
-                                <span class="information">Poste :</span> Poste</br></br>
+                                <span class="information">Nom :</span> LAMARE </br>
+                                <span class="information">Prénom :</span> Timothée</br>
+                                <span class="information">Poste :</span> Administrateur</br></br>
                                 <a class="email" href="mailto:bidule@gmail.com" >Envoyez un mail</a></br></br>
                             </p>
                             <button onclick="myFunction3()" id="myBtn3">Voir plus</button>
@@ -87,14 +87,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container4">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
-                            <p class="overlay">NOM Prénom</p>
+                            <img src="/SITE/public/images/yifei.png" alt="Photo de Yifei" class="image">
+                            <p class="overlay">Zhao</p>
                         </div>
                         <div>
                             <p id="description4">
-                                <span class="information">Nom :</span> NOM </br>
-                                <span class="information">Prénom :</span> Prénom</br>
-                                <span class="information">Poste :</span> Poste</br></br>
+                                <span class="information">Nom :</span> ZHAO </br>
+                                <span class="information">Prénom :</span> Yifei</br>
+                                <span class="information">Poste :</span> Administrateur</br></br>
                                 <a class="email" href="mailto:bidule@gmail.com" >Envoyez un mail</a></br></br>
                             </p>
                             <button onclick="myFunction4()" id="myBtn4">Voir plus</button>
@@ -103,14 +103,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container5">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
-                            <p class="overlay">NOM Prénom</p>
+                            <img src="/SITE/public/images/hugo.png" alt="Photo de Hugo" class="image">
+                            <p class="overlay">Poulain</p>
                         </div>
                         <div>
                             <p id="description5">
-                                <span class="information">Nom :</span> NOM </br>
-                                <span class="information">Prénom :</span> Prénom</br>
-                                <span class="information">Poste :</span> Poste</br></br>
+                                <span class="information">Nom :</span> POULAIN </br>
+                                <span class="information">Prénom :</span> Hugo</br>
+                                <span class="information">Poste :</span> Administrateur</br></br>
                                 <a class="email" href="mailto:bidule@gmail.com" >Envoyez un mail</a></br></br>
                             </p>
                             <button onclick="myFunction5()" id="myBtn5">Voir plus</button>
@@ -119,14 +119,14 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container6">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
-                            <p class="overlay">NOM Prénom</p>
+                            <img src="/SITE/public/images/thibault.png" alt="Photo de Thibault" class="image">
+                            <p class="overlay">Poyet</p>
                         </div>
                         <div>
                             <p id="description6">
-                                <span class="information">Nom :</span> NOM </br>
-                                <span class="information">Prénom :</span> Prénom</br>
-                                <span class="information">Poste :</span> Poste</br></br>
+                                <span class="information">Nom :</span> POYET </br>
+                                <span class="information">Prénom :</span> Thibault</br>
+                                <span class="information">Poste :</span> Administrateur</br></br>
                                 <a class="email" href="mailto:bidule@gmail.com" >Envoyez un mail</a></br></br>
                             </p>
                             <button onclick="myFunction6()" id="myBtn6">Voir plus</button>

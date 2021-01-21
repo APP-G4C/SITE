@@ -143,9 +143,15 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <br>
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-
+      <h3><?php
+      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
+        {
+          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
+        }
+      ?></h3>
       <br><br>
       <label id="Nom" for="Nom"><strong><U><?php Valid_ajout_gest()?>Nom</U></strong></label>
+      <br>
       <br>
       <br>
       <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
@@ -269,20 +275,21 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <legend><strong>AJOUTER UNE FAQ</strong></legend>
       <br>
 
-<!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
+<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
       <h3></h3>
       <br><br>
       <label id="Question" for="Question"><strong><U>Question</U></strong></label>
       <br>
       <br>
-      <input name="Question"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
+      <input name="Question"type="text" placeholder="Question" pattern="[A-Za-z-].{1,}">
       <br> <br>
       <label id="Reponse"for="Reponse"><strong><U>Reponse</U></strong></label>
       <br>
       <input name="Reponse"type="text" placeholder="Reponse"pattern="[A-Za-z-].{1,}">
       <br> <br>
       <br> <br>
-      <input type="submit" name="FAQ" value="Ajouter FAQ">
+      <br> <br>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
     </fieldset>
     </div>
   </form>

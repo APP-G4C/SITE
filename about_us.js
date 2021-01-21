@@ -2,6 +2,7 @@ function myFunction1() {
   var description = document.getElementById("description1");
   var myBtn = document.getElementById("myBtn1");
 
+
   if (description.style.display == "none") {
 	description.style.display = "inline";
 	myBtn.innerHTML = "Voir moins";
