@@ -1,16 +1,15 @@
 <?php
 // Appel des fonctions PHP
+
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
-
-
+session_start();
 
 
 //Début de la session
-session_start();
 if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
   header("Location:page_connexion.php");
 } ?>
@@ -62,7 +61,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <!-- FORMULAIRE INFOS PERSONNELLES-->
     <form id="loginForm">
     <div id="informationspersonnelles">
-      <fieldset> 
+      <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form>
@@ -72,7 +71,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
             <br>
             <label> 12345
             <br> <br>
-            <label><strong><U>Photo de profil</U></strong></label>             
+            <label><strong><U>Photo de profil</U></strong></label>
             <br>
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
@@ -85,7 +84,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
             </select>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
-            <br>      
+            <br>
             <label>DUPOND</label>
             <br> <br>
             <label><strong><U>Prénom</U></strong></label>
@@ -136,28 +135,24 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <div id="Backoffice">
   <br> <br>
   <h2> BACK OFFICE</h2>
-  <br> <br> 
-  <form id="form" method="POST"action="page_administrateur.php">  
+  <br> <br>
+  <form id="form" method="POST"action="page_administrateur.php">
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
-      <br> 
+      <br>
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php 
+      <h3><?php
       if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
           echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
-        }
-      else
-        {
-          header("Location:page_administrateur.php");
         }
       ?></h3>
       <br><br>
       <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
       <br>
-      <br> 
+      <br>
       <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
       <br> <br>
       <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
@@ -166,11 +161,11 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <br> <br>
       <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
       <br>
-      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
+      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
       <button onclick="alert('Es-tu sûr de vouloir ajouter ce gestionnaire ?')"type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
-    </div>    
+    </div>
   </form>
   <br> <br>
   </div>
@@ -187,7 +182,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
     <select>
       <option>A</option>
       <option>B</option>
-      <option>C</option>    
+      <option>C</option>
     </select>
     <br> <br>
   <table>
@@ -272,48 +267,50 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
   <!-- FORMULAIRE "AJOUTER UNE FAQ"-->
 <div id="Backoffice">
   <br> <br>
-  <br> <br> 
-  <form id="form" method="POST"action="page_administrateur.php">  
+  <br> <br>
+  <form id="form" method="POST"action="page_administrateur.php">
     <div id="ajouterfaq">
     <fieldset>
-      <legend><strong>AJOUTER UNE</strong></legend>
-      <br> 
+      <legend><strong>AJOUTER UNE FAQ</strong></legend>
+      <br>
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
       <h3></h3>
       <br><br>
       <label id="Question" for="Question"><strong><U>Question</U></strong></label>
       <br>
-      <br> 
+      <br>
       <input name="Question"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
       <br> <br>
       <label id="Reponse"for="Reponse"><strong><U>Reponse</U></strong></label>
       <br>
       <input name="Reponse"type="text" placeholder="Reponse"pattern="[A-Za-z-].{1,}">
-      <br> <br>   
+      <br> <br>
       <br> <br>
       <input type="submit" name="FAQ" value="Ajouter FAQ">
     </fieldset>
-    </div>    
+    </div>
   </form>
   <br> <br>
   </div>
 
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
-    <fieldset>
-      <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
-        <br>
-        <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
-        <br>
-        <input type="text" placeholder="Titre CGU/CL">
-        <br> <br>
-        <label><strong><U>Description CGU/CL:</U></strong> </label>
-        <br>
-        <textarea></textarea>
-        <br> <br>
-        <button onclick="alert('Es-tu sûr de vouloir ajouter ce gestionnaire ?')"><span>Ajouter CGU/CL</span></button>
-    </fieldset>
+    <form class="" action="page_administrateur.php" method="post">
+      <fieldset>
+        <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
+          <br>
+          <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
+          <br>
+          <input name="Titre CGU/CGL" type="text" placeholder="Titre CGU/CL">
+          <br> <br>
+          <label><strong><U>Description CGU/CL:</U></strong> </label>
+          <br>
+          <input type="text" name="CGL" >
+          <br> <br>
+          <button type="submit"><span>Ajouter CGU/CL</span></button>
+      </fieldset>
+    </form>
   </div>
   <br> <br>
 
