@@ -38,7 +38,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container1">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/paul.png" alt="Photo de Paul" class="image">
                             <p class="overlay">Malagoli</p>
                         </div>
                         <div>
@@ -55,7 +55,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container2">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/laure.png" alt="Photo de Laure" class="image">
                             <p class="overlay">Degot</p>
                         </div>
                         <div>
@@ -71,7 +71,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container3">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/timothée.png" alt="Photo de Timothée" class="image">
                             <p class="overlay">Lamare</p>
                         </div>
                         <div>
@@ -87,7 +87,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container4">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/yifei.png" alt="Photo de Yifei" class="image">
                             <p class="overlay">Zhao</p>
                         </div>
                         <div>
@@ -103,7 +103,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container5">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/hugo.png" alt="Photo de Hugo" class="image">
                             <p class="overlay">Poulain</p>
                         </div>
                         <div>
@@ -119,7 +119,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
                     <div id="container6">
                         <div class="photoprofil">
-                            <img src="/SITE/public/images/profil.png" alt="Photo de Bidule" class="image">
+                            <img src="/SITE/public/images/thibault.png" alt="Photo de Thibault" class="image">
                             <p class="overlay">Poyet</p>
                         </div>
                         <div>

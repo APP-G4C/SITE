@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
 
 #titre_aboutus {
-  position: relative;
+  position: absolute;
   font-size:3vw;
   color : #3F51B5;
   margin-left:35%;
 }
 
 #introduction {
-  position: relative;
+  position: absolute;
   margin-top:4.5%;
   font-size:1.3vw;
   margin-left:7%;
