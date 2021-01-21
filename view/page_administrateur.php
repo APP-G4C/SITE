@@ -59,7 +59,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
-    <form id="loginForm">
+
     <div id="informationspersonnelles">
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
