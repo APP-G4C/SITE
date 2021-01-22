@@ -10,7 +10,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'D:\vendor\phpmailer';
+require 'D:\MAMP\bin\php\vendor\phpmailer';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer();
