@@ -1,5 +1,5 @@
 <?php 
-session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_gestionnaire.php');
 function recherche_id_user()
 {
 	if (isset($_GET['q'])) {
@@ -188,17 +188,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $test_utilisateur = htmlspecialchars(trim($_POST["test_utilisateur"]));
         
     }
-    echo $_SESSION["id"];
+
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_id_user_rdv)&& empty($err_centre_utilisateur)&&empty($err_horaire_rdv_utilisateur)&&empty($err_date_rdv_utilisateur)&&empty($err_test_utilisateur)){
 
      $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-      $sql=" INSERT INTO test (`Date_test`, `heure_test`,`id_User`, `Nom`) VALUES (:Date_test, :heure_test,:id_User,:Nom)";
+           $sql=" INSERT INTO test (`Date_test`, `heure_test`,`id_User`,`id_RH`, `Nom`) VALUES (:Date_test, :heure_test,:id_User,:id_RH,:Nom)";
+
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Date_test", $param_date_test, PDO::PARAM_STR);
             $stmt->bindParam(":heure_test", $param_heure_test_rdv, PDO::PARAM_STR);
             $stmt->bindParam(":id_User", $param_id_user_rdv, PDO::PARAM_STR);
+            $stmt->bindParam(":id_RH", $param_id_RH, PDO::PARAM_STR);
             $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
         
             
@@ -208,6 +210,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_heure_test_rdv = trim($_POST["horaire_rdv_utilisateur"]);
             $param_id_user_rdv = trim($_POST["id_user_rdv"]);
             $param_Nom = trim($_POST["test_utilisateur"]);
+             $param_id_RH = $_COOKIE["id"];
             sleep(1);
             $test=true;
 

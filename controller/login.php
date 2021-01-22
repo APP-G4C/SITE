@@ -26,6 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_password = "Veuillez entrer un mot de passe.";
     } else{
         $password = trim($_POST["password"]);
+        
     }
 
     // On vérifie qu'il n'y a pas d'erreur

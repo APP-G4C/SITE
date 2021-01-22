@@ -5,6 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/recherche.php');
 
 
 
@@ -90,12 +91,13 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
             <br> <br>
             <label><strong><U>Prénom</U></strong></label>
             <br>
-           <label> Jean</label>
+            <label> Jean</label>
             <br> <br>
-        <label><strong><U>Date de Naissance</U></strong></label>
-        <br>
-        <input type="date" name="">
-        <br> <br>
+            <label><strong><U>Date de Naissance</U></strong></label>
+            <br>
+            <input type="date" name="">
+            <br> <br>
+            <br> <br>
             <label><strong><U>Numéro de téléphone</U></strong></label>
             <br>
             <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
@@ -135,25 +137,14 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
 <div id="Backoffice">
   <br> <br>
-  <h2> BACK OFFICE</h2>
   <br> <br> 
   <form id="form" method="POST"action="page_administrateur.php">  
-    <div id="ajouterutilisateur">
+    <div id="ajouterfaq">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
       <br> 
 
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php 
-      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
-        {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
-        }
-      else
-        {
-          header("Location:page_administrateur.php");
-        }
-      ?></h3>
       <br><br>
       <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>
       <br>
@@ -177,52 +168,31 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 
   <!-- FORMULAIRE " PROCHAINS RDV"-->
   <div id="prochainsrdv">
-  <fieldset>
-  <legend><strong>PROCHAINS RDV</strong></legend>
-  <br>
-  <div id="prisederdv">
-  <form>
-    <label><strong><U>Gestionnaire</U></strong></label>
+    <fieldset>
+    <legend><strong>PROCHAINS RDV</strong></legend>
     <br>
-    <select>
-      <option>A</option>
-      <option>B</option>
-      <option>C</option>    
-    </select>
-    <br> <br>
-  <table>
-    <tr>
-      <td><strong><U>Nom</U></strong></td>
-      <td><strong><U>Prénom</U></strong></td>
-      <td><strong><U>Date</U></strong></td>
-      <td><strong><U>Centre</U></strong></td>
-      <td><strong><U>Horaire</U></strong></td>
-    </tr>
-    <tr>
-      <td><label> Dupond</label></td>
-      <td><label>Jean</label></td>
-      <td><input type="date" name=""></td>
-      <td><label>1</label></td>
-      <td><input type="time" name=""></td>
-    </tr>
-    <tr>
-      <td><label>Dupond</label></td>
-      <td><label>Jean</label></td>
-      <td><input type="date" name=""></td>
-      <td><label>2</label></td>
-      <td><input type="time" name=""></td>
-    </tr>
-    <tr>
-      <td><label>Dupond</label></td>
-      <td><label>Jean</label></td>
-      <td><input type="date" name=""></td>
-      <td><label>3</label></td>
-      <td><input type="time" name=""></td>
-    </tr>
-  </table>
-  </form>
-  </fieldset>
-  </div>
+            <form action="page_administrateur.php"method="POST" >
+              
+          <select name="ok">
+            <option><?php id__gestionnaire_rdv();?></option>
+          </select>
+          <br>
+          <input type="submit" value="valider" name="submit">
+          <table>
+            <tr>
+              <td><strong><U>id_User</U></strong></td>
+              <td><strong><U>Date</U></strong></td>
+              <td><strong><U>Horaire</U></strong></td>
+            </tr>
+            <tr>
+              <td><?php id_prochainrdv_admin();?></td>
+              <td><?php Date_prochainrdv_admin();?></td>
+              <td><?php horaire_prochainrdv_admin();?></td>
+            </tr>
+          </table>
+        </form>
+    </fieldset>
+    </div>
   <br>
 
   <!-- FORMULAIRE "RESULTATS"-->
@@ -235,39 +205,45 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <br>
       <input type="text" name="">
       <br> <br>
-      <label><strong><U>Trier par</U></strong></label>
-      <br> <br>
-      <table>
-        <tr>
-          <td><strong>Date</strong></td>
-          <td><strong>Centre</strong></td>
-          <td><strong>Gestionnaire</strong>
-          <td><strong> Horaire</strong></td>
-        </tr>
-        <tr>
-          <td><input type="date" name=""></td>
-          <td>
-            <select>
-              <option>1</option>
-              <option>2</option>
-            </select>
-          </td>
-          <td>
-            <select>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-          </td>
-          <td><input type="time"></td>
-        </tr>
-      </table>
-      <br> <br>
+     
       <button><span>Afficher</span></button>
     </form>
     </fieldset>
   </div>
   <br><br><br>
+
+<!-- RECHERCHER-->
+<fieldset>
+  <legend><strong><U>RECHERCHER ADMIN-GESTIONNAIRE-UTILISATEUR</U></strong></legend>
+  <form method="GET">
+    <br><br>
+     <input type="search" name="q" placeholder="Recherche..." />
+     <br><br>
+     <input type="submit" value="Rechercher" />
+     <br><br>
+     <table>
+        <tr>
+          <td><strong><U>id_user</U></strong></td>
+          <td><strong><U>Nom</U></strong></td>
+          <td><strong><U>Prenom</U></strong></td>
+          <td><strong><U>Date de naissance</U></strong></td>
+          <td><strong><U>Sexe</U></strong></td>
+          <td><strong><U>Mail</U></strong></td>
+
+        </tr>
+        <tr>
+          <td><?php recherche_id();?></td>
+          <td><?php recherche_nom()?></td>
+          <td><?php recherche_prenom();?></td>
+          <td><?php recherche_date_de_naissance();?></td>
+          <td><?php recherche_sexe();?></td>
+          <td><?php recherche_mail();?></td>
+        </tr>
+      </table>
+  </form>
+</fieldset>
+<br><br>
+
 
   <!-- FORMULAIRE "AJOUTER UNE FAQ"-->
 <div id="Backoffice">

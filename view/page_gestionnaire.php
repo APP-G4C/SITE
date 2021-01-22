@@ -4,14 +4,13 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/recherche.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/recherche.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_rdv_gestionnaire.php');
 
 session_start();
-//Début de la session 
-if(!isset($_SESSION["id"])||$_SESSION['type']!=2)
-{
+//Début de la session
+if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   header("Location:page_connexion.php");
 }?>
 
@@ -179,32 +178,14 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2)
   <form>
     <table>
       <tr>
-        <td><strong><U>Nom</U></strong></td>
-        <td><strong><U>Prénom</U></strong></td>
+        <td><strong><U>id_User</U></strong></td>
         <td><strong><U>Date</U></strong></td>
-        <td><strong><U>Centre</U></strong></td>
         <td><strong><U>Horaire</U></strong></td>
       </tr>
       <tr>
-        <td><label> Dupond</label></td>
-        <td><label>Jean</label></td>
-        <td><input type="date" name=""></td>
-        <td><label>1</label></td>
-        <td><input type="time" name=""></td>
-      </tr>
-      <tr>
-        <td><label>Dupond</label></td>
-        <td><label>Jean</label></td>
-        <td><input type="date" name=""></td>
-        <td><label>2</label></td>
-        <td><input type="time" name=""></td>
-      </tr>
-      <tr>
-        <td><label>Dupond</label></td>
-        <td><label>Jean</label></td>
-        <td><input type="date" name=""></td>
-        <td><label>3</label></td>
-        <td><input type="time" name=""></td>
+        <td><?php id_user_prochainrdv()?></td>
+        <td><?php Date_prochainrdv()?></td>
+        <td><?php horaire_prochainrdv()?></td>
       </tr>
     </table>
   </form>
@@ -213,16 +194,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2)
   <br>
 
 <!-- RECHERCHER-->
-<?php
-$pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-if(isset($_GET['q']) AND !empty($_GET['q'])) 
-{
-   $q = htmlspecialchars($_GET['q']);
-   $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%"');
- }
 
-
-?>
 <fieldset>
   <legend><strong><U>RECHERCHER</U></strong></legend>
   <form method="GET">
@@ -264,6 +236,7 @@ if(isset($_GET['q']) AND !empty($_GET['q']))
           <td><strong><U>Centre</U></strong></td>
           <td><strong><U>Horaire</U></strong></td>
           <td><strong><U>Choix du test</U></strong></td>
+          <td><strong><U>Valider</U></strong></td>
         </tr>
         <tr>
           <td>
