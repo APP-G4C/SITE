@@ -1,12 +1,12 @@
 body
 {
-text-align: center;
+	text-align: center;
 }
 
 #photoavatar 
 {
-width: 100px;
-height: 100px;
+	width: 100px;
+	height: 100px;
 }
 
 legend
@@ -16,56 +16,56 @@ legend
 
 #informationspersonnelles fieldset
 {
-width: 40%;
-border: 3px #0059C2 solid;
-margin: auto;
+	width: 40%;
+	border: 3px #0059C2 solid;
+	margin: auto;
 }
 
 #informationspersonnelles form
 {
-text-align: center;
+	text-align: center;
 }
 
 td
 {	
-text-align: center;
+	text-align: center;
 }
 
 button
 {
-background-color: black;
-border:3px solid;
-box-shadow: 3px 3px 0px #3F51B5;	
+	background-color: black;
+	border:3px solid;
+	box-shadow: 3px 3px 0px #3F51B5;	
 }
 
 span
 {
-color: white;
+	color: white;
 }
 
 #prochainsrdv fieldset
 {
-margin: auto;
-padding: auto;
-border: 3px #0059C2 solid;	
+	margin: auto;
+	padding: auto;
+	border: 3px #0059C2 solid;	
 }
 
 #prochainsrdv table 
 {
-margin:auto;
+	margin:auto;
 }
 
 #prochainsrdv fieldset
 {
 
-width:40%;
+	width:40%;
 }
 
 #résultats fieldset
 {
-width: 25%;
-margin:auto;
-border: 3px #0059C2 solid;
+	width: 25%;
+	margin:auto;
+	border: 3px #0059C2 solid;
 }
 
 #résultats form
@@ -169,46 +169,46 @@ font-size: 10px
 
 #backoffice fieldset
 {
-border: 3px #0059C2 solid;
-padding: auto;
-width: auto;
+	border: 3px #0059C2 solid;
+	padding: auto;
+	width: auto;
 }
 
 .champ
 {
-width: auto;
-height: auto;
+	width: auto;
+	height: auto;
 }
 
 #form textarea
 {
-width:70px;
-height:100px;
+	width:70px;
+	height:100px;
 }
 
 input
 {
-width: 50px;
+	width: 50px;
 }
 
 #graph 
 {
-width: 300px;
-height: 150px;
+	width: 300px;
+	height: 150px;
 }
 
 button
 {
-width: 30px;
-height:10px;
-font-size: 70%;
+	width: 30px;
+	height:10px;
+	font-size: 70%;
 }
 
 #form fieldset
 {
-padding:1%;
+	padding:1%;
 }
 a
 {
-font-size: 10px;
+	font-size: 10px;
 }
