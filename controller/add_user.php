@@ -1,5 +1,6 @@
 <?php
 // Initialisation session
+
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
     header("Location: page_gestionnaire.php");
@@ -48,5 +49,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 }unset($pdo);
-
-

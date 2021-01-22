@@ -20,7 +20,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
   <header id="menu1">
     <nav class="menu">
         <ul id="menu">
-            <li id="link"><a id="logoapp" href="page_accueil.php""><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="logoapp" href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2" href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
             <li id="link"><a id="b2" href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>

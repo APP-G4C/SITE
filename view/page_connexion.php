@@ -7,10 +7,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
 ?>
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>

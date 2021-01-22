@@ -13,26 +13,24 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 
 
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
-$Question =$Reponse ="";
-$err_Question=$err_Reponse = "";
+$CGL=$titre_CGL="";
+$err_CGL=$err_titre_CGL="";
 $test=false;
-
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
-    if(empty(htmlspecialchars(trim($_POST["Question"])))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_Question = "Le champ est vide";
+    if(empty(trim($_POST["CGL"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        $err_CGL = "Le champs est vide";
     } else{
-        $Question = htmlspecialchars(trim($_POST["Question"]));
-
+        $CGL = trim($_POST["CGL"]);
 
     }
 
     // On vérifie qu'un mdp a été entré
-    if(empty(htmlspecialchars(trim($_POST["Reponse"])))){
-        $err_Reponse = "Veuillez entrer un mot de passe.";
+    if(empty(trim($_POST["titre_CGL"]))){
+        $err_titre_CGL = "Le champs est vide";
     } else{
-        $Reponse = htmlspecialchars(trim($_POST["Reponse"]));
+        $titre_CGL = trim($_POST["titre_CGL"]);
 
     }
 
@@ -40,14 +38,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Question) && empty($err_Reponse)){
 
-        fonction_add_faq();
+        fonction_add_cgl();
     }
     else{
         header("Location:page_administrateur.php");
     }
 
 }unset($pdo);
- {
-    # code...
-}
 ?>
