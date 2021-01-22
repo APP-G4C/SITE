@@ -4,6 +4,7 @@
 }
 .Entete{
   text-transform: uppercase;
+  font-family: 'Lato'
   height: 20px;
   width:auto;
   font-size: 30px;
@@ -63,7 +64,7 @@ color: black;
 .Message{
   font-size: 20px;
   position: relative;
-  right: 47px;
+  right: 2px;
   font-weight: bold;
   display: inline;
 }
@@ -85,4 +86,21 @@ legend{
   padding: 2px 6px;
   font-size: 20px;
   font-weight: bolder;
+  text-align: center;
+}
+
+.input-row{
+ height: 20px;
+ padding: 10px;
+ color: red;
+ border-color: red;
+}
+input:valid+span:after {
+  position: absolute;
+  content: '✓';
+  padding-left: 5px;
+}
+input:invalid+span:after {
+  position: absolute; content: '✖';
+  padding-left: 5px;
 }

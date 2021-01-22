@@ -1,0 +1,214 @@
+body
+{
+	text-align: center;
+}
+
+#photoavatar 
+{
+	width: 100px;
+	height: 100px;
+}
+
+legend
+{
+  text-align: center;
+}
+
+#informationspersonnelles fieldset
+{
+	width: 40%;
+	border: 3px #0059C2 solid;
+	margin: auto;
+}
+
+#informationspersonnelles form
+{
+	text-align: center;
+}
+
+td
+{	
+	text-align: center;
+}
+
+button
+{
+	background-color: black;
+	border:3px solid;
+	box-shadow: 3px 3px 0px #3F51B5;	
+}
+
+span
+{
+	color: white;
+}
+
+#prochainsrdv fieldset
+{
+	margin: auto;
+	padding: auto;
+	border: 3px #0059C2 solid;	
+}
+
+#prochainsrdv table 
+{
+	margin:auto;
+}
+
+#prochainsrdv fieldset
+{
+
+	width:40%;
+}
+
+#résultats fieldset
+{
+	width: 25%;
+	margin:auto;
+	border: 3px #0059C2 solid;
+}
+
+#résultats form
+{
+text-align: center;
+margin:auto;
+}
+
+#backoffice fieldset
+{
+border: 3px #0059C2 solid;
+width: auto;
+margin:auto;
+}
+
+#ajouterutilisateur fieldset
+{
+width:30%;
+margin: auto;
+border: 3px #0059C2 solid;
+}
+
+#faq fieldset
+{
+width:20%;
+margin: auto;
+border: 3px #0059C2 solid;
+}
+
+#clcgu fieldset
+{
+width:20%;
+margin: auto;
+border: 3px #0059C2 solid;
+}
+
+#form fieldset
+{
+width:60%;
+margin: auto;
+border: 3px #0059C2 solid;
+padding:2% 
+}
+
+#Graphique
+{
+width: auto;
+padding: auto;	
+}
+
+#graph
+{
+margin:auto;
+}
+
+#Graphique fieldset
+{
+width:40%;
+margin: auto;
+border: 3px #0059C2 solid;
+}
+
+#backoffice fieldset
+{
+margin: auto;
+}
+input
+{
+width: 45%;
+height: 5%;
+}
+
+.text-danger 
+{
+color: red;
+}
+
+.text-success
+{
+color: green;
+}
+
+h3
+{
+color: green;
+}
+
+#bienvenue p
+{
+color: green;
+}
+/*MEDIAQUERIES*/
+@media all and (max-width: 600px)
+{
+body 
+{
+margin:auto;
+padding: auto;    
+font-size: 10px
+}
+
+#backoffice fieldset
+{
+	border: 3px #0059C2 solid;
+	padding: auto;
+	width: auto;
+}
+
+.champ
+{
+	width: auto;
+	height: auto;
+}
+
+#form textarea
+{
+	width:70px;
+	height:100px;
+}
+
+input
+{
+	width: 50px;
+}
+
+#graph 
+{
+	width: 300px;
+	height: 150px;
+}
+
+button
+{
+	width: 30px;
+	height:10px;
+	font-size: 70%;
+}
+
+#form fieldset
+{
+	padding:1%;
+}
+a
+{
+	font-size: 10px;
+}

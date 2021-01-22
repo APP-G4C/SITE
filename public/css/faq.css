@@ -1,0 +1,46 @@
+.container{
+  text-align: center;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-bottom: 10vh;
+}
+.top{
+  text-transform: uppercase;
+  font-family: 'Lato'
+  height: 20px;
+  width:auto;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 30px;
+  text-align:center;
+  color:#3F51B5;
+
+}
+legend{
+  background-color: #fff;
+  color: #3F51B5;
+  padding: 2px 6px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+li{
+  list-style-type: none;
+}
+.reponses{
+  margin-left: 10vh;
+  margin-right: 10vh;
+  font-size: 20px;
+  text-align: justify;
+  text-align-last: center;
+
+}
+.question{
+  font-size: 25px;
+  text-decoration: underline;
+}
+/*test*/
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
