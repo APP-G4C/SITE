@@ -1,4 +1,5 @@
 <?php
+
 function est_co (){
   if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
     return true;
@@ -55,4 +56,3 @@ function Valid_ajout_gest(){
       echo 'Felicitations vous avez ajouté "'.$_SESSION["Nom_Prenom_gest"].'" en tant que Gestionnaire !';
     }
 }
-?>

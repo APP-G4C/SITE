@@ -33,7 +33,9 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
         <div id="textaboutus">
           <h1 id="titre_aboutus"></br>Qui sommes-nous ?</br></h1>
                 <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati </p>
+
         </div>
+        <br><br><br>
                 <div id="containerglobal">
 
                     <div id="container1">
