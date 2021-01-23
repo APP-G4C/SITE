@@ -25,14 +25,14 @@ $mail->isSMTP();
 $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
 
 //Set the hostname of the mail server
-$mail->Host = 'smtp.sfr.fr';
+$mail->Host = 'smtp.gmail.com';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
 
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-$mail->Port = 465;
-$mail->SMTPSecure=PHPMailer::ENCRYPTION_SMTPS;
+$mail->Port = 587;
+
 //Set the encryption mechanism to use - STARTTLS or SMTPS
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
@@ -43,7 +43,7 @@ $mail->SMTPAuth = true;
 $mail->Username = 'G4CAPP@gmail.com';
 
 //Password to use for SMTP authentication
-$mail->Password = 'G4CAPP';
+$mail->Password = 'G4CAPPcreatif';
 
 //Set who the message is to be sent from
 $mail->setFrom('tmtlamare@gmail.com', 'First Last');
