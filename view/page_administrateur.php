@@ -5,12 +5,8 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
-
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/recherche.php');
-
-
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php')
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
 session_start();
 
 
@@ -189,7 +185,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
     <br>
 
             <form action="page_administrateur.php"method="POST" >
-              
+
           <select name="ok">
             <option><?php id__gestionnaire_rdv();?></option>
           </select>
@@ -222,7 +218,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
       <br>
       <input type="text" name="">
       <br> <br>
-     
+
       <button><span>Afficher</span></button>
     </form>
     </fieldset>
