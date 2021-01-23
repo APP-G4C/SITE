@@ -14,6 +14,7 @@ function fonction_add_gestionnaire(){
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
+            
             $test=true;
             $stmt->execute();
 }
@@ -31,7 +32,9 @@ function fonction_add_utilisateur(){
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
+            sleep(1);
             $test=true;
+            $_SESSION["Nom_Prenom_gest"] = $param_Prenom." ".$param_Nom;
             $stmt->execute();
 }
 
@@ -51,7 +54,19 @@ function fonction_add_faq(){
             $stmt->execute();
 }
 
-
+function fonction_add_cgl(){
+        $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+        $sql=" INSERT INTO `CGL`(`titre_cgl`, `cgl`) VALUES (:titre,:CGL)";
+        $stmt = $pdo->prepare($sql);
+            // On attache les variables au statement comme paramètres
+            $stmt->bindParam(":titre", $param_titre, PDO::PARAM_STR);
+            $stmt->bindParam(":CGL", $param_CGL, PDO::PARAM_STR);
+            // On remplis les paramètres
+            $param_titre = trim($_POST["titre_cgl"]);
+            $param_CGL = trim($_POST["cgl"]);
+            $test=true;
+            $stmt->execute();
+}
 
 function fonction_add_contact(){
   $serveur= "localhost";

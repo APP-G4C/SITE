@@ -1,6 +1,4 @@
 <?php
-// Initialisation session
-session_start();
 
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 
@@ -26,6 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_password = "Veuillez entrer un mot de passe.";
     } else{
         $password = trim($_POST["password"]);
+        
     }
 
     // On vérifie qu'il n'y a pas d'erreur
@@ -91,4 +90,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
-

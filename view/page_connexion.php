@@ -3,12 +3,8 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
-/*session_start();*/
+
 ?>
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -72,7 +68,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
 
 
   <body>
-<br><br>
+
     <div class="login-box">
       <h1>Connexion</h1>
       <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -85,7 +81,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
           <input class="login" type="password" placeholder="Mot de passe" name="password" value="<?php echo $password ?>">
         </div>
         <input type="submit" class="btn" value="Se connecter">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="error_block"><p>
           <?php if(!empty($err_Mail)){
             echo $err_Mail;
