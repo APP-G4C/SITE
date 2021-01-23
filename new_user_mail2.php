@@ -1,5 +1,7 @@
 <?php
+ini_set('SMTP','smtp.sfr.fr');
 ini_set('smtp_port',465);
+
 $to = "tmtlamare@gmail.com";
 $objet = "test";
 $msg = "test";
