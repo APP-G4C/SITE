@@ -40,10 +40,10 @@
 }
 
 .overlay {
-  position: relative;
-  top:0 ;
+  position: absolute;
+  top: 1vh ;
   background: rgba(0, 0, 0, 0.5);
-  width: 100%;
+  width: 71%;
   margin-top:50%;
   transition: 1s ease;
   opacity:0;
@@ -53,42 +53,41 @@
   font-size:1.5vw;
 }
 #containeur{
-
 }
 
 #container1 {
-  position: relative;
-  top : 50%;
+  position: absolute;
+  top : 55%;
   left : 7%;
   width: 11%;
 }
 #container2 {
-  position: relative;
-  top : 50%;
+  position: absolute;
+  top : 55%;
   left : 22%;
   width: 11%;
 }
 #container3 {
-  position: relative;
-  top : 50%;
+  position: absolute;
+  top : 55%;
   left:37%;
   width: 11%;
 }
 #container4 {
-  position: relative;
-  top : 50%;
+  position: absolute;
+  top : 55%;
   left:52%;
   width: 11%;
 }
 #container5 {
-  position: relative;
-  top : 50%;
+  position: absolute;
+  top : 55%;
   left:67%;
   width: 11%;
 }
 #container6 {
-  position: relative;
-  top : 50%;
+  position: absolute;
+  top : 55%;
   left:82%;
   width: 11%;
 }

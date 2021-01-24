@@ -4,9 +4,13 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_rdv_gestionnaire.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_graph.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/affficher_rdv_utilisateur.php');
+
 
 //Début de la session
-session_start();
+
 if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
   header("Location:page_connexion.php");
 } ?>
@@ -128,91 +132,131 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
             <legend><strong>RESULTATS</strong></legend>
               <table>
                 <tr>
-                  <td><strong><U>Date</U></strong></td>
-                  <td><strong><U>Centre</U></strong></td>
-                  <td><strong><U>Capteur 1</U></strong></td>
-                  <td><strong><U>Capteur 2</U></strong></td>
+                  <td><strong><U>id_test</U></strong></td>
+                  <td><strong><U>trame</U></strong></td>
+                  <td><strong><U>Heure</U></strong></td>
                 </tr>
                 <tr>
-                  <td><input type="date" name=""></td>
-                  <td><label>1</label></td>
-                  <td><label>52/100</label></td>
-                  <td><label>52/100</label></td>
+                  <td><label><?php user_id_test();?></label></td>
+                  <td><label><?php user_trame();?></label></td>
+                  <td><label><?php user_Heure();?></label></td>
                 </tr>
               </table>
           </fieldset>
         </div>
         <br><br>
+          <!-- FORMULAIRE " PROCHAINS RDV"-->
+  <div id="prochainsrdv">
+  <fieldset>
+  <legend><strong>PROCHAINS RDV</strong></legend>
+  <br>
+  <div id="prisederdv">
+  <form>
+    <table>
+      <tr>
+        <td><strong><U>Date</U></strong></td>
+        <td><strong><U>Horaire</U></strong></td>
+      </tr>
+      <tr>
+        <td><?php user_Date_prochainrdv()?></td>
+        <td><?php user_horaire_prochainrdv()?></td>
+      </tr>
+    </table>
+  </form>
+  </fieldset>
+  </div>
+  <br>
+
       <!--GRAPHIQUE-->
-       <?php 
-        
-            // On attache les variables au statement comme paramètres
-            
-    function tram(){
-      $bdd=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" SELECT * FROM valeur_test";
-        $reponse = $bdd->query($sql);
-      while ($donnees=$reponse->fetch()){
-          $trame= "'".$donnees['trame']."',";
-          echo $trame;}}
-
-       function Heure(){
-      $bdd=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" SELECT * FROM valeur_test";
-        $reponse = $bdd->query($sql);
-      while ($donnees=$reponse->fetch()){
-          $Heure= "'".$donnees['Heure']."',";
-          echo $Heure;}}
 
         
-
-
-       
-  
-          ?>
-        
-
- 
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <div id="Graphique" style="width: 75%;margin: auto;">
-          <canvas id="myChart"></canvas>
-        </div>
-          <script> 
-            Chart.defaults.global.title.display=true;
-            Chart.defaults.global.title.text="PAS DE TITRE";
-            Chart.defaults.global.elements.point.radius=10;
-          </script>
-          <script > 
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chart = new Chart(ctx, {
-            // The type of chart we want to create
-              type: 'line',
+      <h2> TEST </h2>
+      <div id="Graphique" style="width: 50%;margin: auto;">
+        <canvas id="myChart"></canvas>
+        <canvas id="test"></canvas>
+      </div>
+      </fieldset>
+          <script src="/SITE/public/js/graph.js.js"></script>
+          <script >
+     Chart.defaults.global.title.display=true;
+Chart.defaults.global.title.text="PAS DE TITRE";
+Chart.defaults.global.elements.point.radius=10;
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'line',
+// The data for our dataset
+data:
+{
+  labels: [<?php echo Heure1();?>],
+  datasets: [{
+    label: 'Battement par minutes',
+    backgroundColor: 'rgb(255, 247, 0,0.25)',
+    borderColor: 'rgb(0, 108, 255)',
+    data: [<?php echo tram1();?>]
+  }]
+},
+// Configuration options go here
+options:
+{
+  title:
+  {
+    text:"Capteur cardiaque"
+  },
+  elements:
+  {
+    point:
+    {
+      radius:5,
+      backgroundColor: 'rgb(0,108,255)'
+    }
+  }
+}
+}
+);
+     Chart.defaults.global.title.display=true;
+Chart.defaults.global.title.text="PAS DE TITRE";
+Chart.defaults.global.elements.point.radius=10;
+var ctx = document.getElementById('test').getContext('2d');
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'line',
+// The data for our dataset
+data:
+{
+  labels: [<?php echo Heure2();?>],
+  datasets: [{
+    label: 'Pression',
+    backgroundColor: 'rgb(255, 247, 0,0.25)',
+    borderColor: 'rgb(0, 108, 255)',
+    data: [<?php echo tram2();?>]
+  }]
+},
+// Configuration options go here
+options:
+{
+  title:
+  {
+    text:"Capteur cardiaque"
+  },
+  elements:
+  {
+    point:
+    {
+      radius:5,
+      backgroundColor: 'rgb(0,108,255)'
+    }
+  }
+}
+}
+);
 
-            // The data for our dataset
-              data: {
-                labels: [<?php echo Heure();?>],
-                datasets: [{
-                  label: 'Battement par minutes',
-                  backgroundColor: 'rgb(255, 247, 0,0.25)',
-                  borderColor: 'rgb(0, 108, 255)',
-                  data: [<?php echo tram();?>]
-                }]
-              },
 
-    // Configuration options go here
-              options: {
-                title:{
-                  text:"Capteur cardiaque"
-                },
-                elements:{
-                  point:{
-                    radius:5,
-                    backgroundColor: 'rgb(0,108,255)'
-                  }
-                }
-              }
-        });
-          </script>
+</script>
+       
+
+         
         <br>
   </body>
 
