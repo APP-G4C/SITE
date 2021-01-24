@@ -124,7 +124,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
                     <label for="email">
                       Remplissez votre email:
                     </label>
-                    <input type="email" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                    <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
                     <span class="validity"></span>
                   </div>
                   <br/> <br/>

@@ -13,24 +13,24 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 
 
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
-$CGL=$titre_CGL="";
-$err_CGL=$err_titre_CGL="";
+$cgl=$titre_cgl="";
+$err_cgl=$err_titre_cgl="";
 $test=false;
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
-    if(empty(trim($_POST["CGL"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_CGL = "Le champs est vide";
+    if(empty(trim($_POST["titre_cgl"]))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        $err_cgl = "Le champs est vide";
     } else{
-        $CGL = trim($_POST["CGL"]);
+        $cgl = trim($_POST["titre_cgl"]);
 
     }
 
     // On vérifie qu'un mdp a été entré
-    if(empty(trim($_POST["titre_CGL"]))){
-        $err_titre_CGL = "Le champs est vide";
+    if(empty(trim($_POST["cgl"]))){
+        $err_titre_cgl = "Le champs est vide";
     } else{
-        $titre_CGL = trim($_POST["titre_CGL"]);
+        $titre_cgl = trim($_POST["cgl"]);
 
     }
 

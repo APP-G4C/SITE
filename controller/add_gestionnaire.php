@@ -12,36 +12,38 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 
 // On charge le fichier config si pas déjà fait (charge databse)
 
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_administrateur.php');
 
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
-$Mail = $Nom =$Prenom ="";
+require_once($_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php");
+$MailG = $NomG =$PrenomG ="";
 $err_Mail = $err_Nom=$err_Prenom = "";
 $test=false;
 
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
-    if(empty(htmlspecialchars(trim($_POST["Mail"])))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+    if(empty(htmlspecialchars(trim($_POST["MailG"])))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
         $err_Mail = "Veuillez entrer votre adresse Mail.";
     } else{
-        $Mail = htmlspecialchars(trim($_POST["Mail"]));
-        
+        $MailG = htmlspecialchars(trim($_POST["MailG"]));
+
     }
 
     // On vérifie qu'un mdp a été entré
-    if(empty(htmlspecialchars(trim($_POST["Nom"])))){
+    if(empty(htmlspecialchars(trim($_POST["NomG"])))){
         $err_Nom = "Veuillez entrer un mot de passe.";
     } else{
-        $Nom = htmlspecialchars(trim($_POST["Nom"]));
-        
+        $NomG = htmlspecialchars(trim($_POST["NomG"]));
+
     }
-    if(empty(htmlspecialchars(trim($_POST["Prenom"])))){
+    if(empty(htmlspecialchars(trim($_POST["PrenomG"])))){
         $err_Prenom = "Veuillez entrer un mot de passe.";
     } else{
-        $Prenom = htmlspecialchars(trim($_POST["Prenom"]));
-        
+        $PrenomG = htmlspecialchars(trim($_POST["PrenomG"]));
+
     }
-    
+
 
     // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
@@ -49,11 +51,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      fonction_add_gestionnaire();
     }
     else{
-        header("Location:page_administrateur.php");
+        header("Location: page_administrateur.php");
     }
 
 }unset($pdo);
     # code...
 ?>
-
-

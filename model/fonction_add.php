@@ -1,23 +1,25 @@
 <?php
+require_once($_SERVER['DOCUMENT_ROOT']."/SITE/view/page_administrateur.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/SITE/controller/add_gestionnaire.php");
 
 // FONCTION DE add_gestionnaire
 function fonction_add_gestionnaire(){
         $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`) VALUES (:Nom, :Prenom,:Mail, '2')";
+        $sql=" INSERT INTO user ('Nom', 'Prenom','Mail', 'Type') VALUES (:NomG, :PrenomG,:MailG, '2')";
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
-            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
-            $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
+            $stmt->bindParam(":MailG", $param_Mail,);
+            $stmt->bindParam(":NomG", $param_Nom, PDO::PARAM_STR);
+            $stmt->bindParam(":PrenomG", $param_Prenom, PDO::PARAM_STR);
 
             // On remplis les paramètres
-            $param_Mail = trim($_POST["Mail"]);
-            $param_Nom = trim($_POST["Nom"]);
-            $param_Prenom = trim($_POST["Prenom"]);
-            
+            $param_Mail =$_POST["MailG"];
+            $param_Nom = trim($_POST["NomG"]);
+            $param_Prenom = trim($_POST["PrenomG"]);
+
             $test=true;
             $stmt->execute();
-}
+}/*trim($_POST["MailG"])*/
 //FONCTION DE add-user
 function fonction_add_utilisateur(){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
@@ -56,11 +58,11 @@ function fonction_add_faq(){
 
 function fonction_add_cgl(){
         $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO `CGL`(`titre_cgl`, `cgl`) VALUES (:titre,:CGL)";
+        $sql=" INSERT INTO `CGL`(`titre`, `contenu`) VALUES (:titre_cgl,:cgl)";
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":titre", $param_titre, PDO::PARAM_STR);
-            $stmt->bindParam(":CGL", $param_CGL, PDO::PARAM_STR);
+            $stmt->bindParam(":titre_cgl", $param_titre, PDO::PARAM_STR);
+            $stmt->bindParam(":cgl", $param_CGL, PDO::PARAM_STR);
             // On remplis les paramètres
             $param_titre = trim($_POST["titre_cgl"]);
             $param_CGL = trim($_POST["cgl"]);

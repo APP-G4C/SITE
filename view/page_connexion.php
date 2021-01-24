@@ -68,7 +68,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
 
 
   <body>
-
+<br><br><br>
     <div class="login-box">
       <h1>Connexion</h1>
       <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -92,8 +92,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
         </div>
       </form>
     </div>
+<br><br><br><br><br><br><br>
+</br><br><br><br>
 
-  </body>
+</body>
 
 
   <footer id="menu2">
@@ -106,7 +108,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/login.php');
             </ul>
         </nav>
     </footer>
-
 
 
 </html>

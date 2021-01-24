@@ -5,16 +5,17 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php')
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
-session_start();
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/recherche.php');
+//require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
+//session_start();
 
 
 
 //Début de la session
-if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
-  header("Location:page_connexion.php");
-} ?>
+//if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
+//  header("Location:page_connexion.php");
+?>
 
 <!--DEBUT HTML-->
 
@@ -150,31 +151,32 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
 
       <h3><?php
-      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
+      if ($test=1 &&empty(!$PrenomG)&&empty(!$NomG))
         {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
+          echo 'Felicitations vous avez ajouté "'.$PrenomG.' '.$NomG.'" en tant que Gestionnaire !';
         }
       ?></h3>
 
       <br><br>
-      <label id="Nom" for="Nom"><strong><U><?php Valid_ajout_gest()?>Nom</U></strong></label>
+      <label id="NomG" for="NomG"><strong><U>Nom</U></strong></label>
       <br>
       <br>
       <br>
-      <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
+      <input name="NomG"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
       <br> <br>
-      <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
+      <label id="PrenomG"for='PrenomG'><strong><U>Prénom</U></strong></label>
       <br>
-      <input name="Prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}">
+      <input name="PrenomG"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}">
       <br> <br>
-      <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
+      <label id="MailG"for="MailG"><strong><U> Adresse mail</U></strong></label>
       <br>
-      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
+      <input type="text"name="MailG" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
       <button onclick="alert('Es-tu sûr de vouloir ajouter ce gestionnaire ?')"type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
+
     </div>
-  </form>
+  </form> <?php fonction_add_gestionnaire();?>
   <br> <br>
   </div>
 
@@ -184,7 +186,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
     <legend><strong>PROCHAINS RDV</strong></legend>
     <br>
 
-            <form action="page_administrateur.php"method="POST" >
+            <form action="page_administrateur.php" method="POST" >
 
           <select name="ok">
             <option><?php id__gestionnaire_rdv();?></option>

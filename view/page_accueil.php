@@ -59,7 +59,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
             <ul>
                 <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
                 <li id="link2"><a href="page_contact.php">Contact</a></li>
-                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_faq.php">Aide</a></li>
                 <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>

@@ -11,6 +11,7 @@ if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
 
 
 require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/SITE/model/fonction_add.php";
 $Mail = $Nom =$Prenom ="";
 $err_Mail = $err_Nom=$err_Prenom = "";
 $test=false;
@@ -45,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else{
         header("Location:page_gestionnaire.php");
     }
-  
+
 
 
 }unset($pdo);

@@ -79,7 +79,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
     <?php
     }
 
-    $reponse->closeCursor(); // Termine le traitement de la requête 
+    $reponse->closeCursor(); // Termine le traitement de la requête
 
     ?>
 </div>
@@ -92,7 +92,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
             <ul>
                 <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
                 <li id="link2"><a href="page_contact.php">Contact</a></li>
-                <li id="link2"><a href="page_faq.php">FAQ</a></li>
+                <li id="link2"><a href="page_faq.php">Aide</a></li>
                 <li id="link2"><a href="page_aboutus.php">À propos</a></li>
             </ul>
         </nav>
