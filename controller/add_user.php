@@ -39,13 +39,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
-
-     fonction_add_utilisateur();
+     $mdp=random_password();
+     fonction_add_utilisateur($mdp);
+     include $_SERVER['DOCUMENT_ROOT'].'/SITE/new_user_mail.php';
     }
     else{
         header("Location:page_gestionnaire.php");
     }
-  
+
 
 
 }unset($pdo);

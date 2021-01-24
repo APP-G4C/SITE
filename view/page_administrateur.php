@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php')
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
 session_start();
 
