@@ -63,7 +63,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
 
     // Si tout va bien, on peut continuer
 
-    // On récupère tout le contenu de la table jeux_video
+    // On récupère tout le contenu de la table faq
     $reponse = $bdd->query('SELECT * FROM faq');
 
     // On affiche chaque entrée une à une
@@ -79,7 +79,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
     <?php
     }
 
-    $reponse->closeCursor(); // Termine le traitement de la requête 
+    $reponse->closeCursor(); // Termine le traitement de la requête
 
     ?>
 </div>
