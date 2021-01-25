@@ -1,19 +1,22 @@
-<?php
-// Initialisation session
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
-// On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
-if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
-    header("Location: ViewGestionnaire.php");
-    exit;
-}
-
-// On charge le fichier config si pas déjà fait (charge databse)
-
-
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/ControllerConfig.php";
+   <?php
+   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelGestionnaire.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
+   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
 $Mail = $Nom =$Prenom ="";
 $err_Mail = $err_Nom=$err_Prenom = "";
 $test=false;
+
+if($_SESSION['type']=2){
+  $modifheader=  header_ada();
+  
+  require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewGestionnaire.php');
+
+}else{
+     require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerLogin.php');
+}
+
+
+
 
 // Si l'utilisateur entre des données dans le form...
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -39,14 +42,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 // On vérifie qu'il n'y a pas d'erreur
     if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
-     $mdp=random_password();
-     fonction_add_utilisateur($mdp);
-     include $_SERVER['DOCUMENT_ROOT'].'/SITE/new_user_mail.php';
-    }
-    else{
-        header("Location:ViewGestionnaire.php");
-    }
 
+     fonction_add_utilisateur();
+    }
 
 
 }unset($pdo);
+
+
+   

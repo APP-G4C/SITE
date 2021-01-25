@@ -1,12 +1,14 @@
 <?php
-
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelLogin.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewLogin.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 
 
 // On charge le fichier config si pas déjà fait (charge databse)
 
 
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
 $Mail = $password = "";
 $err_Mail = $err_password = "";
 
@@ -60,13 +62,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_COOKIE["Mail"]=$Mail;
                             // Puis on redirige l'utilisateur a la page d'accueil
                             if($type==1){
-                              header("Location:page_utilisateur.php");
+                              header("Location:ControllerUser.php");
                             }
                             if($type==2){
-                              header("Location:page_gestionnaire.php");
+                              header("Location:ControllerGestionnaire.php");
                             }
                             if($type==3){
-                              header("Location:page_administrateur.php");
+                              header("Location:ControllerAdmin.php");
                             }
                         } else{
                             // Sinon on met un message d'erreur

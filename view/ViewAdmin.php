@@ -1,20 +1,7 @@
 <?php
 // Appel des fonctions PHP
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_gestionnaire.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_faq.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_cgu-cgl.php');
-session_start();
 
-
-
-//Début de la session
-if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
-  header("Location:page_connexion.php");
-} ?>
+ ?>
 
 <!--DEBUT HTML-->
 
@@ -33,12 +20,12 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <header id="menu1">
 <nav>
   <ul id="menu">
-      <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-      <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-      <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
-      <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li id="link"><a id="logoapp"href="/SITE/controller/ControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+      <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+      <li id="link"><a id="b2"href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
+      <li id="link"><a id="b2"href="/SITE/controller/ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
       <!-- APPEL DE LA FONCTION DE "fn_session.php" AFIN DE MODIFIER LE HEADER EN FONCTION DE L'UTILISATEUR"-->
-      <?php echo header_ada()?>
+      <?php echo $modifheader ?>
   </ul>
 </nav>
 </header>
@@ -135,43 +122,39 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <!-- BACK OFFICE-->
 
 <!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
-<div id="Backoffice">
   <br> <br>
 
 
   <h2> BACK OFFICE</h2>
   <br> <br>
-  <form id="form" method="POST"action="page_administrateur.php">
-    <div id="ajouterutilisateur">
+  <br> <br>
+  <br> <br>
+  <form  method="POST"action="ControllerAdmin.php">
+    <div id="ajouteruser">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
       <br>
 
-<!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-
-      <h3><?php
-      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
-        {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
-        }
-      ?></h3>
-
+<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
+      <h3></h3>
       <br><br>
-      <label id="Nom" for="Nom"><strong><U><?php Valid_ajout_gest()?>Nom</U></strong></label>
+      <label id="Nom" ><strong><U>Nom</U></strong></label>
       <br>
       <br>
-      <br>
-      <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
+      <input name="Nom"type="text" placeholder="Nom" pattern="[A-Za-z-].{1,}">
       <br> <br>
-      <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
+      <label id="Prenom"><strong><U>Prenom</U></strong></label>
       <br>
-      <input name="Prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}">
-      <br> <br>
-      <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
+      <input name="Prenom"type="text" placeholder="Prenom"pattern="[A-Za-z-].{1,}">
       <br>
-      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
+       <label id="Mail"><strong><U>Mail</U></strong></label>
+      <br><br>
+      <input name="Mail"type="text" placeholder="Mail"pattern="[A-Za-z-].{1,}">
+
       <br> <br>
-      <button onclick="alert('Es-tu sûr de vouloir ajouter ce gestionnaire ?')"type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+      <br> <br>
+      <br> <br>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
     </fieldset>
     </div>
   </form>
@@ -184,7 +167,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
     <legend><strong>PROCHAINS RDV</strong></legend>
     <br>
 
-            <form action="page_administrateur.php"method="POST" >
+            <form action="ViewAdmin.php"method="POST" >
 
           <select name="ok">
             <option><?php id__gestionnaire_rdv();?></option>
@@ -198,7 +181,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
               <td><strong><U>Horaire</U></strong></td>
             </tr>
             <tr>
-              <td><?php id_prochainrdv_admin();?></td>
+              <td><?php $id_prochainrdv_admin;?></td>
               <td><?php Date_prochainrdv_admin();?></td>
               <td><?php horaire_prochainrdv_admin();?></td>
             </tr>
@@ -262,7 +245,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <div id="Backoffice">
   <br> <br>
   <br> <br>
-  <form id="form" method="POST"action="page_administrateur.php">
+  <form id="form" method="POST"action="ControllerAdmin.php">
     <div id="ajouterfaq">
     <fieldset>
       <legend><strong>AJOUTER UNE FAQ</strong></legend>
@@ -291,7 +274,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
-    <form class="" action="page_administrateur.php" method="post">
+    <form class="" action="ViewAdmin.php" method="post">
       <fieldset>
         <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
           <br>
@@ -348,10 +331,10 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=3){
 <footer id="menu2">
   <nav>
       <ul>
-          <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
-          <li id="link2"><a href="page_contact.php">Contact</a></li>
-          <li id="link2"><a href="page_faq.php">FAQ</a></li>
-          <li id="link2"><a href="page_aboutus.php">À propos</a></li>
+          <li id="link2"><a href="ControllerCGU.php">CGU & CL</a></li>
+          <li id="link2"><a href="ControllerContact.php">Contact</a></li>
+          <li id="link2"><a href="ControllerFAQ.php">FAQ</a></li>
+          <li id="link2"><a href="ControllerAboutus.php">À propos</a></li>
       </ul>
   </nav>
 </footer>

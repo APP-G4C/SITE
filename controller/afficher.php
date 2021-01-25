@@ -7,7 +7,7 @@ function afficher_gestionnaire(){
         }
       else
         {
-          header("Location:page_administrateur.php");
+          header("Location:ViewGestionnaire.php");
         }
 }
 ?>
