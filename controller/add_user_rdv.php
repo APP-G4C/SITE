@@ -34,6 +34,17 @@ function centre_gestionnaire_rdv()
     echo $centre_gestionnaire;
   }
 }
+function centre_gestionnaire_rdv()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT DISTINCT centre.adresse FROM centre INNER JOIN gestionnaire_centre INNER JOIN test ON centre.id_centre=gestionnaire_centre.id_centre WHERE test.id_RH='".$_SESSION['id']."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
+  {
+    $centre_gestionnaire=$donnees["adresse"];
+    echo $centre_gestionnaire;
+  }
+}
 
     # code...
 ?>

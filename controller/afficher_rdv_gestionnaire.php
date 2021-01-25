@@ -42,7 +42,7 @@
       print_r($donnees["Date_test"]."<br>");
     }
   }
-
+ 
     function user_horaire_prochainrdv()
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
