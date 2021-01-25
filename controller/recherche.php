@@ -10,11 +10,13 @@ function recherche_id_user()
 		{
 			$q = htmlspecialchars($_GET['q']);
 						$recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
+
 		}
 		while($a = $recherche->fetch()) 
 		{
 			$reponse= "<br>".$a['id_User']; 
 			echo"<br>".$reponse;
+			sleep(1);
 		}
 	}
 }
@@ -32,6 +34,7 @@ function recherche_nom_user()
 			{ 
 				$reponse= "<br>".$a['Nom']; 
 				echo "<br>".$reponse;
+				sleep(1);
 			}
 		}
 	}
@@ -49,6 +52,7 @@ function recherche_date_de_naissance_user()
 			{ 
 				$reponse= "<br>".$a['Date_de_naissance']; 
 				echo "<br>".$reponse;
+				sleep(1);
 			}
 		}
 	}
