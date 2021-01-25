@@ -1,5 +1,5 @@
 <?php 
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_gestionnaire.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewGestionnaire.php');
 function recherche_id_user()
 {
 	if (isset($_GET['q'])) {
@@ -217,7 +217,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->execute();
     }
     else{
-        header("Location:page_administrateur.php");
+        header("Location:ViewAdmin.php");
     }
 
 }unset($pdo);

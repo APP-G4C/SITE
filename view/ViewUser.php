@@ -1,19 +1,6 @@
-<?php
-// Appel des fonctions PHP
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_rdv_gestionnaire.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_graph.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/affficher_rdv_utilisateur.php');
 
 
-//Début de la session
 
-if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
-  header("Location:page_connexion.php");
-} ?>
 
 <!--DEBUT HTML-->
 <!DOCTYPE html>
@@ -31,12 +18,12 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
   <header id="menu1">
   <nav>
     <ul id="menu">
-        <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-        <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-        <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
-        <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li id="link"><a id="logoapp"href="/SITE/controllerControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+        <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+        <li id="link"><a id="b2"href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
+        <li id="link"><a id="b2"href="/SITE/controller/ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
         <!-- APPEL DE LA FONCTION DE "fn_session.php" AFIN DE MODIFIER LE HEADER EN FONCTION DE L'UTILISATEUR"-->
-        <?php echo header_ada()?>
+        <?php echo $modifheader ?>
     </ul>
   </nav>
   </header>
@@ -60,7 +47,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
     <br><br>
 
     <!-- FORMULAIRE INFOS PERSONNELLES-->
-    <form id=loginForm">
+    <form id="loginForm">
     <div id="informationspersonnelles">
       <fieldset> 
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -137,9 +124,9 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
                   <td><strong><U>Heure</U></strong></td>
                 </tr>
                 <tr>
-                  <td><label><?php user_id_test();?></label></td>
-                  <td><label><?php user_trame();?></label></td>
-                  <td><label><?php user_Heure();?></label></td>
+                  <td><label><?php echo $user_id_test ;?></label></td>
+                  <td><label><?php echo $user_trame;?></label></td>
+                  <td><label><?php echo $user_Heure;?></label></td>
                 </tr>
               </table>
           </fieldset>
@@ -158,8 +145,8 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=1){
         <td><strong><U>Horaire</U></strong></td>
       </tr>
       <tr>
-        <td><?php user_Date_prochainrdv()?></td>
-        <td><?php user_horaire_prochainrdv()?></td>
+        <td><?php echo $user_Date_prochainrdv;?></td>
+        <td><?php echo $user_horaire_prochainrdv;?></td>
       </tr>
     </table>
   </form>
@@ -264,10 +251,10 @@ options:
       <footer id="menu2">
           <nav>
               <ul>
-                  <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
-                  <li id="link2"><a href="page_contact.php">Contact</a></li>
-                  <li id="link2"><a href="page_faq.php">FAQ</a></li>
-                  <li id="link2"><a href="page_aboutus.php">À propos</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerCGU.php">CGU & CL</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerContact.php">Contact</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerFAQ.php">FAQ</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerAboutus.php">À propos</a></li>
               </ul>
           </nav>
       </footer>

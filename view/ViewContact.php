@@ -1,7 +1,6 @@
 <?php
-session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,42 +23,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
   <header id="menu1">
     <nav>
         <ul id="menu">
-
-
-            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <?php echo header_ada()?>
-
-
-
-            <!--UTILISATEUR
-            <li id='link'><a id="b6"href="#"> Ma Page</a>
-                    <ul>
-                        <li><a href="pageutilisateur.php"> Ma Page Utilisateur</li></a>
-                        <li><a href="#">Déconnexion</li></a>
-                    </ul>
-                </li><!-->
-
-             <!--GESTIONNAIRE
-             <li id='link'><a id="b7"href="#"> Ma Page</a>
-                <ul>
-                    <li><a href="pagegestionnaire.php"> Ma Page Gestionnaire</li></a>
-
-                    <li><a href="#">Déconnexion</li></a>
-                </ul>
-            </li><!-->
-            <!-- ADMIN
-             <li id='link'><a id="b7"href="#"> Ma Page</a>
-                <ul>
-                    <li><a href="pagegestionnaire.php"> Ma Page Administrateur</li></a>
-
-
-                    <li><a href="#">Déconnexion</li></a>
-                </ul>
-            </li><!-->
-
+            <li id="link"><a id="logoapp"href="ControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
+            <li id="link"><a id="b2"href="ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <?php echo $modifheader ?>
         </ul>
     </nav>
   </header>
@@ -74,7 +42,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
 
   <body>
     <div id="bloccontact">
-      <form method="post" action="page_contact.php">
+      <form method="post" action="ViewContact.php">
 
     <!--Permet de traiter les données avec le php-->
 
@@ -83,7 +51,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
               <span>
                 <p class="Entete"><strong>Formulaire de Contact</strong></p>
 
-              <p class="Mot"> Une question? <a class="lien" href ="page_faq.php">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
+              <p class="Mot"> Une question? <a class="lien" href ="ViewFAQ.php">Cliquez ici pour accéder à la FAQ</a> avant de nous contacter.<br> Merci de nous laisser vos questions, commentaires ou suggestions en complétant le formulaire. </p>
                 <br>
                 <!--REDIRIGE VERS LA FAQ DIRECTEMENT EN CLIQUANT DESSUS-->
               </span>
@@ -164,10 +132,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/traitement.php');
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="page_contact.php">Contact</a></li>
-                <li id="link2"><a href="page_faq.php">FAQ</a></li>
-                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerCGU.php">CGU & CL</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerContact.php">Contact</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerFAQ.php">FAQ</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerAboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>
