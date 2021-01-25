@@ -31,11 +31,11 @@
 </header>
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-<a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+<a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
 <a href="#résultats"><button><span>Résultats</span></button></a>
 <br>
-<br> 
+<br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
 <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
 <a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
@@ -54,29 +54,26 @@
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form>
-            <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+            <label> <strong><U>Etat :</U></strong>  Utilisateur</label>
             <br> <br>
-            <label><strong><U>ID :</U></strong></label>
-            <br>
-            <label> 12345
-            <br> <br>
+            <label><strong><U>ID :</U></strong> 12345</label>
+            <br><br>
             <label><strong><U>Photo de profil</U></strong></label>
             <br>
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
-            <label><strong><U>Sexe</U></strong></label>
-            <br>
+            <label><strong><U>Sexe :</U> &ensp; </strong></label>
             <select>
               <option>Homme</option>
               <option>Femme</option>
               <option>Autre</option>
             </select>
             <br> <br>
-            <label><strong><U>Nom</U></strong></label>
+            <label><strong><U>Nom :</U></strong></label>
             <br>
             <label>DUPOND</label>
             <br> <br>
-            <label><strong><U>Prénom</U></strong></label>
+            <label><strong><U>Prénom :</U></strong></label>
             <br>
             <label> Jean</label>
             <br> <br>
@@ -85,13 +82,9 @@
             <input type="date" name="">
             <br> <br>
             <br> <br>
-            <label><strong><U>Numéro de téléphone</U></strong></label>
+            <label><strong><U>Numéro de téléphone :</U></strong></label>
             <br>
-            <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
-           <br> <br>
-            <label><strong><U>Date de Naissance</U></strong></label>
-            <br>
-            <input type="date" name="">
+            <input type="tel"  placeholder="0601010101"pattern="[0-9]{10}$"value="">
            <br> <br>
           </form>
         <form action="" method="POST" id="loginForm">
@@ -138,21 +131,17 @@
 <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
       <h3></h3>
       <br><br>
-      <label id="Nom" ><strong><U>Nom</U></strong></label>
-      <br>
+      <label id="Nom" ><strong><U>Nom :</U></strong></label>
       <br>
       <input name="Nom"type="text" placeholder="Nom" pattern="[A-Za-z-].{1,}">
       <br> <br>
-      <label id="Prenom"><strong><U>Prenom</U></strong></label>
+      <label id="Prenom"><strong><U>Prenom :</U></strong></label>
       <br>
       <input name="Prenom"type="text" placeholder="Prenom"pattern="[A-Za-z-].{1,}">
-      <br>
-       <label id="Mail"><strong><U>Mail</U></strong></label>
       <br><br>
+       <label id="Mail"><strong><U>Mail :</U></strong></label>
+      <br>
       <input name="Mail"type="text" placeholder="Mail"pattern="[A-Za-z-].{1,}">
-
-      <br> <br>
-      <br> <br>
       <br> <br>
       <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
     </fieldset>
@@ -176,10 +165,11 @@
           <input type="submit" value="valider" name="submit">
           <table>
             <tr>
-              <td><strong><U>id_User</U></strong></td>
-              <td><strong><U>Date</U></strong></td>
+              <td><strong><U>id_User</U> &ensp; </strong></td>
+              <td><strong><U>Date</U> &ensp; </strong></td>
               <td><strong><U>Horaire</U></strong></td>
             </tr>
+            <br><br>
             <tr>
               <td><?php $id_prochainrdv_admin;?></td>
               <td><?php Date_prochainrdv_admin();?></td>

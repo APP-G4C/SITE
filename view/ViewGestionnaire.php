@@ -32,7 +32,7 @@
 </header>
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-<a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+<a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
 <a href="#résultats"><button><span>Résultats</span></button></a>
 <br>
@@ -50,7 +50,7 @@
 <!-- FORMULAIRE INFOS PERSONNELLES-->
 <form id="loginForm">
 <div id="informationspersonnelles">
-  <fieldset> 
+  <fieldset>
     <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
     <br>
     <form>
@@ -60,7 +60,7 @@
         <br>
         <label> 12345
         <br> <br>
-        <label><strong><U>Photo de profil</U></strong></label>             
+        <label><strong><U>Photo de profil</U></strong></label>
         <br>
         <img id="photoavatar"src="/SITE/public/images/avatar.png">
         <br> <br>
@@ -73,7 +73,7 @@
         </select>
         <br> <br>
         <label><strong><U>Nom</U></strong></label>
-        <br>      
+        <br>
         <label>DUPOND</label>
         <br> <br>
         <label><strong><U>Prénom</U></strong></label>
@@ -125,14 +125,14 @@
 <div id="Backoffice">
   <br> <br>
   <h2> BACK OFFICE</h2>
-  <br> <br> 
-  <form id="form" method="POST"action="ControllerGestionnaire.php">  
+  <br> <br>
+  <form id="form" method="POST"action="ControllerGestionnaire.php">
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
       <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php 
+      <h3><?php
       if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
           echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que utilisateur !';
@@ -150,11 +150,11 @@
       <br> <br>
       <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
       <br>
-      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
+      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
       <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
-    </div>    
+    </div>
   </form>
   <br> <br>
   </div>
@@ -250,7 +250,7 @@
 
     </fieldset>
   </div>
-  
+
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 
@@ -266,7 +266,3 @@
           </nav>
       </footer>
 </html>
-                
-
-
-

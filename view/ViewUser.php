@@ -30,7 +30,7 @@
 
   <body>
     <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-    <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+    <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
     <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
     <a href="#résultats"><button><span>Résultats</span></button></a>
     <br>
@@ -49,7 +49,7 @@
     <!-- FORMULAIRE INFOS PERSONNELLES-->
     <form id="loginForm">
     <div id="informationspersonnelles">
-      <fieldset> 
+      <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form>
@@ -59,7 +59,7 @@
             <br>
             <label> 12345
             <br> <br>
-            <label><strong><U>Photo de profil</U></strong></label>             
+            <label><strong><U>Photo de profil</U></strong></label>
             <br>
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
@@ -72,7 +72,7 @@
             </select>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
-            <br>      
+            <br>
             <label>DUPOND</label>
             <br> <br>
             <label><strong><U>Prénom</U></strong></label>
@@ -156,7 +156,7 @@
 
       <!--GRAPHIQUE-->
 
-        
+
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
       <h2> TEST </h2>
       <div id="Graphique" style="width: 50%;margin: auto;">
@@ -241,9 +241,9 @@ options:
 
 
 </script>
-       
 
-         
+
+
         <br>
   </body>
 
@@ -261,4 +261,3 @@ options:
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 </html>
-
