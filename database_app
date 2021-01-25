@@ -1,0 +1,391 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Jan 22, 2021 at 02:01 PM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `database_app`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `capteur`
+--
+
+CREATE TABLE `capteur` (
+  `id_capteur` int(11) NOT NULL,
+  `Nom` int(11) NOT NULL,
+  `id_carte` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carte`
+--
+
+CREATE TABLE `carte` (
+  `id_carte` int(11) NOT NULL,
+  `centre` varchar(256) NOT NULL,
+  `statut` int(11) NOT NULL,
+  `nom_carte` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carte_capteur`
+--
+
+CREATE TABLE `carte_capteur` (
+  `id_carte_capteur` int(11) NOT NULL,
+  `id_carte` int(11) NOT NULL,
+  `id_capteur` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `centre`
+--
+
+CREATE TABLE `centre` (
+  `id_centre` int(11) NOT NULL,
+  `Ville` varchar(256) NOT NULL,
+  `adresse` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `centre`
+--
+
+INSERT INTO `centre` (`id_centre`, `Ville`, `adresse`) VALUES
+(1, 'Issy les Moulineaux', '10 Rue de Vanves, 92130 Issy-les-Moulineaux');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `CGU`
+--
+
+CREATE TABLE `CGU` (
+  `id_cgu` int(11) NOT NULL,
+  `titre` varchar(256) NOT NULL,
+  `contenu` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `IDcontact` int(11) NOT NULL,
+  `nom` varchar(50) DEFAULT NULL,
+  `prenom` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `telephone` int(11) DEFAULT NULL,
+  `message` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`IDcontact`, `nom`, `prenom`, `email`, `telephone`, `message`) VALUES
+(1, 'ok', 'ok', 'paul.malagoli57@orange.fr', 663713529, 'ok'),
+(2, 'ok', 'ok', 'paul.malagoli57@orange.fr', 663713529, 'ok');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `FAQ`
+--
+
+CREATE TABLE `FAQ` (
+  `idQR` int(11) NOT NULL,
+  `Question` text,
+  `Reponse` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `FAQ`
+--
+
+INSERT INTO `FAQ` (`idQR`, `Question`, `Reponse`) VALUES
+(405, 'Question 1', 'Reponse 1\r\n'),
+(406, 'Question 2', 'Reponse 2'),
+(407, 'aaa', 'aaaa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gestionnaire_centre`
+--
+
+CREATE TABLE `gestionnaire_centre` (
+  `id_gestionnaire_centre` int(11) NOT NULL,
+  `id_User` int(11) NOT NULL,
+  `id_centre` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gestionnaire_centre`
+--
+
+INSERT INTO `gestionnaire_centre` (`id_gestionnaire_centre`, `id_User`, `id_centre`) VALUES
+(1, 156, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test`
+--
+
+CREATE TABLE `test` (
+  `id_test` int(11) NOT NULL,
+  `Date_test` date DEFAULT NULL,
+  `heure_test` time DEFAULT NULL,
+  `id_User` int(11) DEFAULT NULL,
+  `statut` int(11) DEFAULT NULL,
+  `id_carte` int(11) DEFAULT NULL,
+  `id_RH` int(11) DEFAULT NULL,
+  `Nom` varchar(256) DEFAULT NULL,
+  `id_centre` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`id_test`, `Date_test`, `heure_test`, `id_User`, `statut`, `id_carte`, `id_RH`, `Nom`, `id_centre`) VALUES
+(2, '2021-01-12', '15:19:21', 159, 0, NULL, 156, 'TEST 2', 1),
+(3, '2021-01-12', '15:19:21', 159, NULL, NULL, 156, 'TEST3', 1),
+(4, '2021-01-27', '07:09:00', 159, NULL, NULL, NULL, 'TEST 2', NULL),
+(5, '2021-01-28', '19:47:00', 159, NULL, NULL, NULL, 'TEST 2', NULL),
+(6, '2021-01-29', '18:46:00', 159, NULL, NULL, NULL, 'TEST 2', NULL),
+(7, '2021-01-22', '21:36:00', 159, NULL, NULL, NULL, 'TEST 2', NULL),
+(8, '2021-01-28', '20:35:00', 159, NULL, NULL, NULL, 'TEST 1', NULL),
+(9, '2021-02-03', '19:35:00', 159, NULL, NULL, NULL, 'TEST 1', NULL),
+(10, '2021-01-27', '20:37:00', 159, NULL, NULL, NULL, 'TEST 1', NULL),
+(11, '2021-02-03', '19:39:00', 159, NULL, NULL, NULL, 'TEST 1', NULL),
+(12, '2021-01-24', '21:33:00', 159, NULL, NULL, 156, 'TEST 2', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `User`
+--
+
+CREATE TABLE `User` (
+  `id_User` int(11) NOT NULL,
+  `id_centre` int(11) DEFAULT NULL,
+  `Nom` char(255) DEFAULT NULL,
+  `Prenom` char(255) DEFAULT NULL,
+  `Sexe` int(11) DEFAULT NULL,
+  `Date_de_naissance` date DEFAULT NULL,
+  `Mail` char(255) DEFAULT NULL,
+  `password` char(255) DEFAULT NULL,
+  `Type` int(11) DEFAULT '1',
+  `id_RH` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`id_User`, `id_centre`, `Nom`, `Prenom`, `Sexe`, `Date_de_naissance`, `Mail`, `password`, `Type`, `id_RH`) VALUES
+(156, NULL, 'Gestionnaire', 'Gestionnaire', NULL, NULL, 'Gestionnaire', 'Gestionnaire', 2, 156),
+(158, NULL, 'Admin', 'Admin', NULL, NULL, 'Admin', 'Admin', 3, 0),
+(159, NULL, 'Utilisateur', 'Utilisateur', NULL, NULL, 'Utilisateur', 'Utilisateur', 1, 156),
+(347, NULL, 'Malagoli', 'Paul', NULL, NULL, 'paul.malagoli57@orange.fr', 'mdp', 2, 347);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `valeur_test`
+--
+
+CREATE TABLE `valeur_test` (
+  `id_valeur_test` int(11) NOT NULL,
+  `id_test` int(11) NOT NULL,
+  `trame` int(11) NOT NULL,
+  `id_capteur` int(11) NOT NULL,
+  `Heure` time NOT NULL,
+  `id_User` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `valeur_test`
+--
+
+INSERT INTO `valeur_test` (`id_valeur_test`, `id_test`, `trame`, `id_capteur`, `Heure`, `id_User`) VALUES
+(1, 1, 59, 1, '00:00:00', 159),
+(2, 1, 45, 1, '00:00:03', 159),
+(3, 1, 75, 1, '00:00:07', 159),
+(4, 2, 33, 1, '12:08:07', 159),
+(5, 2, 136, 1, '14:08:58', 159),
+(6, 2, 78, 1, '12:14:34', 159);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `capteur`
+--
+ALTER TABLE `capteur`
+  ADD PRIMARY KEY (`id_capteur`),
+  ADD KEY `id_carte` (`id_carte`);
+
+--
+-- Indexes for table `carte`
+--
+ALTER TABLE `carte`
+  ADD PRIMARY KEY (`id_carte`),
+  ADD KEY `centre` (`centre`);
+
+--
+-- Indexes for table `carte_capteur`
+--
+ALTER TABLE `carte_capteur`
+  ADD PRIMARY KEY (`id_carte_capteur`),
+  ADD KEY `id_carte` (`id_carte`),
+  ADD KEY `id_capteur` (`id_capteur`);
+
+--
+-- Indexes for table `centre`
+--
+ALTER TABLE `centre`
+  ADD PRIMARY KEY (`id_centre`);
+
+--
+-- Indexes for table `CGU`
+--
+ALTER TABLE `CGU`
+  ADD PRIMARY KEY (`id_cgu`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`IDcontact`);
+
+--
+-- Indexes for table `FAQ`
+--
+ALTER TABLE `FAQ`
+  ADD PRIMARY KEY (`idQR`);
+
+--
+-- Indexes for table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`id_test`),
+  ADD KEY `id_User` (`id_User`),
+  ADD KEY `id_User_2` (`id_User`),
+  ADD KEY `id_carte` (`id_carte`),
+  ADD KEY `id_Gestionnaire` (`id_RH`),
+  ADD KEY `id_Gestionnaire_2` (`id_RH`),
+  ADD KEY `id_centre` (`id_centre`),
+  ADD KEY `id_centre_2` (`id_centre`);
+
+--
+-- Indexes for table `User`
+--
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`id_User`),
+  ADD KEY `id_centre` (`id_centre`),
+  ADD KEY `id_RH` (`id_RH`);
+
+--
+-- Indexes for table `valeur_test`
+--
+ALTER TABLE `valeur_test`
+  ADD PRIMARY KEY (`id_valeur_test`),
+  ADD KEY `id_capteur` (`id_capteur`),
+  ADD KEY `id_User` (`id_User`),
+  ADD KEY `id_User_2` (`id_User`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `capteur`
+--
+ALTER TABLE `capteur`
+  MODIFY `id_capteur` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `carte`
+--
+ALTER TABLE `carte`
+  MODIFY `id_carte` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `carte_capteur`
+--
+ALTER TABLE `carte_capteur`
+  MODIFY `id_carte_capteur` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `centre`
+--
+ALTER TABLE `centre`
+  MODIFY `id_centre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `CGU`
+--
+ALTER TABLE `CGU`
+  MODIFY `id_cgu` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `IDcontact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `FAQ`
+--
+ALTER TABLE `FAQ`
+  MODIFY `idQR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=408;
+
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `id_test` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `User`
+--
+ALTER TABLE `User`
+  MODIFY `id_User` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
+
+--
+-- AUTO_INCREMENT for table `valeur_test`
+--
+ALTER TABLE `valeur_test`
+  MODIFY `id_valeur_test` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `User`
+--
+ALTER TABLE `User`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_centre`) REFERENCES `Centre_passage` (`id_centre`);

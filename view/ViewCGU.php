@@ -1,7 +1,6 @@
 <?php
-session_start();
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_cgl.php');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,13 +20,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_cgl.php');
   <header id="menu1">
     <nav>
         <ul id="menu">
-            <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-            <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-            <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
-            <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <?php echo header_ada()?>
-
-
+            <li id="link"><a id="logoapp"href="/SITE/controller/ControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+            <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+            <li id="link"><a id="b2"href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
+            <li id="link"><a id="b2"href="/SITE/controller/ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+            <?php echo $modifheader ?>
         </ul>
     </nav>
   </header>
@@ -191,10 +188,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_cgl.php');
     <footer id="menu2">
         <nav>
             <ul>
-                <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
-                <li id="link2"><a href="page_contact.php">Contact</a></li>
-                <li id="link2"><a href="page_aq.php">FAQ</a></li>
-                <li id="link2"><a href="page_aboutus.php">À propos</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerCGU.php">CGU & CL</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerContact.php">Contact</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerFAQ.php">FAQ</a></li>
+                <li id="link2"><a href="/SITE/controller/ControllerAboutus.php">À propos</a></li>
             </ul>
         </nav>
     </footer>

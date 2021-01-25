@@ -32,13 +32,13 @@ $sql = "SELECT id_User, Mail, password,type FROM user WHERE Mail = :Mail";
                             $_COOKIE["Mail"]=$Mail;
                             // Puis on redirige l'utilisateur a la page d'accueil
                             if($type==1){
-                              header("Location:page_utilisateur.php");
+                              header("Location:ViewUser.php");
                             }
                             if($type==2){
-                              header("Location:page_gestionnaire.php");
+                              header("Location:ViewGestionnaire.php");
                             }
                             if($type==3){
-                              header("Location:page_administrateur.php");
+                              header("Location:ViewAdmin.php");
                             }
                         } else{
                             // Sinon on met un message d'erreur

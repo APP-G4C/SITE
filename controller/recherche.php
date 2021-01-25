@@ -250,6 +250,18 @@ function  recherche_mail()
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 function id__gestionnaire_rdv()
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
@@ -323,7 +335,7 @@ function centre_gestionnaire_rdv()
 // Initialisation session
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
-header("Location: page_administrateur.php");
+header("Location: ViewAdmin.php");
 exit;
 }
 
@@ -392,7 +404,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->execute();
     }
     else{
-        header("Location:page_administrateur.php");
+        header("Location:ViewAdmin.php");
     }
 
 }unset($pdo);
