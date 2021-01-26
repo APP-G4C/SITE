@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_password = "Veuillez entrer un mot de passe.";
     } else{
         $password = trim($_POST["password"]);
-        
+
     }
 
     // On vérifie qu'il n'y a pas d'erreur
@@ -43,8 +43,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // On exécute la commande préparée
             if($stmt->execute()){
                 // On vérifie que le Mail existe, puis on vérifie le mdp
-                if($stmt->rowCount() == 1){
+
                     if($row = $stmt->fetch()){
+
                         $id = $row["id_User"];
                         $Mail = $row["Mail"];
                         $password1 = $row["password"];
@@ -61,6 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_COOKIE["id"]=$id;
                             $_COOKIE["Mail"]=$Mail;
                             // Puis on redirige l'utilisateur a la page d'accueil
+                            header("Location:ControllerAdmin.php");
                             if($type==1){
                               header("Location:ControllerUser.php");
                             }
@@ -90,5 +92,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // On ferme la connection à la base de donnée
     unset($pdo);
-}
+
 ?>
