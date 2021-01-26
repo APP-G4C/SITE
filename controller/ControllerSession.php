@@ -62,7 +62,7 @@ function random_password(){
   $carac = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   $caraclen = strlen($carac);
   $rdpassword = "";
-  for ($i=0, $i<$lenght;$i++  ){
+  for ($i=0; $i<$lenght;$i++){
     $rdpassword .= $carac[random_int(0, $caraclen - 1)];
   }
   return $rdpassword;
