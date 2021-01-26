@@ -11,7 +11,6 @@
 
 
 $modifheader=  header_ada();
-$QuestionFAQ=faq();
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewFAQ.php');
 
 

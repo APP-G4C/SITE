@@ -47,6 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if($row = $stmt->fetch()){
                         $id = $row["id_User"];
                         $Mail = $row["Mail"];
+                        $Nom=$row["Nom"];
+                        $Prenom=$row["Prenom"];
                         $password1 = $row["password"];
                         $type=$row['type'];
                         if($password==$password1){
@@ -58,6 +60,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["Mail"] = $Mail;
                             $_SESSION['type'] = $type;
+                            $_SESSION["Nom"]=$Nom;
+                            $_SESSION["Prenom"]=$Prenom;
                             $_COOKIE["id"]=$id;
                             $_COOKIE["Mail"]=$Mail;
                             // Puis on redirige l'utilisateur a la page d'accueil
