@@ -6,12 +6,10 @@
 
 if($_SESSION['type']=1)
 {
-  $user_id_test=user_id_test();
+
   $modifheader=  header_ada();
-  $user_trame=user_trame();
-  $user_Heure= user_Heure();
-  $user_Date_prochainrdv=user_Date_prochainrdv();
-  $user_horaire_prochainrdv=user_horaire_prochainrdv();
+
+
   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewUser.php');
 }
 else
@@ -19,7 +17,51 @@ else
     require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerLogin.php');
 }
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["SexeProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifSexeProfil();}
 
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["DatenaissanceProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifDatenaissanceProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["TelProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifTelProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["MailProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifMailProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["PasswordProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
 
 
 

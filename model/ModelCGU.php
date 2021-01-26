@@ -1,16 +1,26 @@
 <?php
-function charge_cgl(){
-  echo '<h3><br><br>Article '.$_SESSION['id_cgl'].' : '.$_SESSION['titre_cgl'].' </h3><br>
-  <div class="text">'.$_SESSION['cgl'].'</div>';
-}
+function show_cgl(){
+                    try
+                    {
+        // On se connecte à MySQL
+                        $bdd = new PDO('mysql:host=localhost;dbname=database_app;charset=utf8', 'root', 'root');
+                    }
+                    catch(Exception $e)
+                    {
+        // En cas d'erreur, on affiche un message et on arrête tout
+                        die('Erreur : '.$e->getMessage());
+                    }
 
-function parc_cgl(){
-  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-  $query = $pdo->query("SELECT * FROM CGU");
-  while($donnees=$query->fetch()) {
-    $_SESSION['id_cgl']=$donnees['id_cgl'];
-    $_SESSION['titre_cgl']=$donnees['titre_cgl'];
-    $_SESSION['cgl']=$donnees['cgl'];
-    charge_cgl();
-  }
-}
+    // Si tout va bien, on peut continuer
+
+    // On récupère tout le contenu de la table faq
+                    $reponse = $bdd->query('SELECT * FROM CGU');
+
+    // On affiche chaque entrée une à une
+                    while ($donnees = $reponse->fetch())
+                    {
+                        print_r("<h3>".$donnees['titre']."</h3>"); 
+                        print_r("<div class=\"text\">".$donnees['contenu']."</div><br><br>"); 
+                    }
+                }
+    ?>

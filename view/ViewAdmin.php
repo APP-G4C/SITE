@@ -44,7 +44,7 @@
 <br><br>
 
 <!--MESSAGE DE BIENVENUE PERSONNALISE-->
-<p id="bienvenue"><?php echo 'BIENVENUE '.$_SESSION["Mail"].' :)'?><p>
+
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
@@ -53,67 +53,102 @@
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <form>
-            <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+        <form method="post" action="ControllerAdmin.php">
+            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
             <br> <br>
-            <label><strong><U>ID :</U></strong></label>
+            <label><strong><U>Nom</U></strong></label>
             <br>
-            <label> 12345
+            <label><?php NomProfil()?></label>
+            <br> <br>
+            <label><strong><U>Prénom</U></strong></label>
+            <br>
+            <label><?php PrenomProfil()?></label>
             <br> <br>
             <label><strong><U>Photo de profil</U></strong></label>
             <br>
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
+             <label><strong><U>ID :</U></strong></label>
+            <br>
+            <?php echo $_SESSION["id"]?>
+            <br> <br>
             <label><strong><U>Sexe</U></strong></label>
             <br>
-            <select>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php SexeProfil();?></td>
+                <td> <select name="SexeProfil">
               <option>Homme</option>
               <option>Femme</option>
               <option>Autre</option>
-            </select>
-            <br> <br>
-            <label><strong><U>Nom</U></strong></label>
-            <br>
-            <label>DUPOND</label>
-            <br> <br>
-            <label><strong><U>Prénom</U></strong></label>
-            <br>
-            <label> Jean</label>
+            </select></td>
+            <td><input type="submit" name="submit" value="Valider"></td>
+          </tr>
+            </table>
             <br> <br>
             <label><strong><U>Date de Naissance</U></strong></label>
             <br>
-            <input type="date" name="">
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php DatenaissanceProfil()?></td>
+                <td><input type="date" name="DatenaissanceProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
             <br> <br>
             <br> <br>
             <label><strong><U>Numéro de téléphone</U></strong></label>
             <br>
-            <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php TelProfil()?></td>
+                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
            <br> <br>
-            <label><strong><U>Date de Naissance</U></strong></label>
-            <br>
-            <input type="date" name="">
-           <br> <br>
-          </form>
-        <form action="" method="POST" id="loginForm">
           <!-- Email -->
-            <label for="email">Mail</label>
+            <label for="email"><strong><U>Mail</U></strong></label>
             <br>
-            <input type="text" class="form-control" name="email" />
-            <small></small>
-          <!-- password -->
-         <br>
-            <label for="password">Mot de passe</label>
-            <br>
-            <input type="password" class="form-control" name="password" />
-            <small></small>
-          <br>
-            <button type="submit" class="btn btn-secondary btn-block">
-              <span>Connexion</span>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php MailProfil()?></td>
+                <td><input type="mail" name="MailProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <br><br>
+            <label><strong><U>Mot de passe</U></strong></label>
+            <table>
+              <tr>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><input type="password" name="PasswordProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
               <br>
-            </button>
             <br> <br>
         </form>
     </fieldset>
+    </div>
       <br><br><br><br>
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
@@ -167,13 +202,16 @@
     <legend><strong>PROCHAINS RDV</strong></legend>
     <br>
 
-            <form action="ViewAdmin.php"method="POST" >
+            <form action="ControllerAdmin.php"method="POST" >
+              <label><strong><U>Rechercher id du Gestionnaire</U></strong></label>
+              <br><br>
 
-          <select name="ok">
+          <select name="SelectId">
             <option><?php id__gestionnaire_rdv();?></option>
           </select>
-          <br>
+          <br><br>
           <input type="submit" value="valider" name="submit">
+          <br><br>
           <table>
             <tr>
               <td><strong><U>id_User</U></strong></td>
@@ -181,7 +219,7 @@
               <td><strong><U>Horaire</U></strong></td>
             </tr>
             <tr>
-              <td><?php $id_prochainrdv_admin;?></td>
+              <td><?php id_prochainrdv_admin();?></td>
               <td><?php Date_prochainrdv_admin();?></td>
               <td><?php horaire_prochainrdv_admin();?></td>
             </tr>
@@ -196,10 +234,24 @@
     <fieldset>
       <legend><strong>RESULTATS</strong></legend>
       <br>
-      <form>
-      <label><strong><U>Rechercher</U></strong></label>
-      <br>
-      <input type="text" name="">
+      <form action="ControllerAdmin.php" method="POST">
+        <label><strong><U>Rechercher id de l'Utlisateur</U></strong></label>
+              <br><br>
+              <select name="NomUser">
+            <option><?php id__utilisateur_rdv();?></option>
+          </select>
+          <br><br>
+
+
+          <table>
+          <tr>
+            <td><strong><U>Trame</U></strong></td>
+            <td><strong><U>Heure</U></strong></td>
+          </tr> 
+          <tr>
+            <td><?php user_trame();?></td>
+            <td><?php user_Heure();?></td>           
+          </table>
       <br> <br>
 
       <button><span>Afficher</span></button>
@@ -274,50 +326,52 @@
 
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
-    <form class="" action="ViewAdmin.php" method="post">
-      <fieldset>
-        <legend><strong>AJOUTER UNE CL-CGU</strong></legend>
-          <br>
-          <label><strong><U>Titre CGU/CL:</U></strong></strong></label>
-          <br>
-          <input name="titre_cgl" type="text" placeholder="Titre CGU/CL">
-          <br> <br>
-          <label><strong><U>Description CGU/CL:</U></strong> </label>
-          <br>
-          <input type="text" name="cgl" >
-          <br> <br>
-          <input type="submit" name="ajout_cgl" value="Ajouter CGL">
-      </fieldset>
-    </form>
+     <form id="form" method="POST"action="ControllerAdmin.php">
+    <div id="ajouterfaq">
+    <fieldset>
+      <legend><strong>AJOUTER CGL/CGU</strong></legend>
+      <br>
+
+<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
+      <h3></h3>
+      <br><br>
+      <label id="Question" for="Question"><strong><U>Titre</U></strong></label>
+      <br>
+      <br>
+      <input name="TitreCGL"type="text" placeholder="Titre CGU">
+      <br> <br>
+      <label id="Reponse"for="Reponse"><strong><U>Contenu</U></strong></label>
+      <br>
+      <input name="ContenuCGL"type="text" placeholder="Contenue">
+      <br> <br>
+      <br> <br>
+      <br> <br>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter cette CGU ?')"type="submit"name="submit"><span>Ajouter la CGU</span></button>
+    </fieldset>
+    </div>
+  </form>
   </div>
   <br> <br>
-
-  <!--FORMULAIRE "CONTACT"-->
+  <!-- AFFICHAGES MESSAGES AIDE-->
   <div id="form">
     <fieldset>
-      <legend><strong>FORMULAIRES DE CONTACT</strong></legend>
-        <table>
-          <tr>
-            <td><strong><U>Nom</U></strong></td>
-            <td><strong><U>Prénom</U></strong></td>
-            <td><strong><U>mail</U></strong></td>
-            <td><strong><U>Téléphone</U></strong></td>
-            <td><strong><U>Message reçu</U></strong></td>
-            <td><strong><U>Message à envoyer</U></strong></td>
-            <td><strong><U>Répondre</U></strong></td>
-          </tr>
-          <tr>
-            <td> Dupond</td>
-            <td>Jean</td>
-            <td>Jean Dupond@gmail.com</td>
-            <td> 0606060606</td>
-            <td><textarea></textarea></td>
-            <td><textarea></textarea></td>
-            <td><button onclick="test();"><span>Envoyer</span></button></td>
-          </tr>
-        </table>
+      <legend><strong>MESSAGES</strong></legend>
+      <table>
+        <tr>
+          <td><strong><U>Nom</U></strong></td>
+          <td><strong><U>Prenom</U></strong></td>
+          <td><strong><U>Mail</U></strong></td>
+          <td><strong><U>Telephone</U></strong></td>
+          <td><strong><U>Message</U></strong></td>
+        </tr>
+        <tr>
+          <td><?php NomMessage(); ?></td>
+          <td><?php PrenomMessage();?></td>
+          <td><?php MailMessage(); ?></td>
+          <td><?php TelMessage();?></td>
+          <td><?php MessageMessage(); ?></td>
+      </table>
     </fieldset>
-  </div>
   <br>
 </div>
 </body>
