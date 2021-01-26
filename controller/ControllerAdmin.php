@@ -1,13 +1,13 @@
-<?php 
+<?php
 
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelAdmin.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
 
 
-if($_SESSION['type']=3){
+if($_SESSION['type']==3){
   $modifheader=  header_ada();
-  
+
   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewAdmin.php');
 
 }else{
@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // On vérifie qu'il n'y a pas d'erreur
-   
+
 
 }unset($pdo);
  {
@@ -105,4 +105,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 
 // On charge le fichier config si pas déjà fait (charge databse)
-
