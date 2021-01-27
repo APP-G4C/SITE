@@ -212,11 +212,12 @@ function Envoi_mail_new_user($user_mail,$nomprenom,$mdp){
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
-            $param_password = rd_password();
+            $param_password1 = rd_password();
+            $param_password = password_hash($param_password1, PASSWORD_DEFAULT);
             sleep(1);
             $test=true;
             $stmt->execute();
-            Envoi_mail_new_user($param_Mail,$param_Nom.' '.$param_Prenom,$param_password);
+            Envoi_mail_new_user($param_Mail,$param_Nom.' '.$param_Prenom,$param_password1);
 
 }
 function centre_gestionnaire_rdv()
@@ -332,9 +333,10 @@ function NomProfil()
 
 
        function ModifPasswordProfil(){
-        if (isset($_POST["DatenaissanceProfil"])){
+        if (isset($_POST["PasswordProfil"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $req=$pdo->prepare("UPDATE User SET password='".$_POST["PasswordProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
+    $password = password_hash($_POST["PasswordProfil"], PASSWORD_DEFAULT)
+    $req=$pdo->prepare("UPDATE User SET password='".$password."'WHERE User.id_User='".$_SESSION["id"]."'");
     $req->execute();}
 
   }

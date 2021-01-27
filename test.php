@@ -9,6 +9,6 @@ function rd_password(){
   return $rdpassword;
 }
 $mdp=rd_password();
-echo $mdp;
-echo $mdp;
+echo password_hash($mdp, PASSWORD_DEFAULT);
+
  ?>
