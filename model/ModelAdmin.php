@@ -379,37 +379,45 @@ function NomProfil()
     }
   }
   function ModifSexeProfil(){
+    if (isset($_POST["SexeProfil"]))
+    {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Sexe='".$_POST["SexeProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    sleep(1);
     $req->execute();
+   header("Location:ControllerAdmin.php");}
 
   }
   function ModifDatenaissanceProfil(){
+    if (isset($_POST["DatenaissanceProfil"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Date_de_naissance='".$_POST["DatenaissanceProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    sleep(1);
     $req->execute();
+   header("Location:ViewAdmin.php");}
 
   }
     function ModifTelProfil(){
+      if (isset($_POST["TelProfil"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Tel='".$_POST["TelProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    sleep(1);
     $req->execute();
+   header("Location:ControllerAdmin.php");}
 
   }
      function ModifMailProfil(){
+      if (isset($_POST["MailProfil"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Mail='".$_POST["MailProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    sleep(1);
     $req->execute();
+    header("Location:ControllerAdmin.php");
+  }
 
   }
        function ModifPasswordProfil(){
+        if (isset($_POST["DatenaissanceProfil"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET password='".$_POST["PasswordProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    sleep(1);
     $req->execute();
+   header("Location:ControllerAdmin.php");}
 
   }
+  
