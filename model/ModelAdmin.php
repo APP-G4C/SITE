@@ -48,7 +48,7 @@ function fonction_add_gestionnaire(){
             $test=true;
             $stmt->execute();
             Envoi_mail_new_gest();
-}
+}}
 function fonction_add_faq(){
   if (isset($_POST["Question"])&&isset($_POST["Reponse"])) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
@@ -443,4 +443,5 @@ function NomProfil()
     $req->execute();}
 
   }
-  
+
+?>
