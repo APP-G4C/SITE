@@ -32,15 +32,13 @@
 </header>
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-<a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+<a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
 <a href="#résultats"><button><span>Résultats</span></button></a>
 <br>
 <br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
 <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
-<a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
-<a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
 <a href="#form"><button><span>Formulaires de contact</span></button></a>
 <br><br>
 <!--MESSAGE DE BIENVENUE PERSONNALISE-->
@@ -53,7 +51,7 @@
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form method="post" action="ControllerAdmin.php">
-            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+            <label> <strong><U>Etat :</U></strong> Gestionnaire</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
             <br>
@@ -68,7 +66,6 @@
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
              <label><strong><U>ID :</U></strong></label>
-            <br>
             <?php echo $_SESSION["id"]?>
             <br> <br>
             <label><strong><U>Sexe</U></strong></label>
@@ -159,14 +156,14 @@
 <div id="Backoffice">
   <br> <br>
   <h2> BACK OFFICE</h2>
-  <br> <br> 
-  <form id="form" method="POST"action="ControllerGestionnaire.php">  
+  <br> <br>
+  <form id="form" method="POST"action="ControllerGestionnaire.php">
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
       <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php 
+      <h3><?php
       if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
           echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que utilisateur !';
@@ -184,11 +181,11 @@
       <br> <br>
       <label id="Mail"><strong><U> Adresse mail</U></strong></label>
       <br>
-      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
+      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
       <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
-    </div>    
+    </div>
   </form>
   <br> <br>
   </div>
@@ -284,7 +281,7 @@
 
     </fieldset>
   </div>
-  
+
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 
@@ -300,7 +297,3 @@
           </nav>
       </footer>
 </html>
-                
-
-
-
