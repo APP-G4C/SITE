@@ -53,3 +53,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 }unset($pdo);
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["SexeProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifSexeProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["DatenaissanceProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifDatenaissanceProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["TelProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifTelProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["MailProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifMailProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["PasswordProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();
+}
+
+}unset($pdo);
+ {
+    # code...
+}
+// Initialisation session
+// On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
+
+// On charge le fichier config si pas déjà fait (charge databse)
