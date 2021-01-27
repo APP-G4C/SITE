@@ -5,9 +5,10 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'D:\MAMP\htdocs\vendor\autoload.php';
+include 'D:\MAMP\htdocs\vendor\autoload.php';
 
 //Create a new PHPMailer instance
+
 $mail = new PHPMailer();
 
 //Tell PHPMailer to use SMTP

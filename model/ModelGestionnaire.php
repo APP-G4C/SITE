@@ -35,14 +35,14 @@ function recherche_id_user()
 {
   if (htmlspecialchars(isset($_GET['q']))) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    if(htmlspecialchars(isset($_GET['q'])) AND !empty(htmlspecialchars($_GET['q']))) 
+    if(htmlspecialchars(isset($_GET['q'])) AND !empty(htmlspecialchars($_GET['q'])))
     {
       $q = htmlspecialchars($_GET['q']);
             $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
     }
-    while($a = $recherche->fetch()) 
+    while($a = $recherche->fetch())
     {
-      $reponse= "<br>".$a['id_User']; 
+      $reponse= "<br>".$a['id_User'];
       echo"<br>".$reponse;
     }
   }
@@ -52,13 +52,13 @@ function recherche_nom_user()
   if (htmlspecialchars(isset($_GET['q'])))
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    if(htmlspecialchars(isset($_GET['q']) AND !empty(htmlspecialchars($_GET['q'])))) 
+    if(htmlspecialchars(isset($_GET['q']) AND !empty(htmlspecialchars($_GET['q']))))
     {
       $q = htmlspecialchars($_GET['q']);
             $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
-      while($a = $recherche->fetch()) 
-      { 
-        $reponse= "<br>".$a['Nom']; 
+      while($a = $recherche->fetch())
+      {
+        $reponse= "<br>".$a['Nom'];
         echo "<br>".$reponse;
       }
     }
@@ -68,13 +68,13 @@ function recherche_date_de_naissance_user()
 {
   if (isset($_GET['q'])) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    if(htmlspecialchars(isset($_GET['q'])) AND !empty(htmlspecialchars($_GET['q']))) 
+    if(htmlspecialchars(isset($_GET['q'])) AND !empty(htmlspecialchars($_GET['q'])))
     {
       $q = htmlspecialchars($_GET['q']);
             $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
-      while($a = $recherche->fetch()) 
-      { 
-        $reponse= "<br>".$a['Date_de_naissance']; 
+      while($a = $recherche->fetch())
+      {
+        $reponse= "<br>".$a['Date_de_naissance'];
         echo "<br>".$reponse;
       }
     }
@@ -86,14 +86,14 @@ function  recherche_sexe_user()
   if (htmlspecialchars(isset($_GET['q']))) {
     # code...
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    if(htmlspecialchars(isset($_GET['q'])) AND !empty(htmlspecialchars($_GET['q']))) 
+    if(htmlspecialchars(isset($_GET['q'])) AND !empty(htmlspecialchars($_GET['q'])))
     {
       $q = htmlspecialchars($_GET['q']);
             $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
     }
-    while($a = $recherche->fetch()) 
-    { 
-      $reponse= "<br>".$a['Sexe']; 
+    while($a = $recherche->fetch())
+    {
+      $reponse= "<br>".$a['Sexe'];
       echo "<br>".$reponse;
     }
   }
@@ -102,14 +102,14 @@ function  recherche_sexe_user()
  {
   if (isset($_GET['q'])) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    if(isset($_GET['q']) AND !empty($_GET['q'])) 
+    if(isset($_GET['q']) AND !empty($_GET['q']))
     {
       $q = htmlspecialchars($_GET['q']);
             $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
     }
     while($a = $recherche->fetch())
-    { 
-      $reponse= "<br>".$a['Mail']; 
+    {
+      $reponse= "<br>".$a['Mail'];
       echo "<br>".$reponse;
     }
   }
@@ -119,14 +119,14 @@ function recherche_prenom_user()
  {
   if (isset($_GET['q'])) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    if(isset($_GET['q']) AND !empty($_GET['q'])) 
+    if(isset($_GET['q']) AND !empty($_GET['q']))
     {
       $q = htmlspecialchars($_GET['q']);
       $recherche = $pdo->query('SELECT id_User,Nom,Sexe,Prenom,Mail,Date_de_naissance FROM User WHERE Type=1 AND (id_User LIKE "%'.$q.'%" OR Nom LIKE"%'.$q.'%"OR Prenom LIKE"%'.$q.'%" OR Date_de_naissance LIKE"%'.$q.'%" OR Sexe LIKE"%'.$q.'%" OR Mail LIKE"%'.$q.'%")');
     }
     while($a = $recherche->fetch())
-    { 
-      $reponse= "<br>".$a['Mail']; 
+    {
+      $reponse= "<br>".$a['Mail'];
       echo "<br>".$reponse;
     }
   }
@@ -156,6 +156,33 @@ function recherche_prenom_user()
     }
   }
 
+function Envoi_mail_new_user($user_mail,$nomprenom){
+    $mail = new PHPMailer();
+    $mail->isSMTP();   //Tell PHPMailer to use SMTP
+    //Enable SMTP debugging
+    // SMTP::DEBUG_OFF = off (for production use)
+    // SMTP::DEBUG_CLIENT = client messages
+    // SMTP::DEBUG_SERVER = client and server messages
+    $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
+    $mail->Host = 'smtp.gmail.com';   //Set the hostname of the mail server
+    $mail->Port = 587;    //Set the SMTP port number - 587 for authenticated TLS, 465 for SSL
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   //Set the encryption mechanism to use - STARTTLS or SMTPS
+    $mail->SMTPAuth = true;  //Whether to use SMTP authentication
+    $mail->Username = 'G4CAPP@gmail.com';   //Username to use for SMTP authentication
+    $mail->Password = 'G4CAPPcreatif';   //Password to use for SMTP authentication
+    $mail->setFrom('G4CAPP@gmail.com', 'G4C');  //Set who the message is to be sent from
+    //Set an alternative reply-to address
+    //$mail->addReplyTo('replyto@example.com', 'First Last');
+
+    $mail->addAddress($user_mail, $nomprenom);  //Set who the message is to be sent to
+    $mail->Subject = 'Création de votre compte PPT Test';   //Set the subject line
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //convert HTML into a basic plain-text alternative body
+    //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+    $mail->Body='test';
+    //$mail->addAttachment('images/phpmailer_mini.png');
+    $mail->send();
+  }
 
   function fonction_add_utilisateur(){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
@@ -173,6 +200,7 @@ function recherche_prenom_user()
             sleep(1);
             $test=true;
             $stmt->execute();
+            Envoi_mail_new_user($param_Mail,$param_Nom.' '.$param_Prenom);
 
 }
 function centre_gestionnaire_rdv()
