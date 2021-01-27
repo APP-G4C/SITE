@@ -42,7 +42,7 @@
 
   <body>
     <div id="bloccontact">
-      <form method="post" action="ViewContact.php">
+      <form method="post" action="ControllerContact.php">
 
     <!--Permet de traiter les données avec le php-->
 
