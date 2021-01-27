@@ -14,7 +14,7 @@ $modifheader=  header_ada();
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
       fonction_add_contact();
-    
+
   }
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewContact.php');

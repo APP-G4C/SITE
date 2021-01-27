@@ -1,4 +1,9 @@
    <?php
+   use PHPMailer\PHPMailer\PHPMailer;
+   use PHPMailer\PHPMailer\SMTP;
+
+   include 'D:\MAMP\htdocs\vendor\autoload.php';
+
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelGestionnaire.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
@@ -8,7 +13,7 @@ $test=false;
 
 if($_SESSION['type']=2){
   $modifheader=  header_ada();
-  
+
   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewGestionnaire.php');
 
 }else{
@@ -99,5 +104,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 
 // On charge le fichier config si pas déjà fait (charge databse)
-
-   
