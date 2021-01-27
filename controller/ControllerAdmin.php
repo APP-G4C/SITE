@@ -1,8 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-
-include 'D:\MAMP\htdocs\vendor\autoload.php';
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelAdmin.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');

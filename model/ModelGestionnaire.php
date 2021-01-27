@@ -1,4 +1,9 @@
 <?php
+//chargement de fichier necessaire a PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
+include 'D:\MAMP\htdocs\vendor\autoload.php';
 function id_user_prochainrdv()
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
@@ -175,7 +180,7 @@ function Envoi_mail_new_user($user_mail,$nomprenom){
     //$mail->addReplyTo('replyto@example.com', 'First Last');
 
     $mail->addAddress($user_mail, $nomprenom);  //Set who the message is to be sent to
-    $mail->Subject = 'Création de votre compte PPT Test';   //Set the subject line
+    $mail->Subject = 'Creation de votre compte PPT Test';   //Set the subject line
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);

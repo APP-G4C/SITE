@@ -1,6 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
+include 'D:\MAMP\htdocs\vendor\autoload.php';
 function Envoi_mail_new_gest($user_mail,$nomprenom){
+  include 'D:\MAMP\htdocs\vendor\autoload.php';
     $mail = new PHPMailer();
     $mail->isSMTP();   //Tell PHPMailer to use SMTP
     //Enable SMTP debugging
@@ -19,7 +23,7 @@ function Envoi_mail_new_gest($user_mail,$nomprenom){
     //$mail->addReplyTo('replyto@example.com', 'First Last');
 
     $mail->addAddress($user_mail, $nomprenom);  //Set who the message is to be sent to
-    $mail->Subject = 'Création de votre compte PPT Test';   //Set the subject line
+    $mail->Subject = 'Creation de votre compte PPT Test';   //Set the subject line
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
@@ -47,7 +51,7 @@ function fonction_add_gestionnaire(){
             $param_Mail = trim($_POST["Mail"]);
             $test=true;
             $stmt->execute();
-            Envoi_mail_new_gest();
+            Envoi_mail_new_gest($param_Mail,$param_Nom.' '.$param_Prenom);
 }}
 function fonction_add_faq(){
   if (isset($_POST["Question"])&&isset($_POST["Reponse"])) {
