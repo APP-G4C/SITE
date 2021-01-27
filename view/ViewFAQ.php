@@ -45,13 +45,18 @@
           <fieldset>
 
             <legend>Questions fréquentes </legend>
-            <?php echo $QuestionFAQ;
-            echo $ReponseFAQ;?>
+                <?php show_faq();?>
+   
+
+
+   
 
         </br>
       </br>
 </div>
   </body>
+
+
 
 
 

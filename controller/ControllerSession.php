@@ -29,7 +29,7 @@ if(!est_co()){
     return '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
               <ul>
                   <li><a href="ControllerUser.php"> Ma Page Utilisateur</li></a>
-                  <li><a href="/SITE/controller/logout.php">Déconnexion</li></a>
+                  <li><a href="/SITE/controller/ControllerLogout.php">Déconnexion</li></a>
               </ul>
             </li';
         }
@@ -37,7 +37,7 @@ if(!est_co()){
     return '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
              <ul>
                 <li><a href="/SITE/controller/ControllerGestionnaire.php"> Ma Page Gestionnaire</li></a>
-                <li><a href="/SITE/controller/logout.php">Déconnexion</li></a>
+                <li><a href="/SITE/controller/ControllerLogout.php">Déconnexion</li></a>
              </ul>
           </li>';
         }
@@ -45,7 +45,7 @@ if(!est_co()){
     return '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
              <ul>
                <li><a href="/SITE/controller/ControllerAdmin.php"> Ma Page Administrateur</li></a>
-               <li><a href="/SITE/controller/logout.php">Déconnexion</li></a>
+               <li><a href="/SITE/controller/ControllerLogout.php">Déconnexion</li></a>
              </ul>
           </li>';
           }

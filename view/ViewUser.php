@@ -30,7 +30,7 @@
 
   <body>
     <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-    <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
+    <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
     <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
     <a href="#résultats"><button><span>Résultats</span></button></a>
     <br>
@@ -47,71 +47,107 @@
     <br><br>
 
     <!-- FORMULAIRE INFOS PERSONNELLES-->
-    <form id="loginForm">
+   <!-- FORMULAIRE INFOS PERSONNELLES-->
     <div id="informationspersonnelles">
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <form>
-            <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+        <form method="post" action="ControllerAdmin.php">
+            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
             <br> <br>
-            <label><strong><U>ID :</U></strong></label>
+            <label><strong><U>Nom</U></strong></label>
             <br>
-            <label> 12345
+            <label><?php NomProfil()?></label>
+            <br> <br>
+            <label><strong><U>Prénom</U></strong></label>
+            <br>
+            <label><?php PrenomProfil()?></label>
             <br> <br>
             <label><strong><U>Photo de profil</U></strong></label>
             <br>
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
+             <label><strong><U>ID :</U></strong></label>
+            <br>
+            <?php echo $_SESSION["id"]?>
+            <br> <br>
             <label><strong><U>Sexe</U></strong></label>
             <br>
-            <select>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php SexeProfil();?></td>
+                <td> <select name="SexeProfil">
               <option>Homme</option>
               <option>Femme</option>
               <option>Autre</option>
-            </select>
+            </select></td>
+            <td><input type="submit" name="submit" value="Valider"></td>
+          </tr>
+            </table>
             <br> <br>
-            <label><strong><U>Nom</U></strong></label>
-            <br>
-            <label>DUPOND</label>
-            <br> <br>
-            <label><strong><U>Prénom</U></strong></label>
-            <br>
-           <label> Jean</label>
-            <br> <br>
-        <label><strong><U>Date de Naissance</U></strong></label>
-        <br>
-        <input type="date" name="">
-        <br> <br>
-            <label><strong><U>Numéro de téléphone</U></strong></label>
-            <br>
-            <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
-           <br> <br>
             <label><strong><U>Date de Naissance</U></strong></label>
             <br>
-            <input type="date" name="">
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php DatenaissanceProfil()?></td>
+                <td><input type="date" name="DatenaissanceProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <br> <br>
+            <br> <br>
+            <label><strong><U>Numéro de téléphone</U></strong></label>
+            <br>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php TelProfil()?></td>
+                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
            <br> <br>
-          </form>
-        <form action="" method="POST" id="loginForm">
           <!-- Email -->
-            <label for="email">Mail</label>
+            <label for="email"><strong><U>Mail</U></strong></label>
             <br>
-            <input type="text" class="form-control" name="email" />
-            <small></small>
-          <!-- password -->
-         <br>
-            <label for="password">Mot de passe</label>
-            <br>
-            <input type="password" class="form-control" name="password" />
-            <small></small>
-          <br>
-            <button type="submit" class="btn btn-secondary btn-block">
-              <span>Connexion</span>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php MailProfil()?></td>
+                <td><input type="mail" name="MailProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <br><br>
+            <label><strong><U>Mot de passe</U></strong></label>
+            <table>
+              <tr>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><input type="password" name="PasswordProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
               <br>
-            </button>
             <br> <br>
         </form>
     </fieldset>
+    </div>
       <br><br><br><br>
       <!--FORMULAIRE "RESULTATS"-->
         <div id="résultats">
@@ -124,9 +160,9 @@
                   <td><strong><U>Heure</U></strong></td>
                 </tr>
                 <tr>
-                  <td><label><?php echo $user_id_test ;?></label></td>
-                  <td><label><?php echo $user_trame;?></label></td>
-                  <td><label><?php echo $user_Heure;?></label></td>
+                  <td><label><?php  user_id_test() ;?></label></td>
+                  <td><label><?php user_trame();?></label></td>
+                  <td><label><?php user_Heure();?></label></td>
                 </tr>
               </table>
           </fieldset>
@@ -145,8 +181,8 @@
         <td><strong><U>Horaire</U></strong></td>
       </tr>
       <tr>
-        <td><?php echo $user_Date_prochainrdv;?></td>
-        <td><?php echo $user_horaire_prochainrdv;?></td>
+        <td><?php  user_Date_prochainrdv();?></td>
+        <td><?php  user_horaire_prochainrdv();?></td>
       </tr>
     </table>
   </form>
@@ -156,7 +192,7 @@
 
       <!--GRAPHIQUE-->
 
-
+        
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
       <h2> TEST </h2>
       <div id="Graphique" style="width: 50%;margin: auto;">
@@ -241,9 +277,9 @@ options:
 
 
 </script>
+       
 
-
-
+         
         <br>
   </body>
 
@@ -261,3 +297,4 @@ options:
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 </html>
+
