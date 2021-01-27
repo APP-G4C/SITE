@@ -28,6 +28,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
+    if(isset($_POST["SexeProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifSexeProfil();}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
     if(isset($_POST["DatenaissanceProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
         ModifDatenaissanceProfil();}
 
