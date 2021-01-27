@@ -171,7 +171,7 @@
       <br>
 
 <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
-      <h3></h3>
+      
       <br><br>
       <label id="Nom" ><strong><U>Nom</U></strong></label>
       <br>

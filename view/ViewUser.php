@@ -53,7 +53,7 @@
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form method="post" action="ControllerAdmin.php">
-            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+            <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
             <br>
