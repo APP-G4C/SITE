@@ -3,7 +3,18 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 include 'D:\MAMP\htdocs\vendor\autoload.php';
-function Envoi_mail_new_gest($user_mail,$nomprenom){
+
+function rd_password(){
+  $caractere = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $len_c=strlen($caractere);
+  $rdpassword = '';
+  for ($i=0;$i<8;$i++){
+    $rdpassword.=$caractere[random_int(0,$len_c-1)];
+  }
+  return $rdpassword;
+}
+
+function Envoi_mail_new_gest($user_mail,$nomprenom,$mdp){
   include 'D:\MAMP\htdocs\vendor\autoload.php';
     $mail = new PHPMailer();
     $mail->isSMTP();   //Tell PHPMailer to use SMTP
@@ -27,7 +38,7 @@ function Envoi_mail_new_gest($user_mail,$nomprenom){
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-    $mail->Body='test';
+    $mail->Body='Bienvenue sur PPT Test. Vos identifiants sont :'.$user_mail.', '.$mdp.'';
     //$mail->addAttachment('images/phpmailer_mini.png');
     $mail->send();
   }
@@ -36,22 +47,23 @@ function Envoi_mail_new_gest($user_mail,$nomprenom){
 function fonction_add_gestionnaire(){
   if (isset($_POST["Nom"]) &&isset($_POST["Prenom"])&&isset($_POST["Mail"])) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO `User`(`Nom`, `Prenom`,`Mail`) VALUES (:Nom, :Prenom,:Mail)";
+        $sql=" INSERT INTO `User`(`Nom`, `Prenom`,`Mail`,`Password`) VALUES (:Nom, :Prenom,:Mail,:Password)";
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
             $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
-
+            $stmt->bindParam(":Password", $param_password, PDO::PARAM_STR);
 
 
             // On remplis les paramètres
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
             $param_Mail = trim($_POST["Mail"]);
+            $param_password = rd_password();
             $test=true;
             $stmt->execute();
-            Envoi_mail_new_gest($param_Mail,$param_Nom.' '.$param_Prenom);
+            Envoi_mail_new_gest($param_Mail,$param_Nom.' '.$param_Prenom,$param_password);
 }}
 function fonction_add_faq(){
   if (isset($_POST["Question"])&&isset($_POST["Reponse"])) {

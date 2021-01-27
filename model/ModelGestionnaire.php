@@ -161,7 +161,17 @@ function recherche_prenom_user()
     }
   }
 
-function Envoi_mail_new_user($user_mail,$nomprenom){
+  function rd_password(){
+    $caractere = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $len_c=strlen($caractere);
+    $rdpassword = '';
+    for ($i=0;$i<8;$i++){
+      $rdpassword.=$caractere[random_int(0,$len_c-1)];
+    }
+    return $rdpassword;
+  }
+
+function Envoi_mail_new_user($user_mail,$nomprenom,$mdp){
     $mail = new PHPMailer();
     $mail->isSMTP();   //Tell PHPMailer to use SMTP
     //Enable SMTP debugging
@@ -184,28 +194,29 @@ function Envoi_mail_new_user($user_mail,$nomprenom){
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-    $mail->Body='test';
+    $mail->Body='Bienvenue sur PPT Test. Vos identifiants sont :'.$user_mail.', '.$mdp.'';
     //$mail->addAttachment('images/phpmailer_mini.png');
     $mail->send();
   }
 
   function fonction_add_utilisateur(){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`) VALUES (:Nom, :Prenom,:Mail, '1')";
+    $sql=" INSERT INTO User (`Nom`, `Prenom`,`Mail`, `Type`,`Password`) VALUES (:Nom, :Prenom,:Mail, '1',:Password)";
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
             $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
             $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
-
+            $stmt->bindParam(":Password", $param_password, PDO::PARAM_STR);
             // On remplis les paramètres
             $param_Mail = trim($_POST["Mail"]);
             $param_Nom = trim($_POST["Nom"]);
             $param_Prenom = trim($_POST["Prenom"]);
+            $param_password = rd_password();
             sleep(1);
             $test=true;
             $stmt->execute();
-            Envoi_mail_new_user($param_Mail,$param_Nom.' '.$param_Prenom);
+            Envoi_mail_new_user($param_Mail,$param_Nom.' '.$param_Prenom,$param_password);
 
 }
 function centre_gestionnaire_rdv()
