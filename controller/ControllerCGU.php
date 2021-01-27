@@ -1,18 +1,13 @@
 <?php
-// APPEL DE LA FONCTION
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/page_administrateur.php');
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelCGU.php');
 // Initialisation session
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
-if(isset($_SESSION["connecte"]) && $_SESSION["connecte"] === true){
-    header("Location: page_administrateur.php");
-    exit;
-}
 
 // On charge le fichier config si pas déjà fait (charge databse)
-
-
-require_once $_SERVER['DOCUMENT_ROOT']."/SITE/controller/config.php";
+$modifheader=  header_ada();
 $CGL=$titre_CGL="";
 $err_CGL=$err_titre_CGL="";
 $test=false;
@@ -41,8 +36,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         fonction_add_cgl();
     }
     else{
-        header("Location:page_administrateur.php");
+        header("Location:ViewAdmin.php");
     }
 
 }unset($pdo);
-?>
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewCGU.php');

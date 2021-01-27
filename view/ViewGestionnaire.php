@@ -1,18 +1,8 @@
 <?php
 
 // Appel des fonctions PHP
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/fn_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/add_user.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/fonction_add.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/recherche.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/afficher_rdv_gestionnaire.php');
 
-session_start();
-//Début de la session
-if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
-  header("Location:page_connexion.php");
-}?>
+?>
 
 
 <!--DEBUT HTML-->
@@ -31,12 +21,12 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
 <header id="menu1">
 <nav>
   <ul id="menu">
-      <li id="link"><a id="logoapp"href="page_accueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
-      <li id="link"><a id="b2" href="page_accueil.php"><i class="fas fa-home"></i> Accueil</a></li>
-      <li id="link"><a id="b2"href="page_faq.php"><i class="fas fa-info"></i> Aide</a></li>
-      <li id="link"><a id="b2"href="page_contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li id="link"><a id="logoapp"href="ControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+      <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
+      <li id="link"><a id="b2"href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
+      <li id="link"><a id="b2"href="/SITE/controller/ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
       <!-- APPEL DE LA FONCTION DE "fn_session.php" AFIN DE MODIFIER LE HEADER EN FONCTION DE L'UTILISATEUR"-->
-      <?php echo header_ada()?>
+      <?php echo $modifheader ?>
   </ul>
 </nav>
 </header>
@@ -58,72 +48,106 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
-<form id="loginForm">
-<div id="informationspersonnelles">
-  <fieldset> 
-    <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
-    <br>
-    <form>
-        <label> <strong><U>Etat :</U></strong> <br>Gestionnaire</label>
-        <br> <br>
-        <label><strong><U>ID :</U></strong></label>
+    <div id="informationspersonnelles">
+      <fieldset>
+        <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <label> 12345
-        <br> <br>
-        <label><strong><U>Photo de profil</U></strong></label>             
-        <br>
-        <img id="photoavatar"src="/SITE/public/images/avatar.png">
-        <br> <br>
-        <label><strong><U>Sexe</U></strong></label>
-        <br>
-        <select>
-          <option>Homme</option>
-          <option>Femme</option>
-          <option>Autre</option>
-        </select>
-        <br> <br>
-        <label><strong><U>Nom</U></strong></label>
-        <br>      
-        <label>DUPOND</label>
-        <br> <br>
-        <label><strong><U>Prénom</U></strong></label>
-        <br>
-       <label> Jean</label>
-        <br> <br>
-    <label><strong><U>Date de Naissance</U></strong></label>
-    <br>
-    <input type="date" name="">
-    <br> <br>
-        <label><strong><U>Numéro de téléphone</U></strong></label>
-        <br>
-        <input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"value="">
-       <br> <br>
-        <label><strong><U>Date de Naissance</U></strong></label>
-        <br>
-        <input type="date" name="">
-       <br> <br>
-      </form>
-    <form action="" method="POST" id="loginForm">
-      <!-- Email -->
-        <label for="email">Mail</label>
-        <br>
-        <input type="text" class="form-control" name="email" />
-        <small></small>
-      <!-- password -->
-     <br>
-        <label for="password">Mot de passe</label>
-        <br>
-        <input type="password" class="form-control" name="password" />
-        <small></small>
-      <br>
-        <button type="submit" class="btn btn-secondary btn-block">
-          <span>Connexion</span>
-          <br>
-        </button>
-        <br> <br>
-    </form>
-</fieldset>
-<br> <br>
+        <form method="post" action="ControllerAdmin.php">
+            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+            <br> <br>
+            <label><strong><U>Nom</U></strong></label>
+            <br>
+            <label><?php NomProfil()?></label>
+            <br> <br>
+            <label><strong><U>Prénom</U></strong></label>
+            <br>
+            <label><?php PrenomProfil()?></label>
+            <br> <br>
+            <label><strong><U>Photo de profil</U></strong></label>
+            <br>
+            <img id="photoavatar"src="/SITE/public/images/avatar.png">
+            <br> <br>
+             <label><strong><U>ID :</U></strong></label>
+            <br>
+            <?php echo $_SESSION["id"]?>
+            <br> <br>
+            <label><strong><U>Sexe</U></strong></label>
+            <br>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php SexeProfil();?></td>
+                <td> <select name="SexeProfil">
+              <option>Homme</option>
+              <option>Femme</option>
+              <option>Autre</option>
+            </select></td>
+            <td><input type="submit" name="submit" value="Valider"></td>
+          </tr>
+            </table>
+            <br> <br>
+            <label><strong><U>Date de Naissance</U></strong></label>
+            <br>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php DatenaissanceProfil()?></td>
+                <td><input type="date" name="DatenaissanceProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <br> <br>
+            <br> <br>
+            <label><strong><U>Numéro de téléphone</U></strong></label>
+            <br>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php TelProfil()?></td>
+                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+           <br> <br>
+          <!-- Email -->
+            <label for="email"><strong><U>Mail</U></strong></label>
+            <br>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php MailProfil()?></td>
+                <td><input type="mail" name="MailProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <br><br>
+            <label><strong><U>Mot de passe</U></strong></label>
+            <table>
+              <tr>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><input type="password" name="PasswordProfil"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+              <br>
+            <br> <br>
+        </form>
+    </fieldset>
+    </div>
 
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
@@ -136,7 +160,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   <br> <br>
   <h2> BACK OFFICE</h2>
   <br> <br> 
-  <form id="form" method="POST"action="page_gestionnaire.php">  
+  <form id="form" method="POST"action="ControllerGestionnaire.php">  
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
@@ -154,11 +178,11 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
       <br>
       <input name="Nom"type="text" placeholder="Dupond" pattern="[A-Za-z-].{1,}">
       <br> <br>
-      <label id="Prenom"for='Prenom'><strong><U>Prénom</U></strong></label>
+      <label id="Prenom"><strong><U>Prénom</U></strong></label>
       <br>
       <input name="Prenom"type="text" placeholder="Jean"pattern="[A-Za-z-].{1,}">
       <br> <br>
-      <label id="Mail"for="Mail"><strong><U> Adresse mail</U></strong></label>
+      <label id="Mail"><strong><U> Adresse mail</U></strong></label>
       <br>
       <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
       <br> <br>
@@ -228,7 +252,7 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
   <div id="ajouter_un_rdv">
     <fieldset>
       <legend><strong>AJOUTER UN RDV</strong></legend>
-      <form method="POST">
+      <form method="POST" action="ControllerGestionnaire.php">
         <table>
         <tr>
           <td><strong><U>id_User</U></strong></td>
@@ -268,10 +292,10 @@ if(!isset($_SESSION["id"])||$_SESSION['type']!=2){
       <footer id="menu2">
           <nav>
               <ul>
-                  <li id="link2"><a href="page_cgu.php">CGU & CL</a></li>
-                  <li id="link2"><a href="page_contact.php">Contact</a></li>
-                  <li id="link2"><a href="page_faq.php">FAQ</a></li>
-                  <li id="link2"><a href="page_aboutus.php">À propos</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerCGU.php">CGU & CL</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerContact.php">Contact</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerFAQ.php">FAQ</a></li>
+                  <li id="link2"><a href="/SITE/controller/ControllerAboutus.php">À propos</a></li>
               </ul>
           </nav>
       </footer>
