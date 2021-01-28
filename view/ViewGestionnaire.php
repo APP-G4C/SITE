@@ -35,12 +35,12 @@
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
 <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
-<a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
-<br>
-<br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
-<a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
-<a href="#form"><button><span>Formulaires de contact</span></button></a>
+<a href="#ajouterutilisateur"><button><span>Ajouter un utilisateur</span></button></a>
+<a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
+<a href="#résultats"><button><span>Résultats</span></button></a>
+<a href="#rechercheuga"><button><span>Rechercher</span></button></a>
+<a href="#ajouterrdv"><button><span>Ajouter un RDV</span></button></a>
 <br><br>
 <!--MESSAGE DE BIENVENUE PERSONNALISE-->
 <h2>BIENVENUE</h2>
@@ -156,10 +156,12 @@
 <!-- BACK OFFICE-->
 <!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
 <br> <br>
+<div id="Backoffice">
 <h2> BACK OFFICE</h2>
 <br> <br>
 <br>
 <hr width="100%"size="3" color=#EFD200 solid>
+</div>
 <br>
 <br> <br>
   <form id="form" method="POST"action="ControllerGestionnaire.php">
