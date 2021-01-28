@@ -2,7 +2,7 @@
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\SMTP;
 
-   include 'D:\MAMP\htdocs\vendor\autoload.php';
+   include ($_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php');
 
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelGestionnaire.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');

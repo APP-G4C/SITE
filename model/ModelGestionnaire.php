@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-include 'D:\MAMP\htdocs\vendor\autoload.php';
+include ($_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php');
 function id_user_prochainrdv()
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
