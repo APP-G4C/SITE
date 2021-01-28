@@ -3,7 +3,7 @@ body
 	text-align: center;
 }
 
-#photoavatar 
+#photoavatar
 {
 	width: 100px;
 	height: 100px;
@@ -14,9 +14,18 @@ legend
   text-align: center;
 }
 
+table td{
+	position: relative;
+	left: center;
+}
+#rechercheuga td{
+	position: relative;
+	left: 0%;
+}
+
 #informationspersonnelles fieldset
 {
-	width: 40%;
+	width: 50%;
 	border: 3px #0059C2 solid;
 	margin: auto;
 }
@@ -24,33 +33,125 @@ legend
 #informationspersonnelles form
 {
 	text-align: center;
+	position: relative;
 }
 
-td
-{	
-	text-align: center;
+
+td{
+	width: auto;
+	position: relative;
+	left: 50%;
 }
 
-button
-{
-	background-color: black;
-	border:3px solid;
-	box-shadow: 3px 3px 0px #3F51B5;	
-}
-
-span
-{
+#submitinfoperso{
+	position: relative;
+	margin:20px;
+	width: 100%;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
 	color: white;
+}
+
+#prochainsrdv input{
+	position: relative;
+	margin:20px;
+	width: 30%;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+	color: white;
+}
+#prochainsrdv form{
+}
+
+#DeleteUser fieldset{
+	width: 50%;
+	border: 3px #0059C2 solid;
+	margin: auto;
+}
+
+#EditProfil fieldset{
+	width: 50%;
+	border: 3px #0059C2 solid;
+	margin: auto;
+}
+
+#box{
+ width: auto;
+}
+
+#submitrecherche{
+	position: relative;
+	margin:20px;
+	width: 20%;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+	color: white;
+}
+
+
+a button{
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 15%;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+}
+
+a button:hover{
+	background-color: white;
+	border: 1px solid #3F51B5;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 15%;
+	position: relative;
+	margin-top: 1%;
+}
+
+button{
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 20%;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+}
+
+a span{
+	color: white;
+}
+
+a span:hover{
+	color: #3F51B5;
 }
 
 #prochainsrdv fieldset
 {
 	margin: auto;
 	padding: auto;
-	border: 3px #0059C2 solid;	
+	border: 3px #0059C2 solid;
 }
 
-#prochainsrdv table 
+#prochainsrdv table
 {
 	margin:auto;
 }
@@ -74,14 +175,44 @@ text-align: center;
 margin:auto;
 }
 
+#rechercheuga fieldset{
+	width: 50%;
+	margin:auto;
+	border: 3px #0059C2 solid;
+	word-spacing: 10px;
+}
+
+#rechercheuga #abc{
+	position: relative;
+	left: -25%;
+	width: 50%;
+	text-align: center;
+	margin:auto;
+}
+
+#ajouterrdv fieldset{
+	width: 90%;
+	margin:auto;
+	border: 3px #0059C2 solid;
+	word-spacing: 10px;
+	position: relative;
+}
+
+#ajouterrdv form{
+	position: relative;
+	left: -32%;
+	width: 100%;
+	text-align: center;
+	margin:auto;
+}
+
 #backoffice fieldset
 {
 border: 3px #0059C2 solid;
-width: auto;
 margin:auto;
 }
 
-#ajouterutilisateur fieldset
+#ajouteruser fieldset
 {
 width:30%;
 margin: auto;
@@ -107,13 +238,13 @@ border: 3px #0059C2 solid;
 width:60%;
 margin: auto;
 border: 3px #0059C2 solid;
-padding:2% 
+padding:2%
 }
 
 #Graphique
 {
 width: auto;
-padding: auto;	
+padding: auto;
 }
 
 #graph
@@ -138,7 +269,7 @@ width: 45%;
 height: 5%;
 }
 
-.text-danger 
+.text-danger
 {
 color: red;
 }
@@ -160,10 +291,10 @@ color: green;
 /*MEDIAQUERIES*/
 @media all and (max-width: 600px)
 {
-body 
+body
 {
 margin:auto;
-padding: auto;    
+padding: auto;
 font-size: 10px
 }
 
@@ -191,18 +322,12 @@ input
 	width: 50px;
 }
 
-#graph 
+#graph
 {
 	width: 300px;
 	height: 150px;
 }
 
-button
-{
-	width: 30px;
-	height:10px;
-	font-size: 70%;
-}
 
 #form fieldset
 {

@@ -6,7 +6,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Website | Accueil</title>
+    <title>PPT - Test</title>
 
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -38,7 +38,7 @@
           <h1 class="top">Conditions générales d'utilisation</h1>
           <br>
                 <br>
-                <?php show_cgl()."<br>"; ?>
+                <?php show_cgl(); ?>
 
 
 

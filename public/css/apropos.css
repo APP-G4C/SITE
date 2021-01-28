@@ -10,6 +10,7 @@
 
 #introduction {
   position: relative;
+  text-align: center;
   margin-top:4.5%;
   font-size:1.3vw;
   margin-left:7%;
@@ -48,7 +49,7 @@
   transition: 1s ease;
   opacity:0;
   color: white;
-  padding:20px;
+  padding: 20px;
   text-align: center;
   font-size:1.5vw;
 }

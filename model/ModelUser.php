@@ -49,7 +49,7 @@ function Heure1()
     $Heure1= "'".$donnees['Heure']."',";
     print_r($Heure1);
   }
-} 
+}
 
 function tram2()
 {
@@ -72,7 +72,7 @@ function Heure2()
     $Heure2= "'".$donnees['Heure']."',";
      print_r($Heure2);
   }
-} 
+}
 
     function user_Date_prochainrdv()
   {
@@ -197,9 +197,10 @@ function NomProfil()
 
 
        function ModifPasswordProfil(){
-        if (isset($_POST["DatenaissanceProfil"])){
+        if (isset($_POST["PasswordProfil"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $req=$pdo->prepare("UPDATE User SET password='".$_POST["PasswordProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
+    $password = password_hash($_POST["PasswordProfil"], PASSWORD_DEFAULT);
+    $req=$pdo->prepare("UPDATE User SET password='".$password."'WHERE User.id_User='".$_SESSION["id"]."'");
     $req->execute();}
 
   }

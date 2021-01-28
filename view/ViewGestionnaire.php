@@ -10,12 +10,14 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" name="viewport"/>
-<title>Website | Accueil</title>
+<title>PPT - Test</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/SITE/public/css/Header.css">
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
 <link rel="stylesheet" href="/SITE/public/css/style.css">
 <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
 
 <!--HEADER-->
 <header id="menu1">
@@ -32,19 +34,19 @@
 </header>
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-<a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+<a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
+<a href="#Backoffice"><button><span>Back-office</span></button></a>
+<a href="#ajouterutilisateur"><button><span>Ajouter un utilisateur</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
 <a href="#résultats"><button><span>Résultats</span></button></a>
-<br>
-<br>
-<a href="#Backoffice"><button><span>Back-office</span></button></a>
-<a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
-<a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
-<a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
-<a href="#form"><button><span>Formulaires de contact</span></button></a>
+<a href="#rechercheuga"><button><span>Rechercher</span></button></a>
+<a href="#ajouterrdv"><button><span>Ajouter un RDV</span></button></a>
 <br><br>
 <!--MESSAGE DE BIENVENUE PERSONNALISE-->
-<p id="bienvenue"><?php echo 'BIENVENUE '.$_SESSION["Mail"].' :)'?><p>
+<h2>BIENVENUE</h2>
+<h2><?php PrenomProfil();?></h2>
+<h2><?php NomProfil();?></h2>
+
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
@@ -52,8 +54,8 @@
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <form method="post" action="ControllerAdmin.php">
-            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+        <form method="post" action="ControllerGestionnaire.php">
+            <label> <strong><U>Etat :</U></strong> Gestionnaire</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
             <br>
@@ -68,7 +70,6 @@
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
              <label><strong><U>ID :</U></strong></label>
-            <br>
             <?php echo $_SESSION["id"]?>
             <br> <br>
             <label><strong><U>Sexe</U></strong></label>
@@ -85,7 +86,7 @@
               <option>Femme</option>
               <option>Autre</option>
             </select></td>
-            <td><input type="submit" name="submit" value="Valider"></td>
+            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
           </tr>
             </table>
             <br> <br>
@@ -98,8 +99,8 @@
               </tr>
               <tr>
                 <td><?php DatenaissanceProfil()?></td>
-                <td><input type="date" name="DatenaissanceProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="date" name="DatenaissanceProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br> <br>
@@ -113,8 +114,8 @@
               </tr>
               <tr>
                 <td><?php TelProfil()?></td>
-                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
            <br> <br>
@@ -128,8 +129,8 @@
               </tr>
               <tr>
                 <td><?php MailProfil()?></td>
-                <td><input type="mail" name="MailProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="mail" name="MailProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br><br>
@@ -139,8 +140,8 @@
                 <td>Modifier</td>
               </tr>
               <tr>
-                <td><input type="password" name="PasswordProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="password" name="PasswordProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
               <br>
@@ -148,25 +149,28 @@
         </form>
     </fieldset>
     </div>
-
+    <br><br><br><br>
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
 <br>
-
 <!-- BACK OFFICE-->
-
-<!-- FORMULAIRE "AJOUTER UN UTILISATEUR"-->
+<!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
+<br> <br>
 <div id="Backoffice">
-  <br> <br>
-  <h2> BACK OFFICE</h2>
-  <br> <br> 
-  <form id="form" method="POST"action="ControllerGestionnaire.php">  
+<h2> BACK OFFICE</h2>
+<br> <br>
+<br>
+<hr width="100%"size="3" color=#EFD200 solid>
+</div>
+<br>
+<br> <br>
+  <form id="form" method="POST"action="ControllerGestionnaire.php">
     <div id="ajouterutilisateur">
     <fieldset>
       <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
       <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php 
+      <h3><?php
       if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
         {
           echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que utilisateur !';
@@ -184,11 +188,11 @@
       <br> <br>
       <label id="Mail"><strong><U> Adresse mail</U></strong></label>
       <br>
-      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">      
+      <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
-      <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+      <button id="submitrecherche" type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
-    </div>    
+    </div>
   </form>
   <br> <br>
   </div>
@@ -213,21 +217,54 @@
       </tr>
     </table>
   </form>
+  <br>
   </fieldset>
   </div>
+
   <br>
+  <!-- FORMULAIRE "RESULTATS"-->
+  <div id="résultats">
+    <fieldset>
+      <legend><strong>RESULTATS</strong></legend>
+      <br>
+      <form action="ControllerGestionnaire.php" method="POST">
+        <label><strong><U>Rechercher id de l'Utlisateur</U></strong></label>
+              <br><br>
+              <select name="NomUser">
+            <option><?php id__utilisateur_rdv();?></option>
+          </select>
+          <br><br>
+
+
+          <table>
+          <tr>
+            <td><strong><U>Trame</U></strong></td>
+            <td><strong><U>Heure</U></strong></td>
+          </tr>
+          <tr>
+            <td><?php user_trame();?></td>
+            <td><?php user_Heure();?></td>
+          </table>
+      <br> <br>
+
+      <button id="submitrecherche"><span>Afficher</span></button>
+    </form>
+    </fieldset>
+  </div>
+  <br><br><br>
+
 
 <!-- RECHERCHER-->
-
+<div id="rechercheuga">
 <fieldset>
   <legend><strong><U>RECHERCHER</U></strong></legend>
   <form method="GET">
     <br><br>
      <input type="search" name="q" placeholder="Recherche..." />
      <br><br>
-     <input type="submit" value="Rechercher" />
+     <input id="submitrecherche" type="submit" value="Rechercher" />
      <br><br>
-     <table>
+     <table id="abc">
         <tr>
           <td><strong><U>id_user</U></strong></td>
           <td><strong><U>Nom</U></strong></td>
@@ -246,11 +283,15 @@
         </tr>
       </table>
   </form>
+  <br><br>
 </fieldset>
+</div>
+<br><br><br>
 
   <!-- AJOUTER UN RDV-->
-  <div id="ajouter_un_rdv">
+  <div id="ajouterrdv">
     <fieldset>
+      <br>
       <legend><strong>AJOUTER UN RDV</strong></legend>
       <form method="POST" action="ControllerGestionnaire.php">
         <table>
@@ -262,6 +303,7 @@
           <td><strong><U>Choix du test</U></strong></td>
           <td><strong><U>Valider</U></strong></td>
         </tr>
+        <br>
         <tr>
           <td>
             <select name="id_user_rdv" for="prenom_utilisateur">
@@ -277,14 +319,15 @@
                 <option>TEST 2</option>
             </select>
           </td>
-          <td><input type="submit" name="submit"value="ajouter un rdv"></td>
+          <td><input id="submitrecherche" type="submit" name="submit"value="ajouter un rdv"></td>
         </tr>
       </table>
     </form>
-
+    <br><br>
     </fieldset>
+    <br><br><br>
   </div>
-  
+
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 
@@ -300,7 +343,3 @@
           </nav>
       </footer>
 </html>
-                
-
-
-
