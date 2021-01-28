@@ -34,15 +34,16 @@
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
 <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
+<a href="#Backoffice"><button><span>Back-office</span></button></a>
+<a href="#ajouteruser"><button><span>Ajouter un gestionnaire</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
 <a href="#résultats"><button><span>Résultats</span></button></a>
-<br>
-<br>
-<a href="#Backoffice"><button><span>Back-office</span></button></a>
-<a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
+<a href="#rechercheuga"><button><span>Rechercher</span></button></a>
+<a href="#DeleteUser"><button><span>Supprimer un utilisateur</span></button></a>
+<a href="#EditProfil"><button><span>Editer un profil</span></button></a>
 <a href="#ajouterfaq"><button><span>Ajouter une FAQ</span></button></a>
-<a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
-<a href="#form"><button><span>Formulaires de contact</span></button></a>
+<a href="#clcgu"><button><span>Ajouter une CGU/CL</span></button></a>
+<a href="#messagesfaq"><button><span>Messages de la FAQ</span></button></a>
 <br><br>
 
 
@@ -160,12 +161,14 @@
 <br>
 <!-- BACK OFFICE-->
 <!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
+<div id="Backoffice">
   <br> <br>
   <h2> BACK OFFICE</h2>
   <br> <br>
   <br>
   <hr width="100%"size="3" color=#EFD200 solid>
   <br>
+</div>
   <br> <br>
   <form  method="POST"action="ControllerAdmin.php">
 
@@ -415,7 +418,6 @@
 
 
   <!-- FORMULAIRE "AJOUTER UNE FAQ"-->
-<div id="Backoffice">
   <br> <br>
   <br> <br>
   <form id="form" method="POST"action="ControllerAdmin.php">
@@ -443,7 +445,7 @@
     </div>
   </form>
   <br> <br>
-  </div>
+
 
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
@@ -473,7 +475,7 @@
   </div>
   <br> <br>
   <!-- AFFICHAGES MESSAGES AIDE-->
-  <div id="form">
+  <div id="messagesfaq">
     <fieldset>
       <legend><strong>MESSAGES</strong></legend>
       <table>
