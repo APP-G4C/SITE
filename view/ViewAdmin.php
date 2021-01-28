@@ -31,11 +31,11 @@
 </header>
 
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-<a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+<a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
 <a href="#résultats"><button><span>Résultats</span></button></a>
 <br>
-<br> 
+<br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
 <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
 <a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
@@ -54,7 +54,7 @@
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form method="post" action="ControllerAdmin.php">
-            <label> <strong><U>Etat :</U></strong> <br>Administrateur</label>
+            <label> <strong><U>Etat :</U></strong> Administrateur</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
             <br>
@@ -69,7 +69,6 @@
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
              <label><strong><U>ID :</U></strong></label>
-            <br>
             <?php echo $_SESSION["id"]?>
             <br> <br>
             <label><strong><U>Sexe</U></strong></label>
@@ -247,10 +246,10 @@
           <tr>
             <td><strong><U>Trame</U></strong></td>
             <td><strong><U>Heure</U></strong></td>
-          </tr> 
+          </tr>
           <tr>
             <td><?php user_trame();?></td>
-            <td><?php user_Heure();?></td>           
+            <td><?php user_Heure();?></td>
           </table>
       <br> <br>
 

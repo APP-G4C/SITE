@@ -56,3 +56,15 @@ function Valid_ajout_gest(){
       echo 'Felicitations vous avez ajouté "'.$_SESSION["Nom_Prenom_gest"].'" en tant que Gestionnaire !';
     }
 }
+
+function random_password(){
+  $lenght=8;
+  $carac = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  $caraclen = strlen($carac);
+  $rdpassword = "";
+  for ($i=0; $i<$lenght;$i++){
+    $rdpassword .= $carac[random_int(0, $caraclen - 1)];
+  }
+  return $rdpassword;
+}
+?>
