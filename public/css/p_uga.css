@@ -71,6 +71,18 @@ td{
 	left: 0%;
 }
 
+#DeleteUser fieldset{
+	width: 50%;
+	border: 3px #0059C2 solid;
+	margin: auto;
+}
+
+#EditProfil fieldset{
+	width: 50%;
+	border: 3px #0059C2 solid;
+	margin: auto;
+}
+
 #box{
  width: auto;
 }
@@ -187,7 +199,7 @@ margin:auto;
 }
 
 #ajouterrdv fieldset{
-	width: 60%;
+	width: 90%;
 	margin:auto;
 	border: 3px #0059C2 solid;
 	word-spacing: 10px;
