@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
 <link rel="stylesheet" href="/SITE/public/css/style.css">
 <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
 
 <!--HEADER-->
 <header id="menu1">
@@ -34,7 +36,6 @@
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
 <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
-<a href="#résultats"><button><span>Résultats</span></button></a>
 <br>
 <br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
@@ -145,18 +146,19 @@
         </form>
     </fieldset>
     </div>
-
+    <br><br><br><br>
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
 <br>
-
 <!-- BACK OFFICE-->
-
-<!-- FORMULAIRE "AJOUTER UN UTILISATEUR"-->
-<div id="Backoffice">
-  <br> <br>
-  <h2> BACK OFFICE</h2>
-  <br> <br>
+<!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
+<br> <br>
+<h2> BACK OFFICE</h2>
+<br> <br>
+<br>
+<hr width="100%"size="3" color=#EFD200 solid>
+<br>
+<br> <br>
   <form id="form" method="POST"action="ControllerGestionnaire.php">
     <div id="ajouterutilisateur">
     <fieldset>
@@ -212,8 +214,7 @@
   </form>
   </fieldset>
   </div>
-  <br>
-
+  <br><br>
 <!-- RECHERCHER-->
 
 <fieldset>
@@ -243,7 +244,9 @@
         </tr>
       </table>
   </form>
+  <br><br>
 </fieldset>
+<br><br><br>
 
   <!-- AJOUTER UN RDV-->
   <div id="ajouter_un_rdv">
@@ -278,8 +281,9 @@
         </tr>
       </table>
     </form>
-
+    <br>
     </fieldset>
+    <br><br><br>
   </div>
 
   <!--APPEL DU FICHIER JS-->
