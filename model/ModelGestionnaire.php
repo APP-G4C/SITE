@@ -340,3 +340,69 @@ function NomProfil()
     $req->execute();}
 
   }
+  function id__gestionnaire_rdv()
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User FROM User WHERE Type=2";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r("<option>".$donnees["id_User"]."</option>");
+    }
+  }
+
+      function user_trame()
+  {
+    if (isset($_POST["NomUser"])){
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT trame FROM valeur_test WHERE id_User='".$_POST["NomUser"]."'";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r($donnees["trame"]."</br>");
+    }
+  }
+  }
+       function user_Heure()
+  {
+    if (isset($_POST["NomUser"])){
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT Heure FROM valeur_test WHERE id_User='".$_POST["NomUser"]."'";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r($donnees["Heure"]."</br>");
+    }}
+  }
+  function id__utilisateur_rdv()
+  {
+
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User FROM User WHERE Type=1";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r("<option>".$donnees["id_User"]."</option><br>");
+    }
+  }
+
+function add_rdv(){
+      $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql=" INSERT INTO test (`Date_test`,`heure_test`,`id_User`,`Nom`) VALUES ( :Date_test,:heure_test,:id_User,:Nom)";
+        $stmt = $pdo->prepare($sql);
+            // On attache les variables au statement comme paramètres
+            $stmt->bindParam(":id_User", $param_id_User, PDO::PARAM_STR);
+            $stmt->bindParam(":Date_test", $param_Date_test, PDO::PARAM_STR);
+            $stmt->bindParam(":heure_test", $param_heure_test, PDO::PARAM_STR);
+            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
+            // On remplis les paramètres
+            $param_id_User = trim($_POST["id_user_rdv"]);
+            $param_Date_test = trim($_POST["date_rdv_utilisateur"]);
+            $param_heure_test = trim($_POST["horaire_rdv_utilisateur"]);
+            $param_Nom= trim($_POST["test_utilisateur"]);
+            sleep(1);
+            $test=true;
+            $stmt->execute();
+
+}
+

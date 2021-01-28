@@ -42,7 +42,10 @@
 <a href="#form"><button><span>Formulaires de contact</span></button></a>
 <br><br>
 <!--MESSAGE DE BIENVENUE PERSONNALISE-->
-<p id="bienvenue"><?php echo 'BIENVENUE '.$_SESSION["Mail"].' :)'?><p>
+<h2>BIENVENUE</h2>
+<h2><?php PrenomProfil();?></h2>
+<h2><?php NomProfil();?></h2>
+
 <br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
@@ -213,6 +216,36 @@
   </fieldset>
   </div>
   <br>
+  <!-- FORMULAIRE "RESULTATS"-->
+  <div id="résultats">
+    <fieldset>
+      <legend><strong>RESULTATS</strong></legend>
+      <br>
+      <form action="ControllerGestionnaire.php" method="POST">
+        <label><strong><U>Rechercher id de l'Utlisateur</U></strong></label>
+              <br><br>
+              <select name="NomUser">
+            <option><?php id__utilisateur_rdv();?></option>
+          </select>
+          <br><br>
+
+
+          <table>
+          <tr>
+            <td><strong><U>Trame</U></strong></td>
+            <td><strong><U>Heure</U></strong></td>
+          </tr>
+          <tr>
+            <td><?php user_trame();?></td>
+            <td><?php user_Heure();?></td>
+          </table>
+      <br> <br>
+
+      <button><span>Afficher</span></button>
+    </form>
+    </fieldset>
+  </div>
+  <br><br><br>
 
 <!-- RECHERCHER-->
 
