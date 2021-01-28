@@ -51,7 +51,7 @@
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <form method="post" action="ControllerAdmin.php">
+        <form method="post" action="ControllerGestionnaire.php">
             <label> <strong><U>Etat :</U></strong> Gestionnaire</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
@@ -83,7 +83,7 @@
               <option>Femme</option>
               <option>Autre</option>
             </select></td>
-            <td><input type="submit" name="submit" value="Valider"></td>
+            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
           </tr>
             </table>
             <br> <br>
@@ -96,8 +96,8 @@
               </tr>
               <tr>
                 <td><?php DatenaissanceProfil()?></td>
-                <td><input type="date" name="DatenaissanceProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="date" name="DatenaissanceProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br> <br>
@@ -111,8 +111,8 @@
               </tr>
               <tr>
                 <td><?php TelProfil()?></td>
-                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
            <br> <br>
@@ -126,8 +126,8 @@
               </tr>
               <tr>
                 <td><?php MailProfil()?></td>
-                <td><input type="mail" name="MailProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="mail" name="MailProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br><br>
@@ -137,8 +137,8 @@
                 <td>Modifier</td>
               </tr>
               <tr>
-                <td><input type="password" name="PasswordProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="password" name="PasswordProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
               <br>
@@ -212,20 +212,21 @@
       </tr>
     </table>
   </form>
+  <br>
   </fieldset>
   </div>
   <br><br>
 <!-- RECHERCHER-->
-
+<div id="rechercheuga">
 <fieldset>
   <legend><strong><U>RECHERCHER</U></strong></legend>
   <form method="GET">
     <br><br>
      <input type="search" name="q" placeholder="Recherche..." />
      <br><br>
-     <input type="submit" value="Rechercher" />
+     <input id="submitrecherche" type="submit" value="Rechercher" />
      <br><br>
-     <table>
+     <table id="abc">
         <tr>
           <td><strong><U>id_user</U></strong></td>
           <td><strong><U>Nom</U></strong></td>
@@ -246,11 +247,13 @@
   </form>
   <br><br>
 </fieldset>
+</div>
 <br><br><br>
 
   <!-- AJOUTER UN RDV-->
-  <div id="ajouter_un_rdv">
+  <div id="ajouterrdv">
     <fieldset>
+      <br>
       <legend><strong>AJOUTER UN RDV</strong></legend>
       <form method="POST" action="ControllerGestionnaire.php">
         <table>
@@ -262,6 +265,7 @@
           <td><strong><U>Choix du test</U></strong></td>
           <td><strong><U>Valider</U></strong></td>
         </tr>
+        <br>
         <tr>
           <td>
             <select name="id_user_rdv" for="prenom_utilisateur">
@@ -277,11 +281,11 @@
                 <option>TEST 2</option>
             </select>
           </td>
-          <td><input type="submit" name="submit"value="ajouter un rdv"></td>
+          <td><input id="submitinfoperso" type="submit" name="submit"value="ajouter un rdv"></td>
         </tr>
       </table>
     </form>
-    <br>
+    <br><br>
     </fieldset>
     <br><br><br>
   </div>

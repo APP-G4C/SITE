@@ -85,7 +85,7 @@
               <option>Femme</option>
               <option>Autre</option>
             </select></td>
-            <td><input type="submit" name="submit" value="Valider"></td>
+            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
           </tr>
             </table>
             <br> <br>
@@ -98,12 +98,12 @@
               </tr>
               <tr>
                 <td><?php DatenaissanceProfil()?></td>
-                <td><input type="date" name="DatenaissanceProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="date" name="DatenaissanceProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br> <br>
-            <br> <br>
+            <br>
             <label><strong><U>Numéro de téléphone</U></strong></label>
             <br>
             <table>
@@ -113,8 +113,8 @@
               </tr>
               <tr>
                 <td><?php TelProfil()?></td>
-                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="tel"  placeholder="0606060606" pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
            <br> <br>
@@ -128,8 +128,8 @@
               </tr>
               <tr>
                 <td><?php MailProfil()?></td>
-                <td><input type="mail" name="MailProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="mail" name="MailProfil"></td>
+                <td><input id="submitinfoperso" type="submit" value=Valider name="submit"></td>
               </tr>
             </table>
             <br><br>
@@ -139,8 +139,8 @@
                 <td>Modifier</td>
               </tr>
               <tr>
-                <td><input type="password" name="PasswordProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="password" name="PasswordProfil"></td>
+                <td><input id="submitinfoperso" type="submit" value=Valider name="submit"></td>
               </tr>
             </table>
               <br>
@@ -200,7 +200,7 @@
     <br>
 
             <form action="ControllerAdmin.php"method="POST" >
-              <label><strong><U>Rechercher id du Gestionnaire</U></strong></label>
+              <label><strong><U>Rechercher l'id du Gestionnaire</U></strong></label>
               <br><br>
 
           <select name="SelectId">
@@ -233,7 +233,7 @@
       <legend><strong>RESULTATS</strong></legend>
       <br>
       <form action="ControllerAdmin.php" method="POST">
-        <label><strong><U>Rechercher id de l'Utlisateur</U></strong></label>
+        <label><strong><U>Rechercher l'id de l'Utlisateur</U></strong></label>
               <br><br>
               <select name="NomUser">
             <option><?php id__utilisateur_rdv();?></option>
@@ -259,13 +259,14 @@
   <br><br><br>
 
 <!-- RECHERCHER-->
+<div id="rechercheuga">
 <fieldset>
   <legend><strong><U>RECHERCHER :  ADMIN  /  GESTIONNAIRE  /  UTILISATEUR</U></strong></legend>
   <form method="GET">
     <br><br>
      <input type="search" name="q" placeholder="Recherche..." />
      <br><br>
-     <input type="submit" value="Rechercher" />
+     <input id="submitrecherche" type="submit" value="Rechercher" />
      <br><br>
      <table>
         <tr>
@@ -288,6 +289,7 @@
       </table>
   </form>
 </fieldset>
+</div>
 <br><br>
 
 
