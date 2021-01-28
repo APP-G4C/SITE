@@ -194,7 +194,15 @@ function Envoi_mail_new_user($user_mail,$nomprenom,$mdp){
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-    $mail->Body='Bienvenue sur PPT Test. Vos identifiants sont :'.$user_mail.', '.$mdp.'';
+    $mail->Body='Bonjour '.$nomprenom.',
+Bienvenur sur PPT Test !
+Veuillez trouver ci-joint les informations nécessaires pour vous connecter sur le site web de PPT Test
+Attention, pour votre sécurité, veuillez changer vos identifiants une fois connecté.
+-	Identifiant : '.$user_mail.'
+-	Mot de passe : '.$mdp.'
+http://localhost/SITE/controller/ControllerLogin.php
+Bien cordialement,
+L’Equipe PPT Test';
     //$mail->addAttachment('images/phpmailer_mini.png');
     $mail->send();
   }
