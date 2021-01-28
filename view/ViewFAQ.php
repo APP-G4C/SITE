@@ -7,7 +7,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Website | Accueil</title>
+    <title>PPT - Test</title>
 
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -46,10 +46,10 @@
 
             <legend>Questions fréquentes </legend>
                 <?php show_faq();?>
-   
 
 
-   
+
+
 
         </br>
       </br>
