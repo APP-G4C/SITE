@@ -18,6 +18,10 @@ table td{
 	position: relative;
 	left: center;
 }
+#rechercheuga td{
+	position: relative;
+	left: 0%;
+}
 
 #informationspersonnelles fieldset
 {
