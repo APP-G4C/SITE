@@ -6,13 +6,13 @@
 $type=type_u();
 switch ($type) {
   case 1:
-    header('Location:ControllerUser.php')
+    header('Location:ControllerUser.php');
     break;
   case 2:
-    header('Location:ControllerGestionnaire.php')
+    header('Location:ControllerGestionnaire.php');
     break;
   case 4:
-    header('Location:ControllerLogin.php')
+    header('Location:ControllerLogin.php');
     break;
 }
 if($_SESSION['type']==3){
