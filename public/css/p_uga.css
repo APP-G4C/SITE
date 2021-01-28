@@ -18,6 +18,10 @@ table td{
 	position: relative;
 	left: center;
 }
+#rechercheuga td{
+	position: relative;
+	left: 0%;
+}
 
 #informationspersonnelles fieldset
 {
@@ -67,8 +71,6 @@ td{
 	color: white;
 }
 #prochainsrdv form{
-	position: relative;
-	left: 0%;
 }
 
 #DeleteUser fieldset{
