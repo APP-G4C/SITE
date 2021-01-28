@@ -5,8 +5,8 @@
 
 $type=type_u();
 switch ($type) {
-  case 1:
-    header('Location:ControllerUser.php');
+  case 3:
+    header('Location:ControllerAdmin.php');
     break;
   case 2:
     header('Location:ControllerGestionnaire.php');
