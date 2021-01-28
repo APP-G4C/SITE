@@ -144,7 +144,7 @@ function recherche_prenom_user()
     $reponse=$pdo->query($sql);
     while ($donnees=$reponse->fetch())
     {
-      $id_user_rdv="<option>".$donnees["id_User"]."</option";
+      $id_user_rdv="<option>".$donnees["id_User"]."</option>";
       echo $id_user_rdv;
     }
   }
@@ -194,7 +194,15 @@ function Envoi_mail_new_user($user_mail,$nomprenom,$mdp){
     //Read an HTML message body from an external file, convert referenced images to embedded,
     //convert HTML into a basic plain-text alternative body
     //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-    $mail->Body='Bienvenue sur PPT Test. Vos identifiants sont :'.$user_mail.', '.$mdp.'';
+    $mail->Body='Bonjour '.$nomprenom.',
+Bienvenur sur PPT Test !
+Veuillez trouver ci-joint les informations nécessaires pour vous connecter sur le site web de PPT Test
+Attention, pour votre sécurité, veuillez changer vos identifiants une fois connecté.
+-	Identifiant : '.$user_mail.'
+-	Mot de passe : '.$mdp.'
+http://localhost/SITE/controller/ControllerLogin.php
+Bien cordialement,
+L’Equipe PPT Test';
     //$mail->addAttachment('images/phpmailer_mini.png');
     $mail->send();
   }
@@ -340,3 +348,69 @@ function NomProfil()
     $req->execute();}
 
   }
+  function id__gestionnaire_rdv()
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User FROM User WHERE Type=2";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r("<option>".$donnees["id_User"]."</option>");
+    }
+  }
+
+      function user_trame()
+  {
+    if (isset($_POST["NomUser"])){
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT trame FROM valeur_test WHERE id_User='".$_POST["NomUser"]."'";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r($donnees["trame"]."</br>");
+    }
+  }
+  }
+       function user_Heure()
+  {
+    if (isset($_POST["NomUser"])){
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT Heure FROM valeur_test WHERE id_User='".$_POST["NomUser"]."'";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r($donnees["Heure"]."</br>");
+    }}
+  }
+  function id__utilisateur_rdv()
+  {
+
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User FROM User WHERE Type=1";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
+    {
+      print_r("<option>".$donnees["id_User"]."</option><br>");
+    }
+  }
+
+function add_rdv(){
+      $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql=" INSERT INTO test (`Date_test`,`heure_test`,`id_User`,`Nom`) VALUES ( :Date_test,:heure_test,:id_User,:Nom)";
+        $stmt = $pdo->prepare($sql);
+            // On attache les variables au statement comme paramètres
+            $stmt->bindParam(":id_User", $param_id_User, PDO::PARAM_STR);
+            $stmt->bindParam(":Date_test", $param_Date_test, PDO::PARAM_STR);
+            $stmt->bindParam(":heure_test", $param_heure_test, PDO::PARAM_STR);
+            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
+            // On remplis les paramètres
+            $param_id_User = trim($_POST["id_user_rdv"]);
+            $param_Date_test = trim($_POST["date_rdv_utilisateur"]);
+            $param_heure_test = trim($_POST["horaire_rdv_utilisateur"]);
+            $param_Nom= trim($_POST["test_utilisateur"]);
+            sleep(1);
+            $test=true;
+            $stmt->execute();
+
+}
+

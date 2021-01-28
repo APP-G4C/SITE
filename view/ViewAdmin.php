@@ -45,9 +45,15 @@
 <a href="#form"><button><span>Formulaires de contact</span></button></a>
 <br><br>
 
+
 <br><br>
 
+
 <!-- FORMULAIRE INFOS PERSONNELLES-->
+<h2>BIENVENUE</h2>
+<h2><?php PrenomProfil();?></h2>
+<h2><?php NomProfil();?></h2>
+<br><br>
 
     <div id="informationspersonnelles">
       <fieldset>
@@ -85,7 +91,7 @@
               <option>Femme</option>
               <option>Autre</option>
             </select></td>
-            <td><input type="submit" name="submit" value="Valider"></td>
+            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
           </tr>
             </table>
             <br> <br>
@@ -98,12 +104,12 @@
               </tr>
               <tr>
                 <td><?php DatenaissanceProfil()?></td>
-                <td><input type="date" name="DatenaissanceProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="date" name="DatenaissanceProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br> <br>
-            <br> <br>
+            <br>
             <label><strong><U>Numéro de téléphone</U></strong></label>
             <br>
             <table>
@@ -113,8 +119,8 @@
               </tr>
               <tr>
                 <td><?php TelProfil()?></td>
-                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="tel"  placeholder="0606060606" pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
            <br> <br>
@@ -128,8 +134,8 @@
               </tr>
               <tr>
                 <td><?php MailProfil()?></td>
-                <td><input type="mail" name="MailProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="mail" name="MailProfil"></td>
+                <td><input id="submitinfoperso" type="submit" value=Valider name="submit"></td>
               </tr>
             </table>
             <br><br>
@@ -139,8 +145,8 @@
                 <td>Modifier</td>
               </tr>
               <tr>
-                <td><input type="password" name="PasswordProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="password" name="PasswordProfil"></td>
+                <td><input id="submitinfoperso" type="submit" value=Valider name="submit"></td>
               </tr>
             </table>
               <br>
@@ -200,7 +206,7 @@
     <br>
 
             <form action="ControllerAdmin.php"method="POST" >
-              <label><strong><U>Rechercher id du Gestionnaire</U></strong></label>
+              <label><strong><U>Rechercher l'id du Gestionnaire</U></strong></label>
               <br><br>
 
           <select name="SelectId">
@@ -233,7 +239,7 @@
       <legend><strong>RESULTATS</strong></legend>
       <br>
       <form action="ControllerAdmin.php" method="POST">
-        <label><strong><U>Rechercher id de l'Utlisateur</U></strong></label>
+        <label><strong><U>Rechercher l'id de l'Utlisateur</U></strong></label>
               <br><br>
               <select name="NomUser">
             <option><?php id__utilisateur_rdv();?></option>
@@ -259,13 +265,14 @@
   <br><br><br>
 
 <!-- RECHERCHER-->
+<div id="rechercheuga">
 <fieldset>
   <legend><strong><U>RECHERCHER :  ADMIN  /  GESTIONNAIRE  /  UTILISATEUR</U></strong></legend>
   <form method="GET">
     <br><br>
      <input type="search" name="q" placeholder="Recherche..." />
      <br><br>
-     <input type="submit" value="Rechercher" />
+     <input id="submitrecherche" type="submit" value="Rechercher" />
      <br><br>
      <table>
         <tr>
@@ -275,6 +282,7 @@
           <td><strong><U>Date de naissance</U></strong></td>
           <td><strong><U>Sexe</U></strong></td>
           <td><strong><U>Mail</U></strong></td>
+          <td><strong><U>Type</U></strong></td>
 
         </tr>
         <tr>
@@ -284,11 +292,125 @@
           <td><?php recherche_date_de_naissance();?></td>
           <td><?php recherche_sexe();?></td>
           <td><?php recherche_mail();?></td>
+
         </tr>
       </table>
   </form>
 </fieldset>
+</div>
 <br><br>
+
+<div id="DeleteUser">
+<fieldset>
+  <legend><strong><U>SUPPRIMER UN UTILISATEUR/GESTIONNAIRE</U></strong></legend>
+  <form method="POST" action="ControllerAdmin.php">
+      <br>
+  <select name="DeleteUser">
+    <?php id__utilisateur_rdv();?>
+  </select>
+  <br><br>
+  <input onclick="alert('Voulez-vous vraiment supprimer cet utilisateur?')"type="submit" name="submit" value="Supprimer">
+  <br><br>
+    
+  </form>
+</fieldset>
+</div>
+<br><br>
+
+<div id="EditProfil">
+  <fieldset>
+    <legend><strong><U>EDITER UN PROFIL GESTIONNAIRE/UTILISATEUR</U></strong></legend>
+    <form action="ControllerAdmin.php" method="POST">
+      <br>
+      <label><strong>Choix de l'Utilisateur/Gestionnaire</strong></label>
+      <br>
+      <select name="SelectIdEdit">
+        <option><?php IdEdit();?></option>
+      </select>
+      <br>
+      <input type="submit" name="submit"value="Afficher">
+      <br><br>
+            <label><strong><U>Nom</U></strong></label>
+            <label><?php NomProfilEdit()?></label>
+            <br>
+            <label><strong><U>Prénom</U></strong></label>
+            <br>
+            <label><?php PrenomProfilEdit()?></label>
+             <label><strong><U>ID :</U></strong></label>
+             <br>
+            <?php IdProfilEdit();?>
+            <br>
+            <label><strong><U>Sexe</U></strong></label>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php SexeProfilEdit();?></td>
+                <td> <select name="SexeProfilEdit">
+              <option>Homme</option>
+              <option>Femme</option>
+              <option>Autre</option>
+            </select></td>
+            <td><input type="submit" name="submit" value="Valider"></td>
+          </tr>
+            </table>
+            <label><strong><U>Date de Naissance</U></strong></label>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php DatenaissanceProfilEdit()?></td>
+                <td><input type="date" name="DatenaissanceProfilEdit"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <label><strong><U>Numéro de téléphone</U></strong></label>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php TelProfilEdit()?></td>
+                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfilEdit"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+          <!-- Email -->
+            <label for="email"><strong><U>Mail</U></strong></label>
+            <br>
+            <table>
+              <tr>
+                <td>Etat actuel</td>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><?php MailProfilEdit()?></td>
+                <td><input type="mail" name="MailProfilEdit"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+            <label><strong><U>Mot de passe</U></strong></label>
+            <table>
+              <tr>
+                <td>Modifier</td>
+              </tr>
+              <tr>
+                <td><input type="password" name="PasswordProfilEdit"></td>
+                <td><input type="submit"value=Valider name="submit"></td>
+              </tr>
+            </table>
+        </form>
+    </fieldset>
+    </div>
+
+
+    </form>
+  </fieldset>
 
 
   <!-- FORMULAIRE "AJOUTER UNE FAQ"-->
