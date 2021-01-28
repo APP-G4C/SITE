@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $Prenom=$row["Prenom"];
                         $password1 = $row["password"];
                         $type=$row['type'];
-                        if($password==$password1){
+                        if(password_verify($password,$password1)){
                             // Le mdp est bon, on lance une session
                             session_start();
 
