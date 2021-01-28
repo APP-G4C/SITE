@@ -1,23 +1,21 @@
 funct/* PAGE CONNEXION*/
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 
-.login-box{
-  width: 280px;
-  position: relative;
-  margin-left: 40%;
-  margin-top: 20%;
-  margin-bottom: 20%;
-  color: #3F51B5;
+h1{
 }
+
 .login-box h1{
-  float: left;
+  position: relative;
+  width: 17%;
+  left: 41.5%;
   font-size: 40px;
   border-bottom: 6px solid #3F51B5;
   margin-bottom: 50px;
   padding: 13px 0;
+  color: #3F51B5;
 }
 .textbox{
-  width: 100%;
+  width: 20%;
   overflow: hidden;
   font-size: 20px;
   padding: 8px 0;
@@ -26,6 +24,9 @@ funct/* PAGE CONNEXION*/
   display:  flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  left: 40%;
+  color: #3F51B5;
 }
 .textbox i{
   width: 26px;
@@ -43,7 +44,9 @@ funct/* PAGE CONNEXION*/
   margin: 0 10px;
 }
 .btn{
-  width: 100%;
+  position: relative;
+  left: 40%;
+  width: 20%;
   background: none;
   border: 2px solid #3F51B5;
   color: #3F51B5;

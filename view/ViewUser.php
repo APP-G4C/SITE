@@ -13,12 +13,14 @@
   <link rel="stylesheet" href="/SITE/public/css/footer.css">
   <link rel="stylesheet" href="/SITE/public/css/style.css">
   <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
  </head>
+
   <!--HEADER-->
   <header id="menu1">
   <nav>
     <ul id="menu">
-        <li id="link"><a id="logoapp"href="/SITE/controllerControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
+        <li id="link"><a id="logoapp"href="/SITE/controller/ControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
         <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
         <li id="link"><a id="b2"href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
         <li id="link"><a id="b2"href="/SITE/controller/ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -44,13 +46,12 @@
 <h2><?php NomProfil();?></h2>
     <br><br>
 
-    <!-- FORMULAIRE INFOS PERSONNELLES-->
    <!-- FORMULAIRE INFOS PERSONNELLES-->
     <div id="informationspersonnelles">
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <form method="post" action="ControllerAdmin.php">
+        <form method="post" action="ControllerUser.php">
             <label> <strong><U>Etat :</U></strong> Utilisateur</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
@@ -82,7 +83,7 @@
               <option>Femme</option>
               <option>Autre</option>
             </select></td>
-            <td><input type="submit" name="submit" value="Valider"></td>
+            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
           </tr>
             </table>
             <br> <br>
@@ -95,8 +96,8 @@
               </tr>
               <tr>
                 <td><?php DatenaissanceProfil()?></td>
-                <td><input type="date" name="DatenaissanceProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="date" name="DatenaissanceProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br> <br>
@@ -110,8 +111,8 @@
               </tr>
               <tr>
                 <td><?php TelProfil()?></td>
-                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
            <br> <br>
@@ -125,8 +126,8 @@
               </tr>
               <tr>
                 <td><?php MailProfil()?></td>
-                <td><input type="mail" name="MailProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="mail" name="MailProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br><br>
@@ -136,8 +137,8 @@
                 <td>Modifier</td>
               </tr>
               <tr>
-                <td><input type="password" name="PasswordProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="password" name="PasswordProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
               <br>
@@ -145,23 +146,26 @@
         </form>
     </fieldset>
     </div>
-      <br><br><br><br>
+      <br><br><br>
       <!--FORMULAIRE "RESULTATS"-->
         <div id="résultats">
           <fieldset>
             <legend><strong>RESULTATS</strong></legend>
+            <br>
               <table>
                 <tr>
                   <td><strong><U>id_test</U></strong></td>
                   <td><strong><U>trame</U></strong></td>
                   <td><strong><U>Heure</U></strong></td>
                 </tr>
+                <br>
                 <tr>
                   <td><label><?php  user_id_test() ;?></label></td>
                   <td><label><?php user_trame();?></label></td>
                   <td><label><?php user_Heure();?></label></td>
                 </tr>
               </table>
+              <br>
           </fieldset>
         </div>
         <br><br>
@@ -177,12 +181,14 @@
         <td><strong><U>Date</U></strong></td>
         <td><strong><U>Horaire</U></strong></td>
       </tr>
+      <br>
       <tr>
         <td><?php  user_Date_prochainrdv();?></td>
         <td><?php  user_horaire_prochainrdv();?></td>
       </tr>
     </table>
   </form>
+  <br>
   </fieldset>
   </div>
   <br>

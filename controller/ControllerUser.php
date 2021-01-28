@@ -3,8 +3,19 @@
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
 
-
-if($_SESSION['type']=1)
+$type=type_u();
+switch ($type) {
+  case 1:
+    header('Location:ControllerUser.php');
+    break;
+  case 2:
+    header('Location:ControllerGestionnaire.php');
+    break;
+  case 4:
+    header('Location:ControllerLogin.php');
+    break;
+}
+if($type=1)
 {
 
   $modifheader=  header_ada();
@@ -71,6 +82,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  {
     # code...
 }
-
-
-

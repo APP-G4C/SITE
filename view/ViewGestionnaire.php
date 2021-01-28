@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
 <link rel="stylesheet" href="/SITE/public/css/style.css">
 <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
 
 <!--HEADER-->
 <header id="menu1">
@@ -34,7 +36,6 @@
 <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
 <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
 <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
-<a href="#résultats"><button><span>Résultats</span></button></a>
 <br>
 <br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
@@ -53,7 +54,7 @@
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
-        <form method="post" action="ControllerAdmin.php">
+        <form method="post" action="ControllerGestionnaire.php">
             <label> <strong><U>Etat :</U></strong> Gestionnaire</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
@@ -85,7 +86,7 @@
               <option>Femme</option>
               <option>Autre</option>
             </select></td>
-            <td><input type="submit" name="submit" value="Valider"></td>
+            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
           </tr>
             </table>
             <br> <br>
@@ -98,8 +99,8 @@
               </tr>
               <tr>
                 <td><?php DatenaissanceProfil()?></td>
-                <td><input type="date" name="DatenaissanceProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="date" name="DatenaissanceProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br> <br>
@@ -113,8 +114,8 @@
               </tr>
               <tr>
                 <td><?php TelProfil()?></td>
-                <td><input type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
            <br> <br>
@@ -128,8 +129,8 @@
               </tr>
               <tr>
                 <td><?php MailProfil()?></td>
-                <td><input type="mail" name="MailProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="mail" name="MailProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
             <br><br>
@@ -139,8 +140,8 @@
                 <td>Modifier</td>
               </tr>
               <tr>
-                <td><input type="password" name="PasswordProfil"></td>
-                <td><input type="submit"value=Valider name="submit"></td>
+                <td><input id="box" type="password" name="PasswordProfil"></td>
+                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
               <br>
@@ -148,18 +149,19 @@
         </form>
     </fieldset>
     </div>
-
+    <br><br><br><br>
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
 <br>
-
 <!-- BACK OFFICE-->
-
-<!-- FORMULAIRE "AJOUTER UN UTILISATEUR"-->
-<div id="Backoffice">
-  <br> <br>
-  <h2> BACK OFFICE</h2>
-  <br> <br>
+<!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
+<br> <br>
+<h2> BACK OFFICE</h2>
+<br> <br>
+<br>
+<hr width="100%"size="3" color=#EFD200 solid>
+<br>
+<br> <br>
   <form id="form" method="POST"action="ControllerGestionnaire.php">
     <div id="ajouterutilisateur">
     <fieldset>
@@ -213,8 +215,10 @@
       </tr>
     </table>
   </form>
+  <br>
   </fieldset>
   </div>
+
   <br>
   <!-- FORMULAIRE "RESULTATS"-->
   <div id="résultats">
@@ -247,17 +251,18 @@
   </div>
   <br><br><br>
 
-<!-- RECHERCHER-->
 
+<!-- RECHERCHER-->
+<div id="rechercheuga">
 <fieldset>
   <legend><strong><U>RECHERCHER</U></strong></legend>
   <form method="GET">
     <br><br>
      <input type="search" name="q" placeholder="Recherche..." />
      <br><br>
-     <input type="submit" value="Rechercher" />
+     <input id="submitrecherche" type="submit" value="Rechercher" />
      <br><br>
-     <table>
+     <table id="abc">
         <tr>
           <td><strong><U>id_user</U></strong></td>
           <td><strong><U>Nom</U></strong></td>
@@ -276,11 +281,15 @@
         </tr>
       </table>
   </form>
+  <br><br>
 </fieldset>
+</div>
+<br><br><br>
 
   <!-- AJOUTER UN RDV-->
-  <div id="ajouter_un_rdv">
+  <div id="ajouterrdv">
     <fieldset>
+      <br>
       <legend><strong>AJOUTER UN RDV</strong></legend>
       <form method="POST" action="ControllerGestionnaire.php">
         <table>
@@ -292,6 +301,7 @@
           <td><strong><U>Choix du test</U></strong></td>
           <td><strong><U>Valider</U></strong></td>
         </tr>
+        <br>
         <tr>
           <td>
             <select name="id_user_rdv" for="prenom_utilisateur">
@@ -307,12 +317,13 @@
                 <option>TEST 2</option>
             </select>
           </td>
-          <td><input type="submit" name="submit"value="ajouter un rdv"></td>
+          <td><input id="submitinfoperso" type="submit" name="submit"value="ajouter un rdv"></td>
         </tr>
       </table>
     </form>
-
+    <br><br>
     </fieldset>
+    <br><br><br>
   </div>
 
   <!--APPEL DU FICHIER JS-->
