@@ -163,12 +163,7 @@
       <legend><strong>AJOUTER UN UTILISATEUR</strong></legend>
       <br> <br>
 <!--AFFICHAGE DE L'UTILISATEUR AJOUTÉ-->
-      <h3><?php
-      if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
-        {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que utilisateur !';
-        }
-      ?></h3>
+
       <br>
 
       <label id="Nom" for="Nom"><strong><U>Nom</U></strong></label>

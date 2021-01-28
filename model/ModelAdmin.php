@@ -47,7 +47,9 @@ function Envoi_mail_new_gest($user_mail,$nomprenom,$mdp){
 function fonction_add_gestionnaire(){
   if (isset($_POST["Nom"]) &&isset($_POST["Prenom"])&&isset($_POST["Mail"])) {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO `User`(`Nom`, `Prenom`,`Mail`,`Password`) VALUES (:Nom, :Prenom,:Mail,:Password)";
+
+        $sql=" INSERT INTO `User`(`Nom`, `Prenom`,`Mail`,`Type`,`Password`) VALUES (:Nom, :Prenom,2,:Mail,:Password)";
+
         $stmt = $pdo->prepare($sql);
             // On attache les variables au statement comme paramètres
             $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
