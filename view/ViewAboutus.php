@@ -31,7 +31,7 @@
       <div id="perso">
         <div id="textaboutus">
           <h1 id="titre_aboutus"></br>Qui sommes-nous ?</br></h1>
-                <p id="introduction">Post hoc impie perpetratum quod in aliis quoque iam timebatur, tamquam licentia crudelitati indulta per suspicionum nebulas aestimati quidam noxii damnabantur. quorum pars necati </p>
+                <p id="introduction">Notre équipe est fière de vous accompagnez dans l'évaluation de vos performances psychotechniques ! </p>
 
         </div>
         <br><br><br>

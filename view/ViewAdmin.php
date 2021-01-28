@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
 <link rel="stylesheet" href="/SITE/public/css/style.css">
 <link rel="stylesheet" href="/SITE/public/css/p_uga.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
 
 <!--HEADER-->
 <header id="menu1">
@@ -38,12 +40,10 @@
 <br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
 <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
-<a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
+<a href="#ajouterfaq"><button><span>Ajouter une FAQ</span></button></a>
 <a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
 <a href="#form"><button><span>Formulaires de contact</span></button></a>
 <br><br>
-
-<!--MESSAGE DE BIENVENUE PERSONNALISE-->
 
 <br><br>
 
@@ -152,25 +152,24 @@
 <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
 <hr width="100%"size="3" color=#EFD200 solid>
 <br>
-
 <!-- BACK OFFICE-->
-
 <!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
   <br> <br>
-
-
   <h2> BACK OFFICE</h2>
   <br> <br>
-  <br> <br>
+  <br>
+  <hr width="100%"size="3" color=#EFD200 solid>
+  <br>
   <br> <br>
   <form  method="POST"action="ControllerAdmin.php">
+
     <div id="ajouteruser">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
       <br>
 
 <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
-      <h3></h3>
+      
       <br><br>
       <label id="Nom" ><strong><U>Nom</U></strong></label>
       <br>
@@ -186,13 +185,12 @@
       <input name="Mail"type="text" placeholder="Mail"pattern="[A-Za-z-].{1,}">
 
       <br> <br>
-      <br> <br>
-      <br> <br>
-      <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
+      <br>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter ce Gestionnaire ?')"type="submit"name="submit"><span>Ajouter </span></button>
     </fieldset>
     </div>
   </form>
-  <br> <br>
+  <br> <br><br><br>
   </div>
 
   <!-- FORMULAIRE " PROCHAINS RDV"-->
@@ -224,10 +222,11 @@
             </tr>
           </table>
         </form>
+        <br><br>
     </fieldset>
     </div>
 
-
+<br><br><br><br>
   <!-- FORMULAIRE "RESULTATS"-->
   <div id="résultats">
     <fieldset>
@@ -240,7 +239,6 @@
             <option><?php id__utilisateur_rdv();?></option>
           </select>
           <br><br>
-
 
           <table>
           <tr>
@@ -255,13 +253,14 @@
 
       <button><span>Afficher</span></button>
     </form>
+    <br>
     </fieldset>
   </div>
   <br><br><br>
 
 <!-- RECHERCHER-->
 <fieldset>
-  <legend><strong><U>RECHERCHER ADMIN-GESTIONNAIRE-UTILISATEUR</U></strong></legend>
+  <legend><strong><U>RECHERCHER :  ADMIN  /  GESTIONNAIRE  /  UTILISATEUR</U></strong></legend>
   <form method="GET">
     <br><br>
      <input type="search" name="q" placeholder="Recherche..." />
@@ -328,7 +327,7 @@
      <form id="form" method="POST"action="ControllerAdmin.php">
     <div id="ajouterfaq">
     <fieldset>
-      <legend><strong>AJOUTER CGL/CGU</strong></legend>
+      <legend><strong>AJOUTER CGU/CGL</strong></legend>
       <br>
 
 <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
@@ -344,8 +343,7 @@
       <input name="ContenuCGL"type="text" placeholder="Contenue">
       <br> <br>
       <br> <br>
-      <br> <br>
-      <button onclick="alert('Es-tu sûr de vouloir ajouter cette CGU ?')"type="submit"name="submit"><span>Ajouter la CGU</span></button>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter cette CGU/CGL ?')"type="submit"name="submit"><span>Ajouter</span></button>
     </fieldset>
     </div>
   </form>

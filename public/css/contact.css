@@ -69,13 +69,15 @@ color: black;
   display: inline;
 }
 .btn{
-  display:inline-block;
-  background-color:white;
-  border-radius: 8px;
-  border: 2px solid #3F51B5;
-  font-family: Lucida sans;
-  font-size: 20px;
-  cursor: pointer;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 20%;
+  height: 30px;
+	position: relative;
+	margin-top: 1%;
+  color: white;
 }
 .contenu{
   text-align: center;

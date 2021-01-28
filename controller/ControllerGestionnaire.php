@@ -2,7 +2,7 @@
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\SMTP;
 
-   include 'D:\MAMP\htdocs\vendor\autoload.php';
+   include ($_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php');
 
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelGestionnaire.php');
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
@@ -20,40 +20,21 @@ if($_SESSION['type']=2){
      require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerLogin.php');
 }
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["Nom"])&&isset($_POST["Prenom"])&&isset($_POST["Mail"])){
+        fonction_add_utilisateur();
+            # code...
+        }
+    // On vérifie qu'il n'y a pas d'erreur
+   
 
+}unset($pdo);
+ {
+ }
 
 
 // Si l'utilisateur entre des données dans le form...
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // On vérifie qu'un email a été entré
-    if(empty(htmlspecialchars(trim($_POST["Mail"])))){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
-        $err_Mail = "Veuillez entrer votre adresse Mail.";
-    } else{
-        $Mail = trim(htmlspecialchars($_POST["Mail"]));
-    }
-
-    // On vérifie qu'un mdp a été entré
-    if(empty(trim(htmlspecialchars($_POST["Nom"])))){
-        $err_Nom = "Veuillez entrer un mot de passe.";
-    } else{
-        $Nom = htmlspecialchars(trim($_POST["Nom"]));
-    }
-    if(empty(htmlspecialchars(trim($_POST["Prenom"])))){
-        $err_Prenom = "Veuillez entrer un mot de passe.";
-    } else{
-        $Prenom = htmlspecialchars(trim($_POST["Prenom"]));
-    }
-
-
-// On vérifie qu'il n'y a pas d'erreur
-    if(empty($err_Nom) && empty($err_Prenom)&&empty($err_Mail)){
-
-     fonction_add_utilisateur();
-    }
-
-
-}unset($pdo);
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
     if(isset($_POST["SexeProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes

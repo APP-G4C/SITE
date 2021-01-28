@@ -12,6 +12,7 @@ if($_SESSION['type']==3){
 }else{
    require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerLogin.php');
 }
+$AjoutNomGestionnaire=$AjoutPrenomGestionnaire="";
 
 
 // On charge le fichier config si pas déjà fait (charge databse)
@@ -24,7 +25,9 @@ $test=false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
     if(isset($_POST["Nom"])&&isset($_POST["Prenom"])&&isset($_POST["Mail"])){
-        fonction_add_gestionnaire();}
+        fonction_add_gestionnaire();
+            # code...
+        }
     // On vérifie qu'il n'y a pas d'erreur
 
 
