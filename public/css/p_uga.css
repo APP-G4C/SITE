@@ -14,9 +14,14 @@ legend
   text-align: center;
 }
 
+table td{
+	position: relative;
+	left: center;
+}
+
 #informationspersonnelles fieldset
 {
-	width: 40%;
+	width: 50%;
 	border: 3px #0059C2 solid;
 	margin: auto;
 }
@@ -24,12 +29,66 @@ legend
 #informationspersonnelles form
 {
 	text-align: center;
+	position: relative;
 }
 
-td
-{
-	text-align: center;
+
+td{
+	width: auto;
+	position: relative;
+	left: 50%;
 }
+
+#submitinfoperso{
+	position: relative;
+	margin:20px;
+	width: 100%;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+	color: white;
+}
+
+#prochainsrdv input{
+	position: relative;
+	margin:20px;
+	width: 30%;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+	color: white;
+}
+#prochainsrdv form{
+	position: relative;
+	left: 0%;
+}
+
+#box{
+ width: auto;
+}
+
+#submitrecherche{
+	position: relative;
+	margin:20px;
+	width: 30%;
+	background-color: #3F51B5;
+	border: 1px solid white;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	margin-top: 1%;
+	height: 25px;
+	color: white;
+}
+
 
 a button{
 	background-color: #3F51B5;
@@ -112,10 +171,40 @@ text-align: center;
 margin:auto;
 }
 
+#rechercheuga fieldset{
+	width: 50%;
+	margin:auto;
+	border: 3px #0059C2 solid;
+	word-spacing: 10px;
+}
+
+#rechercheuga #abc{
+	position: relative;
+	left: -25%;
+	width: 50%;
+	text-align: center;
+	margin:auto;
+}
+
+#ajouterrdv fieldset{
+	width: 60%;
+	margin:auto;
+	border: 3px #0059C2 solid;
+	word-spacing: 10px;
+	position: relative;
+}
+
+#ajouterrdv form{
+	position: relative;
+	left: -32%;
+	width: 100%;
+	text-align: center;
+	margin:auto;
+}
+
 #backoffice fieldset
 {
 border: 3px #0059C2 solid;
-width: auto;
 margin:auto;
 }
 
