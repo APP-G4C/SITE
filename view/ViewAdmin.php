@@ -38,7 +38,7 @@
 <br>
 <a href="#Backoffice"><button><span>Back-office</span></button></a>
 <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
-<a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
+<a href="#ajouterfaq"><button><span>Ajouter une FAQ</span></button></a>
 <a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
 <a href="#form"><button><span>Formulaires de contact</span></button></a>
 <br><br>
@@ -170,7 +170,7 @@
       <br>
 
 <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
-      <h3></h3>
+      
       <br><br>
       <label id="Nom" ><strong><U>Nom</U></strong></label>
       <br>

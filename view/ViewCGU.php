@@ -38,7 +38,7 @@
           <h1 class="top">Conditions générales d'utilisation</h1>
           <br>
                 <br>
-                <?php show_cgl()."<br>"; ?>
+                <?php show_cgl(); ?>
 
 
 
