@@ -188,7 +188,7 @@
       <br>
       <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
-      <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+      <button id="submitrecherche" type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
     </div>
   </form>
@@ -245,7 +245,7 @@
           </table>
       <br> <br>
 
-      <button><span>Afficher</span></button>
+      <button id="submitrecherche"><span>Afficher</span></button>
     </form>
     </fieldset>
   </div>
@@ -317,7 +317,7 @@
                 <option>TEST 2</option>
             </select>
           </td>
-          <td><input id="submitinfoperso" type="submit" name="submit"value="ajouter un rdv"></td>
+          <td><input id="submitrecherche" type="submit" name="submit"value="ajouter un rdv"></td>
         </tr>
       </table>
     </form>
