@@ -15,7 +15,7 @@ switch ($type) {
     header('Location:ControllerLogin.php');
     break;
 }
-if($_SESSION['type']==3){
+if($type==3){
   $modifheader=  header_ada();
 
   require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewAdmin.php');
