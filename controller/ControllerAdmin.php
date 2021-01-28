@@ -115,6 +115,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // On vérifie qu'un email a été entré
+    if(isset($_POST["DeleteUser"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        DeleteUser();
+}
+
+}unset($pdo);
+ {
+    # code...
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
     if(isset($_POST["PasswordProfil"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
         ModifPasswordProfil();}
 
@@ -122,6 +132,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  {
     # code...
 }
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // On vérifie qu'un email a été entré
+    if(isset($_POST["SexeProfilEdit"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifSexeProfilEdit();
+    }
+     if(isset($_POST["DatenaissanceProfilEdit"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();
+    }
+     if(isset($_POST["TelProfilEdit"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();
+    }
+     if(isset($_POST["MailProfilEdit"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();
+    }
+     if(isset($_POST["PasswordProfilEdit"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();
+    }
+     if(isset($_POST["SelectIdEdit"])){  //la fn trim sert a enlever les espaces sur les cotes du mail en cas de fautes de frappes
+        ModifPasswordProfil();
+    }
+
+
+}unset($pdo);
+ {
+    # code...
+}
+
 // Initialisation session
 // On regarde si l'utilisateur est en ligne, si oui on le redirige sur la page d'accueil
 

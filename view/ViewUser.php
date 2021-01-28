@@ -41,7 +41,9 @@
     <br><br>
 
     <!--MESSAGE DE BIENVENUE PERSONNALISE-->
-    <p id="bienvenue"><?php echo 'BIENVENUE '.$_SESSION["Mail"].' :)'?><p>
+<h2>BIENVENUE</h2>
+<h2><?php PrenomProfil();?></h2>
+<h2><?php NomProfil();?></h2>
     <br><br>
 
    <!-- FORMULAIRE INFOS PERSONNELLES-->
