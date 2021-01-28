@@ -144,7 +144,7 @@ function recherche_prenom_user()
     $reponse=$pdo->query($sql);
     while ($donnees=$reponse->fetch())
     {
-      $id_user_rdv="<option>".$donnees["id_User"]."</option";
+      $id_user_rdv="<option>".$donnees["id_User"]."</option>";
       echo $id_user_rdv;
     }
   }
