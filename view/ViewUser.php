@@ -30,15 +30,11 @@
 
   <body>
     <!-- BOUTONS DE REDIRECTIONS SUR LA PAGE-->
-    <a href="#informationspersonnelles"><button ><span>Informations personelles</span></button></a>
+    <a href="#informationspersonnelles"><button ><span>Informations personnelles</span></button></a>
     <a href="#prochainsrdv"><button ><span>Prochains RDV</span></button></a>
     <a href="#résultats"><button><span>Résultats</span></button></a>
     <br>
     <br>
-    <a href="#Backoffice"><button><span>Back-office</span></button></a>
-    <a href="#ajouterutilisateur"><button><span>Ajouter un gestionnaire</span></button></a>
-    <a href="#faq"><button><span>Ajouter une FAQ</span></button></a>
-    <a href="#clcgu"><button><span>Ajouter une CGL/CGU</span></button></a>
     <a href="#form"><button><span>Formulaires de contact</span></button></a>
     <br><br>
 
@@ -53,7 +49,7 @@
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
         <br>
         <form method="post" action="ControllerAdmin.php">
-            <label> <strong><U>Etat :</U></strong> <br>Utilisateur</label>
+            <label> <strong><U>Etat :</U></strong> Utilisateur</label>
             <br> <br>
             <label><strong><U>Nom</U></strong></label>
             <br>
@@ -68,7 +64,6 @@
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
              <label><strong><U>ID :</U></strong></label>
-            <br>
             <?php echo $_SESSION["id"]?>
             <br> <br>
             <label><strong><U>Sexe</U></strong></label>
@@ -192,7 +187,7 @@
 
       <!--GRAPHIQUE-->
 
-        
+
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
       <h2> TEST </h2>
       <div id="Graphique" style="width: 50%;margin: auto;">
@@ -277,9 +272,9 @@ options:
 
 
 </script>
-       
 
-         
+
+
         <br>
   </body>
 
@@ -297,4 +292,3 @@ options:
   <!--APPEL DU FICHIER JS-->
   <script src="/SITE/public/js/regexp.js"></script>
 </html>
-
