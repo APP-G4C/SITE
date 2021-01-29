@@ -20,7 +20,7 @@ table td{
 }
 #rechercheuga td{
 	position: relative;
-	left: 0%;
+	left: 40%;
 }
 
 #informationspersonnelles fieldset
@@ -71,6 +71,17 @@ td{
 	color: white;
 }
 #prochainsrdv form{
+ position: relative;
+ left: -5%;
+}
+#messagesfaq td{
+	position: relative;
+	left: 30%;
+}
+#messagesfaq fieldset{
+width: 50%;
+margin: auto;
+border: 3px #0059C2 solid;
 }
 
 #DeleteUser fieldset{
@@ -200,7 +211,7 @@ margin:auto;
 
 #ajouterrdv form{
 	position: relative;
-	left: -32%;
+	left: -22%;
 	width: 100%;
 	text-align: center;
 	margin:auto;

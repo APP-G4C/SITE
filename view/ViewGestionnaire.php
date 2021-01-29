@@ -319,7 +319,7 @@
                 <option>TEST 2</option>
             </select>
           </td>
-          <td><input id="submitrecherche" type="submit" name="submit"value="ajouter un rdv"></td>
+          <td><input id="submitinfoperso" type="submit" name="submit"value="ajouter un rdv"></td>
         </tr>
       </table>
     </form>
