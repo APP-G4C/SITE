@@ -1,39 +1,48 @@
 <?php
 session_start();
-function est_co (){
-  if (isset($_SESSION["connecte"]) && $_SESSION["connecte"]){
+function est_co ()
+{
+  if (isset($_SESSION["connecte"]) && $_SESSION["connecte"])
+  {
     return true;
   }
-  else{
+  else
+  {
     return false;
   }
 }
-function type_u(){
-  if (isset($_SESSION['type'])){
+function type_u()
+{
+  if (isset($_SESSION['type']))
+  {
     return $_SESSION['type'];
   }
-  else{return 4;}
+  else{return 4;
+  }
 }
-
-
-function header_ada(){
-$type=type_u();
-if(!est_co()){
-  return '<li id="link">
-          <a id="b2"href="/SITE/controller/ControllerLogin.php">
-          <i class="far fa-id-badge"></i> Connexion</a>
-        </li>';
-
-}else{
-  if($type==1){
-    return '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
-              <ul>
-                  <li><a href="ControllerUser.php"> Ma Page Utilisateur</li></a>
-                  <li><a href="/SITE/controller/ControllerLogout.php">Déconnexion</li></a>
-              </ul>
-            </li';
-        }
-  if($type==2){
+function header_ada()
+{
+  $type=type_u();
+  if(!est_co())
+  {
+    return '<li id="link">
+              <a id="b2"href="/SITE/controller/ControllerLogin.php">
+              <i class="far fa-id-badge"></i> Connexion</a>
+            </li>';
+      }
+      else
+      {
+        if($type==1)
+        {
+          return '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
+                    <ul>
+                      <li><a href="ControllerUser.php"> Ma Page Utilisateur</li></a>
+                      <li><a href="/SITE/controller/ControllerLogout.php">Déconnexion</li></a>
+                    </ul>
+                  </li';
+          }
+          if($type==2)
+          {
     return '<li id="link"><a id="b2"href="#"> Ma Page</a><br><br>
              <ul>
                 <li><a href="/SITE/controller/ControllerGestionnaire.php"> Ma Page Gestionnaire</li></a>
