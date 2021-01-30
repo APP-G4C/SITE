@@ -10,7 +10,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" name="viewport"/>
-<title>Website | Accueil</title>
+<title>PPT - Test</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/SITE/public/css/Header.css">
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -190,7 +190,7 @@
       <br>
       <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
-      <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+      <button id="submitrecherche" type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
     </div>
   </form>
@@ -247,7 +247,7 @@
           </table>
       <br> <br>
 
-      <button><span>Afficher</span></button>
+      <button id="submitrecherche"><span>Afficher</span></button>
     </form>
     </fieldset>
   </div>
@@ -319,7 +319,7 @@
                 <option>TEST 2</option>
             </select>
           </td>
-          <td><input id="submitinfoperso" type="submit" name="submit"value="ajouter un rdv"></td>
+          <td><input id="submitrecherche" type="submit" name="submit"value="ajouter un rdv"></td>
         </tr>
       </table>
     </form>

@@ -9,7 +9,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8" name="viewport"/>
-<title>Website | Accueil</title>
+<title>PPT - Test</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/SITE/public/css/Header.css">
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -195,7 +195,7 @@
 
       <br> <br>
       <br>
-      <button onclick="alert('Es-tu sûr de vouloir ajouter ce Gestionnaire ?')"type="submit"name="submit"><span>Ajouter </span></button>
+      <button id="submitrecherche" onclick="alert('Es-tu sûr de vouloir ajouter ce Gestionnaire ?')"type="submit"name="submit"><span>Ajouter </span></button>
     </fieldset>
     </div>
   </form>
@@ -216,7 +216,7 @@
             <option><?php id__gestionnaire_rdv();?></option>
           </select>
           <br><br>
-          <input type="submit" value="valider" name="submit">
+          <input id="submitrecherche" type="submit" value="valider" name="submit">
           <br><br>
           <table>
             <tr>
@@ -260,7 +260,7 @@
           </table>
       <br> <br>
 
-      <button><span>Afficher</span></button>
+      <button id="submitrecherche"><span>Afficher</span></button>
     </form>
     <br>
     </fieldset>
@@ -440,7 +440,7 @@
       <br> <br>
       <br> <br>
       <br> <br>
-      <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
+      <button id="submitrecherche" onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
     </fieldset>
     </div>
   </form>
@@ -468,7 +468,7 @@
       <input name="ContenuCGL"type="text" placeholder="Contenue">
       <br> <br>
       <br> <br>
-      <button onclick="alert('Es-tu sûr de vouloir ajouter cette CGU/CGL ?')"type="submit"name="submit"><span>Ajouter</span></button>
+      <button id="submitrecherche" onclick="alert('Es-tu sûr de vouloir ajouter cette CGU/CGL ?')"type="submit"name="submit"><span>Ajouter</span></button>
     </fieldset>
     </div>
   </form>

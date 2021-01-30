@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Website | Accueil</title>
+    <title>PPT - Test</title>
 
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
@@ -24,6 +24,9 @@
   </header>
 
   <body>
+
+<br><br>
+
     <div class="login-box">
       <h1>Connexion</h1>
       <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

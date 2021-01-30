@@ -18,6 +18,10 @@ table td{
 	position: relative;
 	left: center;
 }
+#rechercheuga td{
+	position: relative;
+	left: 0%;
+}
 
 #informationspersonnelles fieldset
 {
@@ -67,8 +71,6 @@ td{
 	color: white;
 }
 #prochainsrdv form{
-	position: relative;
-	left: 0%;
 }
 
 #DeleteUser fieldset{
@@ -90,10 +92,10 @@ td{
 #submitrecherche{
 	position: relative;
 	margin:20px;
-	width: 30%;
+	width: 20%;
 	background-color: #3F51B5;
 	border: 1px solid white;
-	border-radius: 10px;
+	border-radius: 5px;
 	cursor: pointer;
 	position: relative;
 	margin-top: 1%;
@@ -134,21 +136,11 @@ button{
 	height: 25px;
 }
 
-button:hover{
-	background-color: white;
-	border: 1px solid #3F51B5;
-	border-radius: 10px;
-	cursor: pointer;
-	width: 20%;
-	position: relative;
-	margin-top: 1%;
-}
-
-span{
+a span{
 	color: white;
 }
 
-span:hover{
+a span:hover{
 	color: #3F51B5;
 }
 
