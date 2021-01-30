@@ -1,5 +1,4 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelLogin.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/view/ViewLogin.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
