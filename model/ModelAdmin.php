@@ -3,227 +3,228 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 include ($_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php');
 
-function rd_password(){
+function rd_password()
+{
   $caractere = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   $len_c=strlen($caractere);
   $rdpassword = '';
-  for ($i=0;$i<8;$i++){
+  for ($i=0;$i<8;$i++)
+  {
     $rdpassword.=$caractere[random_int(0,$len_c-1)];
   }
   return $rdpassword;
 }
-
-function Envoi_mail_new_gest($user_mail,$nomprenom,$mdp){
+function Envoi_mail_new_gest($user_mail,$nomprenom,$mdp)
+{
   include 'D:\MAMP\htdocs\vendor\autoload.php';
-    $mail = new PHPMailer();
-    $mail->isSMTP();   //Tell PHPMailer to use SMTP
-    //Enable SMTP debugging
-    // SMTP::DEBUG_OFF = off (for production use)
-    // SMTP::DEBUG_CLIENT = client messages
-    // SMTP::DEBUG_SERVER = client and server messages
-    $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
-    $mail->Host = 'smtp.gmail.com';   //Set the hostname of the mail server
-    $mail->Port = 587;    //Set the SMTP port number - 587 for authenticated TLS, 465 for SSL
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   //Set the encryption mechanism to use - STARTTLS or SMTPS
-    $mail->SMTPAuth = true;  //Whether to use SMTP authentication
-    $mail->Username = 'G4CAPP@gmail.com';   //Username to use for SMTP authentication
-    $mail->Password = 'G4CAPPcreatif';   //Password to use for SMTP authentication
-    $mail->setFrom('G4CAPP@gmail.com', 'G4C');  //Set who the message is to be sent from
-    //Set an alternative reply-to address
-    //$mail->addReplyTo('replyto@example.com', 'First Last');
+  $mail = new PHPMailer();
+  $mail->isSMTP();   //Tell PHPMailer to use SMTP
+  //Enable SMTP debugging
+  // SMTP::DEBUG_OFF = off (for production use)
+  // SMTP::DEBUG_CLIENT = client messages
+  // SMTP::DEBUG_SERVER = client and server messages
+  $mail->SMTPDebug = SMTP::DEBUG_CONNECTION;
+  $mail->Host = 'smtp.gmail.com';   //Set the hostname of the mail server
+  $mail->Port = 587;    //Set the SMTP port number - 587 for authenticated TLS, 465 for SSL
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   //Set the encryption mechanism to use - STARTTLS or SMTPS
+  $mail->SMTPAuth = true;  //Whether to use SMTP authentication
+  $mail->Username = 'G4CAPP@gmail.com';   //Username to use for SMTP authentication
+  $mail->Password = 'G4CAPPcreatif';   //Password to use for SMTP authentication
+  $mail->setFrom('G4CAPP@gmail.com', 'G4C');  //Set who the message is to be sent from
+  //Set an alternative reply-to address
+  //$mail->addReplyTo('replyto@example.com', 'First Last');
 
-    $mail->addAddress($user_mail, $nomprenom);  //Set who the message is to be sent to
-    $mail->Subject = 'Creation de votre compte PPT Test';   //Set the subject line
-    //Read an HTML message body from an external file, convert referenced images to embedded,
-    //convert HTML into a basic plain-text alternative body
-    //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
-    $mail->Body= 'Bonjour '.$nomprenom.',
-Bienvenur sur PPT Test !
-Veuillez trouver ci-joint les informations nécessaires pour vous connecter sur le site web de PPT Test
-Attention, pour votre sécurité, veuillez changer vos identifiants une fois connecté.
--	Identifiant : '.$user_mail.'
--	Mot de passe : '.$mdp.'
-http://localhost/SITE/controller/ControllerLogin.php
-Bien cordialement,
-L’Equipe PPT Test';
+  $mail->addAddress($user_mail, $nomprenom);  //Set who the message is to be sent to
+  $mail->Subject = 'Creation de votre compte PPT Test';   //Set the subject line
+  //Read an HTML message body from an external file, convert referenced images to embedded,
+  //convert HTML into a basic plain-text alternative body
+  //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+  $mail->Body= 'Bonjour '.$nomprenom.',
+  Bienvenur sur PPT Test !
+  Veuillez trouver ci-joint les informations nécessaires pour vous connecter sur le site web de PPT Test
+  Attention, pour votre sécurité, veuillez changer vos identifiants une fois connecté.
+  -	Identifiant : '.$user_mail.'
+  -	Mot de passe : '.$mdp.'
+  http://localhost/SITE/controller/ControllerLogin.php
+  Bien cordialement,
+  L’Equipe PPT Test';
     //$mail->addAttachment('images/phpmailer_mini.png');
-    $mail->send();
-  }
-
+  $mail->send();
+}
 // FONCTION DE add_gestionnaire
-function fonction_add_gestionnaire(){
-  if (isset($_POST["Nom"]) &&isset($_POST["Prenom"])&&isset($_POST["Mail"])) {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO `User`(`Nom`, `Prenom`,`Mail`,`Password`) VALUES (:Nom, :Prenom,:Mail,:Password)";
-        $stmt = $pdo->prepare($sql);
-            // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
-            $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
-            $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
-            $stmt->bindParam(":Password", $param_password, PDO::PARAM_STR);
-
-
-            // On remplis les paramètres
-            $param_Nom = trim($_POST["Nom"]);
-            $param_Prenom = trim($_POST["Prenom"]);
-            $param_Mail = trim($_POST["Mail"]);
-            $param_password1 = rd_password();
-            $param_password = password_hash($param_password1, PASSWORD_DEFAULT);
-            $test=true;
-            $stmt->execute();
-            Envoi_mail_new_gest($param_Mail,$param_Nom.' '.$param_Prenom,$param_password1);
-}}
-function fonction_add_faq(){
-  if (isset($_POST["Question"])&&isset($_POST["Reponse"])) {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO `FAQ`(`Question`, `Reponse`) VALUES (:Question, :Reponse)";
-        $stmt = $pdo->prepare($sql);
-            // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":Question", $param_Question, PDO::PARAM_STR);
-            $stmt->bindParam(":Reponse", $param_Reponse, PDO::PARAM_STR);
-
-
-            // On remplis les paramètres
-            $param_Question = trim($_POST["Question"]);
-            $param_Reponse = trim($_POST["Reponse"]);
-            $test=true;
-            $stmt->execute();
-          }
-}
-function fonction_add_cgl(){
-if (isset($_POST["TitreCGL"])&&isset($_POST["ContenuCGL"])) {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql=" INSERT INTO `CGU`(`titre`, `contenu`) VALUES (:TitreCGL, :ContenuCGL)";
-        $stmt = $pdo->prepare($sql);
-            // On attache les variables au statement comme paramètres
-            $stmt->bindParam(":TitreCGL", $param_Question, PDO::PARAM_STR);
-            $stmt->bindParam(":ContenuCGL", $param_Reponse, PDO::PARAM_STR);
-
-
-            // On remplis les paramètres
-            $param_Question = trim($_POST["TitreCGL"]);
-            $param_Reponse = trim($_POST["ContenuCGL"]);
-            $test=true;
-            $stmt->execute();
-          }
-}
-function id__gestionnaire_rdv()
+function fonction_add_gestionnaire()
+{
+  if (isset($_POST["Nom"]) &&isset($_POST["Prenom"])&&isset($_POST["Mail"]))
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT DISTINCT id_User FROM User WHERE Type=2";
+    $sql=" INSERT INTO `User`(`Nom`, `Prenom`,`Mail`,`Password`) VALUES (:Nom, :Prenom,:Mail,:Password)";
+    $stmt = $pdo->prepare($sql);
+    // On attache les variables au statement comme paramètres
+    $stmt->bindParam(":Nom", $param_Nom, PDO::PARAM_STR);
+    $stmt->bindParam(":Prenom", $param_Prenom, PDO::PARAM_STR);
+    $stmt->bindParam(":Mail", $param_Mail, PDO::PARAM_STR);
+    $stmt->bindParam(":Password", $param_password, PDO::PARAM_STR);
+
+
+    // On remplis les paramètres
+    $param_Nom = trim($_POST["Nom"]);
+    $param_Prenom = trim($_POST["Prenom"]);
+    $param_Mail = trim($_POST["Mail"]);
+    $param_password1 = rd_password();
+    $param_password = password_hash($param_password1, PASSWORD_DEFAULT);
+    $test=true;
+    $stmt->execute();
+    Envoi_mail_new_gest($param_Mail,$param_Nom.' '.$param_Prenom,$param_password1);
+  }
+}
+function fonction_add_faq()
+{
+  if (isset($_POST["Question"])&&isset($_POST["Reponse"]))
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql=" INSERT INTO `FAQ`(`Question`, `Reponse`) VALUES (:Question, :Reponse)";
+    $stmt = $pdo->prepare($sql);
+    // On attache les variables au statement comme paramètres
+    $stmt->bindParam(":Question", $param_Question, PDO::PARAM_STR);
+    $stmt->bindParam(":Reponse", $param_Reponse, PDO::PARAM_STR);
+    // On remplis les paramètres
+    $param_Question = trim($_POST["Question"]);
+    $param_Reponse = trim($_POST["Reponse"]);
+    $test=true;
+    $stmt->execute();
+  }
+}
+function fonction_add_cgl()
+{
+  if (isset($_POST["TitreCGL"])&&isset($_POST["ContenuCGL"]))
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql=" INSERT INTO `CGU`(`titre`, `contenu`) VALUES (:TitreCGL, :ContenuCGL)";
+    $stmt = $pdo->prepare($sql);
+    // On attache les variables au statement comme paramètres
+    $stmt->bindParam(":TitreCGL", $param_Question, PDO::PARAM_STR);
+    $stmt->bindParam(":ContenuCGL", $param_Reponse, PDO::PARAM_STR);
+    // On remplis les paramètres
+    $param_Question = trim($_POST["TitreCGL"]);
+    $param_Reponse = trim($_POST["ContenuCGL"]);
+    $test=true;
+    $stmt->execute();
+  }
+}
+function id__gestionnaire_rdv()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT DISTINCT id_User FROM User WHERE Type=2";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
+  {
+    print_r("<option>".$donnees["id_User"]."</option>");
+  }
+}
+function id_prochainrdv_admin()
+{
+  if (isset($_POST["SelectId"]))
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User,Date_test,heure_test FROM test WHERE Id_RH='".$_POST["SelectId"]."'";
     $reponse=$pdo->query($sql);
     while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["id_User"]."</option>");
-    }
-  }
-  function id_prochainrdv_admin()
-   {
-    if (isset($_POST["SelectId"])){
-     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-     $sql="SELECT DISTINCT id_User,Date_test,heure_test FROM test WHERE Id_RH='".$_POST["SelectId"]."'";
-     $reponse=$pdo->query($sql);
-      while ($donnees=$reponse->fetch())
     {
       print_r($donnees["id_User"]."<br>");
     }
   }
-  }
+}
 function Date_prochainrdv_admin()
+{
+  if (isset($_POST["SelectId"]))
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User,Date_test,heure_test FROM test WHERE Id_RH='".$_POST["SelectId"]."'";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
     {
-      if (isset($_POST["SelectId"])){
-        $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql="SELECT DISTINCT id_User,Date_test,heure_test FROM test WHERE Id_RH='".$_POST["SelectId"]."'";
-        $reponse=$pdo->query($sql);
-        while ($donnees=$reponse->fetch())
-        {
-          print_r($donnees["Date_test"]."<br>");
-        }
-      }
-      }
-      function horaire_prochainrdv_admin()
+      print_r($donnees["Date_test"]."<br>");
+    }
+  }
+}
+function horaire_prochainrdv_admin()
+{
+  if (isset($_POST["SelectId"]))
+  {
+    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $sql="SELECT DISTINCT id_User,Date_test,heure_test FROM test WHERE Id_RH='".$_POST["SelectId"]."'";
+    $reponse=$pdo->query($sql);
+    while ($donnees=$reponse->fetch())
     {
-      if (isset($_POST["SelectId"])){
-        $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-        $sql="SELECT DISTINCT id_User,Date_test,heure_test FROM test WHERE Id_RH='".$_POST["SelectId"]."'";
-        $reponse=$pdo->query($sql);
-        while ($donnees=$reponse->fetch())
-        {
-          print_r($donnees["heure_test"]."<br>");
-        }
-      }
-      }
-
+      print_r($donnees["heure_test"]."<br>");
+    }
+  }
+}
 function id__utilisateur_rdv()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT DISTINCT id_User FROM User WHERE Type=1";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT DISTINCT id_User FROM User WHERE Type=1";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["id_User"]."</option><br>");
-    }
+    print_r("<option>".$donnees["id_User"]."</option><br>");
   }
-  function NomMessage()
+}
+function NomMessage()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT nom FROM contact";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT nom FROM contact";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["nom"]."</option>");
-    }
+    print_r("<option>".$donnees["nom"]."</option>");
   }
-    function PrenomMessage()
+}
+function PrenomMessage()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT prenom FROM contact";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT prenom FROM contact";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["prenom"]."</option>");
-    }
+    print_r("<option>".$donnees["prenom"]."</option>");
   }
-    function MailMessage()
+}
+function MailMessage()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT email FROM contact";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT email FROM contact";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["email"]."</option>");
-    }
+    print_r("<option>".$donnees["email"]."</option>");
   }
-     function TelMessage()
+}
+function TelMessage()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT telephone FROM contact";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT telephone FROM contact";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["telephone"]."</option>");
-    }
+    print_r("<option>".$donnees["telephone"]."</option>");
   }
-       function MessageMessage()
-  {
+}
+function MessageMessage()
+{
 
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT message FROM contact";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["message"]."</option>");
-    }
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT message FROM contact";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
+  {
+    print_r("<option>".$donnees["message"]."</option>");
   }
-
-      function user_trame()
+}
+function user_trame()
+{
+  if (isset($_POST["NomUser"]))
   {
-    if (isset($_POST["NomUser"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT trame FROM valeur_test WHERE id_User='".$_POST["NomUser"]."'";
     $reponse=$pdo->query($sql);
@@ -232,20 +233,20 @@ function id__utilisateur_rdv()
       print_r($donnees["trame"]."</br>");
     }
   }
-  }
-       function user_Heure()
+}
+function user_Heure()
+{
+  if (isset($_POST["NomUser"]))
   {
-    if (isset($_POST["NomUser"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Heure FROM valeur_test WHERE id_User='".$_POST["NomUser"]."'";
     $reponse=$pdo->query($sql);
     while ($donnees=$reponse->fetch())
     {
       print_r($donnees["Heure"]."</br>");
-    }}
+    }
   }
-
-
+}
 function recherche_id()
 {
   if (isset($_GET['q'])) {
@@ -296,7 +297,6 @@ function recherche_prenom()
     }
   }
 }
-
 function recherche_date_de_naissance()
 {
   if (isset($_GET['q'])) {
@@ -347,148 +347,158 @@ function  recherche_mail()
     }
   }
 }
-
-
-function afficher_gestionnaire(){
-     if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
-        {
-          echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
-        }
-      else
-        {
-          header("Location:ViewGestionnaire.php");
-        }
+function afficher_gestionnaire()
+{
+  if ($test=1 &&empty(!$Prenom)&&empty(!$Nom))
+  {
+    echo 'Felicitations vous avez ajouté "'.$Prenom.' '.$Nom.'" en tant que Gestionnaire !';
+  }
+  else
+  {
+    header("Location:ViewGestionnaire.php");
+  }
 }
-
 function SexeProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT Sexe  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT Sexe  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["Sexe"]."</option>");
-    }
+    print_r("<option>".$donnees["Sexe"]."</option>");
   }
+}
 function NomProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT Nom  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT Nom  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["Nom"]."</option>");
-    }
+    print_r("<option>".$donnees["Nom"]."</option>");
   }
-  function PrenomProfil()
+}
+function PrenomProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT Prenom  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT Prenom  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["Prenom"]."</option>");
-    }
+    print_r("<option>".$donnees["Prenom"]."</option>");
   }
-   function DatenaissanceProfil()
+}
+function DatenaissanceProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT Date_de_naissance  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT Date_de_naissance  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["Date_de_naissance"]."</option>");
-    }
+    print_r("<option>".$donnees["Date_de_naissance"]."</option>");
   }
-    function TelProfil()
+}
+function TelProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT Tel  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT Tel  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["Tel"]."</option>");
-    }
+    print_r("<option>".$donnees["Tel"]."</option>");
   }
-    function MailProfil()
+}
+function MailProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT Mail  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT Mail  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["Mail"]."</option>");
-    }
+    print_r("<option>".$donnees["Mail"]."</option>");
   }
-      function PasswordProfil()
+}
+function PasswordProfil()
+{
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT password  FROM User WHERE id_User='".$_SESSION["id"]."'";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT password  FROM User WHERE id_User='".$_SESSION["id"]."'";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["password"]."</option>");
-    }
+    print_r("<option>".$donnees["password"]."</option>");
   }
-  function ModifSexeProfil(){
-    if (isset($_POST["SexeProfil"]))
-    {
+}
+function ModifSexeProfil()
+{
+  if (isset($_POST["SexeProfil"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Sexe='".$_POST["SexeProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
+    $req->execute();
   }
-  function ModifDatenaissanceProfil(){
-    if (isset($_POST["DatenaissanceProfil"])){
+}
+function ModifDatenaissanceProfil()
+{
+  if (isset($_POST["DatenaissanceProfil"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Date_de_naissance='".$_POST["DatenaissanceProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
+    $req->execute();
   }
-    function ModifTelProfil(){
-      if (isset($_POST["TelProfil"])){
+}
+function ModifTelProfil()
+{
+  if (isset($_POST["TelProfil"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Tel='".$_POST["TelProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
+    $req->execute();
   }
-     function ModifMailProfil(){
-      if (isset($_POST["MailProfil"])){
+}
+function ModifMailProfil()
+{
+  if (isset($_POST["MailProfil"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Mail='".$_POST["MailProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
     $req->execute();
   }
-
-  }
-       function ModifPasswordProfil(){
-        if (isset($_POST["PasswordProfil"])){
+}
+function ModifPasswordProfil()
+{
+  if (isset($_POST["PasswordProfil"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $password = password_hash($_POST["PasswordProfil"], PASSWORD_DEFAULT);
     $req=$pdo->prepare("UPDATE User SET password='".$password."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
+    $req->execute();
   }
-  function DeleteUser(){
-    if (isset($_POST["DeleteUser"])){
+}
+function DeleteUser()
+{
+  if (isset($_POST["DeleteUser"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("DELETE FROM User WHERE  id_User='".$_POST["DeleteUser"]."'");
-    $req->execute();}
+    $req->execute();
   }
+}
 
-  function IdEdit()
+function IdEdit()
+{
+
+  $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+  $sql="SELECT DISTINCT id_User FROM User WHERE Type=1 OR Type=2";
+  $reponse=$pdo->query($sql);
+  while ($donnees=$reponse->fetch())
   {
-
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $sql="SELECT DISTINCT id_User FROM User WHERE Type=1 OR Type=2";
-    $reponse=$pdo->query($sql);
-    while ($donnees=$reponse->fetch())
-    {
-      print_r("<option>".$donnees["id_User"]."</option><br>");
-    }
+    print_r("<option>".$donnees["id_User"]."</option><br>");
   }
-  function NomProfilEdit()
+}
+function NomProfilEdit()
+{
+  if(isset($_POST["SelectIdEdit"]))
   {
-    if(isset($_POST["SelectIdEdit"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Nom  FROM User WHERE id_User='".$_POST["SelectIdEdit"]."'";
     $reponse=$pdo->query($sql);
@@ -497,10 +507,11 @@ function NomProfil()
       print_r("<option>".$donnees["Nom"]."</option>");
     }
   }
-  }
-    function PrenomProfilEdit()
+}
+function PrenomProfilEdit()
+{
+  if(isset($_POST["SelectIdEdit"]))
   {
-    if(isset($_POST["SelectIdEdit"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Prenom  FROM User WHERE id_User='".$_POST["SelectIdEdit"]."'";
     $reponse=$pdo->query($sql);
@@ -509,10 +520,11 @@ function NomProfil()
       print_r("<option>".$donnees["Prenom"]."</option>");
     }
   }
-  }
-      function SexeProfilEdit()
+}
+function SexeProfilEdit()
+{
+  if(isset($_POST["SelectIdEdit"]))
   {
-    if(isset($_POST["SelectIdEdit"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Sexe  FROM User WHERE id_User='".$_POST["SelectIdEdit"]."'";
     $reponse=$pdo->query($sql);
@@ -521,10 +533,11 @@ function NomProfil()
       print_r("<option>".$donnees["Sexe"]."</option>");
     }
   }
-  }
-      function DatenaissanceProfilEdit()
+}
+function DatenaissanceProfilEdit()
+{
+  if(isset($_POST["SelectIdEdit"]))
   {
-    if(isset($_POST["SelectIdEdit"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Date_de_naissance  FROM User WHERE id_User='".$_POST["SelectIdEdit"]."'";
     $reponse=$pdo->query($sql);
@@ -533,10 +546,11 @@ function NomProfil()
       print_r("<option>".$donnees["Date_de_naissance"]."</option>");
     }
   }
-  }
-      function TelProfilEdit()
+}
+function TelProfilEdit()
+{
+  if(isset($_POST["SelectIdEdit"]))
   {
-    if(isset($_POST["SelectIdEdit"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Tel  FROM User WHERE id_User='".$_POST["SelectIdEdit"]."'";
     $reponse=$pdo->query($sql);
@@ -545,10 +559,11 @@ function NomProfil()
       print_r("<option>".$donnees["Tel"]."</option>");
     }
   }
-  }
-        function MailProfilEdit()
+}
+function MailProfilEdit()
+{
+  if(isset($_POST["SelectIdEdit"]))
   {
-    if(isset($_POST["SelectIdEdit"])){
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT Mail  FROM User WHERE id_User='".$_POST["SelectIdEdit"]."'";
     $reponse=$pdo->query($sql);
@@ -557,50 +572,57 @@ function NomProfil()
       print_r("<option>".$donnees["Mail"]."</option>");
     }
   }
-  }
-   function ModifSexeProfilEdit(){
-    if (isset($_POST["SexeProfilEdit"]))
-    {
+}
+function ModifSexeProfilEdit()
+{
+  if (isset($_POST["SexeProfilEdit"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Sexe='".$_POST["SexeProfilEdit"]."'WHERE User.id_User='".$_POST["SelectIdEdit"]."'");
-    $req->execute();}
-
+    $req->execute();
   }
-    function ModifDatenaissanceProfilEdit(){
-    if (isset($_POST["DatenaissanceProfilEdit"]))
-    {
+}
+function ModifDatenaissanceProfilEdit()
+{
+  if (isset($_POST["DatenaissanceProfilEdit"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Date_de_naissance='".$_POST["DatenaissanceProfilEdit"]."'WHERE User.id_User='".$_POST["SelectIdEdit"]."'");
-    $req->execute();}
+    $req->execute();
   }
-     function ModifTelProfilEdit(){
-    if (isset($_POST["TelProfilEdit"]))
-    {
+}
+function ModifTelProfilEdit()
+{
+  if (isset($_POST["TelProfilEdit"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Tel='".$_POST["TelProfilEdit"]."'WHERE User.id_User='".$_POST["SelectIdEdit"]."'");
-    $req->execute();}
+    $req->execute();
   }
-       function ModifMailProfilEdit(){
-    if (isset($_POST["MailProfilEdit"]))
-    {
+}
+function ModifMailProfilEdit()
+{
+  if (isset($_POST["MailProfilEdit"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET Mail='".$_POST["MailProfilEdit"]."'WHERE User.id_User='".$_POST["SelectIdEdit"]."'");
-    $req->execute();}
+    $req->execute();
   }
-      function ModifPasswordProfilEdit(){
-    if (isset($_POST["PasswordProfilEdit"]))
-    {
+}
+function ModifPasswordProfilEdit()
+{
+  if (isset($_POST["PasswordProfilEdit"]))
+  {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $req=$pdo->prepare("UPDATE User SET password='".$_POST["PasswordProfilEdit"]."'WHERE User.id_User='".$_POST["SelectIdEdit"]."'");
-    $req->execute();}
+    $req->execute();
   }
-    function IdProfilEdit()
+}
+function IdProfilEdit()
+{
+  if (isset($_POST["SelectIdEdit"]))
   {
-    if (isset($_POST["SelectIdEdit"])) {
-echo $_POST["SelectIdEdit"];
-}}
-
-
-
-
+    echo $_POST["SelectIdEdit"];
+  }
+}
 ?>

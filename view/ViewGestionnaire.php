@@ -1,16 +1,9 @@
-<?php
-
-// Appel des fonctions PHP
-
-?>
-
-
 <!--DEBUT HTML-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" name="viewport"/>
-<title>PPT - Test</title>
+<title>Website | Accueil</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/SITE/public/css/Header.css">
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -81,13 +74,15 @@
               </tr>
               <tr>
                 <td><?php SexeProfil();?></td>
-                <td> <select name="SexeProfil">
-              <option>Homme</option>
-              <option>Femme</option>
-              <option>Autre</option>
-            </select></td>
-            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
-          </tr>
+                <td>
+                  <select name="SexeProfil">
+                    <option>Homme</option>
+                    <option>Femme</option>
+                    <option>Autre</option>
+                  </select>
+                </td>
+                <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
+              </tr>
             </table>
             <br> <br>
             <label><strong><U>Date de Naissance</U></strong></label>
@@ -190,7 +185,7 @@
       <br>
       <input type="text"name="Mail" placeholder="Mail"pattern="[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}">
       <br> <br>
-      <button id="submitrecherche" type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
+      <button type="submit"name="submit"><span>Ajouter l'utilisateur</span></button>
     </fieldset>
     </div>
   </form>
@@ -231,11 +226,9 @@
         <label><strong><U>Rechercher id de l'Utlisateur</U></strong></label>
               <br><br>
               <select name="NomUser">
-            <option><?php id__utilisateur_rdv();?></option>
-          </select>
+                <option><?php id__utilisateur_rdv();?></option>
+              </select>
           <br><br>
-
-
           <table>
           <tr>
             <td><strong><U>Trame</U></strong></td>
@@ -244,10 +237,10 @@
           <tr>
             <td><?php user_trame();?></td>
             <td><?php user_Heure();?></td>
+          </tr>
           </table>
       <br> <br>
-
-      <button id="submitrecherche"><span>Afficher</span></button>
+      <button><span>Afficher</span></button>
     </form>
     </fieldset>
   </div>
