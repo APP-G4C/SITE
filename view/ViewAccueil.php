@@ -24,7 +24,8 @@
             <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2" href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
             <li id="link"><a id="b2" href="/SITE/controller/ControllerContact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-            <?php echo $modifheader ?>
+            <?php $modifheader ="";
+            echo $modifheader ?>
         </ul>
     </nav>
   </header>
