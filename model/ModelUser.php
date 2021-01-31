@@ -14,10 +14,11 @@
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     $sql="SELECT * FROM valeur_test WHERE id_User='".$_SESSION['id']."'";
     $reponse=$pdo->query($sql);
-    while ( $donnees=$reponse->fetch()) {
-    print_r($donnees["trame"]."<br>");
+    while ( $donnees=$reponse->fetch())
+    {
+      print_r($donnees["trame"]."<br>");
+    }
   }
-}
    function user_Heure()
   {
     $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
@@ -83,7 +84,6 @@ function Heure2()
     {
       $resultats=$donnees["Date_test"]."<br>";
       print_r($resultats);
-
     }
   }
     function user_horaire_prochainrdv()
@@ -166,42 +166,49 @@ function NomProfil()
       print_r("<option>".$donnees["password"]."</option>");
     }
   }
-  function ModifSexeProfil(){
+  function ModifSexeProfil()
+  {
     if (isset($_POST["SexeProfil"]))
     {
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $req=$pdo->prepare("UPDATE User SET Sexe='".$_POST["SexeProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
+      $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+      $req=$pdo->prepare("UPDATE User SET Sexe='".$_POST["SexeProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
+      $req->execute();
+    }
   }
-  function ModifDatenaissanceProfil(){
-    if (isset($_POST["DatenaissanceProfil"])){
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $req=$pdo->prepare("UPDATE User SET Date_de_naissance='".$_POST["DatenaissanceProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
+  function ModifDatenaissanceProfil()
+  {
+    if (isset($_POST["DatenaissanceProfil"]))
+    {
+      $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+      $req=$pdo->prepare("UPDATE User SET Date_de_naissance='".$_POST["DatenaissanceProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
+      $req->execute();}
   }
-    function ModifTelProfil(){
-      if (isset($_POST["TelProfil"])){
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $req=$pdo->prepare("UPDATE User SET Tel='".$_POST["TelProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
-  }
-     function ModifMailProfil(){
-      if (isset($_POST["MailProfil"])){
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $req=$pdo->prepare("UPDATE User SET Mail='".$_POST["MailProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-  }
-
-
-       function ModifPasswordProfil(){
-        if (isset($_POST["PasswordProfil"])){
-    $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    $password = password_hash($_POST["PasswordProfil"], PASSWORD_DEFAULT);
-    $req=$pdo->prepare("UPDATE User SET password='".$password."'WHERE User.id_User='".$_SESSION["id"]."'");
-    $req->execute();}
-
-  }
+    function ModifTelProfil()
+    {
+      if (isset($_POST["TelProfil"]))
+      {
+        $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+        $req=$pdo->prepare("UPDATE User SET Tel='".$_POST["TelProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
+        $req->execute();
+      }
+    }
+     function ModifMailProfil()
+     {
+      if (isset($_POST["MailProfil"]))
+      {
+        $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+        $req=$pdo->prepare("UPDATE User SET Mail='".$_POST["MailProfil"]."'WHERE User.id_User='".$_SESSION["id"]."'");
+        $req->execute();
+      }
+    }
+       function ModifPasswordProfil()
+       {
+        if (isset($_POST["PasswordProfil"]))
+        {
+          $pdo=new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
+          $password = password_hash($_POST["PasswordProfil"], PASSWORD_DEFAULT);
+          $req=$pdo->prepare("UPDATE User SET password='".$password."'WHERE User.id_User='".$_SESSION["id"]."'");
+          $req->execute();
+        }
+      }
   ?>

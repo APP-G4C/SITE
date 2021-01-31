@@ -1,13 +1,8 @@
-<?php
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>PPT - Test</title>
+    <title>Website | Accueil</title>
 
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -16,13 +11,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
-
-
   <header id="menu1">
     <nav>
         <ul id="menu">
-
-
             <li id="link"><a id="logoapp"href="ControllerAccueil.php"><img src="/SITE/public/images/logoapp.png"/></a></li>
             <li id="link"><a id="b2" href="/SITE/controller/ControllerAccueil.php"><i class="fas fa-home"></i> Accueil</a></li>
             <li id="link"><a id="b2"href="/SITE/controller/ControllerFAQ.php"><i class="fas fa-info"></i> FAQ</a></li>
@@ -31,11 +22,6 @@
         </ul>
     </nav>
   </header>
-
-
-
-
-
 
   <body>
     <br>
@@ -46,19 +32,10 @@
 
             <legend>Questions fréquentes </legend>
                 <?php show_faq();?>
-
-
-
-
-
+            </br>
         </br>
-      </br>
-</div>
-  </body>
-
-
-
-
+    </div>
+</body>
 
  <footer id="menu2">
         <nav>
@@ -70,6 +47,4 @@
             </ul>
         </nav>
     </footer>
-
-
 </html>
