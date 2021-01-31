@@ -44,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             // On remplis les paramètres
             $param_Mail = trim($_POST["Mail"]);
             // On exécute la commande préparée
+
             if($stmt->execute())
             {
             // On vérifie que le Mail existe, puis on vérifie le mdp
@@ -81,6 +82,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                         }
                         if($type==3)
                         {
+
                             header("Location:ControllerAdmin.php");
                         }
                     }

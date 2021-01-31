@@ -449,6 +449,7 @@
   <div id="messagesfaq">
     <fieldset>
       <legend><strong>MESSAGES</strong></legend>
+      <br>
       <table>
         <tr>
           <td><strong><U>Nom</U></strong></td>
@@ -464,6 +465,7 @@
           <td><?php TelMessage();?></td>
           <td><?php MessageMessage(); ?></td>
       </table>
+      <br>
     </fieldset>
   <br>
 </div>
