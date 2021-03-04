@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,11 +8,8 @@
     <link rel="stylesheet" href="/SITE/public/css/footer.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
     <link rel="stylesheet" href="/SITE/public/css/cgu.css">
-
-     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-
-
   <header id="menu1">
     <nav>
         <ul id="menu">
@@ -28,10 +21,6 @@
         </ul>
     </nav>
   </header>
-
-
-
-
     <body>
          <div class="container">
           <br><br>
@@ -39,11 +28,7 @@
           <br>
                 <br>
                 <?php show_cgl(); ?>
-
-
-
     </body>
-
     <footer id="menu2">
         <nav>
             <ul>
@@ -54,7 +39,4 @@
             </ul>
         </nav>
     </footer>
-
-
-
 </html>

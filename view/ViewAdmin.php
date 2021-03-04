@@ -1,15 +1,8 @@
-<?php
-// Appel des fonctions PHP
-
- ?>
-
-<!--DEBUT HTML-->
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" name="viewport"/>
-<title>PPT - Test</title>
+<title>Website | Accueil</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/SITE/public/css/Header.css">
 <link rel="stylesheet" href="/SITE/public/css/footer.css">
@@ -44,18 +37,13 @@
 <a href="#ajouterfaq"><button><span>Ajouter une FAQ</span></button></a>
 <a href="#clcgu"><button><span>Ajouter une CGU/CL</span></button></a>
 <a href="#messagesfaq"><button><span>Messages de la FAQ</span></button></a>
-<br><br>
-
-
-<br><br>
-
+<br><br><br><br>
 
 <!-- FORMULAIRE INFOS PERSONNELLES-->
 <h2>BIENVENUE</h2>
 <h2><?php PrenomProfil();?></h2>
 <h2><?php NomProfil();?></h2>
 <br><br>
-
     <div id="informationspersonnelles">
       <fieldset>
         <legend><strong>INFORMATIONS PERSONNELLES</strong></legend>
@@ -75,7 +63,7 @@
             <br>
             <img id="photoavatar"src="/SITE/public/images/avatar.png">
             <br> <br>
-             <label><strong><U>ID :</U></strong></label>
+            <label><strong><U>ID :</U></strong></label>
             <?php echo $_SESSION["id"]?>
             <br> <br>
             <label><strong><U>Sexe</U></strong></label>
@@ -87,13 +75,14 @@
               </tr>
               <tr>
                 <td><?php SexeProfil();?></td>
-                <td> <select name="SexeProfil">
-              <option>Homme</option>
-              <option>Femme</option>
-              <option>Autre</option>
-            </select></td>
-            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
-          </tr>
+                <td>
+                  <select name="SexeProfil">
+                    <option>Homme</option>
+                    <option>Femme</option>
+                    <option>Autre</option>
+                  </select>
+                  <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
+                </tr>
             </table>
             <br> <br>
             <label><strong><U>Date de Naissance</U></strong></label>
@@ -109,8 +98,7 @@
                 <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
               </tr>
             </table>
-            <br> <br>
-            <br>
+            <br> <br><br>
             <label><strong><U>Numéro de téléphone</U></strong></label>
             <br>
             <table>
@@ -150,35 +138,31 @@
                 <td><input id="submitinfoperso" type="submit" value=Valider name="submit"></td>
               </tr>
             </table>
-              <br>
-            <br> <br>
+              <br><br> <br>
         </form>
     </fieldset>
     </div>
       <br><br><br><br>
-<!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
-<hr width="100%"size="3" color=#EFD200 solid>
-<br>
-<!-- BACK OFFICE-->
-<!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
-<div id="Backoffice">
-  <br> <br>
-  <h2> BACK OFFICE</h2>
-  <br> <br>
-  <br>
+  <!--BARRE DE SEPARATION AVEC LE BACK-OFFICE-->
   <hr width="100%"size="3" color=#EFD200 solid>
   <br>
-</div>
+  <!-- BACK OFFICE-->
+  <!-- FORMULAIRE "AJOUTER UN GESTIONNAIRE"-->
+  <div id="Backoffice">
+    <br> <br>
+    <h2> BACK OFFICE</h2>
+    <br> <br>  <br>
+    <hr width="100%"size="3" color=#EFD200 solid>
+    <br>
+  </div>
   <br> <br>
   <form  method="POST"action="ControllerAdmin.php">
-
     <div id="ajouteruser">
     <fieldset>
       <legend><strong>AJOUTER UN GESTIONNAIRE</strong></legend>
       <br>
 
-<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
-
+  <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
       <br><br>
       <label id="Nom" ><strong><U>Nom</U></strong></label>
       <br>
@@ -189,13 +173,12 @@
       <br>
       <input name="Prenom"type="text" placeholder="Prenom"pattern="[A-Za-z-].{1,}">
       <br>
-       <label id="Mail"><strong><U>Mail</U></strong></label>
+      <label id="Mail"><strong><U>Mail</U></strong></label>
       <br><br>
       <input name="Mail"type="text" placeholder="Mail"pattern="[A-Za-z-].{1,}">
-
       <br> <br>
       <br>
-      <button id="submitrecherche" onclick="alert('Es-tu sûr de vouloir ajouter ce Gestionnaire ?')"type="submit"name="submit"><span>Ajouter </span></button>
+      <button onclick="alert('Es-tu sûr de vouloir ajouter ce Gestionnaire ?')"type="submit"name="submit"><span>Ajouter </span></button>
     </fieldset>
     </div>
   </form>
@@ -205,37 +188,34 @@
   <!-- FORMULAIRE " PROCHAINS RDV"-->
   <div id="prochainsrdv">
     <fieldset>
-    <legend><strong>PROCHAINS RDV</strong></legend>
-    <br>
-
-            <form action="ControllerAdmin.php"method="POST" >
-              <label><strong><U>Rechercher l'id du Gestionnaire</U></strong></label>
-              <br><br>
-
-          <select name="SelectId">
-            <option><?php id__gestionnaire_rdv();?></option>
-          </select>
-          <br><br>
-          <input id="submitrecherche" type="submit" value="valider" name="submit">
-          <br><br>
-          <table>
-            <tr>
-              <td><strong><U>id_User</U></strong></td>
-              <td><strong><U>Date</U></strong></td>
-              <td><strong><U>Horaire</U></strong></td>
-            </tr>
-            <tr>
-              <td><?php id_prochainrdv_admin();?></td>
-              <td><?php Date_prochainrdv_admin();?></td>
-              <td><?php horaire_prochainrdv_admin();?></td>
-            </tr>
-          </table>
-        </form>
+      <legend><strong>PROCHAINS RDV</strong></legend>
+      <br>
+      <form action="ControllerAdmin.php"method="POST" >
+        <label><strong><U>Rechercher l'id du Gestionnaire</U></strong></label>
         <br><br>
+        <select name="SelectId">
+          <option><?php id__gestionnaire_rdv();?></option>
+        </select>
+        <br><br>
+        <input type="submit" value="valider" name="submit">
+        <br><br>
+        <table>
+          <tr>
+            <td><strong><U>id_User</U></strong></td>
+            <td><strong><U>Date</U></strong></td>
+            <td><strong><U>Horaire</U></strong></td>
+          </tr>
+          <tr>
+            <td><?php id_prochainrdv_admin();?></td>
+            <td><?php Date_prochainrdv_admin();?></td>
+            <td><?php horaire_prochainrdv_admin();?></td>
+          </tr>
+        </table>
+      </form>
+      <br><br>
     </fieldset>
-    </div>
-
-<br><br><br><br>
+  </div>
+  <br><br><br><br>
   <!-- FORMULAIRE "RESULTATS"-->
   <div id="résultats">
     <fieldset>
@@ -243,32 +223,30 @@
       <br>
       <form action="ControllerAdmin.php" method="POST">
         <label><strong><U>Rechercher l'id de l'Utlisateur</U></strong></label>
-              <br><br>
-              <select name="NomUser">
-            <option><?php id__utilisateur_rdv();?></option>
-          </select>
-          <br><br>
-
+        <br><br>
+        <select name="NomUser">
+          <option><?php id__utilisateur_rdv();?></option>
+        </select>
+        <br><br>
           <table>
-          <tr>
-            <td><strong><U>Trame</U></strong></td>
-            <td><strong><U>Heure</U></strong></td>
-          </tr>
-          <tr>
-            <td><?php user_trame();?></td>
-            <td><?php user_Heure();?></td>
-          </table>
-      <br> <br>
+            <tr>
+              <td><strong><U>Trame</U></strong></td>
+              <td><strong><U>Heure</U></strong></td>
+            </tr>
+            <tr>
+              <td><?php user_trame();?></td>
+              <td><?php user_Heure();?></td>
+            </table>
+            <br> <br>
+            <button><span>Afficher</span></button>
+          </form>
+          <br>
+        </fieldset>
+      </div>
+      <br><br><br>
 
-      <button id="submitrecherche"><span>Afficher</span></button>
-    </form>
-    <br>
-    </fieldset>
-  </div>
-  <br><br><br>
-
-<!-- RECHERCHER-->
-<div id="rechercheuga">
+  <!-- RECHERCHER-->
+  <div id="rechercheuga">
 <fieldset>
   <legend><strong><U>RECHERCHER :  ADMIN  /  GESTIONNAIRE  /  UTILISATEUR</U></strong></legend>
   <form method="GET">
@@ -286,7 +264,6 @@
           <td><strong><U>Sexe</U></strong></td>
           <td><strong><U>Mail</U></strong></td>
           <td><strong><U>Type</U></strong></td>
-
         </tr>
         <tr>
           <td><?php recherche_id();?></td>
@@ -295,7 +272,6 @@
           <td><?php recherche_date_de_naissance();?></td>
           <td><?php recherche_sexe();?></td>
           <td><?php recherche_mail();?></td>
-
         </tr>
       </table>
   </form>
@@ -303,181 +279,177 @@
 </div>
 <br><br>
 
-<div id="DeleteUser">
-<fieldset>
-  <legend><strong><U>SUPPRIMER UN UTILISATEUR / GESTIONNAIRE</U></strong></legend>
-  <form method="POST" action="ControllerAdmin.php">
-      <br>
-  <select name="DeleteUser">
-    <?php id__utilisateur_rdv();?>
-  </select>
+<!--DELETE USER-->
+  <div id="DeleteUser">
+    <fieldset>
+      <legend><strong><U>SUPPRIMER UN UTILISATEUR / GESTIONNAIRE</U></strong></legend>
+      <form method="POST" action="ControllerAdmin.php">
+        <br>
+        <select name="DeleteUser">
+          <?php id__utilisateur_rdv();?>  
+        </select>
+        <br><br>
+        <input id="submitrecherche" onclick="alert('Voulez-vous vraiment supprimer cet utilisateur ?')"type="submit" name="submit" value="Supprimer">
+        <br><br>
+      </form>
+    </fieldset>
+  </div>
   <br><br>
-  <input id="submitrecherche" onclick="alert('Voulez-vous vraiment supprimer cet utilisateur ?')"type="submit" name="submit" value="Supprimer">
-  <br><br>
+
+<!-- DELET USER-->
+  <div id="EditProfil">
+    <fieldset>
+      <legend><strong><U>EDITER UN PROFIL GESTIONNAIRE/UTILISATEUR</U></strong></legend>
+      <form action="ControllerAdmin.php" method="POST">
+        <br>
+        <label><strong>Choix de l'Utilisateur/Gestionnaire</strong></label>
+        <br>
+        <select name="SelectIdEdit">
+          <option><?php IdEdit();?></option>
+        </select>
+        <br>
+        <input id="submitrecherche" type="submit" name="submit"value="Afficher">
+        <br><br>
+        <label><strong><U>Nom</U></strong></label>
+        <label><?php NomProfilEdit()?></label>
+        <br>
+        <br>
+        <label><strong><U>Prénom</U></strong></label>
+        <br>
+        <br>
+        <label><?php PrenomProfilEdit()?></label>
+        <label><strong><U>ID :</U></strong></label>
+        <br>
+        <?php IdProfilEdit();?>
+        <br>
+        <label><strong><U>Sexe</U></strong></label>
+        <table>
+          <tr>
+            <td>Etat actuel</td>
+            <td>Modifier</td>
+          </tr>
+          <tr>
+            <td><?php SexeProfilEdit();?></td>
+            <td>
+              <select name="SexeProfilEdit">
+                <option>Homme</option>
+                <option>Femme</option>
+                <option>Autre</option>
+              </select></td>
+              <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
+            </tr>
+          </table>
+          <label><strong><U>Date de Naissance</U></strong></label>
+          <table>
+            <tr>
+              <td>Etat actuel</td>
+              <td>Modifier</td>
+            </tr>
+            <tr>
+              <td><?php DatenaissanceProfilEdit()?></td>
+              <td><input id="box" type="date" name="DatenaissanceProfilEdit"></td>
+              <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
+            </tr>
+          </table>
+          <label><strong><U>Numéro de téléphone</U></strong></label>
+          <table>
+            <tr>
+              <td>Etat actuel</td>
+              <td>Modifier</td>
+            </tr>
+            <tr>
+              <td><?php TelProfilEdit()?></td>
+              <td><input id="box" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfilEdit"></td>
+              <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
+            </tr>
+          </table>
+          <!-- Email -->
+          <label for="email"><strong><U>Mail</U></strong></label>
+          <br>
+          <table>
+            <tr>
+              <td>Etat actuel</td>
+              <td>Modifier</td>
+            </tr>
+            <tr>
+              <td><?php MailProfilEdit()?></td>
+              <td><input id="box" type="mail" name="MailProfilEdit"></td>
+              <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
+            </tr>
+          </table>
+          <label><strong><U>Mot de passe</U></strong></label>
+          <table>
+            <tr>
+              <td>Modifier</td>
+            </tr>
+            <tr>
+              <td><input id="box" type="password" name="PasswordProfilEdit"></td>
+              <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
+            </tr>
+          </table>
+        </form>
+      </fieldset>
+    </div>
   </form>
 </fieldset>
-</div>
-<br><br>
-
-<div id="EditProfil">
-  <fieldset>
-    <legend><strong><U>EDITER UN PROFIL GESTIONNAIRE/UTILISATEUR</U></strong></legend>
-    <form action="ControllerAdmin.php" method="POST">
-      <br>
-      <label><strong>Choix de l'Utilisateur/Gestionnaire</strong></label>
-      <br>
-      <select name="SelectIdEdit">
-        <option><?php IdEdit();?></option>
-      </select>
-      <br>
-      <input id="submitrecherche" type="submit" name="submit"value="Afficher">
-      <br><br>
-            <label><strong><U>Nom</U></strong></label>
-            <label><?php NomProfilEdit()?></label>
-            <br>
-            <br>
-            <label><strong><U>Prénom</U></strong></label>
-            <br>
-            <br>
-            <label><?php PrenomProfilEdit()?></label>
-             <label><strong><U>ID :</U></strong></label>
-             <br>
-            <?php IdProfilEdit();?>
-            <br>
-            <label><strong><U>Sexe</U></strong></label>
-            <table>
-              <tr>
-                <td>Etat actuel</td>
-                <td>Modifier</td>
-              </tr>
-              <tr>
-                <td><?php SexeProfilEdit();?></td>
-                <td> <select name="SexeProfilEdit">
-              <option>Homme</option>
-              <option>Femme</option>
-              <option>Autre</option>
-            </select></td>
-            <td><input id="submitinfoperso" type="submit" name="submit" value="Valider"></td>
-          </tr>
-            </table>
-            <label><strong><U>Date de Naissance</U></strong></label>
-            <table>
-              <tr>
-                <td>Etat actuel</td>
-                <td>Modifier</td>
-              </tr>
-              <tr>
-                <td><?php DatenaissanceProfilEdit()?></td>
-                <td><input id="box" type="date" name="DatenaissanceProfilEdit"></td>
-                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
-              </tr>
-            </table>
-            <label><strong><U>Numéro de téléphone</U></strong></label>
-            <table>
-              <tr>
-                <td>Etat actuel</td>
-                <td>Modifier</td>
-              </tr>
-              <tr>
-                <td><?php TelProfilEdit()?></td>
-                <td><input id="box" type="tel"  placeholder="0606060606"pattern="[0-9]{10}$"name="TelProfilEdit"></td>
-                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
-              </tr>
-            </table>
-          <!-- Email -->
-            <label for="email"><strong><U>Mail</U></strong></label>
-            <br>
-            <table>
-              <tr>
-                <td>Etat actuel</td>
-                <td>Modifier</td>
-              </tr>
-              <tr>
-                <td><?php MailProfilEdit()?></td>
-                <td><input id="box" type="mail" name="MailProfilEdit"></td>
-                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
-              </tr>
-            </table>
-            <label><strong><U>Mot de passe</U></strong></label>
-            <table>
-              <tr>
-                <td>Modifier</td>
-              </tr>
-              <tr>
-                <td><input id="box" type="password" name="PasswordProfilEdit"></td>
-                <td><input id="submitinfoperso" type="submit"value=Valider name="submit"></td>
-              </tr>
-            </table>
-        </form>
-    </fieldset>
-    </div>
-
-
-    </form>
-  </fieldset>
-
 
   <!-- FORMULAIRE "AJOUTER UNE FAQ"-->
   <br> <br>
   <br> <br>
   <form id="form" method="POST"action="ControllerAdmin.php">
     <div id="ajouterfaq">
-    <fieldset>
-      <legend><strong>AJOUTER UNE FAQ</strong></legend>
-      <br>
+      <fieldset>
+        <legend><strong>AJOUTER UNE FAQ</strong></legend>
+          <br>
 
-<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
-      <h3></h3>
-      <br><br>
-      <label id="Question" for="Question"><strong><U>Question</U></strong></label>
-      <br>
-      <br>
-      <input name="Question"type="text" placeholder="Question" pattern="[A-Za-z-].{1,}">
-      <br> <br>
-      <label id="Reponse"for="Reponse"><strong><U>Reponse</U></strong></label>
-      <br>
-      <input name="Reponse"type="text" placeholder="Reponse"pattern="[A-Za-z-].{1,}">
-      <br> <br>
-      <br> <br>
-      <br> <br>
-      <button id="submitrecherche" onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
-    </fieldset>
+      <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
+        <h3></h3>
+        <br><br>
+        <label id="Question" for="Question"><strong><U>Question</U></strong></label>
+        <br><br>
+        <input name="Question"type="text" placeholder="Question" pattern="[A-Za-z-].{1,}">
+        <br> <br>
+        <label id="Reponse"for="Reponse"><strong><U>Reponse</U></strong></label>
+        <br>
+        <input name="Reponse"type="text" placeholder="Reponse"pattern="[A-Za-z-].{1,}">
+        <br> <br><br> <br><br> <br>
+        <button onclick="alert('Es-tu sûr de vouloir ajouter cette FAQ ?')"type="submit"name="submit"><span>Ajouter la FAQ</span></button>
+      </fieldset>
     </div>
   </form>
   <br> <br>
 
-
   <!--FORMULAIRE "AJOUTER UNE CL/CGU"-->
   <div id="clcgu">
-     <form id="form" method="POST"action="ControllerAdmin.php">
-    <div id="ajouterfaq">
-    <fieldset>
-      <legend><strong>AJOUTER CGU/CGL</strong></legend>
-      <br>
+    <form id="form" method="POST"action="ControllerAdmin.php">
+        <fieldset>
+          <legend><strong>AJOUTER CGU/CGL</strong></legend>
+          <br>
 
-<!--AFFICHAGE DE LA FAQ AJOUTÉ-->
-      <h3></h3>
-      <br><br>
-      <label id="Question" for="Question"><strong><U>Titre</U></strong></label>
-      <br>
-      <br>
-      <input name="TitreCGL"type="text" placeholder="Titre CGU">
-      <br> <br>
-      <label id="Reponse"for="Reponse"><strong><U>Contenu</U></strong></label>
-      <br>
-      <input name="ContenuCGL"type="text" placeholder="Contenue">
-      <br> <br>
-      <br> <br>
-      <button id="submitrecherche" onclick="alert('Es-tu sûr de vouloir ajouter cette CGU/CGL ?')"type="submit"name="submit"><span>Ajouter</span></button>
-    </fieldset>
-    </div>
-  </form>
+            <!--AFFICHAGE DE LA FAQ AJOUTÉ-->
+          <h3></h3>
+          <br><br>
+          <label id="Question" for="Question"><strong><U>Titre</U></strong></label>
+          <br>
+          <br>
+          <input name="TitreCGL"type="text" placeholder="Titre CGU">
+          <br> <br>
+          <label id="Reponse"for="Reponse"><strong><U>Contenu</U></strong></label>
+          <br>
+          <input name="ContenuCGL"type="text" placeholder="Contenue">
+          <br> <br>
+          <br> <br>
+          <button onclick="alert('Es-tu sûr de vouloir ajouter cette CGU/CGL ?')"type="submit"name="submit"><span>Ajouter</span></button>
+        </fieldset>
+      </div>
+    </form>
   </div>
   <br> <br>
   <!-- AFFICHAGES MESSAGES AIDE-->
   <div id="messagesfaq">
     <fieldset>
       <legend><strong>MESSAGES</strong></legend>
+      <br>
       <table>
         <tr>
           <td><strong><U>Nom</U></strong></td>
@@ -493,6 +465,7 @@
           <td><?php TelMessage();?></td>
           <td><?php MessageMessage(); ?></td>
       </table>
+      <br>
     </fieldset>
   <br>
 </div>

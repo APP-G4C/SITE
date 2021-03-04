@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>PPT - Test</title>
+    <title>Website | Accueil</title>
 
     <link rel="stylesheet" href="/SITE/public/css/Header.css">
     <link rel="stylesheet" href="/SITE/public/css/style.css">
@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/SITE/public/css/connexions.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-
   <header id="menu1">
     <nav>
         <ul id="menu">
@@ -22,11 +21,7 @@
         </ul>
     </nav>
   </header>
-
   <body>
-
-<br><br>
-
     <div class="login-box">
       <h1>Connexion</h1>
       <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -54,8 +49,6 @@
     </div>
     <br><br><br><br><br><br><br>
   </body>
-
-
   <footer id="menu2">
         <nav>
             <ul>
@@ -66,7 +59,4 @@
             </ul>
         </nav>
     </footer>
-
-
-
 </html>
