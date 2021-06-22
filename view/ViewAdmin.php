@@ -469,6 +469,14 @@
     </fieldset>
   <br>
 </div>
+
+<div id="messagesfaq">
+    <fieldset>
+        <legend><strong>ALLUMER LED</strong> </legend>
+        <br>
+        <button><span>ALLUMER LED</span></button>
+    </fieldset>
+</div>
 </body>
 
 <!--APPEL DU DOCUMENT JAVASCRIPT-->
