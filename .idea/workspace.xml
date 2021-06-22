@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab6ba8ab-abc9-4528-ad75-e56606df38dc" name="Default Changelist" comment="modif">
-      <change beforePath="$PROJECT_DIR$/model/ModelAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/ModelAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/accueil.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControllerLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControllerLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControllerUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControllerUser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,8 @@
       <option name="presentableId" value="Default" />
       <updated>1612098540228</updated>
       <workItem from="1612098543531" duration="1096000" />
+      <workItem from="1618411748000" duration="272000" />
+      <workItem from="1623672149357" duration="924000" />
     </task>
     <task id="LOCAL-00001" summary="modif">
       <created>1612098921235</created>
@@ -69,6 +72,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modif" />

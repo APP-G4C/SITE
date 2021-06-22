@@ -33,9 +33,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     ModifSexeProfil();}
   }
   unset($pdo);
-  {
-  }
-}
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
