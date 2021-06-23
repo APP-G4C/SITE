@@ -474,7 +474,13 @@
     <fieldset>
         <legend><strong>ALLUMER LED</strong> </legend>
         <br>
-        <button><span>ALLUMER LED</span></button>
+        <input type=button onclick=window.location.href='http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=AG4C&TRAME=1AG4C13010001a9'; value=Aller sur mon site />
+    </fieldset>
+</div>
+<div id="messagesfaq">
+    <fieldset>
+        <legend><strong>RECUPERATION TRAME</strong> </legend>
+        <?php echo AfficherTrame()?><label> millisecondes</label>
     </fieldset>
 </div>
 </body>
