@@ -3,6 +3,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/model/ModelAdmin.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerSession.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/SITE/controller/ControllerConfig.php');
 
+
 $type=type_u();
 switch ($type)
 {
@@ -34,7 +35,38 @@ $Nom =$Prenom =$Mail="";
 $err_Nom=$err_Prenom =$err_Mail="";
 $test=false;
 
-// Si l'utilisateur entre des données dans le form...
+
+function AfficherTrame(){
+    $team = "AG4C";
+    $ch = curl_init(); curl_setopt(
+        $ch,
+        CURLOPT_URL, "http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=".$team);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); $data = curl_exec($ch);
+    curl_close($ch);
+//echo "Raw Data:<br />";
+//echo("$data");
+
+    $data_tab = str_split($data,33);
+
+
+    /*
+    for($i=0, $size=count($data_tab); $i<$size; $i++){
+        echo "Trame $i: $data_tab[$i]<br />";
+    }*/
+
+    $trame = $data_tab[count($data_tab)-2];
+// décodage avec des substring
+    $t = substr($trame,0,1); $o = substr($trame,1,4); // ...
+// décodage avec sscanf
+    list($t, $o, $r, $c, $n, $value, $a, $x, $year, $month, $day, $hour, $min, $sec) = sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+    echo("<br />$value");
+
+
+}
+
+
+
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     if(isset($_POST["Nom"])&&isset($_POST["Prenom"])&&isset($_POST["Mail"]))
@@ -171,44 +203,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         ModifPasswordProfil();
     }
 
-
-	$ch = curl_init();
-	curl_setopt(
-        $ch,
-        CURLOPT_URL,
-        "http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=AG4C&TRAME=1AG4C13010001a9");
-	curl_setopt($ch, CURLOPT_HEADER, FALSE);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-	$data = curl_exec($ch);
-	curl_close($ch);
-
-	$data_tab = str_split($data,33);
-	echo "Tabular Data:<br />";
-	for($i=0, $size=count($data_tab); $i<$size; $i++) {
-        echo "Trame $i: $data_tab[$i] <br />";
-        $trame = $data_tab[$i];
-    }
-
-	//$trame = $data_tab[$i];
-	// décodage avec des substring
-	/*
-	$t = substr($trame,0,1);
-	$o = substr($trame,1,4);
-	// …
-	*/
-	// décodage avec sscanf
-	list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
-        sscanf($trame,"%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
-
-	echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
-	echo("<br/> $t");
-	echo("<br/> $o");
-	echo("<br/> $r");
-	echo("<br/> $c");
-	echo("<br/> $v");
-	echo("<br/> $a");
-	echo("<br/> $x");
-	echo("<br/> $year, $month, $day, $hour, $min, $sec");
 }
 unset($pdo);
 { 
